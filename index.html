@@ -6,7 +6,7 @@
 
 <style>
 body { 
-    background-color: #FFFFFF
+    background-color: #FEFEFE
 }
 #centerContainer {
     width: 900px;
@@ -15,8 +15,8 @@ body {
 }
 h1 {
     font-family: 'Ubuntu';
-    color: #404040;
-    font-size: 1.3em;
+    color: #252525;
+    font-size: 1.5em;
     font-weight: 450;
     text-align: left;
     line-height: 1.05;
@@ -25,8 +25,8 @@ h1 {
 }
 h2 {
     font-family: 'Ubuntu';
-    color: #404040;
-    font-size: 1em;
+    color: #252525;
+    font-size: 1.3em;
     font-weight: 450;
     text-align: left;
     line-height: 1.05;
@@ -36,43 +36,13 @@ h2 {
 
 text0 {
     font-family: 'system-ui';
-    color: #101010;
-    font-size: 0.87em;
-    font-weight: 300;
-    text-align: justify;
-    line-height: 1.3;
-}
-text1 {
-    font-family: 'system-ui';
-    color: #131313;
-    font-size: 0.87em;
-    font-weight: 300;
-    text-align: justify;
-    line-height: 1.3;
-}
-text2 {
-    font-family: 'system-ui';
-    color: #101010;
-    font-size: 0.87em;
-    font-weight: 300;
-    text-align: justify;
-    line-height: 1.3;
-}
-text3 {
-    font-family: 'Open Sans';
-    color: #303030;
-    font-size: 1.1em;
-    font-weight: 400;
-    text-align: justify;
-    line-height: 1.1;
-}
-text4 {
-    font-family: 'Helvetica';
-    color: #505050;
+    color: #252525;
     font-size: 1em;
+    /* font-weight: 300; */
     text-align: justify;
-    line-height: 1.1;
+    line-height: 1.3;
 }
+
 
 
 
@@ -87,161 +57,14 @@ text4 {
         <text0>
             system ui 300 151515 0.9
             <br>
-            Современные алгоритмы машинного обучения обычно превосходят классические линейные методы в точности прогнозов, но при этом сложны в интерпретации.
-            Некоторые алгоритмы имеют встроенный функционал приоритезации предикторов, что позволяет выявить наиболее информативные. Тем не менее, этого
-            недостаточно для оценки взаимосвязей</text0>
-        <br>
-        <br>
-        <text1>
-            system ui 300 131313 0.9
-            <br>
-            Современные алгоритмы машинного обучения обычно превосходят классические линейные методы в точности прогнозов, но при этом сложны в интерпретации.
-            Некоторые алгоритмы имеют встроенный функционал приоритезации предикторов, что позволяет выявить наиболее информативные. Тем не менее, этого
-            недостаточно для оценки взаимосвязей</text1>
-        <br>
-        <br>
-        <text2>
-            system ui 300 101010 0.9
-            <br>
-            Современные алгоритмы машинного обучения обычно превосходят классические линейные методы в точности прогнозов, но при этом сложны в интерпретации.
-            Некоторые алгоритмы имеют встроенный функционал приоритезации предикторов, что позволяет выявить наиболее информативные. Тем не менее, этого
-            недостаточно для оценки взаимосвязей</text2>
-        <br>
-        <br>
-        <text3>
-            Open Sans 400 1.1 303030
-            <br>
-            Современные алгоритмы машинного обучения обычно превосходят классические линейные методы в точности прогнозов, но при этом сложны в интерпретации.
-            Некоторые алгоритмы имеют встроенный функционал приоритезации предикторов, что позволяет выявить наиболее информативные. Тем не менее, этого
-            недостаточно для оценки взаимосвязей</text3>
-        <br>
-        <br>
-        <text4>
-            Helvetica 300 1 202020
-            <br>
-            Современные алгоритмы машинного обучения обычно превосходят классические линейные методы в точности прогнозов, но при этом сложны в интерпретации.
-            Некоторые алгоритмы имеют встроенный функционал приоритезации предикторов, что позволяет выявить наиболее информативные. Тем не менее, этого
-            недостаточно для оценки взаимосвязей</text4>
+            Современные алгоритмы машинного обучения обычно превосходят классические линейные методы в точности прогнозов, но при этом сложны в интерпретации. Некоторые алгоритмы имеют встроенный функционал приоритезации предикторов, что позволяет выявить наиболее информативные. Тем не менее, этого недостаточно для оценки взаимосвязей.
+
+Целью данного проекта является создание простой в интерпретации модели HousePricePredictor, которая по точности прогнозов не уступает лучшим алгоритмами машинного обучения. Модель состоит из двух уровней: на первом уровне используется линейная регрессия для выдачи первичных прогнозов и определения коэффициентов для интерпретации; второй уровень - это алгоритм машинного обучения, прогнозирующий величину остатков (ошибок) регрессии для увеличения тчоности прогнозов. Эта схема во многом напоминает первую итерацию бустинга, в котором каждая последующая итерация минимизирует ошибку предыдущей.</text0>
+        
         
         
     <!-- </div> -->
         
-
-
-<body>
-    
-</html>
-
-
-
-
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Заголовок документа</title>
-    <style>
-      body {
-      background-color: #eee;
-      color: #000;
-      font-size: 1em;
-      font-family: 'Ubuntu', 'Helvetica', sans-serif;
-      }
-      hr {
-      margin: 60px 0;
-      }
-      table {
-      table-layout: fixed;
-      padding: .3em;
-      border: 1px solid #ccc;
-      background-color: #f9f9f9;
-      margin-bottom: 1em;
-      }
-      td {
-          color:red;
-      padding: 15px;
-      border: 1px solid #eee;
-      }
-      h3 {
-      font-size: 5em;
-      line-height: 1;
-      font-family: sans-serif;
-      }
-      .uppercase {
-      text-transform: uppercase;
-      }
-      .italic {
-      font-style: italic;
-      font-family: 'Roboto',Helvetica, sans-serif;
-      }
-      .optimizeLegibility {
-      text-rendering: optimizeLegibility;
-      }
-    </style>
-  </head>
-  <body>
-    <h2>Пример text-rendering</h2>
-    <table>
-      <tr>
-        <td>Text-rendering: auto;</td>
-        <td>
-          <h3 class="uppercase">LOREM</h3>
-        </td>
-      </tr>
-      <tr>
-        <td>Text-rendering: optimizeLegibility;</td>
-        <td>
-          <h3 class="optimizeLegibility uppercase">LOREM</h3>
-        </td>
-      </tr>
-    </table>
-    <table>
-      <tr>
-        <td>Text-rendering: auto;</td>
-        <td>
-          <h3>Ipsum</h3>
-        </td>
-      </tr>
-      <tr>
-        <td>Text-rendering: optimizeLegibility;</td>
-        <td>
-          <h3 class="optimizeLegibility">Ipsum</h3>
-        </td>
-      </tr>
-    </table>
-    <table>
-      <tr>
-        <td>Text-rendering: auto;</td>
-        <td>
-          <h3 class="italic">lorem ipsum</h3>
-        </td>
-      </tr>
-      <tr>
-        <td>Text-rendering: optimizeLegibility;</td>
-        <td>
-          <h3 class="optimizeLegibility italic">lorem ipsum</h3>
-        </td>
-      </tr>
-    </table>
-  </body>
-</html>
-
-
-<tr>
-<td>Современные алгоритмы машинного обучения </td> </tr>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

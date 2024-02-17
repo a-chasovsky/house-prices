@@ -15,6 +15,7 @@
         font-weight: 600;
         text-align: left;
         line-height: 1.05;
+        <p>
     }
     h2 {
         font-family: 'Ubuntu';
@@ -40,32 +41,34 @@
         text-align: left;
         line-height: 1.05;
     }
-    text {
+    .text {
         font-family: 'system-ui';
         color: #333333;
         font-size: 1em;
-        /* font-weight: 300; */
         text-align: justify;
         line-height: 1.5;
     }
-    text1 {
+    .text085 {
         font-family: 'system-ui';
         color: #23292F;
         font-size: 0.85em;
-        /* font-weight: 300; */
+        font-style: italic;
         text-align: justify;
         line-height: 1.4;
     }
-    #centerContainer {
+    /* #centerContainerWide {
+        background-color:grey;
         width: 1000;
         text-align: left;
         margin: 0px auto;
-    }
-    #centerContainer1 {
+    } */
+    /* #centerContainerNarrow {
+        background-color:black;
         width: 1050;
         text-align: left;
         margin: 0px auto;
-    }
+    } */
+    
     .hr {
         height:1px;
         color:#CFD7DE;
@@ -78,25 +81,27 @@
     }
     
     .verticalLine-left {
-      border-left: 0.5px solid #CFD7DE;
+        border-left: 0.5px solid #CFD7DE;
+        /* margin-bottom: 150px; */
     }
     .verticalLine-right {
       border-right: 0.5px solid #CFD7DE;
     }
+
     #toc_container {
-    background: #FEFEFE;
-    border: 1px solid #CFD7DE;
-    display: table;
-    font-size: 95%;
-    margin-bottom: 1em;
-    padding: 20px;
-    width: auto;
+        background: #FEFEFE;
+        border: 1px solid #CFD7DE;
+        display: table;
+        font-size: 95%;
+        margin-bottom: 1em;
+        padding: 20px;
+        width: auto;
     }
     .toc_title {
-    font-weight: 700;
-    text-align: left;
-    font-family: 'Ubuntu';
-    color: #23292F;
+        font-weight: 700;
+        text-align: left;
+        font-family: 'Ubuntu';
+        color: #23292F;
     }
     /* unvisited link */
     a:link {
@@ -126,100 +131,129 @@
     .spacer3 {
       height: 3px;
     }
+    .bordersLines {
+        margin-left: 0%;
+        margin-right: 5%;
+    }
+    .bordersContent {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+    .bordersHeadTitle {
+        margin-left: 7.5%;
+        margin-right: 30px;
+    }
+
 
 
 </style>
 
 <body>
 
-    
-    <div id="centerContainer1">
-        <div class="verticalLine-left">
-        <div class="verticalLine-right">
-            <div id="centerContainer">
+    <div class='bordersLines'> 
+    <!-- Широкий фон с ветикальными линиями -->
+    <!-- <div id="centerContainerWide"> -->
+        
+          
+            
+            <!-- Фон для контента -->
+            <!-- <div id="centerContainerNarrow"> -->
                 <!-- <img src= "img/header.png" style='width:1000' alt="Header"/> -->
+        <div class='bordersHeadTitle'>
                 <h1>Комбинирование регрессионнного анализа и машинного обучения для более точных прогнозов и высокой интерпретируемости модели</h1>
-                <text1><i>Регрессионный анализ, машинное обучение, описательная аналитика, предиктивная аналитика </i> </text1>
-                    <br><br>
+
+            
+
+         
+                <p><div class='text085'> <i>Регрессионный анализ, машинное обучение, описательная аналитика, предиктивная аналитика </i></div></p>
+            
+            <div class="verticalLine-left" style='color:#FFFFFF'>  
+            <div class="verticalLine-right" style='color:#FFFFFF'>
+
+                <div class='bordersContent'>
+                
                 <!-- Содержание -->
                 <a name="toc"> </a>
-                <div id="toc_container">
-                    <div class='toc_title'>Содержание </div>
-                    <div class="spacer75"></div>
-                    1. <a href="#review">Обзор проекта и краткие результаты</a>
-                    <div class="spacer3"></div>
-                    2. <a href="#dataset_description">Описание датасета</a>
-                    <div class="spacer3"></div>
-                    3. <a href="#missed_values">Работа с отсутствующими значениями</a>
-                    <div class="spacer3"></div>
-                    4. <a href="#model_base">ML-модель №1 (базовая)</a>
-                    <div class="spacer3"></div>
-                    5. <a href="#eda">Исследование данных</a>
-                    <div class="spacer3"></div>
-                    6. <a href="#clear">Очистка данных</a>
+                <div class='borders'>
+                    <div id="toc_container">
+                        <div class='toc_title'>Содержание </div>
+                        <div class="spacer75"></div>
+                        1. <a href="#review">Обзор проекта и краткие результаты</a>
                         <div class="spacer3"></div>
-                       6.1. <a href="#outliers">Выявление и удаление выбросов</a>
+                        2. <a href="#dataset_description">Описание датасета</a>
                         <div class="spacer3"></div>
-                       6.2. <a href="#discrepancy">Проверка данных на несоответствие</a>
-                    <div class="spacer3"></div>
-                    7. <a href="#model_inter1">ML-модель №2 (после очистки данных)</a>
-                    <div class="spacer3"></div>
-                    8. <a href="#feature_engineering">Создание дополнительных предикторов</a>
+                        3. <a href="#missed_values">Работа с отсутствующими значениями</a>
                         <div class="spacer3"></div>
-                       8.1. <a href="#square_feet">Предикторы, характеризующие площадь</a>
+                        4. <a href="#model_base">ML-модель №1 (базовая)</a>
                         <div class="spacer3"></div>
-                       8.2. <a href="#rooms">Предикторы, характеризующие помещения (жилые комнаты, ванные комнаты, кухни)</a>
+                        5. <a href="#eda">Исследование данных</a>
                         <div class="spacer3"></div>
-                       8.3. <a href="#dates">Предикторы, характеризующие даты</a>
-                    <div class="spacer3"></div>
-                    9. <a href="#preprocessing">Предварительная подготовка данных</a>
-                    <div class="spacer3"></div>
-                    10. <a href="#model_inter2">ML-модель №3 (после создания новых признаков)</a>
-                    <div class="spacer3"></div>
-                    11. <a href="#model_linear">Линейные модели и регрессионный анализ</a>
+                        6. <a href="#clear">Очистка данных</a>
+                            <div class="spacer3"></div>
+                           6.1. <a href="#outliers">Выявление и удаление выбросов</a>
+                            <div class="spacer3"></div>
+                           6.2. <a href="#discrepancy">Проверка данных на несоответствие</a>
                         <div class="spacer3"></div>
-                        11.1. <a href="#elastic_net">Эластичная сеть</a>
+                        7. <a href="#model_inter1">ML-модель №2 (после очистки данных)</a>
                         <div class="spacer3"></div>
-                        11.2. <a href="#linear_regression">Линейная регрессия</a>
+                        8. <a href="#feature_engineering">Создание дополнительных предикторов</a>
+                            <div class="spacer3"></div>
+                           8.1. <a href="#square_feet">Предикторы, характеризующие площадь</a>
+                            <div class="spacer3"></div>
+                           8.2. <a href="#rooms">Предикторы, характеризующие помещения (жилые комнаты, ванные комнаты, кухни)</a>
+                            <div class="spacer3"></div>
+                           8.3. <a href="#dates">Предикторы, характеризующие даты</a>
                         <div class="spacer3"></div>
-                        11.3. <a href="#simulations">Результаты линейных моделей на сэмплированных данных</a>
-                    <div class="spacer3"></div>
-                    12. <a href="#residuals">Выбор ML-модели для прогнозирования остатков линейной регрессии</a>
+                        9. <a href="#preprocessing">Предварительная подготовка данных</a>
                         <div class="spacer3"></div>
-                        12.1. <a href="#ml_simple">Опорные вектора, бустинги, бэггинг, случайный лес, K-ближайших соседей</a>
+                        10. <a href="#model_inter2">ML-модель №3 (после создания новых признаков)</a>
                         <div class="spacer3"></div>
-                        12.2. <a href="#vote_stack">Добавление оценщиков верхнего уровня - Voting и Stacking](#vote_stack)</a>
+                        11. <a href="#model_linear">Линейные модели и регрессионный анализ</a>
+                            <div class="spacer3"></div>
+                            11.1. <a href="#elastic_net">Эластичная сеть</a>
+                            <div class="spacer3"></div>
+                            11.2. <a href="#linear_regression">Линейная регрессия</a>
+                            <div class="spacer3"></div>
+                            11.3. <a href="#simulations">Результаты линейных моделей на сэмплированных данных</a>
                         <div class="spacer3"></div>
-                        12.3. <a href="#residuals_final">Сравнение всех моделeй и выбор финального оценщика остатков регрессии](#residuals_final)</a>
+                        12. <a href="#residuals">Выбор ML-модели для прогнозирования остатков линейной регрессии</a>
+                            <div class="spacer3"></div>
+                            12.1. <a href="#ml_simple">Опорные вектора, бустинги, бэггинг, случайный лес, K-ближайших соседей</a>
+                            <div class="spacer3"></div>
+                            12.2. <a href="#vote_stack">Добавление оценщиков верхнего уровня - Voting и Stacking</a>
+                            <div class="spacer3"></div>
+                            12.3. <a href="#residuals_final">Сравнение всех моделeй и выбор финального оценщика остатков регрессии</a>
+                            <div class="spacer3"></div>
+                            12.4. <a href="#hpp">Комбинирование линейной регрессии и ML-алгоритма - итоговый оценщик HousePricePredictor</a>
                         <div class="spacer3"></div>
-                        12.4. <a href="#hpp">Комбинирование линейной регрессии и ML-алгоритма - итоговый оценщик HousePricePredictor](#hpp)</a>
-                    <div class="spacer3"></div>
-                    13. <a href="#ml_models">Оценка независимых ML-моделей](#ml_models)</a>
-                    <div class="spacer3"></div>
-                    15. <a href="#final_results">Подведение итогов](#final_results)</a>
+                        13. <a href="#ml_models">Оценка независимых ML-моделей</a>
                         <div class="spacer3"></div>
-                        14.1. <a href="#all_models">Сравнение всех моделей](#all_models)</a>
-                        <div class="spacer3"></div>
-                        14.2. <a href="#predicted_actual">Актуальные и спрогнозированные цены](#predicted_actual)</a>
-                        <div class="spacer3"></div>
-                        14.3. <a href="#hpp_residuals">Анализ остатков HPP](#hpp_residuals)</a>
-                        <div class="spacer3"></div>
-                        14.4. <a href="#further">Дальнейшие шаги](#further)</a>
-                        <div class="spacer3"></div>
-                    
+                        15. <a href="#final_results">Подведение итогов</a>
+                            <div class="spacer3"></div>
+                            14.1. <a href="#all_models">Сравнение всех моделей</a>
+                            <div class="spacer3"></div>
+                            14.2. <a href="#predicted_actual">Актуальные и спрогнозированные цены</a>
+                            <div class="spacer3"></div>
+                            14.3. <a href="#hpp_residuals">Анализ остатков HPP</a>
+                            <div class="spacer3"></div>
+                            14.4. <a href="#further">Дальнейшие шаги</a>
+                            <div class="spacer3"></div>
+                        </div>
                     </div>
-                <h2>1. Обзор проекта и краткие результаты</h2>
-                <h4>Цель проекта</h4>
-                <text>Современные алгоритмы машинного обучения обычно превосходят классические линейные модели в точности прогнозов, но при этом сложны в
+                    <!-- Конец содержания -->
+                
+                <h2><div class='borders'>1. Обзор проекта и краткие результаты</div></h2>
+                <h4><div class='borders'>Цель проекта</div></h4>
+                <p> <div class='borders'> <div class='text'> Современные алгоритмы машинного обучения обычно превосходят классические линейные модели в точности прогнозов, но при этом сложны в
                     интерпретации. Некоторые алгоритмы имеют встроенный функционал приоритезации предикторов, что позволяет выявить наиболее информативные. Тем не
-                    менее, этого недостаточно для оценки взаимосвязей. 
-                    <br><br>
-                    Целью данного проекта является создание простой в интерпретации модели HousePricePredictor, которая по точности прогнозов не уступает лучшим
+                    менее, этого недостаточно для оценки взаимосвязей. </div></div></p>
+                    <p> <div class='borders'> <div class='text'> Целью данного проекта является создание простой в интерпретации модели HousePricePredictor, которая по точности прогнозов не уступает лучшим
                     алгоритмами машинного обучения. Модель состоит из двух уровней: на первом уровне используется линейная регрессия для выдачи первичных прогнозов и
                     определения коэффициентов для интерпретации; второй уровень - это алгоритм машинного обучения, прогнозирующий величину остатков (ошибок)
                     регрессии для увеличения тчоности прогнозов. Эта схема во многом напоминает первую итерацию бустинга, в котором каждая последующая итерация
-                    минимизирует ошибку предыдущей.</text>
+                    минимизирует ошибку предыдущей. </div></div></p>
 
+                
 
 
                 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -234,21 +268,17 @@
              <a href="#toc" style="font-size:15px;" >Обратно к содержанию</a>  
                 
              
-                </div>
+             
             </div>
             </div>
         </div>
-        </div>
+        <!-- </div>
+         </div> -->
+
+    </div>
+        
 <body>
 
-    <body class='markdown-preview' data-use-github-style><h2 id="-">1Комбинирование регрессионнного анализа и машинного обучения для более точных прогнозов и высокой интерпретируемости модели</h2> 
-
-<p>В ходе проекта удалось снизить ошибку RMSE c 0.1216 у базовой модели до 0.0969 итогового оценщика HousePricePredictor. На этапе преобразования наибольший вклад внесла очистка данных, а дополнительно сгенерированные предикторы были полезны как для линейной регрессии, так и для сложных алгоритмов машинного обучения (см. <em>8. Создание дополнительных предикторов</em>, <em>11.2. Линейная регрессия</em>, <em>13. Оценка независимых ML-моделей</em>).</p>
-<p>Результат итогового оценщика HPP превысил ожидания - это единственная модель, у которой ошибка на тестовых данных меньше 0.1. Доверительные интервалы средней ошибки и предиктивные интервалы у всех моделей примерно одинаковы.</p>
-<p>Три лучшие модели демонстрируют неплохой разброс - их прогнозы достаточно кучны, за исключением нескольких выбросов, хорошо заметных на нижнем графике. Для HPP это пять элементов с заметно более высоким значением ошибки.</p>
-    
-    
-    </body>
        
 
 <!-- <hr  style='height:1.5pt' /><hr> -->

@@ -164,7 +164,7 @@
         line-height: 1.5;
         margin-top: -10px;
     }
-    .bordersPic {
+    .picture {
         margin-left: 30px;
     }
 
@@ -303,7 +303,7 @@
                 <li><t><b>HPP</b> - модель, полученная в результате комбинации линейной регрессии и стэкинга (HousePricePredictor).</t></li>
             </ul>
             <div class='borders'></div>
-            <div class='bordersPic'></div>
+            <div class='picture'></div>
             <img src='img/Section8-Final-predictions/final_plot.png'>
             <p><div class='borders'> <div class='text'>В ходе проекта удалось снизить ошибку RMSE c 0.1216 у базовой модели до 0.0969 итогового оценщика HousePricePredictor. На этапе преобразования наибольший вклад внесла очистка данных, а дополнительно сгенерированные предикторы были полезны как для линейной регрессии, так и для сложных алгоритмов машинного обучения (см. <i>8. Создание дополнительных предикторов</i>, <i>11.2. Линейная регрессия</i>, <i>13. Оценка независимых ML-моделей</i>).</div></div></p>
             <p><div class='borders'> <div class='text'>Результат итогового оценщика HPP превысил ожидания - это единственная модель, у которой ошибка на тестовых данных меньше 0.1. Доверительные интервалы средней ошибки и предиктивные интервалы у всех моделей примерно одинаковы.</div></div></p>
@@ -311,7 +311,7 @@
         <h4><div class='borders'><i>Интерпретациия</i></div></h4>
             <p><div class='borders'> <div class='text'>Ядром HousePricePredictor является линейная регрессия. Коэффициенты и доверительные интервалы представлены в таблице ниже.</div></div></p>
             <div class='borders'></div>
-            <div class='bordersPic'></div>
+            <div class='picture'></div>
             <img src='img/Section4-Linear-models-research/coefficients_table.png'>
             <p><div class='borders'> <div class='text'>Предикторы с наибольшим коэффициентом - это дополнительно сгенерированный предиктор <b>lg_flrsfmean</b> (средневзвешенная площадь первого и второго этажей, см. _'8.1. Предикторы, характеризующие площадь_'), общее качество строительных и отделочных материалов <b>overallqual</b>, возраст дома <b>houseage</b>. Вклад, котоый вносит увеличение этих параметров в изменение цены дома (при прочих равных):</div></div></p>
             <ul>
@@ -321,7 +321,7 @@
             </ul>
             <p><div class='borders'> <div class='text'>Интерпретацию остальных коэффцииентов см. в разделе <i>'11.2. Линейная регрессия'.</i></div></div></p>
         <h4><div class='borders'><i>Сравнение актуальных и предсказанных HousePricePredictor цен</i></div></h4>
-            <div class='borders'></div> <div class='bordersPic'></div>
+            <div class='borders'></div> <div class='picture'></div>
             <img src='img/Section8-Final-predictions/predicted_actual_residuals.png'>
             <p><div class='borders'> <div class='text'>На оси абсцисс - элементы, отсортированные по суммарной площади жилого пространства ___grlivarea___. С увеличением площади увеличивается цена дома. Этот график можно разбить на три составляющие: малые, средние и большие дома. </div></div></p>
             <p>
@@ -354,11 +354,24 @@
             Число элементов: 1460;
         </div></div>
     </p>
-    <div class='borders'></div> <div class='bordersPic'></div>
+    <div class='borders'></div> <div class='picture'></div>
     <img src='img/Section1-Overview-and-Base-model/data_raw.png'> <br/> 
-
-
-
+    <p>
+        <div class='borders'> <div class='text'>
+            После разделения датасета на обучающий (train) и проверочный (test), число элементов составило 1314 и 146 соответственно.
+        </div></div>
+    </p>
+    <h4>
+        <div class='borders'>
+            <i>Целевая переменная</i>
+        </div>
+    </h4>
+    <p>
+        <div class='borders'> <div class='text'>
+            Распределение целевой переменной напоминает гамма-распределение. Это одномодальное распределение с вершиной в районе 150000$ и правосторонней ассиметрией. 
+        </div></div>
+    </p>  
+    <img src='img/Section1-Overview-and-Base-model/target_distribution.png'>
 
 
         

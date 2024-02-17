@@ -12,7 +12,7 @@
         font-family: 'Ubuntu';
         color: #2F343B;
         font-size: 1.5em;
-        font-weight: 500;
+        font-weight: 600;
         text-align: left;
         line-height: 1.05;
     }
@@ -56,7 +56,7 @@
         text-align: justify;
         line-height: 1.4;
     }
-    /* #centerContainer {
+    #centerContainer {
         width: 1000;
         text-align: left;
         margin: 0px auto;
@@ -82,7 +82,22 @@
     }
     .verticalLine-right {
       border-right: 0.5px solid #CFD7DE;
-    } */
+    }
+    #toc_container {
+    background: #FEFEff;
+    border: 1px solid #CFD7DE;
+    display: table;
+    font-size: 95%;
+    margin-bottom: 1em;
+    padding: 20px;
+    width: auto;
+    }
+    .toc_title {
+    font-weight: 700;
+    text-align: left;
+    font-family: 'Ubuntu';
+    color: #23292F;
+    }
 /* 
 #toc_container {
     background: #FEFEff none repeat scroll 0 0;
@@ -103,8 +118,8 @@
 
 #toc_container li, #toc_container ul, #toc_container ul li{
     list-style: outside none none !important;
-} */
-
+}
+ */
 /* unvisited link */
 /* a:link {
     font-family: 'system-ui';
@@ -135,18 +150,13 @@
 
 <body>
 
-<h2>
-    1. Обзор проекта и краткие результаты </h2>
-<h4>
-    Цель проекта </h4>
-
-    <!-- 
+    
     <div id="centerContainer1">
         <div class="verticalLine-left">
-        <div class="verticalLine-right"> -->
-            <!-- <div id="centerContainer"> -->
+        <div class="verticalLine-right">
+            <div id="centerContainer">
                 <!-- <img src= "img/header.png" style='width:1000' alt="Header"/> -->
-                <!-- <h1>
+                <h1>
                     Комбинирование регрессионнного анализа и машинного обучения для более точных прогнозов и высокой интерпретируемости модели</h1>
                 <text1>
                     <i>Регрессионный анализ, машинное обучение, описательная аналитика, предиктивная аналитика </i> </text1>
@@ -154,10 +164,10 @@
                         <a name="toc"> </a>
                         <div id="toc_container">
                             
-                            <div class='toc_title'>Содержание </div> -->
+                            <div class='toc_title'>Содержание </div>
                             
                             
-                            <!-- </div>
+                            </div>
                 <h2>
                     1. Обзор проекта и краткие результаты </h2>
                 <h4>
@@ -171,7 +181,7 @@
                     алгоритмами машинного обучения. Модель состоит из двух уровней: на первом уровне используется линейная регрессия для выдачи первичных прогнозов и
                     определения коэффициентов для интерпретации; второй уровень - это алгоритм машинного обучения, прогнозирующий величину остатков (ошибок)
                     регрессии для увеличения тчоности прогнозов. Эта схема во многом напоминает первую итерацию бустинга, в котором каждая последующая итерация
-                    минимизирует ошибку предыдущей. </text> --> 
+                    минимизирует ошибку предыдущей. </text>
 
 
 

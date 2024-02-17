@@ -41,6 +41,13 @@
         text-align: left;
         line-height: 1.05;
     }
+    text {
+        font-family: 'system-ui';
+        color: #333333;
+        font-size: 1em;
+        text-align: justify;
+        line-height: 1.5;
+    }
     .text {
         font-family: 'system-ui';
         color: #333333;
@@ -55,6 +62,14 @@
         font-style: italic;
         text-align: justify;
         line-height: 1.4;
+    }
+    text-number-toc {
+        font-family: 'system-ui';
+        font-weight:600;
+        color: #333333;
+        font-size: 0.85em;
+        text-align: justify;
+        line-height: 1.5;
     }
     /* #centerContainerWide {
         background-color:grey;
@@ -168,75 +183,74 @@
                 <p><div class='text085'> <i>Регрессионный анализ, машинное обучение, описательная аналитика, предиктивная аналитика </i></div></p>
             
             <div class="verticalLine-left" style='color:#FFFFFF'>  
-            <div class="verticalLine-right" style='color:#FFFFFF'>
 
                 <div class='bordersContent'>
-                
+                    
                 <!-- Содержание -->
                 <a name="toc"> </a>
                 <div class='borders'>
                     <div id="toc_container">
                         <div class='toc_title'>Содержание </div>
                         <div class="spacer75"></div>
-                        1. <a href="#review">Обзор проекта и краткие результаты</a>
+                         <text> <text-number-toc>1.</text-number-toc> <a href="#review"> Обзор проекта и краткие результаты</a> </text>
                         <div class="spacer3"></div>
-                        2. <a href="#dataset_description">Описание датасета</a>
+                        <text> <text-number-toc>2.</text-number-toc> <a href="#dataset_description"> Описание датасета</a> </text>
                         <div class="spacer3"></div>
-                        3. <a href="#missed_values">Работа с отсутствующими значениями</a>
+                        <text> <text-number-toc>3.</text-number-toc> <a href="#missed_values">Работа с отсутствующими значениями</a> </text>
                         <div class="spacer3"></div>
-                        4. <a href="#model_base">ML-модель №1 (базовая)</a>
+                        <text> <text-number-toc>4.</text-number-toc> <a href="#model_base">ML-модель №1 (базовая)</a> </text>
                         <div class="spacer3"></div>
-                        5. <a href="#eda">Исследование данных</a>
+                        <text> <text-number-toc>5.</text-number-toc> <a href="#eda">Исследование данных</a> </text>
                         <div class="spacer3"></div>
-                        6. <a href="#clear">Очистка данных</a>
+                        <text> <text-number-toc>6.</text-number-toc> <a href="#clear">Очистка данных</a> </text>
                             <div class="spacer3"></div>
-                           6.1. <a href="#outliers">Выявление и удаление выбросов</a>
+                           &emsp;<text> <text-number-toc>6.1.</text-number-toc> <a href="#outliers">Выявление и удаление выбросов</a> </text>
                             <div class="spacer3"></div>
-                           6.2. <a href="#discrepancy">Проверка данных на несоответствие</a>
+                           &emsp;<text> <text-number-toc>6.2.</text-number-toc> <a href="#discrepancy">Проверка данных на несоответствие</a>
                         <div class="spacer3"></div>
-                        7. <a href="#model_inter1">ML-модель №2 (после очистки данных)</a>
+                        <text> <text-number-toc>7.</text-number-toc> <a href="#model_inter1">ML-модель №2 (после очистки данных)</a>
                         <div class="spacer3"></div>
-                        8. <a href="#feature_engineering">Создание дополнительных предикторов</a>
+                        <text> <text-number-toc>8.</text-number-toc> <a href="#feature_engineering">Создание дополнительных предикторов</a>
                             <div class="spacer3"></div>
-                           8.1. <a href="#square_feet">Предикторы, характеризующие площадь</a>
+                           &emsp;<text> <text-number-toc>8.1.</text-number-toc> <a href="#square_feet">Предикторы, характеризующие площадь</a>
                             <div class="spacer3"></div>
-                           8.2. <a href="#rooms">Предикторы, характеризующие помещения (жилые комнаты, ванные комнаты, кухни)</a>
+                           &emsp;<text> <text-number-toc>8.2.</text-number-toc> <a href="#rooms">Предикторы, характеризующие помещения (жилые комнаты, ванные комнаты, кухни)</a>
                             <div class="spacer3"></div>
-                           8.3. <a href="#dates">Предикторы, характеризующие даты</a>
+                           &emsp;<text> <text-number-toc>8.3.</text-number-toc> <a href="#dates">Предикторы, характеризующие даты</a>
                         <div class="spacer3"></div>
-                        9. <a href="#preprocessing">Предварительная подготовка данных</a>
+                        <text> <text-number-toc>9.</text-number-toc> <a href="#preprocessing">Предварительная подготовка данных</a>
                         <div class="spacer3"></div>
-                        10. <a href="#model_inter2">ML-модель №3 (после создания новых признаков)</a>
+                        <text> <text-number-toc>10.</text-number-toc> <a href="#model_inter2">ML-модель №3 (после создания новых признаков)</a>
                         <div class="spacer3"></div>
-                        11. <a href="#model_linear">Линейные модели и регрессионный анализ</a>
+                        <text> <text-number-toc>11.</text-number-toc> <a href="#model_linear">Линейные модели и регрессионный анализ</a>
                             <div class="spacer3"></div>
-                            11.1. <a href="#elastic_net">Эластичная сеть</a>
+                            &emsp;<text> <text-number-toc>11.1.</text-number-toc> <a href="#elastic_net">Эластичная сеть</a>
                             <div class="spacer3"></div>
-                            11.2. <a href="#linear_regression">Линейная регрессия</a>
+                            &emsp;<text> <text-number-toc>11.2.</text-number-toc> <a href="#linear_regression">Линейная регрессия</a>
                             <div class="spacer3"></div>
-                            11.3. <a href="#simulations">Результаты линейных моделей на сэмплированных данных</a>
+                            &emsp;<text> <text-number-toc>11.3.</text-number-toc> <a href="#simulations">Результаты линейных моделей на сэмплированных данных</a>
                         <div class="spacer3"></div>
-                        12. <a href="#residuals">Выбор ML-модели для прогнозирования остатков линейной регрессии</a>
+                        <text> <text-number-toc>12.</text-number-toc> <a href="#residuals">Выбор ML-модели для прогнозирования остатков линейной регрессии</a>
                             <div class="spacer3"></div>
-                            12.1. <a href="#ml_simple">Опорные вектора, бустинги, бэггинг, случайный лес, K-ближайших соседей</a>
+                            &emsp;<text> <text-number-toc>12.1</text-number-toc> <a href="#ml_simple">Опорные вектора, бустинги, бэггинг, случайный лес, K-ближайших соседей</a>
                             <div class="spacer3"></div>
-                            12.2. <a href="#vote_stack">Добавление оценщиков верхнего уровня - Voting и Stacking</a>
+                            &emsp;<text> <text-number-toc>12.2.</text-number-toc> <a href="#vote_stack">Добавление оценщиков верхнего уровня - Voting и Stacking</a>
                             <div class="spacer3"></div>
-                            12.3. <a href="#residuals_final">Сравнение всех моделeй и выбор финального оценщика остатков регрессии</a>
+                            &emsp;<text> <text-number-toc>12.3.</text-number-toc> <a href="#residuals_final">Сравнение всех моделeй и выбор финального оценщика остатков регрессии</a>
                             <div class="spacer3"></div>
-                            12.4. <a href="#hpp">Комбинирование линейной регрессии и ML-алгоритма - итоговый оценщик HousePricePredictor</a>
+                            &emsp;<text> <text-number-toc>12.4.</text-number-toc> <a href="#hpp">Комбинирование линейной регрессии и ML-алгоритма - итоговый оценщик HousePricePredictor</a>
                         <div class="spacer3"></div>
-                        13. <a href="#ml_models">Оценка независимых ML-моделей</a>
+                        <text> <text-number-toc>13.</text-number-toc> <a href="#ml_models">Оценка независимых ML-моделей</a>
                         <div class="spacer3"></div>
-                        15. <a href="#final_results">Подведение итогов</a>
+                        <text> <text-number-toc>14.</text-number-toc> <a href="#final_results">Подведение итогов</a>
                             <div class="spacer3"></div>
-                            14.1. <a href="#all_models">Сравнение всех моделей</a>
+                            &emsp;<text> <text-number-toc>14.1.</text-number-toc> <a href="#all_models">Сравнение всех моделей</a>
                             <div class="spacer3"></div>
-                            14.2. <a href="#predicted_actual">Актуальные и спрогнозированные цены</a>
+                            &emsp;<text> <text-number-toc>14.2.</text-number-toc> <a href="#predicted_actual">Актуальные и спрогнозированные цены</a>
                             <div class="spacer3"></div>
-                            14.3. <a href="#hpp_residuals">Анализ остатков HPP</a>
+                            &emsp;<text> <text-number-toc>14.3.</text-number-toc> <a href="#hpp_residuals">Анализ остатков HPP</a>
                             <div class="spacer3"></div>
-                            14.4. <a href="#further">Дальнейшие шаги</a>
+                            &emsp;<text> <text-number-toc>14.4.</text-number-toc> <a href="#further">Дальнейшие шаги</a>
                             <div class="spacer3"></div>
                         </div>
                     </div>
@@ -244,6 +258,12 @@
                 
                 <h2><div class='borders'>1. Обзор проекта и краткие результаты</div></h2>
                 <h4><div class='borders'>Цель проекта</div></h4>
+                    </div>
+
+                    <div class="verticalLine-right" style='color:#FFFFFF'>
+
+                    <div class='bordersContent'>
+                        
                 <p> <div class='borders'> <div class='text'> Современные алгоритмы машинного обучения обычно превосходят классические линейные модели в точности прогнозов, но при этом сложны в
                     интерпретации. Некоторые алгоритмы имеют встроенный функционал приоритезации предикторов, что позволяет выявить наиболее информативные. Тем не
                     менее, этого недостаточно для оценки взаимосвязей. </div></div></p>
@@ -274,7 +294,7 @@
         </div>
         <!-- </div>
          </div> -->
-
+        </div>
     </div>
         
 <body>

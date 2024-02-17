@@ -145,7 +145,6 @@ ___Сравнение актуальных и предсказанных HousePr
 
 [Перейти к странице датасета на сайте Kaggle](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/overview)
 
-Целевая переменная количественная;  
 Число предикторов: 79;  
 Число элементов: 1460;
 

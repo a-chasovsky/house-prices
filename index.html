@@ -202,14 +202,14 @@
         justify-content: center;
     }
 
-    .center {
-      display: block;
-      margin-left: auto;
-      margin-right: 18%;
-      margin-top: 5%;
-      max-width: 500px;
-      width: -50vw; /*Just a guess, use the size that you want*/
-      height: auto%;
+    #holder {
+        background: #FFFFFF;
+        height: 100px;
+        margin: 0 100px;
+    }
+    #holder div {
+        width: 100%;
+    
     }
 
     sb {
@@ -253,10 +253,11 @@
     <div class='bordersLines'>
         <div class='bordersContent'>
             <!-- <img src='img/header.png' style='margin-left:30px;margin-rigt:25%;width:50%'> -->
-
-            <div class='center'>
-                <img src='img/header.png'>
+       
+            <div id="holder">
+            <div><img src='img/header.png'></div>
                 </div>
+        
             
             <h1>
                 Комбинирование регрессионнного анализа и машинного обучения для более точных прогнозов и высокой интерпретируемости модели

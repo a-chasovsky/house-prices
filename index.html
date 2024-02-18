@@ -1136,10 +1136,12 @@
                 <i>Количественные переменные</i>
                 </h4>
             Количественные предикторы логарифмируются (натуральный логарифм) с помощью <b>LogCpTransformer</b> из библиотеки Feature-engine. Предварительно к каждому значению добавляетя константа C, равная 1. В название всех логарифимрованных предикторов добавляется приставка <b>lg_</b>.
+            <br><br>
             <div class='picture'>       
                 <img src='img/Section3-Feature-selection-and-Preprocessing/data_log.png'>
                 </div>
             Матрица корреляций после добавления новых предикторов приведена ниже. Единственный признак, отрицательно коррелирующий с целевой перменной - относительный размер кухни <b>kitchensize</b>.
+            <br><br>
             <div class='picture'>       
                 <img src='img/Section3-Feature-selection-and-Preprocessing/corr_matrix_new.png'>
                 </div>
@@ -1147,6 +1149,7 @@
                 <i>Категориальные переменные</i>
                 </h4>
             Для преобразования категориальных переменных используется <b>OrdinalEncoder</b> из библиотеки Feature-engine. Он присваивает переменным порядковые целочисленные значения (0, 1, 2, 3, и т.д.). Порядок определяется средним значением целевой переменной (0 - для элементов с наименьшим средним и далее по возрастанию). 
+            <br><br>
             <div class='picture'>       
                 <img src='img/Section3-Feature-selection-and-Preprocessing/data_encoded.png'>
                 </div>
@@ -1154,6 +1157,7 @@
                 <i>Стандартизация</i>
                 </h4>
             После этого данные стандартизируются с помощью <b>StandardScaler</b> из библиотеки Scikit-learn.
+            <br><br>
             <div class='picture'>       
                 <img src='img/Section3-Feature-selection-and-Preprocessing/data_scaled.png'>
                 </div>

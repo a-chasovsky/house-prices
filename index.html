@@ -188,7 +188,7 @@
         margin-left: 30px;
     }
 
-    pic-center {
+    center {
         display: flex;
         justify-content: center;
     }
@@ -416,9 +416,9 @@
         <li><t><b>Stacking</b> - лучшая ML-модель (Stacking);</t></li>
         <li><t><b>HPP</b> - модель, полученная в результате комбинации линейной регрессии и стэкинга (HousePricePredictor).</t></li>
     </ul>
-    <pic-center>
+    <center>
         <img src='img/Section8-Final-predictions/final_plot.png'>
-    </pic-center>
+    </center>
     <div class='text'>
         <p>
             В ходе проекта удалось снизить ошибку RMSE c 0.1216 у базовой модели до 0.0969 итогового оценщика HousePricePredictor. На этапе преобразования наибольший вклад внесла очистка данных, а дополнительно сгенерированные предикторы были полезны как для линейной регрессии, так и для сложных алгоритмов машинного обучения (см. <i>8. Создание дополнительных предикторов</i>, <i>11.2. Линейная регрессия</i>, <i>13. Оценка независимых ML-моделей</i>).
@@ -436,9 +436,9 @@
             Ядром HousePricePredictor является линейная регрессия. Коэффициенты и доверительные интервалы представлены в таблице ниже.
             </p>
         </div>
-    <pic-center>
+    <center>
         <img src='img/Section4-Linear-models-research/coefficients_table.png'>
-    </pic-center>
+    </center>
     <div class='text'>
         <p>
             Предикторы с наибольшим коэффициентом - это дополнительно сгенерированный предиктор <b>lg_flrsfmean</b> (средневзвешенная площадь первого и второго этажей, см. _'8.1. Предикторы, характеризующие площадь_'), общее качество строительных и отделочных материалов <b>overallqual</b>, возраст дома <b>houseage</b>. Вклад, котоый вносит увеличение этих параметров в изменение цены дома (при прочих равных):
@@ -1601,9 +1601,9 @@
             <br><br>
             <img src='img/Section8-Final-predictions/final_plot.png'>
             <br><br>
-            <pic-center>
+            <center>
                 <img src='img/Section8-Final-predictions/final_table_T.png'>
-            </pic-center>
+            </center>
                 
                 
             <br><br>

@@ -1071,22 +1071,112 @@
             Коэффициент корреляции нового предиктора __flrsfmean__ равен 0.77 - это на 0.05 выше, чем у наиболее информатичного количественного предиктора __grlivarea__. В дополнение к этому, __flrsfmean__ имеет мéньшую дисперсию.
             </p>
         </div>
+    <div class='picture'>       
+        <img src='img/Section3-Feature-selection-and-Preprocessing/flrsfmean.png'>
+        </div>
+    <a
+        href="#toc"
+        style="font-size:0.9em;">
+        Вернуться к содержанию
+        </a>
+    <h3>
+        <a
+            class='anchor'
+            id='rooms'>
+            </a>
+        8.2. Предикторы, характеризующие помещения (жилые комнаты, ванные комнаты, кухни)
+        </h3>
+    <div class='text'>
+        <p>
+            Исследованы 7 предикторов, сгенерировано 5 дополнительных - <b>bedroomsize</b>, <b>kitchensize</b>, <b>bedroomfracrms</b>, <b>kitchenfracrms</b>, <b>bathsfracbedr</b>. 
+            <br><br>
+            Наиболее информативный предиктор этой группы - <b>fullbath</b> (0.58), который показывает количество совмещенных ванных комнат. Новые предикторы можно разделить на три группы:
+            <ul>
+                <li><t><b>bedroomsize</b>, <b>kitchensize</b>: относительный размер спален и кухонь от площади - рассчитывается как количество спален/кухонь, деленное на общую площадь жилых помещений (<b>grlivarea</b>);</t></li>
+                <li><t><b>bedroomfracrms</b>, <b>kitchenfracrms</b>: относительный размер спален и кухонь от общего числа комнат - рассчитывается как количество спален/кухонь, деленное на общее число комнат (<b>totrmsabvgrd</b>);</t></li>
+                <li><t><b>bathsfracbedr</b>: относительное число ванных комнат - рассчитывается как число совмещенных ванных комнат, деленное на число спален (<b>bedroomabvgr</b>).</t></li>
+                </ul>
+            Наиболее информативным из новых признаков является относительный размер кухни (<b>kitchensize</b>, коэффициент корреляции: -0.71).
+            <div class='picture'>       
+                <img src='img/Section3-Feature-selection-and-Preprocessing/bedroom_kitchen.png'>
+                </div>
+            </p>
+        </div>
+    <h3>
+        <a
+            class='anchor'
+            id='dates'>
+            </a>
+        8.3. Предикторы, характеризующие даты
+        </h3>
+    <div class='text'>
+        <p>
+            Посчитаны и добавлены новые предикторы <b>houseage</b> (возраст дома на момент продажи) и <b>modage</b> (число лет с момента модернизации на момент продажи). Они не повышают информативность, но более удобны для интерпретации.
+            </p>
+        </div>
+    <a
+        href="#toc"
+        style="font-size:0.9em;">
+        Вернуться к содержанию
+        </a>
+    <h2>
+        <a
+            class='anchor'
+            id='preprocessing'>
+            </a>
+        9. Предварительная подготовка данных
+        </h2>  
+    <div class='text'>
+        <p>
+            <i>Первые пять эелементов данных до преобразования</i>
+            <div class='picture'>       
+                <img src='img/Section3-Feature-selection-and-Preprocessing/data_raw.png'>
+                </div>
+            <h4>
+                <i>Количественные переменные</i>
+                </h4>
+            Количественные предикторы логарифмируются (натуральный логарифм) с помощью <b>LogCpTransformer</b> из библиотеки Feature-engine. Предварительно к каждому значению добавляетя константа C, равная 1. В название всех логарифимрованных предикторов добавляется приставка <b>lg_</b>.
+            <div class='picture'>       
+                <img src='img/Section3-Feature-selection-and-Preprocessing/data_log.png'>
+                </div>
+            Матрица корреляций после добавления новых предикторов приведена ниже. Единственный признак, отрицательно коррелирующий с целевой перменной - относительный размер кухни <b>kitchensize</b>.
+            <div class='picture'>       
+                <img src='img/Section3-Feature-selection-and-Preprocessing/corr_matrix_new.png'>
+                </div>
+             <h4>
+                <i>Категориальные переменные</i>
+                </h4>
+            Для преобразования категориальных переменных используется <b>OrdinalEncoder</b> из библиотеки Feature-engine. Он присваивает переменным порядковые целочисленные значения (0, 1, 2, 3, и т.д.). Порядок определяется средним значением целевой переменной (0 - для элементов с наименьшим средним и далее по возрастанию). 
+            <div class='picture'>       
+                <img src='img/Section3-Feature-selection-and-Preprocessing/data_encoded.png'>
+                </div>
+            <h4>
+                <i>Стандартизация</i>
+                </h4>
+            После этого данные стандартизируются с помощью <b>StandardScaler</b> из библиотеки Scikit-learn.
+            <div class='picture'>       
+                <img src='img/Section3-Feature-selection-and-Preprocessing/data_scaled.png'>
+                </div>
+            </p>
+        </div>
+    <a
+        href="#toc"
+        style="font-size:0.9em;">
+        Вернуться к содержанию
+        </a>
+
+
+
         
 
 
 
-   
 
 
 
 
 
 
-
-
-<img src='img/Section3-Feature-selection-and-Preprocessing/flrsfmean.png'>
-
-###### [Вернуться к содержанию](#toc)
 
 
 

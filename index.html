@@ -43,7 +43,7 @@
         height:'100%';
         }
     img-center {
-        display: flex;
+        /* display: flex; */
         justify-content: center;
     }
     img-margin {
@@ -152,14 +152,7 @@
         font-family: system-ui;
         line-height: 1.75em;
     }
-    /* t {
-        font-family: system-ui;
-        color: #333333;
-        font-size: 1em;
-        text-align: justify;
-        line-height: 1.5;
-        margin-bottom: 1em;
-    } */
+
     
 </style>
 
@@ -320,7 +313,7 @@
                     <li>HousePricePredictor(HPP) - модель, полученная в результате комбинации линейной регрессии и стэкинга.</li>
                 </ul>
                 <space></space>
-                <img src='img/Section8-Final-predictions/final_plot.png'>
+                <img-center><img src='img/Section8-Final-predictions/final_plot.png'></img-center>
                 <space></space>
             <p>
                 В ходе проекта удалось снизить ошибку RMSE c 0.1216 у базовой модели до 0.0969 итогового оценщика HousePricePredictor. На этапе преобразования наибольший вклад внесла очистка данных, а дополнительно сгенерированные предикторы были полезны как для линейной регрессии, так и для сложных алгоритмов машинного обучения (см. <i>'8. Создание дополнительных предикторов'</i>, <i>'11.2. Линейная регрессия'</i>, <i>'13. Оценка независимых ML-моделей'</i>).
@@ -335,7 +328,7 @@
             <p>
                 Ядром HousePricePredictor является линейная регрессия. Коэффициенты и доверительные интервалы представлены в таблице ниже.
                 <space></space>
-                <pic-margin><img src='img/Section4-Linear-models-research/coefficients_table.png'></pic-margin>
+                <img src='img/Section4-Linear-models-research/coefficients_table.png' style='margin-left:50px'>
                 <space></space>
                 Предикторы с наибольшим коэффициентом - это дополнительно сгенерированный предиктор <sb>lg_flrsfmean</sb> (средневзвешенная площадь первого и второго этажей, см. <i>'8.1. Предикторы, характеризующие площадь'</i>), общее качество строительных и отделочных материалов <sb>overallqual</sb>, возраст дома <sb>houseage</sb>. Вклад, котоый вносит увеличение этих параметров в изменение цены дома (при прочих равных):
                 </p>

@@ -313,7 +313,7 @@
                     <li>HousePricePredictor(HPP) - модель, полученная в результате комбинации линейной регрессии и стэкинга.</li>
                 </ul>
                 <space></space>
-                <img-center><img src='img/Section8-Final-predictions/final_plot.png' style='padding-left:0px'></img-center>
+                <img-center><img src='img/Section8-Final-predictions/final_plot.svg' style='padding-left:0px'></img-center>
                 <space></space>
             <p>
                 В ходе проекта удалось снизить ошибку RMSE c 0.1216 у базовой модели до 0.0969 итогового оценщика HousePricePredictor. На этапе преобразования наибольший вклад внесла очистка данных, а дополнительно сгенерированные предикторы были полезны как для линейной регрессии, так и для сложных алгоритмов машинного обучения (см. <i>'8. Создание дополнительных предикторов'</i>, <i>'11.2. Линейная регрессия'</i>, <i>'13. Оценка независимых ML-моделей'</i>).
@@ -380,11 +380,11 @@
             <p>
                 Распределение целевой переменной напоминает гамма-распределение. Это одномодальное распределение с вершиной в районе 150000$ и правосторонней ассиметрией.
                 <space></space>
-                <img src='img/Section1-Overview-and-Base-model/target_distribution.png'>
+                <img src='img/Section1-Overview-and-Base-model/target_distribution.svg'>
                 <space></space>
                 Для выравнивания формы распределения и снижения влияния экстремальных значений используется натуральный логарифм.
                 <space></space>
-                <img src='img/Section1-Overview-and-Base-model/target_distribution_log.png'>
+                <img src='img/Section1-Overview-and-Base-model/target_distribution_log.svg'>
                 <space></space>
                 </p>
                 <h4>
@@ -461,7 +461,7 @@
             <p>
                 &emsp;&emsp;&ensp;237 (18%) пропущенных значений, пропуски заполняются медианным значением. Дополнительно обнаружены два потенциальных выброса (выделены красным).
                 <space></space>
-                <img src='img/Section1-Overview-and-Base-model/lotfrontage_outs.png'>
+                <img src='img/Section1-Overview-and-Base-model/lotfrontage_outs.svg'>
                 <space></space>
                 </p>
             <ul>
@@ -500,7 +500,7 @@
             <p>
                 Лучшие результаты (RMSE в районе 0.130) показывают сложные модели с большим числом деревьев (> 25), увеличение числа листьев также положительно сказывается на эффективности модели. Оптимальная скорость обучения - 0.1. RMSE лучшей модели - 0.1282.
                 <space></space>
-                <img src='img/Section1-Overview-and-Base-model/gridsearch1.png'>
+                <img src='img/Section1-Overview-and-Base-model/gridsearch1.svg'>
                 <space></space>
                 </p>
                 <h4>
@@ -509,7 +509,7 @@
             <p>
                 Ошибка уменьшилась незначительно - с 0.1282 до 0.1276.
                 <space></space>
-                <img src='img/Section1-Overview-and-Base-model/gridsearch2.png'>
+                <img src='img/Section1-Overview-and-Base-model/gridsearch2.svg'>
                 <space></space>
                 </p>
             <h4>

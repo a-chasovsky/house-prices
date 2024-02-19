@@ -38,13 +38,8 @@
         background-repeat: no-repeat;
       }
     pic-width-adjust1 {
-          left: 0;
-          right: 0;
-          
-          width: 100%;
-          height: auto;
-          
-          object-position: center;
+        max-height:100%;
+        max-width:100%
         }
     pic-center {
         display: flex;
@@ -178,7 +173,7 @@
     <tr>
         <td style='width:20%;border:none'></td>
         <td style='width:25%;border:none;padding-bottom:15px'>
-            <div class='pic-width-adjust' style='background-image:url(img/header.png);'></div>
+            <!-- <div class='pic-width-adjust' style='background-image:url(img/header.png);'></div> -->
             <h1>
                 Комбинирование регрессионнного анализа и машинного обучения для более точных прогнозов и высокой интерпретируемости модели
                 </h1>
@@ -324,7 +319,7 @@
                     <li>HousePricePredictor(HPP) - модель, полученная в результате комбинации линейной регрессии и стэкинга.</li>
                 </ul>
                 <space></space>
-                <img src='img/Section8-Final-predictions/final_plot.png'>
+                <img src='img/Section8-Final-predictions/final_plot.png' style='width:200px'>
                 <space></space>
             <p>
                 В ходе проекта удалось снизить ошибку RMSE c 0.1216 у базовой модели до 0.0969 итогового оценщика HousePricePredictor. На этапе преобразования наибольший вклад внесла очистка данных, а дополнительно сгенерированные предикторы были полезны как для линейной регрессии, так и для сложных алгоритмов машинного обучения (см. <i>'8. Создание дополнительных предикторов'</i>, <i>'11.2. Линейная регрессия'</i>, <i>'13. Оценка независимых ML-моделей'</i>).
@@ -339,7 +334,7 @@
             <p>
                 Ядром HousePricePredictor является линейная регрессия. Коэффициенты и доверительные интервалы представлены в таблице ниже.
                 <space></space>
-                <pic-margin><img src='img/Section4-Linear-models-research/coefficients_table.png'></pic-margin>
+                <pic-margin><img src='img/Section4-Linear-models-research/coefficients_table.png'  style='width:200px'></pic-margin>
                 <space></space>
                 Предикторы с наибольшим коэффициентом - это дополнительно сгенерированный предиктор <sb>lg_flrsfmean</sb> (средневзвешенная площадь первого и второго этажей, см. <i>'8.1. Предикторы, характеризующие площадь'</i>), общее качество строительных и отделочных материалов <sb>overallqual</sb>, возраст дома <sb>houseage</sb>. Вклад, котоый вносит увеличение этих параметров в изменение цены дома (при прочих равных):
                 </p>
@@ -355,7 +350,7 @@
                 <i>Сравнение актуальных и предсказанных HousePricePredictor цен</i>
                 </h4>
                 <space></space>
-                <img src='img/Section8-Final-predictions/predicted_actual_residuals.svg'>
+                <img src='img/Section8-Final-predictions/predicted_actual_residuals.svg'  style='width:200px'>
                 <space></space>
             <p>
                 На оси абсцисс - элементы, отсортированные по суммарной площади жилого пространства <sb>grlivarea</sb>. С увеличением площади увеличивается цена дома. Этот график можно разбить на три составляющие: малые, средние и большие дома.
@@ -380,7 +375,7 @@
                 Число предикторов: 79;<br>
                 Число элементов: 1460;
                 <space></space>
-                <img src='img/Section1-Overview-and-Base-model/data_raw.png'>
+                <img src='img/Section1-Overview-and-Base-model/data_raw.png'  style='width:200px'>
                 <space></space>
                 После разделения датасета на обучающий (train) и проверочный (test), число элементов составило 1314 и 146 соответственно.
                 <space></space>
@@ -391,11 +386,11 @@
             <p>
                 Распределение целевой переменной напоминает гамма-распределение. Это одномодальное распределение с вершиной в районе 150000$ и правосторонней ассиметрией.
                 <space></space>
-                <img src='img/Section1-Overview-and-Base-model/target_distribution.png'>
+                <img src='img/Section1-Overview-and-Base-model/target_distribution.png'  style='width:200px'>
                 <space></space>
                 Для выравнивания формы распределения и снижения влияния экстремальных значений используется натуральный логарифм.
                 <space></space>
-                <img src='img/Section1-Overview-and-Base-model/target_distribution_log.png'>
+                <img src='img/Section1-Overview-and-Base-model/target_distribution_log.png'  style='width:200px'>
                 <space></space>
                 </p>
                 <h4>
@@ -447,11 +442,11 @@
                 <space></space>
                 <i>Порядковые</i>
                 <space></space>
-                <img src='img/Section1-Overview-and-Base-model/categorical_ordinal.png'>
+                <img src='img/Section1-Overview-and-Base-model/categorical_ordinal.png'  style='width:200px'>
                 <space></space>
                 <i>Номинативные</i>
                 <space></space>
-                <img src='img/Section1-Overview-and-Base-model/categorical_categorical.png'>
+                <img src='img/Section1-Overview-and-Base-model/categorical_categorical.png'  style='width:200px'>
                 <space></space>
                 <i>Заполнение пропусков</i>
                 <space></space>
@@ -464,7 +459,7 @@
                 У трех количественных переменных присутствуют пропущенные значения: <sb>lotfrontage</sb>, <sb>garageyrblt</sb>, <sb>masvnrarea</sb>.
                 </p>
                 <space></space>
-                <img src='img/Section1-Overview-and-Base-model/quantitative.png'>
+                <img src='img/Section1-Overview-and-Base-model/quantitative.png'  style='width:200px'>
                 <space></space>
             <ul>
                 <li><sb>lotfrontage</sb> - длина участка улицы, соприкасающейся с придомовой территорией</li>
@@ -472,7 +467,7 @@
             <p>
                 &emsp;&emsp;&ensp;237 (18%) пропущенных значений, пропуски заполняются медианным значением. Дополнительно обнаружены два потенциальных выброса (выделены красным).
                 <space></space>
-                <img src='img/Section1-Overview-and-Base-model/lotfrontage_outs.png'>
+                <img src='img/Section1-Overview-and-Base-model/lotfrontage_outs.png'  style='width:200px'>
                 <space></space>
                 </p>
             <ul>
@@ -529,11 +524,11 @@
             <p>
                 Таким образом, базовая модель (RMSE: 0.1276) имеет следующую конфигурацию:
                 <space></space>
-                <img src='img/Section1-Overview-and-Base-model/model_1.png'>
+                <img src='img/Section1-Overview-and-Base-model/model_1.png'  style='width:200px'>
                 <space></space>
                 Это первый ориентир относительного того, насколько имеющиеся данные подходят для предсказания цены домов. Дополнительно базовая модель дает представление о наиболее значимых предикторах. Отметим, что 7 из 10 ключевых предикторов - это площадь того или иного помещения продаваемого дома. На общем фоне заметно выделяется суммарная площадь жилого пространства (<sb>grlivarea</sb>).
                 <space></space>
-                <img src='img/Section1-Overview-and-Base-model/feature_importance.png'>
+                <img src='img/Section1-Overview-and-Base-model/feature_importance.png'  style='width:200px'>
                 <space></space>
             <h2>
                 <a
@@ -548,7 +543,7 @@
             <p>
                 Матрица корреляций деомнстрирует линейные взаимосвязи предикторов с целевой переменной. В топ-10 наиболее влияющих признаков в основном оценки площади и качества различных составляющих дома.
                 <space></space>
-                <img src='img/Section2-Explore-and-Clean/corr_matrix.png'  style='width:200px'>
+                <img src='img/Section2-Explore-and-Clean/corr_matrix.png'  style='width:200px'  style='width:200px'>
                 <space></space>
                 Полный набор различных визуализаций представлен в соответсвующем блокноте <i>'Section2-Explore-and-Clean.ipynb'</i>. Ниже приведены несколько типовых графиков.
             </p>
@@ -558,7 +553,7 @@
             <p>
                 Ключевые инструменты для исследования количественных переменных - гистограммы и диаграммы рассеяния с добавлением линии регрессии.
                 <space></space>
-                <img src='img/Section2-Explore-and-Clean/quantitative.png' style='max-height:100%; max-width:100%'>
+                <img src='img/Section2-Explore-and-Clean/quantitative.png' style='width:200px'>
                 <space></space>
                 </p>
             <h4>
@@ -567,7 +562,7 @@
             <p>
                 Ключевые инструменты для исследования катеориальных переменных - диаграмма рассеяния с лининей регрессии и точечная диаграмма.
                 <space></space>
-                <div 
+                <!-- <div 
                     class='pic-width-adjust'
                     style='background-image:url(img/Section2-Explore-and-Clean/ordinal.png);'>
                     </div>
@@ -575,13 +570,13 @@
                 <div 
                     class='pic-width-adjust'
                     style='background-image:url(img/Section2-Explore-and-Clean/categorical.png);'>
-                    </div>
+                    </div> -->
                 <space></space>
                 Примеры взаимосвязи некоторых категориальных переменных с ценой
                 <space></space>
-                <img src='img/Section2-Explore-and-Clean/housestyle.png'>
+                <img src='img/Section2-Explore-and-Clean/housestyle.png' style='width:200px'>
                 <space></space>
-                <img src='img/Section2-Explore-and-Clean/kitchenqual_vs_price.png'>
+                <img src='img/Section2-Explore-and-Clean/kitchenqual_vs_price.png' style='width:200px'>
                 <space></space>
                 </p>
             <h2>
@@ -643,7 +638,7 @@
                     <li>Исправление вручную. Во время исправления ошибок в данных в первую очередь будем ориентироваться на тип облицовки (<sb>masvntype</sb>) и цену дома (<sb>price</sb>). На графике ниже видно, что наиболее дорогие - это дома с облицовкой из камня (Stone) и кирпича (BrkFace).</li>
                     </ul>
                 <space></space>
-                <img src='img/Section2-Explore-and-Clean/masvnrtype_price.png'>
+                <img src='img/Section2-Explore-and-Clean/masvnrtype_price.png' style='width:200px'>
                 <space></space>
             <p>
                 В данных присутствует три типа противоречий. Каждое будет рассмотрено отдельно, и соответственно будут исследованы три группы элементов.
@@ -652,7 +647,7 @@
                 <i>Элементы с индексом 1230 и 733</i>
                 </h4>
                 <space></space>
-                <img src='img/Section2-Explore-and-Clean/1230_773.png'>
+                <img src='img/Section2-Explore-and-Clean/1230_773.png' style='width:200px'>
                 <space></space>
             <p>
             <i>Противоречие:</i>
@@ -680,13 +675,13 @@
                 <li>Наименьшее значение переменной <sb>masvnarea</sb> - 10 (см. график ниже); в данном случае 1 - это вероятно ошибка ввода данных.</li>
                     </ul>
                 <space></space>
-                <img src='img/Section2-Explore-and-Clean/masvnrarea_minimal.png'>
+                <img src='img/Section2-Explore-and-Clean/masvnrarea_minimal.png' style='width:200px'>
                 <space></space>
             <h4>
                 <i>Элементы с индексом 1241 и 688</i>
                 </h4>
                 <space></space>
-                <img src='img/Section2-Explore-and-Clean/688_1241.png'>
+                <img src='img/Section2-Explore-and-Clean/688_1241.png' style='width:200px'>
                 <space></space>
             <p>
                 <i>Противоречие:</i>
@@ -716,7 +711,7 @@
                 <i>Элементы с индексом 624, 1300 и 1334</i>
                 </h4>
                 <space></space>
-                <img src='img/Section2-Explore-and-Clean/624_1300_1334.png'>
+                <img src='img/Section2-Explore-and-Clean/624_1300_1334.png' style='width:200px'>
                 <space></space>
             <p>
                 <i>Противоречие:</i>
@@ -747,7 +742,7 @@
                 <i>Исправленные данные</i>
                 </h4>
                 <space></space>
-                <img src='img/Section2-Explore-and-Clean/masvnrarea_fixed.png'>
+                <img src='img/Section2-Explore-and-Clean/masvnrarea_fixed.png' style='width:200px'>
                 <space></space>
             <h3>
                 <a
@@ -759,11 +754,11 @@
             <p>
                 Два подозрительно высоких значения <sb>lotfrontage</sb>, обнаруженных при исследовании количественных признаков.
                 <space></space>
-                <img src='img/Section2-Explore-and-Clean/lotfrontage.png'>
+                <img src='img/Section2-Explore-and-Clean/lotfrontage.png' style='width:200px'>
                 <space></space>
                 Помимо этого потенциальные выбросы обнаружены в некотрых других переменных. К примеру, так выглядит диаграмма для переменной <sb>miscval</sb>:
                 <space></space>
-                <img src='img/Section2-Explore-and-Clean/miscval.png'>
+                <img src='img/Section2-Explore-and-Clean/miscval.png' style='width:200px'>
                 <space></space>
                 Далее формируется список потенциальных выброосв и строятся диаграммы, на которых подозрительные элементы выделены цветом.
                 <space></space>
@@ -781,13 +776,13 @@
             <p>
                 Здесь применяется тот же двухэтапный подход, что и в пункте <i>"4. ML-модель №1 (базовая)"</i>. Лучшая модель демонстрирует RMSE на уровне 0.1233 (у базовой модели RMSE равна 0.1276). Конфигурация модели выглядит следующим образом:
                 <space></space>
-                <img src='img/Section2-Explore-and-Clean/model_2.png'>
+                <img src='img/Section2-Explore-and-Clean/model_2.png' style='width:200px'>
                 <space></space>
                 По сравнению с базовой моделью число деревьев не изменилось, глубина дерева уменьшалсь почти в три раза, а количество листьев сократилось более чем в 10 раз. Модель стала проще и эффективнее. 
                 <space></space>
                 Очистка и исправление данных несколько сгладили значимость предикторов по сравнению с сырыми данными - по-прежнему лидирует предиктор, характеризующий суммарную жилую площадь <sb>grlivarea</sb>.
                 <space></space>
-                <img src='img/Section2-Explore-and-Clean/feature_importance.png'>
+                <img src='img/Section2-Explore-and-Clean/feature_importance.png' style='width:200px'>
                 <space></space>
                 </p>
             <h2>
@@ -876,7 +871,7 @@
              <p>
                 <i>Первые пять эелементов данных до преобразования</i>
                 <space></space>
-                <img src='img/Section3-Feature-selection-and-Preprocessing/data_raw.png'>
+                <img src='img/Section3-Feature-selection-and-Preprocessing/data_raw.png' style='width:200px'>
                 <space></space>
                  </p>
             <h4>
@@ -885,7 +880,7 @@
             <p>
                 Количественные предикторы логарифмируются (натуральный логарифм) с помощью <sb>LogCpTransformer</sb> из библиотеки Feature-engine. Предварительно к каждому значению добавляетя константа C, равная 1. В название всех логарифимрованных предикторов добавляется приставка <sb>lg_</sb>.
                 <space></space>
-                <img src='img/Section3-Feature-selection-and-Preprocessing/data_log.png'>
+                <img src='img/Section3-Feature-selection-and-Preprocessing/data_log.png' style='width:200px'>
                 <space></space>
                 Матрица корреляций после добавления новых предикторов приведена ниже. Единственный признак, отрицательно коррелирующий с целевой перменной - относительный размер кухни <sb>kitchensize</sb>.
                 <space></space>    
@@ -898,7 +893,7 @@
             <p>
                 Для преобразования категориальных переменных используется <sb>OrdinalEncoder</sb> из библиотеки Feature-engine. Он присваивает переменным порядковые целочисленные значения (0, 1, 2, 3, и т.д.). Порядок определяется средним значением целевой переменной (0 - для элементов с наименьшим средним и далее по возрастанию).
                 <space></space>
-                <img src='img/Section3-Feature-selection-and-Preprocessing/data_encoded.png'>
+                <img src='img/Section3-Feature-selection-and-Preprocessing/data_encoded.png' style='width:200px'>
                 <space></space>
                 </p>
             <h4>
@@ -907,7 +902,7 @@
             <p>
                 После этого данные стандартизируются с помощью <sb>StandardScaler</sb> из библиотеки Scikit-learn.
                 <space></space>
-                <img src='img/Section3-Feature-selection-and-Preprocessing/data_scaled.png'>
+                <img src='img/Section3-Feature-selection-and-Preprocessing/data_scaled.png' style='width:200px'>
                 <space></space>
                 </p>
             <h2>
@@ -920,11 +915,11 @@
             <p>
                 Добавление новых предикторов практически не оказало влияния на эффективность модели (RMSE уменьшилась с 0.1233 до 0.1230). Число деревьев и листьев не изменились, а глубина деревьев увеличилась в два раза.
                 <space></space>
-                <img src='img/Section3-Feature-selection-and-Preprocessing/model_3.png'>
+                <img src='img/Section3-Feature-selection-and-Preprocessing/model_3.png' style='width:200px'>
                 <space></space>
                  Теперь считает самым информативным предиктором является вновь созданный <sb>flrsfmean</sb> (это соответствует его высокому коэффициенту корреляции). В топ-10 наиболее значимых признаков также попал новый предиктор <sb>bedroomsize</sb>.
                 <space></space>    
-                <img src='img/Section3-Feature-selection-and-Preprocessing/feature_importance.png'>
+                <img src='img/Section3-Feature-selection-and-Preprocessing/feature_importance.png' style='width:200px'>
                 <space></space>
                 </p>
             <h2>
@@ -946,21 +941,21 @@
                 <space></space>
                 Отобразим пространство значений гиперпараметра $\alpha$
                 <space></space>
-                <img src='img/Section4-Linear-models-research/alphas_logspace.png'>
+                <img src='img/Section4-Linear-models-research/alphas_logspace.png' style='width:200px'>
                 <space></space>
                 Выполним поиск по сетке гиперпараметров <sb>GridSearch</sb> и отобразим результаты на графике. В рамках исследуемых данных лучшую предиктивную эффективность показывает минимальная регуляризация.
                 <space></space>
-                <img src='img/Section4-Linear-models-research/regularization.png'>
+                <img src='img/Section4-Linear-models-research/regularization.png' style='width:200px'>
                 <space></space>
                 Теперь посмотрим, какие предикторы выбирает эластичная сеть в зависимости от величины $\alpha$, и какое влияние это оказывает на эффективность модели.
                 <space></space>
-                <img src='img/Section4-Linear-models-research/features_plot.png'>
+                <img src='img/Section4-Linear-models-research/features_plot.png' style='width:200px'>
                 <space></space>
                 Чем ниже параметр регуляризации, тем выше эффективность прогнозирования. Минимальное число предикторов эластичной сети - 3, это уже известные <sb>lg_flrsfmean</sb>, <sb>neighborhood</sb>, <sb>overallqual</sb>. Ошибка резко уменьшается при увеличинии количества предикторов с 3 до 8, заметно снижается при изменении их с 8 до 33, и плавно снижается после увеличения до 88. С точки зрения баланса точности прогнозов и интерпретируемости, оптимальное количество предикторов находится где-то между 8 и 33. Необходимо также учитывать тот факт, что после отметки в 14 признаков показатель мультиколлинеарности <sb>VIF</sb> увеличивается многократно и выходит за допустимые рамки (см. таблицу ниже). 
                 <space></space>
                 <i>Изменение набора предикторов в зависмости от величины параметра регуляризации $\alpha$</i>
                 <space></space>
-                <img src='img/Section4-Linear-models-research/features_by_alpha.png'>
+                <img src='img/Section4-Linear-models-research/features_by_alpha.png' style='width:200px'>
                 <space></space>
                 Отметив эти особенности, можно переходить к следующему пункту - построению линейной регрессии, которая станет ядром HousePricePredictor.
                 </p>
@@ -1009,15 +1004,12 @@
                 <i>Визуальная оценка</i>
                 </p>
                 <space></space>
-                <div
-                    class='pic-width-adjust'
-                    style='background-image: url(img/Section4-Linear-models-research/regression_diagnostics.png);'>
-                    </div>
+                <img src='img/Section4-Linear-models-research/regression_diagnostics.png' style='width:200px'>
             <p>
                 <space></space>
                 <i>Результаты статистических тестов и характеристики регрессии</i>
                 <space></space>
-                <img src='img/Section4-Linear-models-research/regression_tests.png'>
+                <img src='img/Section4-Linear-models-research/regression_tests.png' style='width:200px'>
                 <space></space>
                 Скорректированный коэффициент детерминации $R^{2}_{adj}$ значим и равен 0.882.
                 <space></space>
@@ -1027,11 +1019,11 @@
                 <space></space>
                 <i>Тесты на нормальность распределения остатков без выборосов</i>
                 <space></space>
-                <img src='img/Section4-Linear-models-research/residuals_trimmed_tests.png'>
+                <img src='img/Section4-Linear-models-research/residuals_trimmed_tests.png' style='width:200px'>
                 <space></space>
                 <i>Коэффициент эксцесса</i>
                 <space></space>
-                <img src='img/Section4-Linear-models-research/residuals_kurtosis.png'>
+                <img src='img/Section4-Linear-models-research/residuals_kurtosis.png' style='width:200px'>
                 <space></space>
                 <i>Визуализация формы распределения остаков и сравнение с нормальным распределением</i>
                 <space></space>
@@ -1075,7 +1067,7 @@
                 Симуляции проводились на 1000 сэмплах с повторением (число элементов в сэмпле и исходных данных одинаково). 
 Ошибки RMSE составили 0.1352 для обученной в п.12.2. линейной регрессии и 0.1347 для эластичной сети с гиперпараметрами {'alpha': 0.0067, 'l1_ratio': 0.1}.
                 <space></space>    
-                <img src='img/Section4-Linear-models-research/simulations.png'>
+                <img src='img/Section4-Linear-models-research/simulations.png' style='width:200px'>
                 <space></space>
                 Прогнозы отдельно взятых элементов практически не различаются (что показывают предиктивные интервалы). Однако на длинной дистанции (для бóльшего числа элементов) в среднем эффективность эластичной сети выше, поэтому она будет включена в итоговое сравнение. 
                 </p>
@@ -1112,7 +1104,7 @@
                 <space></space>
                 Алгоритмы <sb>Random Forest</sb>, <sb>Bagging</sb>, <sb>LGBoost</sb>, <sb>XGBoost</sb> имеют встроенный функционал отбора наиболее информативных признаков. Отобразим топ-10 наиболее важных признаков для каждой из моделей.
                 <space></space>       
-                <img src='img/Section5-Residuals-prediction/features_importance_four_models.png'>
+                <img src='img/Section5-Residuals-prediction/features_importance_four_models.png' style='width:200px'>
                 <space></space>
                 Наиболе значимые признаки здесь:
                 <space></space>
@@ -1125,12 +1117,12 @@
                 <i>Число попаданий в топ-10 ключевых признаков</i>
                 </p>
                 <space></space>
-                <img src='img/Section5-Residuals-prediction/features_importance.png'>
+                <img src='img/Section5-Residuals-prediction/features_importance.png' style='width:200px'>
                 <space></space>
             <p>
                 Результаты на 20-фолдовой кросс-валидации выглядят следующим образом (опорные вектора продемонстрировали неожиданно высокий результат).
                 <space></space>
-                <img src='img/Section5-Residuals-prediction/models_residuals.png'>
+                <img src='img/Section5-Residuals-prediction/models_residuals.png' style='width:200px'>
                 <space></space>
                 </p>
             <h3>
@@ -1155,7 +1147,7 @@
                 <space></space>
                 <i>Сравнение Voting и Stacking (20-fold cross-validation)</i>
                 <space></space>
-                <img src='img/Section5-Residuals-prediction/vote_stack_compare.png'>
+                <img src='img/Section5-Residuals-prediction/vote_stack_compare.png' style='width:200px'>
                 <space></space>
                 Прогнозы <sb>Stacking</sb> точнее в 14 фолдах из 20.
             <h3>
@@ -1168,11 +1160,11 @@
             <p>
                 Суммарные результаты всех обученных в этом разделе моделей выглядят следующим образом
                 <space></space>
-                <img src='img/Section5-Residuals-prediction/models_residuals_summary.png'>
+                <img src='img/Section5-Residuals-prediction/models_residuals_summary.png' style='width:200px'>
                 <space></space>
                 <i>Визуализация результатов</i>
                 <space></space>
-                <img src='img/Section5-Residuals-prediction/final_plot.png'>
+                <img src='img/Section5-Residuals-prediction/final_plot.png' style='width:200px'>
                 <space></space>
                 В качестве оценщика остатков будет использоваться <sb>Stacking</sb>.
                 <space></space>
@@ -1193,13 +1185,13 @@
             <p>
                 Класс <sb>HousePricePredictor</sb> объединяет линейную регрессию и <sb>Stacking</sb> в единую модель. Линейная регрессия генерирует основные прогнозы цены, а <sb>Stacking</sb> используется для коррекции и повышения точности прогнозов.
                 <space></space>
-                <img src='img/Section5-Residuals-prediction/hpp.png'>
+                <img src='img/Section5-Residuals-prediction/hpp.png' style='width:200px'>
                 <space></space>
                 <sb>HousePricePredictor</sb> поддерживает Scickit-learn-совместимые методы <sb>fit</sb> и <sb>predict</sb>, а также ряд других методов (код доступен в файле <i>tools.py</i>)
                 <space></space>
-                <img src='img/Section5-Residuals-prediction/fit.png'>
+                <img src='img/Section5-Residuals-prediction/fit.png' style='width:200px'>
                 <space></space>
-                <img src='img/Section5-Residuals-prediction/predict.png'>
+                <img src='img/Section5-Residuals-prediction/predict.png' style='width:200px'>
                 <space></space>
                 Средняя RMSE на 20-фолдовой проверке: 0.1102 +/- 0.009.
                 </p>
@@ -1223,11 +1215,11 @@
                 <space></space>
                 <i>Визуализация результатов</i>
                 <space></space>
-                <img src='img/Section7-ML-models/ml_models_plot.png'>
+                <img src='img/Section7-ML-models/ml_models_plot.png' style='width:200px'>
                 <space></space>
                 <i>Средние значения RMSE (20-fold) всех моделей</i>
                 <space></space>
-                <img src='img/Section7-ML-models/ml_models_table.png'>
+                <img src='img/Section7-ML-models/ml_models_table.png' style='width:200px'>
                 <space></space>
                 Ожидаемо, наиболее эффективным алгоритмом оказался <sb>Stacking</sb>. Его конфигурация идентична модели, выбранной для прогнозирования остатков регрессии.
                 <space></space>
@@ -1265,13 +1257,13 @@
             <p>
                 <i>Результаты на тестовом датасете</i>
                 <space></space>
-                <img src='img/Section8-Final-predictions/final_bar.png'>
+                <img src='img/Section8-Final-predictions/final_bar.png' style='width:200px'>
                 <space></space>
                 <i>Сводный график и таблица с результатами</i>
                 <space></space>
-                <img src='img/Section8-Final-predictions/final_plot.png'>
+                <img src='img/Section8-Final-predictions/final_plot.png' style='width:200px'>
                 <space></space>
-                <img src='img/Section8-Final-predictions/final_table_T.png'>
+                <img src='img/Section8-Final-predictions/final_table_T.png' style='width:200px'>
                 <space></space>
                 Ряд комментариев относительно результатов:
                 </p>
@@ -1286,7 +1278,7 @@
             <p>
                 Дополнительно визуализируем ошибку всех 20 фолдов кросс-валидации HousePricePredictor и Stacking
                 <space></space>
-                <img src='img/Section8-Final-predictions/stack_hpp_compare.png'>
+                <img src='img/Section8-Final-predictions/stack_hpp_compare.png' style='width:200px'>
                 </p>
             <h3>
                 <a
@@ -1298,7 +1290,7 @@
             <p>
                 <i>Сопоставление актуальных и спрогнозированных HousePricePredictor цен (элементы по оси Х отсортированы в сторону уеличения суммарной жилой площади)</i>
                 <space></space>
-                <img src='img/Section8-Final-predictions/predicted_actual_residuals.png'>
+                <img src='img/Section8-Final-predictions/predicted_actual_residuals.png' style='width:200px'>
                 <space></space>
                 В первой трети графика видно, что HousePricePredictor излишне оптимитичен и часто переоценивает дома. Во второй трети этот баланс выравнивается, но в третьей части графика появляется снова. По-видимому, выбранная нами архитектура построения модели хорошо подходит для домов среднего размера, но для больших и маленьких домов модель должна быть пересмотрена, что в теории приведет к увеличению воможностей для эффективного прогноза цены.
                 </p>
@@ -1314,25 +1306,25 @@
                 <space></space>
                 <i>Распределение остатков HousePricePredictor</i>
                 <space></space>
-                <img src='img/Section8-Final-predictions/hpp_residuals.png'>
+                <img src='img/Section8-Final-predictions/hpp_residuals.png' style='width:200px'>
                 <space></space>
                 Ни один тест не дает основания предполагать, что остатки распределены нормально. Попробуем удалить экстремальные значения ошибок (шесть эелментов с остатками более 50000$, см. таблицу ниже).
                 <space></space>
-                <img src='img/Section8-Final-predictions/residuals_been_cutted.png'>
+                <img src='img/Section8-Final-predictions/residuals_been_cutted.png' style='width:200px'>
                 <space></space>
                 После этого три из пяти тестов указывают на нормальность распределения.
                 <space></space>
-                <img src='img/Section8-Final-predictions/residuals_cutted_tests.png'>
+                <img src='img/Section8-Final-predictions/residuals_cutted_tests.png' style='width:200px'>
                 <space></space>
                 <i>Сравнение формы распределения остатков (до и после удаления выбросов) с формой нормального распределения</i>
                 <space></space>
-                <img src='img/Section8-Final-predictions/residuals_distributions_compare.png'>
+                <img src='img/Section8-Final-predictions/residuals_distributions_compare.png' style='width:200px'>
                 <space></space>
                 Это подтверждает предположение о наличии несколько элементов, которые не вписыааются в общий контекст. Возможно по причине ошибки ввода данных или мошенничестве при заключении сделки о продаже дома.
                 <space></space>
                 Далее отобразим взаимосвязь актуальных и спрогнозированных цен. Область между 100000 и 200000 имеет низкую дисперсию, в то время как у более дорогих домов разброс сильнее. 
                 <space></space>
-                <img src='img/Section8-Final-predictions/actual_predicted.png'>
+                <img src='img/Section8-Final-predictions/actual_predicted.png' style='width:200px'>
                 <space></space>
                 Попробуем определить предиктор, который наилучшим образом отражает эту закономерность. После ряда тестов выяснилось, что таким предиктором является суммарная площадь жилых помещений <sb>grlivarea</sb> (что логично, так как этот признак наиболее сильно коррелирует с ценой).
                 <space></space>
@@ -1343,7 +1335,7 @@
             <p>
                 Для домов с суммарной жилой площадью менее 1900 футов RMSE равна 0.084705. С увеличением площади дома значительно возрастает и дисперсия прогнозов - RMSE равна 0.132874. 
                 <space></space>
-                <img src='img/Section8-Final-predictions/grlivarea_residuals.png'>
+                <img src='img/Section8-Final-predictions/grlivarea_residuals.png' style='width:200px'>
                 <space></space>
                 </p>
             <h4>
@@ -1352,7 +1344,7 @@
             <p>
                 С другой стороны, если взглянуть на относительные ошибки, то зависимость от величины жилого пространства менее очевидна. Можно увидеть некоторые паттерны, если дополнительно построить линии локальной регрессии (LOWESS). Форма остатков в левой части графика напоминает форму вогнутой пораболы с вершиной в районе площади, равной 1250. В правой же части графика явно-выраженная закономерность отсутствует (что может быть следствием недостаточного числа элементов).
                 <space></space>
-                <img src='img/Section8-Final-predictions/grlivarea_residuals_frac.png'>
+                <img src='img/Section8-Final-predictions/grlivarea_residuals_frac.png' style='width:200px'>
                 </p>
             <h3>
                 <a

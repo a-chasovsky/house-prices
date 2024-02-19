@@ -11,46 +11,95 @@
 </head>
 
 <style>
-
-body { 
-    background-color: #FFFFFF
-}
-table tr td {
-  border-right: 1px solid blue;
-  color: black;
-    width:100%;
-}
-
-table tr td:last-of-type {
-  border: none;
-}
+    body {
+        background-color: #FFFFFF
+    }
+    table 
+        {
+        width:100%;
+    }
     
-h1 {
-    font-family: Ubuntu, system-ui;
-    color: #26292D;
-    font-size: 1.5em;
-    font-weight: 500;
-    text-align: left;
-    line-height: 1.05;
-    margin-bottom: 0px;
-}
-
+    tr td {
+        border-right: 1px solid blue;
+    }
+    table tr td:last-of-type {
+        border: none;
+    }
+    .header {
+        height: 165px;
+        background-image: url(img/header.png);
+        background-size: contain; /* try other properties here like cover, contain, etc */
+        background-repeat: no-repeat;
+        padding-left: 30px;
+        padding-right: 25%;
+        margin-top: 30px;
+      }
+    h1 {
+        font-family: Ubuntu, system-ui;
+        color: #26292D;
+        font-size: 1.5em;
+        font-weight: 500;
+        text-align: left;
+        line-height: 1.05;
+        margin-bottom: 0px;
+    }
+    p {
+        font-family: system-ui;
+        }
+    margin {
+        margin-right:30px;
+        margin-left:30px;
+    }
     
 </style>
 
 <body>
 
 <table>
-  <tr>
-    <td>this is the first cell</td>
-    <td>this is the second cell</td>
-    <td>this is the third cell</td>
-  </tr>
-  <tr>
-    <td>this is the fourth cell</td>
-    <td>this is the fifth cell</td>
-    <td>this is the sixth cell</td>
-  </tr>
+    <tr>
+        <td style='width:20%;border:none'></td>
+        <td style='width:65%;border:none'>
+            <div class='header'></div>
+            <h1>
+                Комбинирование регрессионнного анализа и машинного обучения для более точных прогнозов и высокой интерпретируемости модели
+                </h1>
+            <p>
+               <i style='font-size:0.85em'>Регрессионный анализ, машинное обучение, описательная аналитика, предиктивная аналитика</i> 
+                </p>
+            </td>
+        <td style='width:15px;border:none'></td>
+        </tr>
+    <tr>
+        <td style='width:20%;border:none'>
+            1
+            </td>
+        <td style='width:65%;border-right:1px solid #CFD7DE;border-left:1px solid #CFD7DE'>
+            3
+            </td>
+        <td style='width:15px;border:none'>
+            4
+            </td>
+        </tr>
+
+
+
+
+
+
+
+    <tr>
+        <td style='width:20%;border:none'>
+            1
+            </td>
+        <td style='width:65%;border-right:1px solid #CFD7DE;border-left:1px solid #CFD7DE'>
+            3
+            </td>
+        <td style='width:15px;border:none'>
+            4
+            </td>
+        </tr>
+
+
 </table>
 
     

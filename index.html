@@ -26,10 +26,15 @@
     table tr td:last-of-type {
         border: none;
     }
-    .header {
+    /* .header {
         height: 165px;
         background-image: url(img/header.png);
         background-size: contain; /* try other properties here like cover, contain, etc */
+        background-repeat: no-repeat;
+      } */
+    .pic-width-adjust {
+        height: 165px;
+        background-size: contain;
         background-repeat: no-repeat;
       }
     h1 {
@@ -152,7 +157,8 @@
     <tr>
         <td style='width:20%;border:none'></td>
         <td style='width:65%;border:none;padding-bottom:15px'>
-            <div class='header'></div>
+            <div class='pic-width-adjust' style='background-image:url(img/header.png)'>
+                </div>
             <h1>
                 Комбинирование регрессионнного анализа и машинного обучения для более точных прогнозов и высокой интерпретируемости модели
                 </h1>

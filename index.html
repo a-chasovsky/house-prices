@@ -18,10 +18,6 @@
         {
         width:100%;
     }
-    
-    /* tr td {
-        border-right: 1px solid blue;
-    } */
     td {
         padding-top:5px;
         padding-right:25px;
@@ -45,9 +41,37 @@
         line-height: 1.05;
         margin-bottom: 0px;
     }
+    h2 {
+        font-family: Ubuntu, system-ui;
+        color: #26292D;
+        font-size: 1.3em;
+        font-weight: 500;
+        text-align: left;
+        line-height: 1.05;
+        margin-bottom: 0px;
+    }
+    h3 {
+        font-family: Ubuntu, system-ui;
+        color: #26292D;
+        font-size: 1.15em;
+        font-weight: 500;
+        text-align: left;
+        line-height: 1.05;
+        margin-bottom: 0px;
+    }
+    h4 {
+        font-family: Ubuntu, system-ui;
+        color: #26292D;
+        font-size: 1em;
+        font-weight: 500;
+        text-align: left;
+        line-height: 1.05;
+        margin-bottom: 0px;
+    }
     p {
         font-family: system-ui;
         line-height: 1.5;
+        margin: 12.5px 0;
         }
     #toc_container {
         background: #FFFDFF;
@@ -88,7 +112,18 @@
     }
     a:active {
         font-family: 'system-ui';
-      color: #1071C1;
+          color: #1071C1;
+    }
+    sb {
+        font-weight:500;
+    }
+    line-height-1-75 {
+        line-height: 1.75em;
+    }
+    space {
+        display: block;
+        margin-top: 12.5px;
+        content: ' '
     }
     
 </style>
@@ -116,8 +151,8 @@
                 <div class='toc_title'>
                     <p>Содержание</p>
                     </div>
-                 <p>
-                     <text-number-toc>1.</text-number-toc> <a href="#review"> Обзор проекта и краткие результаты</a><br>
+                 <line-height-1-75>
+                    <text-number-toc>1.</text-number-toc> <a href="#review"> Обзор проекта и краткие результаты</a><br>
                     <text-number-toc>2.</text-number-toc> <a href="#dataset_description"> Описание датасета</a><br>
                     <text-number-toc>3.</text-number-toc> <a href="#missed_values">Работа с отсутствующими значениями</a><br>
                     <text-number-toc>4.</text-number-toc> <a href="#model_base">ML-модель №1 (базовая)</a><br>
@@ -147,14 +182,29 @@
                     &emsp;<text-number-toc>14.2.</text-number-toc> <a href="#predicted_actual">Актуальные и спрогнозированные цены</a><br>
                     &emsp;<text-number-toc>14.3.</text-number-toc> <a href="#hpp_residuals">Анализ остатков HPP</a><br>
                     &emsp;<text-number-toc>14.4.</text-number-toc> <a href="#further">Дальнейшие шаги</a><br>
-                    </p>
+                    </line-height-1-75>
                 </div>
-
-
-
-
-
-
+            </td>
+        <td style='width:15px;border:none'></td>
+        </tr>
+    <tr>
+        <td style='width:20%;border:none'></td>
+        <td style='width:65%;border-right:1px solid #CFD7DE;border-left:1px solid #CFD7DE'>
+            <h2>
+            <a
+                class='anchor'
+                id='review'>
+                </a>
+            1. Обзор проекта и краткие результаты
+            </h2>
+            <h3>
+                Цель проекта
+                </h3>
+            <p>
+            Современные алгоритмы машинного обучения обычно превосходят классические линейные модели в точности прогнозов, но при этом сложны в интерпретации. Некоторые алгоритмы имеют встроенный функционал приоритезации предикторов, что позволяет выявить наиболее информативные. Тем не менее, этого недостаточно для оценки взаимосвязей.<br>
+                <space></space>
+            Целью данного проекта является создание простой в интерпретации модели <sb>HousePricePredictor</sb>, которая по точности прогнозов не уступает лучшим алгоритмами машинного обучения. Модель состоит из двух уровней: на первом уровне используется линейная регрессия для выдачи первичных прогнозов и определения коэффициентов для интерпретации; второй уровень - это алгоритм машинного обучения, прогнозирующий величину остатков (ошибок) регрессии для увеличения тчоности прогнозов. Эта схема во многом напоминает первую итерацию бустинга, в котором каждая последующая итерация минимизирует ошибку предыдущей.
+            </p>
 
 
 
@@ -168,6 +218,12 @@
 
 
 
+
+
+
+
+
+    
 
 
     <tr>

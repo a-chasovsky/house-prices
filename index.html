@@ -19,8 +19,13 @@
         width:100%;
     }
     
-    tr td {
+    /* tr td {
         border-right: 1px solid blue;
+    } */
+    td {
+        padding-top:5px;
+        padding-right:25px;
+        padding-left:25px
     }
     table tr td:last-of-type {
         border: none;
@@ -42,15 +47,32 @@
     }
     p {
         font-family: system-ui;
+        line-height: 1.5;
         }
-    margin {
-        margin-right:30px;
-        margin-left:30px;
+    #toc_container {
+        background: #FFFDFF;
+        border: 1px solid #CFD7DE;
+        display: table;
+        font-size: 95%;
+        margin-bottom: 1em;
+        padding: 20px;
+        width: auto;
     }
-    pad {
-        padding-left:30px;
-        padding-right:30px;
+    .toc_title {
+        font-weight: 700;
+        text-align: left;
+        font-family: 'Ubuntu';
+        color: #23292F;
     }
+    text-number-toc {
+        font-family: system-ui;
+        font-weight:600;
+        color: #333333;
+        font-size: 0.85em;
+        text-align: justify;
+        line-height: 1.5;
+    }    
+    
     
 </style>
 
@@ -59,7 +81,7 @@
 <table>
     <tr>
         <td style='width:20%;border:none'></td>
-        <td style='width:65%;border:none;padding-top:5px;padding-right:25px;padding-left:25px'>
+        <td style='width:65%;border:none;padding-bottom:15px'>
             <div class='header'></div>
             <h1>
                 Комбинирование регрессионнного анализа и машинного обучения для более точных прогнозов и высокой интерпретируемости модели
@@ -71,15 +93,56 @@
         <td style='width:15px;border:none'></td>
         </tr>
     <tr>
-        <td style='width:20%;border:none'>
-            1
+        <td style='width:20%;border:none'></td>
+        <td style='width:65%;border-right:none;border-left:1px solid #CFD7DE'>
+            <div id="toc_container">
+                <div class='toc_title'>
+                    <p>Содержание</p>
+                    </div>
+                 <p> <text-number-toc>1.</text-number-toc> <a href="#review"> Обзор проекта и краткие результаты</a> </p>
+                <text-number-toc>2.</text-number-toc> <a href="#dataset_description"> Описание датасета</a> </p>
+                <text-number-toc>3.</text-number-toc> <a href="#missed_values">Работа с отсутствующими значениями</a> </p>
+                <text-number-toc>4.</text-number-toc> <a href="#model_base">ML-модель №1 (базовая)</a> </p>
+                <text-number-toc>5.</text-number-toc> <a href="#eda">Исследование данных</a> </p>
+                <text-number-toc>6.</text-number-toc> <a href="#clear">Очистка данных</a> </p>
+                   <p> <text-number-toc>6.1.</text-number-toc> <a href="#discrepancy">Проверка данных на несоответствие</a> </p>
+                    <p> <text-number-toc>6.2.</text-number-toc> <a href="#outliers">Выявление и удаление выбросов</a> </p>
+                <p> <text-number-toc>7.</text-number-toc> <a href="#model_inter1">ML-модель №2 (после очистки данных)</a> </p>
+                <p> <text-number-toc>8.</text-number-toc> <a href="#feature_engineering">Создание дополнительных предикторов</a> </p>
+                   <p> <text-number-toc>8.1.</text-number-toc> <a href="#square_feet">Предикторы, характеризующие площадь</a> </p>
+                   <p> <text-number-toc>8.2.</text-number-toc> <a href="#rooms">Предикторы, характеризующие помещения (жилые комнаты, ванные комнаты, кухни)</a> </p>
+                   <p> <text-number-toc>8.3.</text-number-toc> <a href="#dates">Предикторы, характеризующие даты</a> </p>
+                <p> <text-number-toc>9.</text-number-toc> <a href="#preprocessing">Предварительная подготовка данных</a> </p>
+                <p> <text-number-toc>10.</text-number-toc> <a href="#model_inter2">ML-модель №3 (после создания новых признаков)</a> </p>
+                <p> <text-number-toc>11.</text-number-toc> <a href="#model_linear">Линейные модели и регрессионный анализ</a> </p>
+                    <p> <text-number-toc>11.1.</text-number-toc> <a href="#elastic_net">Эластичная сеть</a> </p>
+                    <p> <text-number-toc>11.2.</text-number-toc> <a href="#linear_regression">Линейная регрессия</a> </p>
+                    <p> <text-number-toc>11.3.</text-number-toc> <a href="#simulations">Результаты линейных моделей на сэмплированных данных</a> </p>
+                <p> <text-number-toc>12.</text-number-toc> <a href="#residuals">Выбор ML-модели для прогнозирования остатков линейной регрессии</a> </p>
+                    <p> <text-number-toc>12.1</text-number-toc> <a href="#ml_simple">Опорные вектора, бустинги, бэггинг, случайный лес, K-ближайших соседей</a> </p>
+                    <p> <text-number-toc>12.2.</text-number-toc> <a href="#vote_stack">Добавление оценщиков верхнего уровня - Voting и Stacking</a> </p>
+                    <p> <text-number-toc>12.3.</text-number-toc> <a href="#residuals_final">Сравнение всех моделeй и выбор финального оценщика остатков регрессии</a> </p>
+                    <p> <text-number-toc>12.4.</text-number-toc> <a href="#hpp">Комбинирование линейной регрессии и ML-алгоритма - итоговый оценщик HousePricePredictor</a> </p>
+                <p> <text-number-toc>13.</text-number-toc> <a href="#ml_models">Оценка независимых ML-моделей</a> </p>
+                <p> <text-number-toc>14.</text-number-toc> <a href="#final_results">Подведение итогов</a> </p>
+                    <p> <text-number-toc>14.1.</text-number-toc> <a href="#all_models">Сравнение всех моделей</a> </p>
+                    <p> <text-number-toc>14.2.</text-number-toc> <a href="#predicted_actual">Актуальные и спрогнозированные цены</a> </p>
+                    <p> <text-number-toc>14.3.</text-number-toc> <a href="#hpp_residuals">Анализ остатков HPP</a> </p>
+                    <p> <text-number-toc>14.4.</text-number-toc> <a href="#further">Дальнейшие шаги</a> </p>
+                </div>
+
+
+
+
+
+
+
+
+
+
+            
             </td>
-        <td style='width:65%;border-right:1px solid #CFD7DE;border-left:1px solid #CFD7DE'>
-            3
-            </td>
-        <td style='width:15px;border:none'>
-            4
-            </td>
+        <td style='width:15px;border:none'></td>
         </tr>
 
 

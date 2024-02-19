@@ -37,6 +37,17 @@
         background-size: contain;
         background-repeat: no-repeat;
       }
+    pic-width-adjust1 {
+          position: absolute;
+          left: 0;
+          right: 0;
+          
+          width: 100%;
+          height: auto;
+          
+          object-fit: cover;
+          object-position: center;
+        }
     pic-center {
         display: flex;
         justify-content: center;
@@ -515,10 +526,7 @@
             <p>
                 Таким образом, базовая модель (RMSE: 0.1276) имеет следующую конфигурацию:
                 <space></space>
-                <div
-                    class='pic-width-adjust'
-                    style='background-image:url(img/Section1-Overview-and-Base-model/model_1.png)'>
-                    </div>
+                <img src='img/Section1-Overview-and-Base-model/model_1.png'>
                 <space></space>
                 Это первый ориентир относительного того, насколько имеющиеся данные подходят для предсказания цены домов. Дополнительно базовая модель дает представление о наиболее значимых предикторах. Отметим, что 7 из 10 ключевых предикторов - это площадь того или иного помещения продаваемого дома. На общем фоне заметно выделяется суммарная площадь жилого пространства (<sb>grlivarea</sb>).
                 <space></space>
@@ -547,10 +555,11 @@
             <p>
                 Ключевые инструменты для исследования количественных переменных - гистограммы и диаграммы рассеяния с добавлением линии регрессии.
                 <space></space>
-                <div 
+                <pic-width-adjust1><img src='img/Section2-Explore-and-Clean/quantitative.png'></pic-width-adjust1>
+                <!-- <div 
                     class='pic-width-adjust'
                     style='background-image:url(img/Section2-Explore-and-Clean/quantitative.png);'>
-                    </div>
+                    </div> -->
                 <space></space>
                 </p>
             <h4>
@@ -773,10 +782,7 @@
             <p>
                 Здесь применяется тот же двухэтапный подход, что и в пункте <i>"4. ML-модель №1 (базовая)"</i>. Лучшая модель демонстрирует RMSE на уровне 0.1233 (у базовой модели RMSE равна 0.1276). Конфигурация модели выглядит следующим образом:
                 <space></space>
-                <div
-                    class='pic-width-adjust'
-                    style='background-image:url(img/Section2-Explore-and-Clean/model_2.png)'>
-                    </div>
+                <img src='img/Section2-Explore-and-Clean/model_2.png'>
                 <space></space>
                 По сравнению с базовой моделью число деревьев не изменилось, глубина дерева уменьшалсь почти в три раза, а количество листьев сократилось более чем в 10 раз. Модель стала проще и эффективнее. 
                 <space></space>

@@ -37,11 +37,15 @@
         background-size: contain;
         background-repeat: no-repeat;
       }
+    pic-center {
+        display: flex;
+        justify-content: center;
+    }
     h1 {
         font-family: Ubuntu, system-ui;
         color: #26292D;
         font-size: 1.5em;
-        font-weight: 500;
+        font-weight: 600;
         text-align: left;
         line-height: 1.05;
         margin-bottom: 0px;
@@ -50,7 +54,7 @@
         font-family: Ubuntu, system-ui;
         color: #26292D;
         font-size: 1.3em;
-        font-weight: 500;
+        font-weight: 600;
         text-align: left;
         line-height: 1.05;
         margin-bottom: 0px;
@@ -59,7 +63,7 @@
         font-family: Ubuntu, system-ui;
         color: #26292D;
         font-size: 1.15em;
-        font-weight: 500;
+        font-weight: 600;
         text-align: left;
         line-height: 1.05;
         margin-bottom: 0px;
@@ -68,7 +72,7 @@
         font-family: Ubuntu, system-ui;
         color: #26292D;
         font-size: 1em;
-        font-weight: 500;
+        font-weight: 600;
         text-align: left;
         line-height: 1.05;
         margin-bottom: 0px;
@@ -176,7 +180,7 @@
                     <p>Содержание</p>
                     </div>
                  <line-height-1-75>
-                    <text-number-toc>1.</text-number-toc> <a href="#review"> Обзор проекта и краткие результаты</a><br>
+                    <text-number-toc>1.</text-number-toc> <a href="#review"> Обзор проекта</a><br>
                     <text-number-toc>2.</text-number-toc> <a href="#dataset_description"> Описание датасета</a><br>
                     <text-number-toc>3.</text-number-toc> <a href="#missed_values">Работа с отсутствующими значениями</a><br>
                     <text-number-toc>4.</text-number-toc> <a href="#model_base">ML-модель №1 (базовая)</a><br>
@@ -222,7 +226,7 @@
             1. Обзор проекта и краткие результаты
             </h2>
             <h3>
-                Цель проекта
+                Цель
                 </h3>
             <p>
             Современные алгоритмы машинного обучения обычно превосходят классические линейные модели в точности прогнозов, но при этом сложны в интерпретации. Некоторые алгоритмы имеют встроенный функционал приоритезации предикторов, что позволяет выявить наиболее информативные. Тем не менее, этого недостаточно для оценки взаимосвязей.<br>
@@ -230,7 +234,7 @@
             Целью данного проекта является создание простой в интерпретации модели <sb>HousePricePredictor</sb>, которая по точности прогнозов не уступает лучшим алгоритмами машинного обучения. Модель состоит из двух уровней: на первом уровне используется линейная регрессия для выдачи первичных прогнозов и определения коэффициентов для интерпретации; второй уровень - это алгоритм машинного обучения, прогнозирующий величину остатков (ошибок) регрессии для увеличения тчоности прогнозов. Эта схема во многом напоминает первую итерацию бустинга, в котором каждая последующая итерация минимизирует ошибку предыдущей.
                 </p>
             <h3>
-                Этапы проекта
+                Этапы
                 </h3>
             <h4>
                 <i>Секция 1: Исследование и подготовка данных</i>
@@ -286,7 +290,7 @@
                 <li>рекомендации по дальнейшим шагам.</li>
             </ul>
             <h3>
-                Результаты проекта
+                Результаты
                 </h3>
             <h4>
                 <i>Предсказательная эффективность HousePricePredictor (HPP)</i>
@@ -319,7 +323,7 @@
             <p>
                 Ядром HousePricePredictor является линейная регрессия. Коэффициенты и доверительные интервалы представлены в таблице ниже.
                 <space></space>
-                <img src='img/Section4-Linear-models-research/coefficients_table.png'>
+                <pic-center><img src='img/Section4-Linear-models-research/coefficients_table.png'></pic-center>
                 <space></space>
                 Предикторы с наибольшим коэффициентом - это дополнительно сгенерированный предиктор <sb>lg_flrsfmean</sb> (средневзвешенная площадь первого и второго этажей, см. <i>'8.1. Предикторы, характеризующие площадь'</i>), общее качество строительных и отделочных материалов <sb>overallqual</sb>, возраст дома <sb>houseage</sb>. Вклад, котоый вносит увеличение этих параметров в изменение цены дома (при прочих равных):
                 </p>

@@ -830,7 +830,7 @@
                     Коэффициент корреляции нового предиктора <sb>flrsfmean</sb> равен 0.77 - это на 0.05 выше, чем у наиболее информатичного количественного предиктора <sb>grlivarea</sb>. В дополнение к этому, <sb>flrsfmean</sb> имеет мéньшую дисперсию.
                     </p>
                 <space></space>
-                <img src='img/Section3-Feature-selection-and-Preprocessing/flrsfmean.png'>
+                <img src='img/Section3-Feature-selection-and-Preprocessing/flrsfmean.png' style='width:200px'>
                 <space></space>
             <h3>
                 <a
@@ -853,7 +853,7 @@
                 Наиболее информативным из новых признаков является относительный размер кухни (<sb>kitchensize</sb>, коэффициент корреляции: -0.71).
                 </p>
                 <space></space>
-                <img src='img/Section3-Feature-selection-and-Preprocessing/bedroom_kitchen.png'>
+                <img src='img/Section3-Feature-selection-and-Preprocessing/bedroom_kitchen.png' style='width:200px'>
                 <space></space>
             <h3>
                 <a
@@ -998,7 +998,7 @@
                 <space></space>
                 <i>Коэффициенты регрессии</i>
                 <space></space>
-                <img src='img/Section4-Linear-models-research/coefficients_table_charachteristics.png'>
+                <img src='img/Section4-Linear-models-research/coefficients_table_charachteristics.png' style='width:200px'>
                 <space></space>
                 </p>
             <h4>
@@ -1006,11 +1006,13 @@
                 </h4>
             <p>
                 <i>Визуальная оценка</i>
+                </p>
                 <space></space>
                 <div
                     class='pic-width-adjust'
                     style='background-image: url(img/Section4-Linear-models-research/regression_diagnostics.png);'>
                     </div>
+            <p>
                 <space></space>
                 <i>Результаты статистических тестов и характеристики регрессии</i>
                 <space></space>
@@ -1032,10 +1034,10 @@
                 <space></space>
                 <i>Визуализация формы распределения остаков и сравнение с нормальным распределением</i>
                 <space></space>
-                <img src='img/Section4-Linear-models-research/residuals_distributions_comparing.png'>
+                <img src='img/Section4-Linear-models-research/residuals_distributions_comparing.png' style='width:200px'>
                 <space></space>
                 Теперь остатки распределены нормально, и в целом форма остатков без удаления выбросов отличается от формы нормального распределения с заданными параметрами только наличием хвостов, что сказывается и на величине эксцесса. Возможно, структура цены нескольких элементов выбивается из общей картины. Можно предположить сознательное снижение/завышение цены при продаже дома.
-            </p>
+                </p>
             <h4>
                 <i>Интерпретация коэффициентов</i>
                 </h4>  
@@ -1175,10 +1177,10 @@
                 <space></space>
                 <i>Конфигурация StackingRegressor</i>
                 <space></space>
-                <div
+                <!-- <div
                     class='pic-width-adjust'
                     style='background-image:url(img/Section5-Residuals-prediction/stacking_cofiguration.png)'>
-                    </div>
+                    </div> -->
                 </p>
             <h3>
                 <a
@@ -1228,10 +1230,10 @@
                 <space></space>
                 Ожидаемо, наиболее эффективным алгоритмом оказался <sb>Stacking</sb>. Его конфигурация идентична модели, выбранной для прогнозирования остатков регрессии.
                 <space></space>
-                <div
+                <!-- <div
                     class='pic-width-adjust'
                     style='background-image:url(img/Section7-ML-models/stacking_cofiguration.png)'>
-                    </div>
+                    </div> -->
                 </p>
             <h2>
                 <a

@@ -41,6 +41,9 @@
         display: flex;
         justify-content: center;
     }
+    pic-margin {
+        margin-left: 30px;
+    }
     h1 {
         font-family: Ubuntu, system-ui;
         color: #26292D;
@@ -161,8 +164,7 @@
     <tr>
         <td style='width:20%;border:none'></td>
         <td style='width:65%;border:none;padding-bottom:15px'>
-            <div class='pic-width-adjust' style='background-image:url(img/header.png);'>
-                </div>
+            <div class='pic-width-adjust' style='background-image:url(img/header.png);'></div>
             <h1>
                 Комбинирование регрессионнного анализа и машинного обучения для более точных прогнозов и высокой интерпретируемости модели
                 </h1>
@@ -323,7 +325,7 @@
             <p>
                 Ядром HousePricePredictor является линейная регрессия. Коэффициенты и доверительные интервалы представлены в таблице ниже.
                 <space></space>
-                <pic-center><img src='img/Section4-Linear-models-research/coefficients_table.png'></pic-center>
+                <pic-margin><img src='img/Section4-Linear-models-research/coefficients_table.png'></pic-margin>
                 <space></space>
                 Предикторы с наибольшим коэффициентом - это дополнительно сгенерированный предиктор <sb>lg_flrsfmean</sb> (средневзвешенная площадь первого и второго этажей, см. <i>'8.1. Предикторы, характеризующие площадь'</i>), общее качество строительных и отделочных материалов <sb>overallqual</sb>, возраст дома <sb>houseage</sb>. Вклад, котоый вносит увеличение этих параметров в изменение цены дома (при прочих равных):
                 </p>
@@ -542,7 +544,10 @@
             <p>
                 Ключевые инструменты для исследования количественных переменных - гистограммы и диаграммы рассеяния с добавлением линии регрессии.
                 <space></space>
-                <img src='img/Section2-Explore-and-Clean/quantitative.png'>
+                <div 
+                    class='pic-width-adjust'
+                    style='background-image:url(img/Section2-Explore-and-Clean/quantitative.png);'>
+                    </div>
                 <space></space>
                 </p>
             <h4>
@@ -551,9 +556,15 @@
             <p>
                 Ключевые инструменты для исследования катеориальных переменных - диаграмма рассеяния с лининей регрессии и точечная диаграмма.
                 <space></space>
-                <img src='img/Section2-Explore-and-Clean/ordinal.png'>
+                <div 
+                    class='pic-width-adjust'
+                    style='background-image:url(img/Section2-Explore-and-Clean/ordinal.png);'>
+                    </div>
                 <space></space>
-                <img src='img/Section2-Explore-and-Clean/categorical.png'>
+                <div 
+                    class='pic-width-adjust'
+                    style='background-image:url(img/Section2-Explore-and-Clean/categorical.png);'>
+                    </div>
                 <space></space>
                 Примеры взаимосвязи некоторых категориальных переменных с ценой
                 <space></space>

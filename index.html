@@ -508,7 +508,235 @@
                 <space></space>
                 <img src='img/Section1-Overview-and-Base-model/feature_importance.png'>
                 <space></space>
-
+            <h2>
+                <a
+                    class='anchor'
+                    id='eda'>
+                    </a>
+                5. Исследование данных
+                </h2>
+            <h4>
+                <i>Матрица корреляций</i>
+                </h4> 
+            <p>
+                Матрица корреляций деомнстрирует линейные взаимосвязи предикторов с целевой переменной. В топ-10 наиболее влияющих признаков в основном оценки площади и качества различных составляющих дома.
+                <space></space>
+                <img src='img/Section2-Explore-and-Clean/corr_matrix.png'>
+                <space></space>
+                Полный набор различных визуализаций представлен в соответсвующем блокноте <i>'Section2-Explore-and-Clean.ipynb'</i>. Ниже приведены несколько типовых графиков.
+            </p>
+            <h4>
+                <i>Количественные признаки</i>
+                </h4>
+            <p>
+                Ключевые инструменты для исследования количественных переменных - гистограммы и диаграммы рассеяния с добавлением линии регрессии.
+                <space></space>
+                <img src='img/Section2-Explore-and-Clean/quantitative.png' style="display:block;" width="100%" height="100%">
+                <space></space>
+                </p>
+            <h4>
+                <i>Категориальные признаки</i>
+                </h4>
+            <p>
+                Ключевые инструменты для исследования катеориальных переменных - диаграмма рассеяния с лининей регрессии и точечная диаграмма.
+                <space></space>
+                <img src='img/Section2-Explore-and-Clean/ordinal.png' style="display:block;" width="100%" height="100%">
+                <space></space>
+                <img src='img/Section2-Explore-and-Clean/categorical.png' style="display:block;" width="100%" height="100%">
+                Примеры взаимосвязи некоторых категориальных переменных с ценой
+                <space></space>
+                <img src='img/Section2-Explore-and-Clean/housestyle.png'>
+                <space></space>
+                <img src='img/Section2-Explore-and-Clean/kitchenqual_vs_price.png'>
+                <space></space>
+                </p>
+            <h2>
+                <a
+                    class='anchor'
+                    id='clear'>
+                    </a>
+                6. Очистка данных
+                </h2>
+            <h3>
+                <a
+                    class='anchor'
+                    id='discrepancy'>
+                    </a>
+                6.1. Проверка данных на несоответствие
+                </h3>
+            <p>
+                В этом пункте данные проверяются на логическое несоответствие. Например, суммарная площадь жилого пространства не может быть меньше суммарной площади всех комнат.
+                <space></space>
+                Всего проверено 33 предиктора, несоответствия найдены в двух переменных: <sb>masvnarea</sb> и <sb>garageyrblt</sb>.
+                <space></space>
+                <b> GARAGEYRBLT </b> (год постройки гаража) 
+                <space></space>
+                <i>Несоответствия:</i>
+                </p>
+                <ul>
+                    <li>У 6 элементов год постройки гаража меньше года постройки дома. В некоторых случаях эта разница составляет несколько лет.</li>
+                    </ul>
+            <p>    
+                <i>Возможная причина:</i>
+                </p>
+                <ul>
+                    <li>Сооружение гаража может быть первым этапом строительства, но после его постройки возможна заморозка стройки, к примеру, из-за финансовых трудностей. Соответственно, сам дом будет достроен только через несколько лет. Такое несоответсвие допускается.</li>
+                    </ul>
+            <p>
+                <i>Решение:</i>
+                </p>
+                <ul>
+                    <li>Данные не исправляются.</li>
+                    </ul>
+            <p>
+                <b> MASVNAREA </b> (Площадь облицовки фундамента)
+                <space></space>
+                <i>Несоответствия:</i>
+                </p>
+                 <ul>
+                    <li>У 7 элементов площадь облицовки равна 0, при этом тип облицовки не NA, и наоборот (см. таблицу выше).</li>
+                    </ul>
+            <p>
+                <i>Возможная причина:</i>
+                </p>
+                <ul>
+                    <li><t>Ошибка ввода данных.</t></li>
+                    </ul>
+            <p>
+                <i>Решение:</i>
+                </p>
+                <ul>
+                    <li>Исправление вручную. Во время исправления ошибок в данных в первую очередь будем ориентироваться на тип облицовки (<sb>masvntype</sb>) и цену дома (<sb>price</sb>). На графике ниже видно, что наиболее дорогие - это дома с облицовкой из камня (Stone) и кирпича (BrkFace).</li>
+                    </ul>
+                <space></space>
+                <img src='img/Section2-Explore-and-Clean/masvnrtype_price.png'>
+                <space></space>
+            <p>
+                В данных присутствует три типа противоречий. Каждое будет рассмотрено отдельно, и соответственно будут исследованы три группы элементов.
+                </p>
+            <h4>
+                <i>Элементы с индексом 1230 и 733</i>
+                </h4>
+                <space></space>
+                <img-margin><img src='img/Section2-Explore-and-Clean/1230_773.png'></img-margin>
+                <space></space>
+            <p>
+            <i>Противоречие:</i>
+                </p>
+            <ul>
+                <li>Если <sb>masvntype</sb> равен NA, то <sb>masvnrarea</sb> должна быть равна 0.</li>
+                </ul>
+            <p>
+                <i>Варианты исправления:</i>
+                </p>
+                <ul>
+                    <li>Или <sb>masvntype</sb> присываивается какое-то значение, или <sb>masvnrarea</sb> приравнивается к 0.</li>
+                    </ul>
+            <p>
+                <i>Решение:</i>
+                </p>
+                <ul>
+                    <li><sb>masvnrarea</sb> приравнивается к 0.</li>
+                    </ul>
+            <p>
+                <i>Аргументы:</i>
+                </p>
+                <ul>
+                <li>Цены этих двух домов в районе 12.0 - это аргумет в пользу того, что облицовка отсутствует (средняя цена домов без облицовки - 11.9).</li>
+                <li>Наименьшее значение переменной <sb>masvnarea</sb> - 10 (см. график ниже); в данном случае 1 - это вероятно ошибка ввода данных.</li>
+                    </ul>
+                <space></space>
+                <img src='img/Section2-Explore-and-Clean/masvnrarea_minimal.png'>
+                <space></space>
+            <h4>
+                <i>Элементы с индексом 1241 и 688</i>
+                </h4>
+                <space></space>
+                <img-margin><img src='img/Section2-Explore-and-Clean/688_1241.png'></img-margin>
+                <space></space>
+            <p>
+                <i>Противоречие:</i>
+                </p>
+                 <ul>
+                    <li>Если <sb>masvnrarea</sb> равна нулю, то <sb>masvntype</sb> должен быть равен NA.</li>
+                    </ul>
+            <p>
+                <i>Варианты исправления:</i>
+                </p>
+                 <ul>
+                    <li>Или <sb>masvnrarea</sb> приравнивается какое-либо значение, или <sb>masvntype</sb> присываивается NA.</li>
+                    </ul>
+            <p>
+                <i>Решение:</i>
+                </p>
+                <ul>
+                    <li><sb>masvnrarea</sb> присваивается медианное значение элементов, имеющих соответствующее <sb>masvntype</sb>.</t></li>
+                    </ul>
+            <p>
+                <i>Аргументы:</i>
+                </p>
+                <ul>
+                    <li>Цена элементов с нулевой <sb>masvnrarea</sb> достаточно большая, говорит скорее в пользу наличия облицовки (т.е. в пользу того, что <sb>masvnrarea</sb> не равна нулю), поэтому <sb>masvnrarea</sb> заполняется медианным значением, соответствующим типу <sb>masvntype</sb>.</li>
+                    </ul>
+            <h4>
+                <i>Элементы с индексом 624, 1300 и 1334</i>
+                </h4>
+                <space></space>
+                <img-margin><img src='img/Section2-Explore-and-Clean/624_1300_1334.png'></img-margin>
+                <space></space>
+            <p>
+                <i>Противоречие:</i>
+                </p>
+                <ul>
+                    <li>Если <sb>masvnrarea</sb> не равна нулю, то <sb>masvntype</sb> не должен быть NA.</li>
+                    </ul>
+            <p>
+                <i>Варианты исправления:</i>
+                </p>
+                <ul>
+                    <li>Или <sb>masvntype</sb> присываивается какое-то значение, или <sb>masvnrarea</sb> приравнивается к 0.</li>
+                    </ul>
+            <p>
+                <i>Решение:</i>
+                </p>
+                <ul>
+                    <li>Элементы 624 и 1334: <b>masvnrarea</b> приравнивается к 0;</li>
+                    <li>Элемент 1300: <b>masvntype</b> присваивается значение Stone.</li>
+                    </ul>
+            <p>
+                <i>Аргументы:</i>
+                </p>
+                <ul>
+                    <li>Для всех трех элементов выбор сделан исходя из их цены - у дорогих домов чаще встречается <sb>masvntype</sb>, равный Stone, у недорогих - NA.</li>
+                    </ul>
+            <h4>
+                <i>Исправленные данные</i>
+                </h4>
+                <space></space>
+                <img-margin><img src='img/Section2-Explore-and-Clean/masvnrarea_fixed.png'></img-margin>
+                <space></space>
+            <h3>
+                <a
+                    class='anchor'
+                    id='outliers'>
+                    </a>
+                6.2. Выявление и удаление выбросов
+                </h3>
+            <p>
+                Два подозрительно высоких значения <sb>lotfrontage</sb>, обнаруженных при исследовании количественных признаков.
+                <space></space>
+                <img src='img/Section2-Explore-and-Clean/lotfrontage.png'>
+                <space></space>
+                Помимо этого потенциальные выбросы обнаружены в некотрых других переменных. К примеру, так выглядит диаграмма для переменной <sb>miscval</sb>:
+                <space></space>
+                <img src='img/Section2-Explore-and-Clean/miscval.png'>
+                <space></space>
+                Далее формируется список потенциальных выброосв и строятся диаграммы, на которых подозрительные элементы выделены цветом.
+                <space></space>
+                <img src='img/Section2-Explore-and-Clean/outliers_colored.png' style="display:block;" width="100%" height="100%">
+                <space></space>
+                После визуальной оценки три элемента (индексы 523, 934 и 1298) признаются выбросами и удаляются из датасета.
+                </p>
 
 
 

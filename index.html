@@ -80,11 +80,13 @@
         line-height: 1.5;
         margin: 12.5px 0;
         text-align: justify;
-        }
+    }
     img-center {
         display: flex;
         justify-content: center;
-        }
+        padding-right:0px;
+        padding-left:0px
+    }
     img-margin {
         margin-left: 30px;
     }
@@ -121,7 +123,7 @@
         font-family: system-ui;
         color: #1071C1;
     }
-sb {
+    sb {
         font-weight:500;
     }
     line-height-1-75 {
@@ -320,8 +322,7 @@ sb {
                 <i>Сравнение актуальных и предсказанных HousePricePredictor цен</i>
                 </h4>
                 <space></space>
-                <img-center><img src='img/Section8-Final-predictions/predicted_actual_residuals.png'
-                                style='padding-right:0px;padding-left:0px'></img-center>
+                <img-center><img src='img/Section8-Final-predictions/predicted_actual_residuals.png'></img-center>
                 <space></space>
             <p>
                 На оси абсцисс - элементы, отсортированные по суммарной площади жилого пространства <sb>grlivarea</sb>. С увеличением площади увеличивается цена дома. Этот график можно разбить на три составляющие: малые, средние и большие дома.
@@ -357,11 +358,11 @@ sb {
             <p>
                 Распределение целевой переменной напоминает гамма-распределение. Это одномодальное распределение с вершиной в районе 150000$ и правосторонней ассиметрией.
                 <space></space>
-                <img src='img/Section1-Overview-and-Base-model/target_distribution.png'>
+                <img-margin><img src='img/Section1-Overview-and-Base-model/target_distribution.png'></img-margin>
                 <space></space>
                 Для выравнивания формы распределения и снижения влияния экстремальных значений используется натуральный логарифм.
                 <space></space>
-                <img src='img/Section1-Overview-and-Base-model/target_distribution_log.png'>
+                <img-margin><img src='img/Section1-Overview-and-Base-model/target_distribution_log.png'></img-margin>
                 <space></space>
                 </p>
                 <h4>

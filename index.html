@@ -82,13 +82,13 @@
         text-align: justify;
         }
     img-center {
-            display: flex;
-            justify-content: center;
+        display: flex;
+        justify-content: center;
         }
-        img-margin {
-            margin-left: 50px;
-        }
-    
+    img-margin {
+        margin-left: 30px;
+    }
+
     .toc_title {
         font-weight: 700;
         text-align: left;
@@ -289,7 +289,7 @@ sb {
                     <li>HousePricePredictor(HPP) - модель, полученная в результате комбинации линейной регрессии и стэкинга.</li>
                 </ul>
                 <space></space>
-                <img src='img/Section8-Final-predictions/final_plot.png'>
+                <img-margin><img src='img/Section8-Final-predictions/final_plot.png'></img-margin>
                 <space></space>
             <p>
                 В ходе проекта удалось снизить ошибку RMSE c 0.1216 у базовой модели до 0.0969 итогового оценщика HousePricePredictor. На этапе преобразования наибольший вклад внесла очистка данных, а дополнительно сгенерированные предикторы были полезны как для линейной регрессии, так и для сложных алгоритмов машинного обучения (см. <i>'8. Создание дополнительных предикторов'</i>, <i>'11.2. Линейная регрессия'</i>, <i>'13. Оценка независимых ML-моделей'</i>).

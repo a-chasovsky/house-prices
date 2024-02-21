@@ -912,21 +912,21 @@
                 <space></space>
                 Отобразим пространство значений гиперпараметра $\alpha$
                 <space></space>
-                <img src='img/Section4-Linear-models-research/alphas_logspace.png'>
+                <img-margin><img src='img/Section4-Linear-models-research/alphas_logspace.png'></img-margin>
                 <space></space>
                 Выполним поиск по сетке гиперпараметров <sb>GridSearch</sb> и отобразим результаты на графике. В рамках исследуемых данных лучшую предиктивную эффективность показывает минимальная регуляризация.
                 <space></space>
-                <img src='img/Section4-Linear-models-research/regularization.png'>
+                <img-margin><img src='img/Section4-Linear-models-research/regularization.png'></img-margin>
                 <space></space>
                 Теперь посмотрим, какие предикторы выбирает эластичная сеть в зависимости от величины $\alpha$, и какое влияние это оказывает на эффективность модели.
                 <space></space>
-                <img src='img/Section4-Linear-models-research/features_plot.png'>
+                <img-margin><img src='img/Section4-Linear-models-research/features_plot.png'></img-margin>
                 <space></space>
                 Чем ниже параметр регуляризации, тем выше эффективность прогнозирования. Минимальное число предикторов эластичной сети - 3, это уже известные <sb>lg_flrsfmean</sb>, <sb>neighborhood</sb>, <sb>overallqual</sb>. Ошибка резко уменьшается при увеличинии количества предикторов с 3 до 8, заметно снижается при изменении их с 8 до 33, и плавно снижается после увеличения до 88. С точки зрения баланса точности прогнозов и интерпретируемости, оптимальное количество предикторов находится где-то между 8 и 33. Необходимо также учитывать тот факт, что после отметки в 14 признаков показатель мультиколлинеарности <sb>VIF</sb> увеличивается многократно и выходит за допустимые рамки (см. таблицу ниже). 
                 <space></space>
                 <i>Изменение набора предикторов в зависмости от величины параметра регуляризации $\alpha$</i>
                 <space></space>
-                <img-margin><img src='img/Section4-Linear-models-research/features_by_alpha.png'></img-margin>
+                <img-center><img src='img/Section4-Linear-models-research/features_by_alpha.png'></img-center>
                 <space></space>
                 Отметив эти особенности, можно переходить к следующему пункту - построению линейной регрессии, которая станет ядром HousePricePredictor.
                 </p>
@@ -965,8 +965,7 @@
                 <space></space>
                 <i>Коэффициенты регрессии</i>
                 <space></space>
-                <img src='img/Section4-Linear-models-research/coefficients_table_charachteristics.png'
-                                style="display:block;padding:0px;" width="100%" height="100%">
+                <img-center><img src='img/Section4-Linear-models-research/coefficients_table_charachteristics.png'></img-center>
                 <space></space>
                 </p>
             <h4>

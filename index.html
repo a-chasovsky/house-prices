@@ -181,7 +181,7 @@
 <body>
 
 <!-- <button onclick="topFunction()" id="myBtn" title="К содержанию">К содержанию</button> -->
-<button onclick="scrollToHash('#toc')" id="myBtn" title="К содержанию">К содержанию</button>
+<button onclick="scrollFunc('#toc')" id="myBtn" title="К содержанию">К содержанию</button>
     
 <div class='main-container' style='padding-left:32px'>
     <img src='img/header.png'
@@ -1402,6 +1402,14 @@
     function scrollToHash(hashName) {
         location.hash = "#" + hashName;
     }
+
+    function scrollFunc(id):
+        let element = document.getElementById(id);
+        element.scrollIntoView({
+          block: 'start',
+          behavior: 'smooth',
+          inline: 'start'
+        });
     
     </script>
 

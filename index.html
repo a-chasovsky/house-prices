@@ -173,7 +173,8 @@
 
 <body>
 
-<button onclick="topFunction()" id="myBtn" title="К содержанию">К содержанию</button>
+<!-- <button onclick="topFunction()" id="myBtn" title="К содержанию">К содержанию</button> -->
+<button onclick="scrollTo()" id="myBtn" title="К содержанию">К содержанию</button>
     
 <div class='main-container' style='padding-left:32px'>
     <img src='img/header.png'
@@ -188,7 +189,7 @@
 <div class='main-container' style='border-left:1px solid #BBBBBB;'>
     <div id="toc_container">
             <div class='toc_title'>
-                <p>Содержание</p>
+                <p>Содержание <a href="#toc"> Обзор проекта</a> </p>
                 </div>
              <line-height-1-75>
                 <text-number-toc>1.</text-number-toc> <a href="#review"> Обзор проекта</a><br>
@@ -1390,6 +1391,11 @@
       document.body.scrollTop = 280; // For Safari
       document.documentElement.scrollTop = 280; // For Chrome, Firefox, IE and Opera
     }   
+
+    function scrollTo(hash) {
+        location.hash = "#" + toc;
+    }
+    
     </script>
 
 </body>

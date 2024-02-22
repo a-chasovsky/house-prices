@@ -174,7 +174,6 @@
       background-color: #E1E1E1;
       border: none; 
       color: #1B60AA;
-      
     }
     
 </style>
@@ -185,7 +184,7 @@
 <button onclick="scrollToID('toc_container')"
     id="myBtn"
     title="К содержанию">
-    К содержанию1
+    К содержанию2
     </button>
     </div>
     
@@ -1392,7 +1391,7 @@
     window.onscroll = function() {scrollFunction()};
     
     function scrollFunction() {
-      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
         mybutton.style.display = "block";
       } else {
         mybutton.style.display = "none";

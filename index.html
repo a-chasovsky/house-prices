@@ -1403,13 +1403,14 @@
         location.hash = "#" + hashName;
     }
 
-    function scrollFunc(id):
+    function scrollFunc(id) {
         let element = document.getElementById(id);
         element.scrollIntoView({
           block: 'start',
           behavior: 'smooth',
           inline: 'start'
         });
+    }
     
     </script>
 

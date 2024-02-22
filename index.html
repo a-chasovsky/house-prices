@@ -166,7 +166,7 @@
       position: fixed;
       margin-left:880px;
       bottom: 35px;
-      z-index: 99; 
+      z-index: 99;
       border: none; 
       outline: none; 
       /* background-color: #F1F1F1; */
@@ -181,6 +181,17 @@
       background-color: #E7E7E7;
       border: none; 
       color: #1B60AA;
+    }
+    #linksBtn {
+        margin-left:20px;
+        z-index: 99;
+        border: none;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        border: none;
+        cursor: pointer;
+        overflow: hidden;
+        outline: none;
     }
     .main-container span a:link {
         color: #454545;
@@ -205,7 +216,7 @@
 
 <div class='main-container'>
 <button onclick="scrollToID('links')" id="toTocBtn" title="К содержанию">
-    К содержанию2
+    К содержанию3
     </button>
     </div>  
 <div class='main-container' style='padding-left:32px'>
@@ -234,11 +245,19 @@
             <img src='img/github-logo.png' style='width:20px;vertical-align:text-top'></a>
         <a href='https://github.com/a-chasovsky'
             target='_blank'
-            style='font-size:0.85em;margin-left:0px'
-            >    Профиль на Github</a>
+            style='font-size:0.85em;margin-left:2.5px'
+            >Профиль на Github</a>
+        </span>
+
+    <span>
+        <button href='https://github.com/a-chasovsky' id="linksBtn" title="К содержанию">
+    К содержанию2
+    </button>
+    </div>  
         </span>
 
 
+    
 
     
     </div>

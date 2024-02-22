@@ -14,6 +14,10 @@
 </head>
 
 <style>
+
+    html {
+        scroll-behavior: smooth;
+    }
     body {
             background-color: #FFFFFF
         }
@@ -161,7 +165,7 @@
       padding: 15px; /* Some padding */
       border-radius: 10px; /* Rounded corners */
       font-size: 14px; /* Increase font size */
-      scroll-behavior: smooth;
+      /* scroll-behavior: smooth; */
     }
     
     #myBtn:hover {
@@ -190,7 +194,7 @@
 <div class='main-container' style='border-left:1px solid #BBBBBB;'>
     <div id="toc_container">
             <div class='toc_title'>
-                <p>Содержание <a href="#toc"> Обзор проекта</a> </p>
+                <p>Содержание <a class='anchor' id="#toc"></a> </p>
                 </div>
              <line-height-1-75>
                 <text-number-toc>1.</text-number-toc> <a href="#review"> Обзор проекта</a><br>

@@ -176,27 +176,11 @@
       border-radius: 10px;
       font-size: 14px;
     }
-    
     #myBtn:hover {
       background-color: #E7E7E7;
       border: none; 
       color: #1B60AA;
     }
-
-    #BtnLinks {
-      position: static;
-      margin-left:0px;
-      z-index: 99; 
-      border: none; 
-      outline: none; 
-      background-color: #F1F1F1;
-      color: #1B60AA; 
-      cursor: pointer; 
-      padding: 15px; 
-      border-radius: 10px;
-      font-size: 14px;
-    }
-
     .main-container span a:link {
         color: #353535;
         text-decoration: none;
@@ -213,35 +197,19 @@
         color: #101010;
         text-decoration: none;
     }
-    /* .main-container span a:link {
-        color: #353535;
-        text-decoration: none;
+    element {
+  scroll-margin-top: 15px;
     }
-    .main-container span a:visited {
-        color: #353535;
-        text-decoration: none;
-    }
-    .main-container span a:hover {
-        color: #252525;
-        text-decoration: none;
-    }
-    .main-container span a:active {
-        color: #101010;
-        text-decoration: none;
-    } */
     
 </style>
 
 <body>
 
 <div class='main-container'>
-<button onclick="scrollToID('links')"
-    id="myBtn"
-    title="К содержанию">
-    К содержанию0
+<button onclick="scrollToID('links')" id="myBtn" title="К содержанию">
+    К содержанию1
     </button>
-    </div>
-    
+    </div>  
 <div class='main-container' style='padding-left:32px'>
     <img src='img/header.png'
         style="display:block;" width="100%" height="100%">
@@ -258,7 +226,7 @@
                 Ссылка на репозиторий
                 </button> -->
     
-    <span style='margin-bottom: 20px;display: inline-block' id='links'>
+    <span style='margin-bottom: 15px;display: inline-block' id='links'>
         <a href='https://github.com/a-chasovsky' target='_blank'>
             <img src='img/github-logo.png' style='width:20px;vertical-align:middle'> </a>
         <a href='https://github.com/a-chasovsky'
@@ -1490,7 +1458,8 @@
         element.scrollIntoView({
           block: 'start',
           // behavior: 'smooth',
-          inline: 'start'
+          inline: 'start',
+         
         });
     }
     

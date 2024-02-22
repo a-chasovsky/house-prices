@@ -161,7 +161,7 @@
         font-family: system-ui;
         line-height: 1.75em;
     }
-    #myBtn {
+    #toToc {
       display: none;
       position: fixed;
       margin-left:880px;
@@ -176,7 +176,7 @@
       border-radius: 10px;
       font-size: 14px;
     }
-    #myBtn:hover {
+    #toToc:hover {
       background-color: #E7E7E7;
       border: none; 
       color: #1B60AA;
@@ -203,8 +203,8 @@
 <body>
 
 <div class='main-container'>
-<button onclick="scrollToID('links')" id="myBtn" title="К содержанию">
-    К содержанию2
+<button onclick="scrollToID('links')" id="toToc" title="К содержанию">
+    К содержанию0
     </button>
     </div>  
 <div class='main-container' style='padding-left:32px'>
@@ -1430,7 +1430,7 @@
 </div>
 
 <script>
-    let mybutton = document.getElementById("myBtn");
+    let mybutton = document.getElementById('toToc');
     
     // When the user scrolls down 20px from the top of the document, show the button
     window.onscroll = function() {scrollFunction()};

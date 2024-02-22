@@ -151,7 +151,7 @@
       display: none; /* Hidden by default */
       position: fixed; /* Fixed/sticky position */
       bottom: 30px; /* Place the button at the bottom of the page */
-      right: 40px; /* Place the button 30px from the right */
+      right: 45px; /* Place the button 30px from the right */
       z-index: 99; /* Make sure it does not overlap */
       border: none; /* Remove borders */
       outline: none; /* Remove outline */
@@ -161,6 +161,7 @@
       padding: 15px; /* Some padding */
       border-radius: 10px; /* Rounded corners */
       font-size: 14px; /* Increase font size */
+      scroll-behavior: smooth;
     }
     
     #myBtn:hover {
@@ -174,7 +175,7 @@
 <body>
 
 <!-- <button onclick="topFunction()" id="myBtn" title="К содержанию">К содержанию</button> -->
-<button onclick="scrollTo(toc)" id="myBtn" title="К содержанию">К содержанию</button>
+<button onclick="scrollToHash(#toc)" id="myBtn" title="К содержанию">К содержанию</button>
     
 <div class='main-container' style='padding-left:32px'>
     <img src='img/header.png'
@@ -1390,10 +1391,10 @@
     function topFunction() {
       document.body.scrollTop = 290; // For Safari
       document.documentElement.scrollTop = 290; // For Chrome, Firefox, IE and Opera
-    }   
+    }  
 
-    function scrollTo(hash) {
-        location.hash = "#" + hash;
+    function scrollToHash(hashName) {
+        location.hash = "#" + hashName;
     }
     
     </script>

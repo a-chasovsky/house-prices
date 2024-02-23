@@ -1323,7 +1323,7 @@
             <space></space>
             <img src='img/Section8-Final-predictions/final_plot.png'>
             <space></space>
-            <img src='img/Section8-Final-predictions/final_table_T.png' style='margin-left:100px'>
+            <img src='img/Section8-Final-predictions/final_table_T.png' style='margin-left:80px'>
             <space></space>
             Ряд комментариев относительно результатов:
             </p>
@@ -1337,8 +1337,7 @@
             </ul>
         <p>
             Дополнительно визуализируем ошибку всех 20 фолдов кросс-валидации HousePricePredictor и Stacking.
-            <space></space>
-            <space></space>
+            <space20></space20>
             <img-center><img src='img/Section8-Final-predictions/stack_hpp_compare.png'></img-center>
             </p>
         <h3>
@@ -1380,13 +1379,13 @@
             <space></space>
             <i>Сравнение формы распределения остатков (до и после удаления выбросов) с формой нормального распределения</i>
             <space></space>
-            <img-margin><img src='img/Section8-Final-predictions/residuals_distributions_compare.png'></img-margin>
+            <img src='img/Section8-Final-predictions/residuals_distributions_compare.png'>
             <space></space>
             Это подтверждает предположение о наличии несколько элементов, которые не вписыааются в общий контекст. Возможно по причине ошибки ввода данных или мошенничестве при заключении сделки о продаже дома.
             <space></space>
             Далее отобразим взаимосвязь актуальных и спрогнозированных цен. Область между 100000 и 200000 имеет низкую дисперсию, в то время как у более дорогих домов разброс сильнее. 
             <space></space>
-            <img-margin><img src='img/Section8-Final-predictions/actual_predicted.png'></img-margin>
+            <img src='img/Section8-Final-predictions/actual_predicted.png'>
             <space></space>
             Попробуем определить предиктор, который наилучшим образом отражает эту закономерность. После ряда тестов выяснилось, что таким предиктором является суммарная площадь жилых помещений <sb>grlivarea</sb> (что логично, так как этот признак наиболее сильно коррелирует с ценой).
             <space></space>
@@ -1397,7 +1396,7 @@
         <p>
             Для домов с суммарной жилой площадью менее 1900 футов RMSE равна 0.084705. С увеличением площади дома значительно возрастает и дисперсия прогнозов - RMSE равна 0.132874. 
             <space></space>
-            <img-margin><img src='img/Section8-Final-predictions/grlivarea_residuals.png'></img-margin>
+            <img src='img/Section8-Final-predictions/grlivarea_residuals.png'>
             <space></space>
             </p>
         <h4>
@@ -1407,7 +1406,7 @@
             С другой стороны, если взглянуть на относительные ошибки, то зависимость от величины жилого пространства менее очевидна. Можно увидеть некоторые паттерны, если дополнительно построить линии локальной регрессии (LOWESS). Форма остатков в левой части графика напоминает форму вогнутой пораболы с вершиной в районе площади, равной 1250. В правой же части графика явно-выраженная закономерность отсутствует (что может быть следствием недостаточного числа элементов).
             <space></space>
             <space></space>
-            <img-margin><img src='img/Section8-Final-predictions/grlivarea_residuals_frac.png'></img-margin>
+            <img src='img/Section8-Final-predictions/grlivarea_residuals_frac.png'>
             </p>
         <h3>
             <a

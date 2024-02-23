@@ -17,22 +17,19 @@
     } */
     body {
         background-color: #FFFFFF
-     }
+    }
     .main-container {
-        width: 750px;
-        margin-left: 22.5%;
-        margin-right: 10%;
-        padding-left: 30px;
-        padding-right: 30px; 
+        width: 810px;
+        border-right: 1px solid #CFD7DE;
+        border-left: none;
+        padding: 0 30px 0 0;
     }
     .sub-container {
-        width: 810px;
-        border-left: none;
-        border-right: 1px solid #CFD7DE;
-        margin-left: 0%;
-        margin-right: 15%;
-        padding-left: 0px;
-        padding-right: 30px;
+        width: 750px;
+        border-right: none;
+        border-left: 1px solid #CFD7DE;
+        margin-left: 22.5%;
+        padding: 0 0 0 30px;
     }
     #toc_container {
         background: #FFFDFF;
@@ -52,7 +49,6 @@
         font-weight: 600;
         text-align: left;
         line-height: 1.25;
-        margin-bottom: 0px;
     }
     h2 {
         font-family: system-ui;
@@ -61,7 +57,6 @@
         font-weight: 600;
         text-align: left;
         line-height: 1.5em;
-        margin-bottom: 0px;
     }
     h3 {
         font-family: system-ui;
@@ -70,7 +65,6 @@
         font-weight: 600;
         text-align: left;
         line-height: 1.25em;
-        margin-bottom: 0px;
     }
     h4 {
         font-family: system-ui;
@@ -81,12 +75,23 @@
         line-height: 1.25;
         margin-bottom: 0px;
     }
+    h5 {
+        font-family: system-ui;
+        font-style: italic;
+        color: #252525;
+        font-size:0.85em;
+        font-weight: 400;
+        text-align: left;
+        line-height: 1.25em;
+        margin-top: -5px;
+        margin-bottom: 0px;
+    }
     p {
         font-family: system-ui;
         font-size: 1em;
         color: #252525;
         line-height: 1.5;
-        margin: 12.5px 0;
+        margin: 12.5px 0 0 0;
         text-align: justify
     }
     img-center {
@@ -167,7 +172,7 @@
     #toTocBtn {
       display: none;
       position: fixed;
-      margin-left: 880px;
+      margin-left: 875px;
       bottom: 35px;
       z-index: 99;
       border: none; 
@@ -184,28 +189,28 @@
       border: none; 
       color: #1B60AA;
     }
-    .main-container span a:link {
+    .sub-container span a:link {
         font-family: system-ui;
         color: #164B84;
         font-size: 0.85em;
         margin-left: 2.5px;
         text-decoration: none;
     }
-    .main-container span a:visited {
+    .sub-container span a:visited {
         font-family: system-ui;
         color: #164B84;
         font-size: 0.85em;
         margin-left: 2.5px;
         text-decoration: none;
     }
-    .main-container span a:hover {
+    .sub-container span a:hover {
         font-family: system-ui;
         color: #2373C7;
         font-size: 0.85em;
         margin-left: 2.5px;
         text-decoration: none;
     }
-    .main-container span a:active {
+    .sub-container span a:active {
         font-family: system-ui;
         color: #2D8CF1;
         font-size: 0.85em;
@@ -217,20 +222,15 @@
     }
 </style>
 <body>
-<div class='main-container'>
-    <button onclick="scrollToID('links')" id="toTocBtn">
-        К содержанию
-        </button>
-    </div>  
-<div class='main-container' style='padding-left:32px'>
+<div class='sub-container' style='border-left:none'>
     <img src='img/header.png'
         style="display:block;" width="100%" height="100%">
-    <h1 style='line-height: 1.25em'>
+    <h1>
         Комбинирование регрессионнного анализа и машинного обучения для более точных прогнозов и высокой интерпретируемости модели
         </h1>
-    <p>
-       <i style='font-size:0.85em'>Регрессионный анализ, машинное обучение, описательная аналитика, предиктивная аналитика</i> 
-        </p>
+    <h5>
+       Регрессионный анализ, машинное обучение, описательная аналитика, предиктивная аналитика
+        </h5>
     <span style='padding-left:17px;margin-bottom:15px;display:inline-block;scroll-margin-top: 15px;' id='links'>
         <a href='https://github.com/a-chasovsky/kgl_house_prices' target='_blank'>
             <span class='emoji' style='vertical-align: -0.1em;'>
@@ -253,7 +253,7 @@
             </a>
         </span>
     </div>
-<div class='main-container' style='border-left:1px solid #CFD7DE;'>
+<div class='sub-container' style='border-left:1px solid #CFD7DE;'>
     <div id="toc_container">
             <div class='toc_title'>
                 <p>Содержание <a class='anchor' id="#toc"></a> </p>
@@ -301,7 +301,10 @@
     <h3>
         Цель
         </h3>
-    <div class='sub-container'>
+    <div class='main-container'>
+        <button onclick="scrollToID('links')" id="toTocBtn">
+        К содержанию
+            </button>
         <p>
             Современные алгоритмы машинного обучения обычно превосходят классические линейные модели в точности прогнозов, но при этом сложны в интерпретации. Некоторые алгоритмы имеют встроенный функционал приоритезации предикторов, что позволяет выявить наиболее информативные. Тем не менее, этого недостаточно для оценки взаимосвязей.<br>
             <space></space>
@@ -420,7 +423,7 @@
             <space></space>
             В первой части для небольших домов значения ошибок невелики, и модель чаще переоценивает дома. На среднем отрезке ошибки увеличиваются, предсказания модели выравниваются. На финальном отрезке для больших домов вновь чаще наблюдается переоценка, а ошибки в абсолютных величинах иногда превышают 50000$.
         </p>
-<h2>
+        <h2>
             <a
                 class='anchor'
                 id='dataset_description'>

@@ -172,7 +172,7 @@
     #toTocBtn {
       display: none;
       position: fixed;
-      margin-left: 875px;
+      margin-left: 880px;
       bottom: 35px;
       z-index: 99;
       border: none; 
@@ -224,7 +224,7 @@
 <body>
 <div class='sub-container' style='border-left:none'>
     <img src='img/header.png'
-        style="display:block;" width="100%" height="100%">
+        style='width:760px'>
     <h1>
         Комбинирование регрессионнного анализа и машинного обучения для более точных прогнозов и высокой интерпретируемости модели
         </h1>
@@ -384,7 +384,6 @@
                 <li>Stacking - лучшая ML-модель;</li>
                 <li>HousePricePredictor(HPP) - модель, полученная в результате комбинации линейной регрессии и стэкинга.</li>
             </ul>
-            <space></space>
             <img src='img/Section8-Final-predictions/final_plot.png'>
             <space></space>
         <p>
@@ -399,7 +398,7 @@
             </h4>
         <p>
             Ядром HousePricePredictor является линейная регрессия. Коэффициенты и доверительные интервалы представлены в таблице ниже.
-            <space></space>
+            <space20></space20>
             <img-margin><img src='img/Section4-Linear-models-research/coefficients_table.png'></img-margin>
             <space></space>
             Предикторы с наибольшим коэффициентом - это дополнительно сгенерированный предиктор <sb>lg_flrsfmean</sb> (средневзвешенная площадь первого и второго этажей, см. <i>'8.1. Предикторы, характеризующие площадь'</i>), общее качество строительных и отделочных материалов <sb>overallqual</sb>, возраст дома <sb>houseage</sb>. Вклад, котоый вносит увеличение этих параметров в изменение цены дома (при прочих равных):
@@ -452,11 +451,11 @@
         <p>
             Распределение целевой переменной напоминает гамма-распределение. Это одномодальное распределение с вершиной в районе 150000$ и правосторонней ассиметрией.
             <space></space>
-            <img-margin><img src='img/Section1-Overview-and-Base-model/target_distribution.png'></img-margin>
+            <img src='img/Section1-Overview-and-Base-model/target_distribution.png'>
             <space></space>
             Для выравнивания формы распределения и снижения влияния экстремальных значений используется натуральный логарифм.
             <space></space>
-            <img-margin><img src='img/Section1-Overview-and-Base-model/target_distribution_log.png'></img-margin>
+            <img src='img/Section1-Overview-and-Base-model/target_distribution_log.png'>
             <space></space>
             </p>
             <h4>
@@ -533,7 +532,7 @@
         <p>
             &emsp;&emsp;&ensp;237 (18%) пропущенных значений, пропуски заполняются медианным значением. Дополнительно обнаружены два потенциальных выброса (выделены красным).
             <space></space>
-            <img-margin><img src='img/Section1-Overview-and-Base-model/lotfrontage_outs.png'></img-margin>
+            <img src='img/Section1-Overview-and-Base-model/lotfrontage_outs.png'>
             <space></space>
             </p>
         <ul>
@@ -571,7 +570,7 @@
             </h4> 
         <p>
             Лучшие результаты (RMSE в районе 0.130) показывают сложные модели с большим числом деревьев (> 25), увеличение числа листьев также положительно сказывается на эффективности модели. Оптимальная скорость обучения - 0.1. RMSE лучшей модели - 0.1282.
-            <space></space>
+            <space20></space20>
             <img-center><img src='img/Section1-Overview-and-Base-model/gridsearch1.png'></img-center>
             <space></space>
             </p>

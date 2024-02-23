@@ -140,7 +140,7 @@
         color: #2D8CF1;
     }
     sb {
-        font-weight:500;
+        font-weight:600;
     }
     line-height-1-75 {
         line-height: 1.75em;
@@ -792,8 +792,8 @@
             <i>Решение:</i>
             </p>
             <ul>
-                <li>Элементы 624 и 1334: <b>masvnrarea</b> приравнивается к 0;</li>
-                <li>Элемент 1300: <b>masvntype</b> присваивается значение Stone.</li>
+                <li>Элементы 624 и 1334: <sb>masvnrarea</sb> приравнивается к 0;</li>
+                <li>Элемент 1300: <sb>masvntype</sb> присваивается значение Stone.</li>
                 </ul>
         <p>
             <i>Аргументы:</i>
@@ -817,11 +817,11 @@
         <p>
             Два подозрительно высоких значения <sb>lotfrontage</sb>, обнаруженных при исследовании количественных признаков.
             <space></space>
-            <img-margin><img src='img/Section2-Explore-and-Clean/lotfrontage.png'></img-margin>
+            <img src='img/Section2-Explore-and-Clean/lotfrontage.png'>
             <space></space>
             Помимо этого потенциальные выбросы обнаружены в некотрых других переменных. К примеру, так выглядит диаграмма для переменной <sb>miscval</sb>:
             <space></space>
-            <img-margin><img src='img/Section2-Explore-and-Clean/miscval.png'></img-margin>
+            <img src='img/Section2-Explore-and-Clean/miscval.png'>
             <space></space>
             Далее формируется список потенциальных выброосв и строятся диаграммы, на которых подозрительные элементы выделены цветом.
             <space></space>
@@ -1005,17 +1005,17 @@
             <space></space>
             Отобразим пространство значений гиперпараметра \( \alpha \)
             <space></space>
-            <img-margin><img src='img/Section4-Linear-models-research/alphas_logspace.png'></img-margin>
+            <img src='img/Section4-Linear-models-research/alphas_logspace.png'>
             <space></space>
             Выполним поиск по сетке гиперпараметров <sb>GridSearch</sb> и отобразим результаты на графике. В рамках исследуемых данных лучшую предиктивную эффективность показывает минимальная регуляризация.
             <space></space>
-            <img-margin><img src='img/Section4-Linear-models-research/regularization.png'></img-margin>
+            <img src='img/Section4-Linear-models-research/regularization.png'>
             <space></space>
             Теперь посмотрим, какие предикторы выбирает эластичная сеть в зависимости от величины \( \alpha \), и какое влияние это оказывает на эффективность модели.
             <space></space>
-            <img-margin><img src='img/Section4-Linear-models-research/features_plot.png'></img-margin>
+            <img src='img/Section4-Linear-models-research/features_plot.png'>
             <space></space>
-            Чем ниже параметр регуляризации, тем выше эффективность прогнозирования. Минимальное число предикторов эластичной сети - 3, это уже известные <sb>lg_flrsfmean</sb>, <sb>neighborhood</sb>, <sb>overallqual</sb>. Ошибка резко уменьшается при увеличинии количества предикторов с 3 до 8, заметно снижается при изменении их с 8 до 33, и плавно снижается после увеличения до 88. С точки зрения баланса точности прогнозов и интерпретируемости, оптимальное количество предикторов находится где-то между 8 и 33. Необходимо также учитывать тот факт, что после отметки в 14 признаков показатель мультиколлинеарности <sb>VIF</sb> увеличивается многократно и выходит за допустимые рамки (см. таблицу ниже). 
+            Чем ниже параметр регуляризации, тем выше эффективность прогнозирования. Минимальное число предикторов эластичной сети - 3, это уже известные <sb>lg_flrsfmean</sb>, <sb>neighborhood</sb>, <sb>overallqual</sb>. Ошибка резко уменьшается при увеличинии количества предикторов с 3 до 8, заметно снижается при изменении их с 8 до 33, и плавно снижается после увеличения до 88. С точки зрения баланса точности прогнозов и интерпретируемости, оптимальное количество предикторов находится между 8 и 33. Необходимо также учитывать тот факт, что после отметки в 14 признаков показатель мультиколлинеарности <sb>VIF</sb> увеличивается многократно и выходит за допустимые рамки (см. таблицу ниже). 
             <space></space>
             <i>Изменение набора предикторов в зависмости от величины параметра регуляризации \( \alpha \)</i>
             <space></space>
@@ -1068,8 +1068,6 @@
             <i>Визуальная оценка</i>
             </p>
             <space></space>
-            <!-- <img src='img/Section4-Linear-models-research/regression_diagnostics.png'
-                style="display:block;" width="100%" height="100%"> -->
             <img-center><img src='img/Section4-Linear-models-research/regression_diagnostics.png'></img-center>
         <p>
             <space></space>
@@ -1093,7 +1091,7 @@
             <space></space>
             <i>Визуализация формы распределения остаков и сравнение с нормальным распределением</i>
             <space></space>
-            <img-center><img src='img/Section4-Linear-models-research/residuals_distributions_comparing.png'></img-center>
+            <img src='img/Section4-Linear-models-research/residuals_distributions_comparing.png'>
             <space></space>
             Теперь остатки распределены нормально, и в целом форма остатков без удаления выбросов отличается от формы нормального распределения с заданными параметрами только наличием хвостов, что сказывается и на величине эксцесса. Возможно, структура цены нескольких элементов выбивается из общей картины. Можно предположить сознательное снижение/завышение цены при продаже дома.
             </p>
@@ -1216,7 +1214,6 @@
             Прогнозы <sb>Stacking</sb> точнее в 12 фолдах из 20.
             <space></space>
             <img-center><img src='img/Section5-Residuals-prediction/vote_stack_compare.png'></img-center>
-            
         <h3>
             <a
                 class='anchor'
@@ -1326,7 +1323,7 @@
             <space></space>
             <img src='img/Section8-Final-predictions/final_plot.png'>
             <space></space>
-            <img src='img/Section8-Final-predictions/final_table_T.png' style='margin-left:0px'>
+            <img src='img/Section8-Final-predictions/final_table_T.png' style='margin-left:20px'>
             <space></space>
             Ряд комментариев относительно результатов:
             </p>

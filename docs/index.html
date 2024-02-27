@@ -229,19 +229,6 @@
         margin-top: 75px;
         content: ' '
     }
-    .img:active{
-        color: #424242; 
-        -webkit-transition: all .3s ease-in;
-        -moz-transition: all .3s ease-in;
-        -ms-transition: all .3s ease-in;
-        -o-transition: all .3s ease-in;
-        transition: all .3s ease-in;
-        opacity: 1;
-        transform: scale(1.5);
-        -ms-transform: scale(1.5); /* IE 9 */
-        -webkit-transform: scale(1.5); /* Safari and Chrome */
-        
-        }
 </style>
 <body>
 <div class='sub-container' style='border-left:none'>
@@ -406,7 +393,8 @@
                 <li>Stacking - лучшая ML-модель;</li>
                 <li>HousePricePredictor(HPP) - модель, полученная в результате комбинации линейной регрессии и стэкинга.</li>
             </ul>
-            <img src='img/Section8-Final-predictions/final_plot.png' class="img" alt="" width="200">
+            <img src='img/Section8-Final-predictions/final_plot.png' onclick="enlargeImg('final_plot')" id='final_plot' width="200">
+            <button onclick="resetImg('final_plot')">Reset</button>
             <space></space>
         <p>
             В ходе проекта удалось снизить ошибку RMSE c 0.1216 у базовой модели до 0.0969 итогового оценщика HousePricePredictor. На этапе преобразования наибольший вклад внесла очистка данных, а дополнительно сгенерированные предикторы были полезны как для линейной регрессии, так и для сложных алгоритмов машинного обучения (см. <i>'8. Создание дополнительных предикторов'</i>, <i>'11.2. Линейная регрессия'</i>, <i>'13. Оценка независимых ML-моделей'</i>).
@@ -1487,8 +1475,26 @@
           inline: 'start'
         });
     }
-    
     </script>
+<script>
+    // Get the img object using its Id
+        img = document.getElementById("img1");
+        // Function to increase image size
+        function enlargeImg(id) {
+            let img = document.getElementById(id);
+            // Set image size to 1.5 times original
+            img.style.transform = "scale(1.5)";
+            // Animation effect
+            img.style.transition = "transform 0.25s ease";
+        }
+        // Function to reset image size
+        function resetImg(id) {
+            let img = document.getElementById(id);
+            // Set image size to original
+            img.style.transform = "scale(1)";
+            img.style.transition = "transform 0.25s ease";
+        }
+</script>
     <pageend></pageend>
 </body>
 </html>

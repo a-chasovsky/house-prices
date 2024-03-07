@@ -45,7 +45,7 @@
     }
     h1 { 
         font-family: system-ui;
-        color: #404040;
+        color: #353535;
         font-size: 1.5em;
         font-weight: 600;
         text-align: left;
@@ -53,7 +53,7 @@
     }
     h2 {
         font-family: system-ui;
-        color: #404040;
+        color: #353535;
         font-size: 1.3em;
         font-weight: 600;
         text-align: left;
@@ -61,7 +61,7 @@
     }
     h3 {
         font-family: system-ui;
-        color: #404040;
+        color: #353535;
         font-size: 1.15em;
         font-weight: 600;
         text-align: left;
@@ -69,7 +69,7 @@
     }
     h4 {
         font-family: system-ui;
-        color: #404040;
+        color: #353535;
         font-size: 1em;
         font-weight: 600;
         text-align: left;
@@ -79,7 +79,7 @@
     h5 {
         font-family: system-ui;
         font-style: italic;
-        color: #404040;
+        color: #353535;
         font-size:0.85em;
         font-weight: 400;
         text-align: left;
@@ -109,8 +109,9 @@
         font-weight: 700;
         text-align: left;
         font-family: system-ui;
-        color: #23292F;
-        padding-bottom:10px;
+        /* color: #23292F; */
+        color: #353535;
+        padding: 10px 0 10px 0;
     }
     text-number-toc {
         font-family: system-ui;
@@ -265,14 +266,12 @@
 <div class='sub-container' style='border-left:1px solid #CFD7DE;'>
     <div id="toc_container">
             <div class='toc_title'>
-                <p>Содержание <a class='anchor' id="#toc"></a></p>
+                Содержание <a class='anchor' id="#toc"></a>
                 </div>
              <line-height-1-75>
                 <text-number-toc>1.</text-number-toc> <a href="#review">Обзор проекта</a><br>
-                <div class='toc_title'>
-                    <p style='font-size:0.9em;line-height:1;margin:10px 0 0px 15px;'>
-                        <i>Секция 1: Исследование и подготовка данных</i>
-                        </p>
+                <div class='toc_title' style='font-size:0.9em;line-height:1;margin:0 0 0 15px;'>
+                    <i>Секция 1: Исследование и подготовка данных</i>
                     </div>
                 <text-number-toc>2.</text-number-toc> <a href="#dataset_description">Описание датасета</a><br>
                 <text-number-toc>3.</text-number-toc> <a href="#missed_values">Работа с отсутствующими значениями</a><br>
@@ -288,19 +287,15 @@
                 &emsp;<text-number-toc>8.3.</text-number-toc> <a href="#dates">Предикторы, характеризующие даты</a><br>
                 <text-number-toc>9.</text-number-toc> <a href="#preprocessing">Предварительная подготовка данных</a><br>
                 <text-number-toc>10.</text-number-toc> <a href="#model_inter2">ML-модель №3 (после создания новых признаков)</a><br>
-                <div class='toc_title'>
-                    <p style='font-size:0.9em;line-height:1;margin:15px 0 0px 20px;'>
-                        <i>Секция 2: Регрессионный анализ</i>
-                        </p>
+                <div class='toc_title' style='font-size:0.9em;line-height:1;margin:0 0 0 20px;'>
+                    <i>Секция 2: Регрессионный анализ</i>
                     </div>
                 <text-number-toc>11.</text-number-toc> <a href="#model_linear">Линейные модели и регрессионный анализ</a><br>
                 &emsp;<text-number-toc>11.1.</text-number-toc> <a href="#elastic_net">Эластичная сеть</a><br>
                 &emsp;<text-number-toc>11.2.</text-number-toc> <a href="#linear_regression">Линейная регрессия</a><br>
                 &emsp;<text-number-toc>11.3.</text-number-toc> <a href="#simulations">Результаты линейных моделей на сэмплированных данных</a><br>
-                <div class='toc_title'>
-                    <p style='font-size:0.9em;line-height:1;margin:15px 0 0px 21px;'>
-                        <i>Секция 3: Машинное обучение</i>
-                        </p>
+                <div class='toc_title' style='font-size:0.9em;line-height:1;margin:0 0 0 21px;'>
+                    <i>Секция 3: Машинное обучение</i>
                     </div>
                 <text-number-toc>12.</text-number-toc> <a href="#residuals">Выбор ML-модели для прогнозирования остатков линейной регрессии</a><br>
                 &emsp;<text-number-toc>12.1</text-number-toc> <a href="#ml_simple">Опорные вектора, бустинги, бэггинг, случайный лес, K-ближайших соседей</a><br>
@@ -308,10 +303,8 @@
                 &emsp;<text-number-toc>12.3.</text-number-toc> <a href="#residuals_final">Сравнение всех моделeй и выбор финального оценщика остатков регрессии</a><br>
                 &emsp;<text-number-toc>12.4.</text-number-toc> <a href="#hpp">Комбинирование линейной регрессии и ML-алгоритма - итоговый оценщик HPP</a><br>
                 <text-number-toc>13.</text-number-toc> <a href="#ml_models">Оценка независимых ML-моделей</a><br>
-                <div class='toc_title'>
-                    <p style='font-size:0.9em;line-height:1;margin:15px 0 0px 22px;'>
-                        <i>Секция 4: Подведение итогов</i>
-                        </p>
+                <div class='toc_title' style='font-size:0.9em;line-height:1;margin:0 0 0 22px;'>
+                    <i>Секция 4: Подведение итогов</i>
                     </div>
                 <text-number-toc>14.</text-number-toc> <a href="#final_results">Подведение итогов</a><br>
                 &emsp;<text-number-toc>14.1.</text-number-toc> <a href="#all_models">Сравнение всех моделей</a><br>

@@ -229,7 +229,7 @@
         margin-top: 75px;
         content: ' '
     }
-    .thatClass {
+    .change-size {
       width: 200px;
     }
 </style>
@@ -396,7 +396,7 @@
             Результаты
             </h3>
         <h4>
-            <i>Предсказательная эффективность HousePricePredictor (HPP)1</i>
+            <i>Предсказательная эффективность HousePricePredictor (HPP)2</i>
             </h4>
         <p>
             График демонстрирует эффективность прогнозирования семи моделей, построенных на разных стадиях проекта.
@@ -410,7 +410,7 @@
                 <li>Stacking - лучшая ML-модель;</li>
                 <li>HousePricePredictor(HPP) - модель, полученная в результате комбинации линейной регрессии и стэкинга.</li>
             </ul>
-            <img src='img/Section8-Final-predictions/final_plot.png' onclick="myFun(this)">
+            <img src='img/Section8-Final-predictions/final_plot.png' onclick="clickSize(change-size)">
             <space></space>
         <p>
             В ходе проекта удалось снизить ошибку RMSE c 0.1216 у базовой модели до 0.0969 итогового оценщика HousePricePredictor. На этапе преобразования наибольший вклад внесла очистка данных, а несколько дополнительно сгенерированных предикторов полезны как для линейной регрессии, так и для более сложных алгоритмов машинного обучения (см. <i>'8. Создание дополнительных предикторов'</i>, <i>'12. Линейная регрессия'</i>, <i>'15. Оценка независимых ML-моделей'</i>).
@@ -1617,8 +1617,8 @@
             img.style.transition = "transform 0.25s ease";
             }
 
-    function myFun(img) {
-      img.classList.toggle('thatClass');
+    function clickSize(img) {
+      img.classList.toggle('change-size');
     }
         
 </script>

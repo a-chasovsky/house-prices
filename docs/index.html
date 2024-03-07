@@ -229,11 +229,9 @@
         margin-top: 75px;
         content: ' '
     }
-    img {
-      transition-duration: 0.4s;
-    }
-    img.half {
-      transform: scale(1.5);
+    .enlarged {
+        width: 400px;
+        height: 300px;
     }
 </style>
 <body>
@@ -399,7 +397,7 @@
             Результаты
             </h3>
         <h4>
-            <i>Предсказательная эффективность HousePricePredictor (HPP)321</i>
+            <i>Предсказательная эффективность HousePricePredictor (HPP)123</i>
             </h4>
         <p>
             График демонстрирует эффективность прогнозирования семи моделей, построенных на разных стадиях проекта.
@@ -413,7 +411,7 @@
                 <li>Stacking - лучшая ML-модель;</li>
                 <li>HousePricePredictor(HPP) - модель, полученная в результате комбинации линейной регрессии и стэкинга.</li>
             </ul>
-            <img src='img/Section8-Final-predictions/final_plot.png' onclick="toggle()">
+            <img src='img/Section8-Final-predictions/final_plot.png'>
             <space></space>
         <p>
             В ходе проекта удалось снизить ошибку RMSE c 0.1216 у базовой модели до 0.0969 итогового оценщика HousePricePredictor. На этапе преобразования наибольший вклад внесла очистка данных, а несколько дополнительно сгенерированных предикторов полезны как для линейной регрессии, так и для более сложных алгоритмов машинного обучения (см. <i>'8. Создание дополнительных предикторов'</i>, <i>'12. Линейная регрессия'</i>, <i>'15. Оценка независимых ML-моделей'</i>).
@@ -1618,15 +1616,13 @@
             // Set image size to original
             img.style.transform = "scale(1)";
             img.style.transition = "transform 0.25s ease";
+            }
 
-        function toggle() {
-            document.querySelector("img").addEventListener("click", function(){
-              this.classList.toggle("half");
+        Array.prototype.forEach.call(document.querySelector("img"), function (elem) {
+            elem.addEventListener("click", function () {
+                elem.classList.toggle("enlarged");
             });
-        }
-
-    
-        }
+        });
 </script>
     <pageend></pageend>
 </body>

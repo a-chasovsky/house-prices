@@ -471,7 +471,11 @@
             Число предикторов: 79;<br>
             Число элементов: 1460;
             <space></space>
-            <img-center><img-border><img src='img/Section1-Overview-and-Base-model/data_raw.png'></img-border></img-center>
+            <img-center>
+                <img 
+                    src='img/Section1-Overview-and-Base-model/data_raw.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-center>
             <space></space>
             После разделения датасета на обучающий (train) и проверочный (test), число элементов составило 1314 и 146 соответственно.
             <space></space>
@@ -538,7 +542,11 @@
             <space></space>
             <i>Порядковые</i>
             <space></space>
-            <img-margin><img-border><img src='img/Section1-Overview-and-Base-model/categorical_ordinal.png'></img-border></img-margin>
+            <img-margin>
+                <img 
+                    src='img/Section1-Overview-and-Base-model/categorical_ordinal.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-margin>
             <space></space>
             <i>Номинативные</i>
             <space></space>
@@ -555,7 +563,11 @@
             У трех количественных переменных присутствуют пропущенные значения: <sb>lotfrontage</sb>, <sb>garageyrblt</sb>, <sb>masvnrarea</sb>.
             </p>
             <space></space>
-            <img-margin><img-border><img src='img/Section1-Overview-and-Base-model/quantitative.png'></img-border></img-margin>
+            <img-margin>
+                <img
+                    src='img/Section1-Overview-and-Base-model/quantitative.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-margin>
             <space></space>
         <ul>
             <li><sb>lotfrontage</sb> - длина участка улицы, соприкасающейся с придомовой территорией</li>
@@ -741,7 +753,11 @@
             <i>Элементы с индексом 1230 и 733</i>
             </h4>
             <space></space>
-            <img-margin><img-border><img src='img/Section2-Explore-and-Clean/1230_773.png'></img-border></img-margin>
+            <img-margin>
+                <img
+                    src='img/Section2-Explore-and-Clean/1230_773.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-margin>
             <space></space>
         <p>
         <i>Противоречие:</i>
@@ -805,7 +821,11 @@
             <i>Элементы с индексом 624, 1300 и 1334</i>
             </h4>
             <space></space>
-            <img-margin><img-border><img src='img/Section2-Explore-and-Clean/624_1300_1334.png'></img-border></img-margin>
+            <img-margin>
+                <img
+                    src='img/Section2-Explore-and-Clean/624_1300_1334.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-margin>
             <space></space>
         <p>
             <i>Противоречие:</i>
@@ -836,7 +856,11 @@
             <i>Исправленные данные</i>
             </h4>
             <space></space>
-            <img-margin><img-border><img src='img/Section2-Explore-and-Clean/masvnrarea_fixed.png'></img-border></img-margin>
+            <img-margin>
+                <img
+                    src='img/Section2-Explore-and-Clean/masvnrarea_fixed.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-margin>
             <space></space>
         <h3>
             <a
@@ -966,7 +990,11 @@
          <p>
             <i>Первые пять эелементов данных до преобразования</i>
             <space></space>
-            <img-center><img-border><img src='img/Section3-Feature-selection-and-Preprocessing/data_raw.png'></img-border></img-center>
+            <img-center>
+                <img
+                    src='img/Section3-Feature-selection-and-Preprocessing/data_raw.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-center>
             <space></space>
              </p>
         <h4>
@@ -975,7 +1003,11 @@
         <p>
             Количественные предикторы логарифмируются (натуральный логарифм) с помощью <sb>LogCpTransformer</sb> из библиотеки Feature-engine. Предварительно к каждому значению добавляетя константа C, равная 1. В название всех логарифимрованных предикторов добавляется приставка <sb>lg_</sb>.
             <space></space>
-            <img-center><img-border><img src='img/Section3-Feature-selection-and-Preprocessing/data_log.png'></img-border></img-center>
+            <img-center>
+                <img
+                    src='img/Section3-Feature-selection-and-Preprocessing/data_log.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-center>
             <space></space>
             Матрица корреляций после добавления новых предикторов приведена ниже. Единственный признак, отрицательно коррелирующий с целевой перменной - относительный размер кухни <sb>kitchensize</sb>.
             <space></space>
@@ -988,7 +1020,11 @@
         <p>
             Для преобразования категориальных переменных используется <sb>OrdinalEncoder</sb> из библиотеки Feature-engine. Он присваивает переменным порядковые целочисленные значения (0, 1, 2, 3, и т.д.). Порядок определяется средним значением целевой переменной (0 - для элементов с наименьшим средним и далее по возрастанию).
             <space></space>
-            <img-center><img-border><img src='img/Section3-Feature-selection-and-Preprocessing/data_encoded.png'></img-border></img-center>
+            <img-center>
+                <img
+                    src='img/Section3-Feature-selection-and-Preprocessing/data_encoded.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-center>
             <space></space>
             </p>
         <h4>
@@ -997,7 +1033,11 @@
         <p>
             После этого данные стандартизируются с помощью <sb>StandardScaler</sb> из библиотеки Scikit-learn.
             <space></space>
-            <img-center><img-border><img src='img/Section3-Feature-selection-and-Preprocessing/data_scaled.png'></img-border></img-center>
+            <img-center>
+                <img
+                    src='img/Section3-Feature-selection-and-Preprocessing/data_scaled.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-center>
             <space></space>
             </p>
         <h2>
@@ -1046,7 +1086,11 @@
             <space></space>
             <i>Изменение набора предикторов в зависмости от величины параметра регуляризации \( \alpha \)</i>
             <space></space>
-            <img-center><img-border><img src='img/Section4-Linear-models-research/features_by_alpha.png'></img-border></img-center>
+            <img-center>
+                <img
+                    src='img/Section4-Linear-models-research/features_by_alpha.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-center>
             <space></space>
             Отметив эти особенности, можно переходить к следующему пункту - построению линейной регрессии, которая станет ядром HousePricePredictor.
             </p>
@@ -1085,7 +1129,11 @@
             <space></space>
             <i>Коэффициенты регрессии</i>
             <space></space>
-            <img-center><img-border><img src='img/Section4-Linear-models-research/coefficients_table_charachteristics.png'></img-border></img-center>
+            <img-center>
+                <img
+                    src='img/Section4-Linear-models-research/coefficients_table_charachteristics.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-center>
             <space></space>
             </p>
         <h4>
@@ -1100,7 +1148,11 @@
             <space></space>
             <i>Результаты статистических тестов и характеристики регрессии</i>
             <space></space>
-            <img-margin><img-border><img src='img/Section4-Linear-models-research/regression_tests.png'></img-border></img-margin>
+            <img-margin>
+                <img
+                    src='img/Section4-Linear-models-research/regression_tests.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-margin>
             <space></space>
             Скорректированный коэффициент детерминации \( R^{2}_{adj} \) значим и равен 0.882.
             <space></space>
@@ -1110,11 +1162,19 @@
             <space></space>
             <i>Тесты на нормальность распределения остатков без выборосов</i>
             <space></space>
-            <img-margin><img-border><img src='img/Section4-Linear-models-research/residuals_trimmed_tests.png'></img-border></img-margin>
+            <img-margin>
+                <img
+                    src='img/Section4-Linear-models-research/residuals_trimmed_tests.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-margin>
             <space></space>
             <i>Коэффициент эксцесса</i>
             <space></space>
-            <img-margin><img-border><img src='img/Section4-Linear-models-research/residuals_kurtosis.png'></img-border></img-margin>
+            <img-margin>
+                <img
+                    src='img/Section4-Linear-models-research/residuals_kurtosis.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-margin>
             <space></space>
             <i>Визуализация формы распределения остаков и сравнение с нормальным распределением</i>
             <space></space>
@@ -1198,7 +1258,11 @@
             <space></space>
             Алгоритмы <sb>Random Forest</sb>, <sb>Bagging</sb>, <sb>LGBoost</sb>, <sb>XGBoost</sb> имеют встроенный функционал отбора наиболее информативных признаков. Отобразим топ-10 наиболее важных признаков для каждой из моделей.
             <space></space>       
-            <img-margin><img-border><img src='img/Section5-Residuals-prediction/features_importance_four_models.png'></img-border></img-margin>
+            <img-margin>
+                <img
+                    src='img/Section5-Residuals-prediction/features_importance_four_models.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-margin>
             <space></space>
             Наиболе значимые признаки здесь:
             <space></space>
@@ -1216,7 +1280,11 @@
         <p>
             Результаты на 20-фолдовой кросс-валидации выглядят следующим образом (опорные вектора продемонстрировали неожиданно высокий результат).
             <space></space>
-            <img-center><img-border><img src='img/Section5-Residuals-prediction/models_residuals.png'></img-border></img-center>
+            <img-center>
+                <img
+                    src='img/Section5-Residuals-prediction/models_residuals.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-center>
             <space></space>
             </p>
         <h3>
@@ -1254,7 +1322,11 @@
         <p>
             Суммарные результаты всех обученных в этом разделе моделей выглядят следующим образом
             <space></space>
-            <img-center><img-border><img src='img/Section5-Residuals-prediction/models_residuals_summary.png'></img-border></img-center>
+            <img-center>
+                <img
+                    src='img/Section5-Residuals-prediction/models_residuals_summary.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-center>
             <space></space>
             <i>Визуализация результатов</i>
             <space></space>
@@ -1264,7 +1336,8 @@
             <space></space>
             <i>Конфигурация StackingRegressor</i>
             <space></space>
-            <img src='img/Section5-Residuals-prediction/stacking_cofiguration.png'
+            <img 
+                src='img/Section5-Residuals-prediction/stacking_cofiguration.png'
                 style="display:block;" width="100%" height="100%">
             </p>
         <h3>
@@ -1311,7 +1384,11 @@
             <space></space>
             <i>Средние значения RMSE (20-fold) всех моделей</i>
             <space></space>
-            <img-center><img-border><img src='img/Section7-ML-models/ml_models_table.png'></img-border></img-center>
+            <img-center>
+                <img
+                    src='img/Section7-ML-models/ml_models_table.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-center>
             <space></space>
             Ожидаемо, наиболее эффективным алгоритмом оказался <sb>Stacking</sb>. Его конфигурация идентична модели, выбранной для прогнозирования остатков регрессии.
             <space></space>
@@ -1349,7 +1426,9 @@
             <space></space>
             <img src='img/Section8-Final-predictions/final_plot.png'>
             <space></space>
-            <img-border><img src='img/Section8-Final-predictions/final_table_T.png' style='margin-left:80px'></img-border>
+            <img
+                src='img/Section8-Final-predictions/final_table_T.png' style='margin-left:80px'
+                style='border: 1px solid #CCCCCC;border-radius: 3px;'>
             <space></space>
             Ряд комментариев относительно результатов:
             </p>
@@ -1397,11 +1476,19 @@
             <space></space>
             Ни один тест не предоставляет достаточно оснований предполагать, что остатки распределены нормально. Попробуем удалить экстремальные значения ошибок (шесть эелментов с остатками более 50000$, см. таблицу ниже).
             <space></space>
-            <img-border><img-margin><img src='img/Section8-Final-predictions/residuals_been_cutted.png'></img-border></img-margin>
+            <img-margin>
+                <img
+                    src='img/Section8-Final-predictions/residuals_been_cutted.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-margin>
             <space></space>
             После этого три из пяти тестов указывают на нормальность распределения.
             <space></space>
-            <img-margin><img-border><img src='img/Section8-Final-predictions/residuals_cutted_tests.png'></img-border></img-margin>
+            <img-margin>
+                <img
+                    src='img/Section8-Final-predictions/residuals_cutted_tests.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-margin>
             <space></space>
             <i>Сравнение формы распределения остатков (до и после удаления выбросов) с формой нормального распределения</i>
             <space></space>

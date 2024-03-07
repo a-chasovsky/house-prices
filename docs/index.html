@@ -229,10 +229,15 @@
         margin-top: 75px;
         content: ' '
     }
-    .enlarged {
-        width: 400px;
-        height: 300px;
-    }
+    img
+        {
+          transition-duration: 0.4s;
+        }
+        
+        img.half
+        {
+          transform: scale(0.5);
+        }
 </style>
 <body>
 <div class='sub-container' style='border-left:none'>
@@ -397,7 +402,7 @@
             Результаты
             </h3>
         <h4>
-            <i>Предсказательная эффективность HousePricePredictor (HPP)123</i>
+            <i>Предсказательная эффективность HousePricePredictor (HPP)55555</i>
             </h4>
         <p>
             График демонстрирует эффективность прогнозирования семи моделей, построенных на разных стадиях проекта.
@@ -1618,11 +1623,10 @@
             img.style.transition = "transform 0.25s ease";
             }
 
-        Array.prototype.forEach.call(document.querySelector("img"), function (elem) {
-            elem.addEventListener("click", function () {
-                elem.classList.toggle("enlarged");
-            });
-        });
+    document.querySelector("img").addEventListener("click", function(){
+      this.classList.toggle("half");
+    });
+        
 </script>
     <pageend></pageend>
 </body>

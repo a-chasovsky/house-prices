@@ -104,10 +104,6 @@
     img-margin {
         margin-left: 30px;
     }
-    img-border {
-        border: 1px solid #CCCCCC;
-        border-radius: 3px;
-    }
     .toc_title {
         font-weight: 600;
         text-align: left;
@@ -550,7 +546,11 @@
             <space></space>
             <i>Номинативные</i>
             <space></space>
-            <img-margin><img-border><img src='img/Section1-Overview-and-Base-model/categorical_categorical.png'></img-border></img-margin>
+            <img-margin>
+                <img
+                    src='img/Section1-Overview-and-Base-model/categorical_categorical.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-margin>
             <space></space>
             <i>Заполнение пропусков</i>
             <space></space>
@@ -791,7 +791,11 @@
             <i>Элементы с индексом 1241 и 688</i>
             </h4>
             <space></space>
-            <img-margin><img-border><img src='img/Section2-Explore-and-Clean/688_1241.png'></img-border></img-margin>
+            <img-margin>
+                <img
+                    src='img/Section2-Explore-and-Clean/688_1241.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-margin>
             <space></space>
         <p>
             <i>Противоречие:</i>
@@ -1408,7 +1412,7 @@
         <p>
             В данном пункте оценщик HousePricePredictor сравнивается с моделями из предыдущих пунктов. Три базовых модели LightGBM обучены на разных этапах подготовки данных (удаление пропусков, очистка, генерация признаков). Для обучения регрессионной модели (эластичная сеть) используются те же предикторы, которые были использованы для линейной регрессии в HousePricePredictor. Две ML-модели представляют лучшую линейную (SVM) ML-модель ансамблевый алгоритм (Stacking).
             </p>
-        <ul>
+        <ul style='padding: 10px 0 0 0'>
             <li><sb>Base</sb> - базовая модель (LightGBM) после удаления пропусков;</li>
             <li><sb>Base (Clean)</sb> - промежуточная модель (LightGBM) после очистки данных;</li>
             <li><sb>Base (FE)</sb> - промежуточная модель (LightGBM) после генерации новых признаков;</li>

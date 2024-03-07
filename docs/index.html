@@ -396,7 +396,7 @@
             Результаты
             </h3>
         <h4>
-            <i>Предсказательная эффективность HousePricePredictor (HPP)1</i>
+            <i>Предсказательная эффективность HousePricePredictor (HPP)</i>
             </h4>
         <p>
             График демонстрирует эффективность прогнозирования семи моделей, построенных на разных стадиях проекта.
@@ -410,10 +410,7 @@
                 <li>Stacking - лучшая ML-модель;</li>
                 <li>HousePricePredictor(HPP) - модель, полученная в результате комбинации линейной регрессии и стэкинга.</li>
             </ul>
-            <img 
-                src='img/Section8-Final-predictions/final_plot.svg'
-                style='border: 1px solid #CCCCCC;border-radius: 3px;'
-                onclick="clickSize(this)">
+            <img src='img/Section8-Final-predictions/final_plot.png'>
             <space></space>
         <p>
             В ходе проекта удалось снизить ошибку RMSE c 0.1216 у базовой модели до 0.0969 итогового оценщика HousePricePredictor. На этапе преобразования наибольший вклад внесла очистка данных, а несколько дополнительно сгенерированных предикторов полезны как для линейной регрессии, так и для более сложных алгоритмов машинного обучения (см. <i>'8. Создание дополнительных предикторов'</i>, <i>'12. Линейная регрессия'</i>, <i>'15. Оценка независимых ML-моделей'</i>).
@@ -431,8 +428,7 @@
             <img-margin>
                 <img 
                     src='img/Section4-Linear-models-research/coefficients_table.png'
-                    style='border: 1px solid #CCCCCC;border-radius: 3px;'
-                    onclick="clickSize(this)">
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
                 </img-margin>
             <space></space>
             Предикторы с наибольшими коэффициентами - <sb>lg_flrsfmean</sb> (дополнительно сгенерированный предиктор - средневзвешенная площадь первого и второго этажей, см. <i>'8.1. Предикторы, характеризующие площадь'</i>), <sb>overallqual</sb> (качество строительных и отделочных материалов) и <sb>houseage</sb> (возраст дома). 

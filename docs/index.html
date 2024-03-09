@@ -1426,19 +1426,27 @@
             14.4. Комбинирование линейной регрессии и ML-алгоритма - итоговый оценщик HPP
             </h3>
         <p>
-            Класс <sb>HousePricePredictor</sb> объединяет линейную регрессию и <sb>Stacking</sb> в единую модель. Линейная регрессия генерирует основные прогнозы цены, а <sb>Stacking</sb> используется для коррекции и повышения точности прогнозов.
+            Класс <sb>HousePricePredictor</sb> объединяет линейную регрессию и Stacking в единую модель. Линейная регрессия генерирует основные прогнозы цен, а Stacking используется для коррекции и повышения точности.
             <space></space>
             <img-margin>
                 <img
                     src='img/Section5-Residuals-prediction/hpp.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-            </img-margin>
+                </img-margin>
             <space></space>
             <sb>HousePricePredictor</sb> поддерживает Scickit-learn-совместимые методы <sb>fit</sb> и <sb>predict</sb>, а также ряд других методов (код доступен в файле <i>tools.py</i>)
             <space></space>
-            <img-margin><img src='img/Section5-Residuals-prediction/fit.png'></img-margin>
+            <img-margin>
+                <img
+                    src='img/Section5-Residuals-prediction/fit.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-margin>
             <space></space>
-            <img-margin><img src='img/Section5-Residuals-prediction/predict.png'></img-margin>
+            <img-margin>
+                <img
+                    src='img/Section5-Residuals-prediction/predict.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-margin>
             <space></space>
             Средняя RMSE на 20-фолдовой проверке: 0.1102 +/- 0.009.
             </p>
@@ -1450,7 +1458,7 @@
             15. Обучение независимых ML-моделей
             </h2>
         <p>
-            Аналогично выбору прогозирования остатков в первую очередь обучаются популярные ML-алгоритмы, а после этого исследуется влияние оценщиков верхнего уровня <sb>Voting</sb> и <sb>Stacking</sb>.
+            Здесь как и в предыдущем пункте в первую очередь обучаются популярные ML-алгоритмы, а после этого исследуется влияние оценщиков верхнего уровня <sb>Voting</sb> и <sb>Stacking</sb>.
             <space></space>
             Для оценки вклада предикторов, добавленных в пункте <i>'8. Создание дополнительных предикторов'</i>, модели обучаются с добавлением и без добавления новых признаков.
             <space></space>

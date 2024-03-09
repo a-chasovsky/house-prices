@@ -1410,7 +1410,7 @@
             <space></space>
             <img-margin><img src='img/Section5-Residuals-prediction/final_plot.png'></img-margin>
             <space></space>
-            В качестве оценщика остатков будет использоваться <sb>Stacking</sb>.
+            Для оценки остатков будет использоваться алгоритм <sb>Stacking</sb>. 
             <space></space>
             <i>Конфигурация StackingRegressor</i>
             <space></space>
@@ -1428,7 +1428,11 @@
         <p>
             Класс <sb>HousePricePredictor</sb> объединяет линейную регрессию и <sb>Stacking</sb> в единую модель. Линейная регрессия генерирует основные прогнозы цены, а <sb>Stacking</sb> используется для коррекции и повышения точности прогнозов.
             <space></space>
-            <img-margin><img src='img/Section5-Residuals-prediction/hpp.png'></img-margin>
+            <img-margin>
+                <img
+                    src='img/Section5-Residuals-prediction/hpp.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+            </img-margin>
             <space></space>
             <sb>HousePricePredictor</sb> поддерживает Scickit-learn-совместимые методы <sb>fit</sb> и <sb>predict</sb>, а также ряд других методов (код доступен в файле <i>tools.py</i>)
             <space></space>

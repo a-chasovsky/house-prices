@@ -414,7 +414,10 @@
                 <li>Stacking - лучшая ML-модель;</li>
                 <li>HousePricePredictor(HPP) - модель, полученная в результате комбинации линейной регрессии и стэкинга.</li>
             </ul>
-            <img src='img/Section8-Final-predictions/final_plot.png'>
+            <img 
+                src='img/Section8-Final-predictions/final_plot.png'
+                style="display:block;background-color:#FFFFFF;"
+                onclick='clickSize(this)'>
             <space></space>
         <p>
             В ходе проекта удалось снизить ошибку RMSE c 0.1216 у базовой модели до 0.0969 итогового оценщика HousePricePredictor. На этапе преобразования наибольший вклад внесла очистка данных, а несколько дополнительно сгенерированных предикторов полезны как для линейной регрессии, так и для более сложных алгоритмов машинного обучения (см. <i>'8. Создание дополнительных предикторов'</i>, <i>'12. Линейная регрессия'</i>, <i>'15. Оценка независимых ML-моделей'</i>).
@@ -451,7 +454,12 @@
             <i>Визуализация актуальных и предсказанных HousePricePredictor цен</i>
             </h4>
             <space></space>
-            <img-center><img src='img/Section8-Final-predictions/predicted_actual_residuals.png'></img-center>
+            <img-center>
+                <img
+                    src='img/Section8-Final-predictions/predicted_actual_residuals.png'
+                    style="display:block;background-color:#FFFFFF;" width="100%" height="100%"
+                    onclick='clickSize(this)'>
+                </img-center>
             <space></space>
         <p>
             Ось абсцисс - элементы, отсортированные по суммарной площади первого и второго этажа <sb>grlivarea</sb>. Визуально этот график можно разбить на три составляющие: малые, средние и большие дома. Модель чаще переоценивает небольшие дома, значения ошибок при этом относительно невелики. На среднем отрезке ошибки увеличиваются и становятся более симметричными. Для больших домов вновь чаще наблюдается переоценка, а ошибки иногда превышают 50000$.
@@ -629,7 +637,12 @@
         <p>
             Лучшие результаты (RMSE примерно 0.130) показывают сложные модели с большим числом деревьев (75), увеличение числа листьев положительно сказывается на эффективности модели. Оптимальная скорость обучения - 0.1. RMSE лучшей модели - 0.1282.
             <space20></space20>
-            <img-center><img src='img/Section1-Overview-and-Base-model/gridsearch1.png'></img-center>
+            <img-center>
+                <img 
+                    src='img/Section1-Overview-and-Base-model/gridsearch1.png'
+                    style='display:block;background-color:#FFFFFF;'
+                    onclick='clickSize(this)'>
+                </img-center>
             <space></space>
             </p>
             <h4>
@@ -638,7 +651,12 @@
         <p>
             Ошибка уменьшилась незначительно - с 0.1282 до 0.1276.
             <space></space>
-            <img-center><img src='img/Section1-Overview-and-Base-model/gridsearch2.png'></img-center>
+            <img-center>
+                <img 
+                    src='img/Section1-Overview-and-Base-model/gridsearch2.png'
+                    style='display:block;background-color:#FFFFFF;'
+                    onclick='clickSize(this)'>
+                </img-center>
             <space></space>
             </p>
         <h4>
@@ -658,13 +676,13 @@
                 class='anchor'
                 id='eda'>
                 </a>
-            5. Исследование данных2
+            5. Исследование данных
             </h2>
         <h4>
             <i>Матрица корреляций</i>
             </h4> 
         <p>
-            В топ-10 в основном попали оценки площади и качества различных составляющих дома.
+            В топ-10 в основном попали оценки площади и качества различных составляющих дома (см. рисунок ниже, клик для увеличения).
             <space></space>
             <img
                 src='img/Section2-Explore-and-Clean/corr_matrix.png'

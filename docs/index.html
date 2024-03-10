@@ -82,7 +82,7 @@ main-container {
 }
 main-container > nav {
     position: sticky;
-    top: 2rem;
+    top: 20px;
     align-self: start;
 }
 sub-container {
@@ -99,17 +99,19 @@ content-container {
 section {
     scroll-margin-top: 15px;
 }
-.section-nav {
+/* .section-nav {
     width: 100%;
     padding-left: 0;
-    padding-right: 20px;
-}
+    
+} */
 .section-nav a:link,
 .section-nav a:visited {
     text-decoration: none;
     display: block;
     color: #505050;
     transition: all 25ms ease-in-out;
+    padding-right: 20px;
+    padding-left:0px;
 }
 .section-nav a:hover,
 .section-nav a:focus {
@@ -120,21 +122,13 @@ section {
     color: #1A1D21;
     font-weight:500
 }
-img-center {
-    display: flex;
-    justify-content: center;
-    padding-right: 0px;
-    padding-left: 0px
-}
-img-margin {
-    margin-left: 30px;
-}
+
 .section-nav ol {
     list-style: none;
 }
 .section-nav ul {
     list-style: none;
-    margin-left: 1rem;
+    margin-left: 10px;
 }
 .section-nav li {
     font-size: 0.9rem;
@@ -150,6 +144,15 @@ li {
     font-family: system-ui;
     line-height: 1.75em;
     text-align: justify
+}
+img-center {
+    display: flex;
+    justify-content: center;
+    padding-right: 0px;
+    padding-left: 0px
+}
+img-margin {
+    margin-left: 30px;
 }
 space {
     display: block;
@@ -216,8 +219,8 @@ span.emoji {
 }
 </style>  
 <body>   
-<main-container>
-    <nav class="section-nav" style='margin-top:-2.755em;'>
+<main-container style='border-left: 1 solid red;'>
+    <nav class='section-nav'>
     <ol>
         <li><a href="#review">1. Обзор и краткие результаты</a></li>
         <li><a href="#section1"><i>Секция 1. Исследование и подготовка данных</i></a></li>
@@ -284,11 +287,11 @@ span.emoji {
         </span>
     </content-container>
 <content-container style='border-right:none;'>
+    <content-container style='border-left:none;padding-left:0;'>
     <section id="review">
         <h2>
-        1. Обзор и краткие результаты 2
+        1. Обзор и краткие результаты 3
             </h2>
-    <content-container style='border-left:none;padding-left:0;'>
         <button onclick="scrollToID('begin')" id="toTocBtn">
             Наверх
             </button>

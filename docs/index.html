@@ -110,7 +110,7 @@ section {
     text-decoration: none;
     display: block;
     /* padding: 0.25rem 0; */
-    line-height: 1.25;
+    line-height: 1;
     padding-right: 15px;
     color: #505050;
     transition: all 25ms ease-in-out;
@@ -222,34 +222,34 @@ span.emoji {
     <nav class="section-nav" style='margin-top:-2.755em'>
     <ol1>
         <li1><a href="#introduction">1. Обзор и краткие результаты</a></li1>
-        <li1><a href="#introduction"><i>Секция 1. Исследование и подготовка данных</i></a></li1>
-        <li1><a href="#authentication">2. Описание датасета</a></li1>
-        <li1><a href="#endpoints">3. Заполнение отсутствующих значений</a></li1>
-        <li1><a href="#endpoints">4. ML-модель №1 (базовая)</a></li1>
-        <li1><a href="#endpoints">5. Исследование данных</a></li1>
-        <li1><a href="#endpoints">6. Очистка и проверка на несоответствие</a></li1>
-        <li1><a href="#endpoints">7. ML-модель №2 (после очистки данных)</a></li1>
-        <li1><a href="#endpoints">8. Создание дополнительных предикторов (feature engineering)</a></li1>
-        <li1><a href="#endpoints">9. Предварительная подготовка данных</a></li1>
-        <li1><a href="#endpoints">10. ML-модель №3 (после создания новых признаков)</a></li1>
-        <li1><a href="#endpoints"><i>Секция 2. Регрессионный анализ</i></a></li1>
-        <li1><a href="#endpoints">11. Эластичная сеть</a></li1>
-        <li1><a href="#endpoints">12. Линейная регрессия</a></li1>
-        <li1><a href="#endpoints">13. Результаты линейных моделей на сэмплированных данных</a></li1>
-        <li1><a href="#endpoints"><i>Секция 3. Машинное обучение</i></a></li1>
-        <li1><a href="#endpoints">14. Выбор ML-модели для прогнозирования остатков линейной регрессии</a></li1>
+        <li1><a href="#section1"><i>Секция 1. Исследование и подготовка данных</i></a></li1>
+        <li1><a href="#dataset_description">2. Описание датасета</a></li1>
+        <li1><a href="#missed_values">3. Заполнение отсутствующих значений</a></li1>
+        <li1><a href="#model_base">4. ML-модель №1 (базовая)</a></li1>
+        <li1><a href="#eda">5. Исследование данных</a></li1>
+        <li1><a href="#clear">6. Очистка и проверка на несоответствие</a></li1>
+        <li1><a href="#model_inter1">7. ML-модель №2 (после очистки данных)</a></li1>
+        <li1><a href="#feature_engineering">8. Создание дополнительных предикторов (feature engineering)</a></li1>
+        <li1><a href="#preprocessing">9. Предварительная подготовка данных</a></li1>
+        <li1><a href="#model_inter2">10. ML-модель №3 (после создания новых признаков)</a></li1>
+        <li1><a href="#section2"><i>Секция 2. Регрессионный анализ</i></a></li1>
+        <li1><a href="#elastic_net">11. Эластичная сеть</a></li1>
+        <li1><a href="#linear_regression">12. Линейная регрессия</a></li1>
+        <li1><a href="#simulations">13. Результаты линейных моделей на сэмплированных данных</a></li1>
+        <li1><a href="#section3"><i>Секция 3. Машинное обучение</i></a></li1>
+        <li1><a href="#ml_algorithms">14. Выбор ML-модели для прогнозирования остатков линейной регрессии</a></li1>
         <u1l>
-            <li1><a href="#endpoints">14.1. Опорные вектора, бустинги, бэггинг, случайный лес, K-ближайших соседей</a></li1>
-            <li1><a href="#endpoints">14.2. Добавление оценщиков верхнего уровня - Voting и Stacking</a></li1>
-            <li1><a href="#endpoints">14.3. Сравнение всех моделeй и выбор финального оценщика остатков регрессии</a></li1>
-            <li1><a href="#endpoints">14.4. Объединение линейной регрессии и ML-алгоритма в итоговый оценщик HPP</a></li1>
+            <li1><a href="#ml_simple">14.1. Опорные вектора, бустинги, бэггинг, случайный лес, K-ближайших соседей</a></li1>
+            <li1><a href="#vote_stack">14.2. Добавление оценщиков верхнего уровня - Voting и Stacking</a></li1>
+            <li1><a href="#residuals_final">14.3. Сравнение всех моделeй и выбор финального оценщика остатков регрессии</a></li1>
+            <li1><a href="#hpp">14.4. Объединение линейной регрессии и ML-алгоритма в итоговый оценщик HPP</a></li1>
             </ul1>
-        <li1><a href="#endpoints">15. Оценка независимых ML-моделей</a></li1>
-        <li1><a href="#endpoints"><i>Секция 4. Подведение итогов</i></a></li1>
-        <li1><a href="#endpoints">16. Сравнение всех моделей</a></li1>
-        <li1><a href="#endpoints">17. Актуальные и спрогнозированные цены</a></li1>
-        <li1><a href="#endpoints">18. Анализ остатков HPP</a></li1>
-        <li1><a href="#endpoints">19. Дальнейшие шаги</a></li1>
+        <li1><a href="#ml_models">15. Оценка независимых ML-моделей</a></li1>
+        <li1><a href="#section4"><i>Секция 4. Подведение итогов</i></a></li1>
+        <li1><a href="#comparison">16. Сравнение всех моделей</a></li1>
+        <li1><a href="#actual_predicted_prices">17. Актуальные и спрогнозированные цены</a></li1>
+        <li1><a href="#residuals_hpp">18. Анализ остатков HPP</a></li1>
+        <li1><a href="#further">19. Дальнейшие шаги</a></li1>
     </ol1>
   </nav>
 <sub-container id='begin' style='scroll-margin-top: 15px;'>
@@ -288,9 +288,9 @@ span.emoji {
 <content-container style='border-right:none;'>
     <section id="review">
         <h2>
-        1. Обзор и краткие результаты
+        1. Обзор и краткие результаты 2
             </h2>
-        </section>
+        
     <content-container style='border-left:none;padding-left:0;'>
         <button onclick="scrollToID('begin')" id="toTocBtn">
             Наверх
@@ -427,7 +427,7 @@ span.emoji {
         <p>
             Ось абсцисс - элементы, отсортированные по суммарной площади первого и второго этажа <sb>grlivarea</sb>. Визуально этот график можно разбить на три составляющие: малые, средние и большие дома. Модель чаще переоценивает небольшие дома, значения ошибок при этом относительно невелики. На среднем отрезке ошибки увеличиваются и становятся более симметричными. Для больших домов вновь чаще наблюдается переоценка, а ошибки иногда превышают 50000$.
         </p>
-
+        </section>
 
 
 

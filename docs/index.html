@@ -80,7 +80,7 @@ main-container {
 }
 main-container > nav {
     position: sticky;
-    top: 20px;
+    top: 50px;
     align-self: start;
 }
 sub-container {
@@ -98,7 +98,7 @@ section {
     scroll-margin-top: 15px;
 }
 .section-nav {
-    width: 100%;
+    width: 99.5%;
     
 }
 .section-nav a:link,
@@ -117,6 +117,8 @@ section {
 }
 .section-nav ol {
     list-style: none;
+    padding-left: 20px;
+    margin-top:0;
 }
 .section-nav ul {
     list-style: none;
@@ -216,7 +218,7 @@ span.emoji {
 </style>  
 <body>   
 <main-container>
-    <nav class='section-nav' style='border-left: 1px solid red;border-right: 1px solid red;'>
+    <nav class='section-nav'>
     <ol>
         <li><a href="#review">1. Обзор и краткие результаты</a></li>
         <li><a href="#section1"><i>Секция 1. Исследование и подготовка данных</i></a></li>
@@ -286,10 +288,9 @@ span.emoji {
     <button onclick="scrollToID('begin')" id="toTocBtn">
             Наверх
             </button>
-    
     <section id="review">
         <h2>
-        1. Обзор и краткие результаты 5
+        1. Обзор и краткие результаты 6
             </h2>
         </section>
     <content-container style='border-left:none;padding-left:0;'>

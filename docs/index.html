@@ -73,8 +73,6 @@ p {
     text-align: justify
 }
 main-container {
-    border-left: none;
-    border-right: none;
     display: grid;
     grid-template-columns: 22.5% 77.5%;
     width: 100%;
@@ -82,7 +80,7 @@ main-container {
 }
 main-container > nav {
     position: sticky;
-    top: 20px;
+    margin-top: 20px;
     align-self: start;
 }
 sub-container {
@@ -99,11 +97,10 @@ content-container {
 section {
     scroll-margin-top: 15px;
 }
-/* .section-nav {
+.section-nav {
     width: 100%;
-    padding-left: 0;
     
-} */
+}
 .section-nav a:link,
 .section-nav a:visited {
     text-decoration: none;
@@ -111,18 +108,13 @@ section {
     color: #505050;
     transition: all 25ms ease-in-out;
     padding-right: 20px;
-    padding-left:0px;
+    padding-left: 0px;
 }
 .section-nav a:hover,
 .section-nav a:focus {
     color: #1A1D21;
     font-weight:500
 }
-.section-nav li.active > a {
-    color: #1A1D21;
-    font-weight:500
-}
-
 .section-nav ol {
     list-style: none;
 }
@@ -133,6 +125,10 @@ section {
 .section-nav li {
     font-size: 0.9rem;
     text-align: left;
+}
+.section-nav li.active > a {
+    color: #1A1D21;
+    font-weight:500
 }
 ul {
     list-style-type: disc;
@@ -219,8 +215,8 @@ span.emoji {
 }
 </style>  
 <body>   
-<main-container style='border-left: 1 solid red;'>
-    <nav class='section-nav'>
+<main-container>
+    <nav class='section-nav' style='border-left: 1px solid red;border-right: 1px solid red;'>
     <ol>
         <li><a href="#review">1. Обзор и краткие результаты</a></li>
         <li><a href="#section1"><i>Секция 1. Исследование и подготовка данных</i></a></li>
@@ -251,7 +247,7 @@ span.emoji {
         <li1><a href="#actual_predicted_prices">17. Актуальные и спрогнозированные цены</a></li1>
         <li1><a href="#residuals_hpp">18. Анализ остатков HPP</a></li1>
         <li1><a href="#further">19. Дальнейшие шаги</a></li1> -->
-    </ol>
+        </ol>
   </nav>
 <sub-container id='begin' style='scroll-margin-top: 15px;'>
     <img 
@@ -290,7 +286,7 @@ span.emoji {
     <content-container style='border-left:none;padding-left:0;'>
     <section id="review">
         <h2>
-        1. Обзор и краткие результаты 3
+        1. Обзор и краткие результаты 4
             </h2>
         <button onclick="scrollToID('begin')" id="toTocBtn">
             Наверх

@@ -81,7 +81,7 @@ main-container > nav {
     position: sticky;
     top: 2rem;
     align-self: start;
-    margin: 40px 0 0 20px;
+    margin: 40px 0 0 10px;
 }
 sub-container {
     display: block;
@@ -107,7 +107,7 @@ section {
     text-decoration: none;
     display: block;
     padding: 0.25rem 0;
-    color: #707070;
+    color: #606060;
     transition: all 25ms ease-in-out;
 }
 .section-nav a:hover,
@@ -205,52 +205,35 @@ span.emoji {
 <main-container>
     <nav class="section-nav" style='margin-top:-2.755em'>
     <ol>
-        <li><a href="#introduction">Обзор и краткие результаты</a></li>
+        <li><a href="#introduction">1. Обзор и краткие результаты</a></li>
         <li><a href="#introduction"><i>Секция 1. Исследование и подготовка данных</i></a></li>
-        <li><a href="#authentication">Описание датасета</a></li>
-        <li><a href="#endpoints">Заполнение отсутствующих значений</a>
-        <li><a href="#endpoints">ML-модель №1 (базовая)</a>
-        <li><a href="#endpoints">Исследование данных</a>
-        <li><a href="#endpoints">Очистка и проверка на несоответствие</a>
-        <li><a href="#endpoints">ML-модель №2 (после очистки данных)</a>
-        <li><a href="#endpoints">Создание дополнительных предикторов (feature engineering)</a>
-        <li><a href="#endpoints">Предварительная подготовка данных</a>
-        <li><a href="#endpoints">ML-модель №3 (после создания новых признаков)</a>
+        <li><a href="#authentication">2. Описание датасета</a></li>
+        <li><a href="#endpoints">3. Заполнение отсутствующих значений</a>
+        <li><a href="#endpoints">4. ML-модель №1 (базовая)</a>
+        <li><a href="#endpoints">5. Исследование данных</a>
+        <li><a href="#endpoints">6. Очистка и проверка на несоответствие</a>
+        <li><a href="#endpoints">7. ML-модель №2 (после очистки данных)</a>
+        <li><a href="#endpoints">8. Создание дополнительных предикторов (feature engineering)</a>
+        <li><a href="#endpoints">9. Предварительная подготовка данных</a>
+        <li><a href="#endpoints">10. ML-модель №3 (после создания новых признаков)</a>
         <li><a href="#endpoints"><i>Секция 2. Регрессионный анализ</i></a>
-        <li><a href="#endpoints">Эластичная сеть</a>
-        <li><a href="#endpoints">Линейная регрессия</a>
-        <li><a href="#endpoints">Результаты линейных моделей на сэмплированных данных</a>
+        <li><a href="#endpoints">11. Эластичная сеть</a>
+        <li><a href="#endpoints">12. Линейная регрессия</a>
+        <li><a href="#endpoints">13. Результаты линейных моделей на сэмплированных данных</a>
         <li><a href="#endpoints"><i>Секция 3. Машинное обучение</i></a>
-        <li><a href="#endpoints">Выбор ML-модели для прогнозирования остатков линейной регрессии</a>
-        <li><a href="#endpoints">Опорные вектора, бустинги, бэггинг, случайный лес, K-ближайших соседей</a>
-        <li><a href="#endpoints">Добавление оценщиков верхнего уровня - Voting и Stacking</a>
-        <li><a href="#endpoints">Сравнение всех моделeй и выбор финального оценщика остатков регрессии</a>
-        <li><a href="#endpoints">Объединение линейной регрессии и ML-алгоритма в итоговый оценщик HPP</a>
-        <li><a href="#endpoints">Оценка независимых ML-моделей</a>
+        <li><a href="#endpoints">14. Выбор ML-модели для прогнозирования остатков линейной регрессии</a>
+            <ul>
+                <li><a href="#endpoints">14.1. Опорные вектора, бустинги, бэггинг, случайный лес, K-ближайших соседей</a>
+                <li><a href="#endpoints">14.2. Добавление оценщиков верхнего уровня - Voting и Stacking</a>
+                <li><a href="#endpoints">14.3. Сравнение всех моделeй и выбор финального оценщика остатков регрессии</a>
+                <li><a href="#endpoints">14.4. Объединение линейной регрессии и ML-алгоритма в итоговый оценщик HPP</a>
+                </ul>
+        <li><a href="#endpoints">15. Оценка независимых ML-моделей</a>
         <li><a href="#endpoints"><i>Секция 4. Подведение итогов</i></a>
-        <li><a href="#endpoints">Сравнение всех моделей</a>
-        <li><a href="#endpoints">Актуальные и спрогнозированные цены</a>
-        <li><a href="#endpoints">Анализ остатков HPP</a>
-        <li><a href="#endpoints">Дальнейшие шаги</a>
-
-
-
-            
-            
-        <ul>
-          <li class=""><a href="#endpoints--root">Root</a></li>
-          <li class=""><a href="#endpoints--cities-overview">Cities Overview</a></li>
-          <li class=""><a href="#endpoints--city-detail">City Detail</a></li>
-          <li class=""><a href="#endpoints--city-config">City Config</a></li>
-          <li class=""><a href="#endpoints--city-spots-overview">City Spots Overview</a></li>
-          <li class=""><a href="#endpoints--city-spot-detail">City Spot Detail</a></li>
-          <li class=""><a href="#endpoints--city-icons-overview">City Icons Overview</a></li>
-          <li class=""><a href="#endpoints--city-icon-detail">City Icon Detail</a></li>
-        </ul>
-      </li>
-      <li class=""><a href="#links">Links</a></li>
-      <li class=""><a href="#expanders">Expanders</a></li>
-      <li class=""><a href="#filters">Filters</a></li>
+        <li><a href="#endpoints">16. Сравнение всех моделей</a>
+        <li><a href="#endpoints">17. Актуальные и спрогнозированные цены</a>
+        <li><a href="#endpoints">18. Анализ остатков HPP</a>
+        <li><a href="#endpoints">19. Дальнейшие шаги</a>
     </ol>
   </nav>
 <sub-container id='begin' style='scroll-margin-top: 15px;'>

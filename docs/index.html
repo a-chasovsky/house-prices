@@ -268,7 +268,7 @@ span.emoji {
             <span class='emoji' style='vertical-align: -0.1em;'>
                 &#127969;
                 </span>
-            <span style='margin-left:3px;font-size:0.9em'>
+            <span style='margin-left:3px;font-size:0.85em'>
                 Ссылка на репозиторий
                 </span>
             </a>
@@ -279,7 +279,7 @@ span.emoji {
             <span>
                 <img src='img/logo-github.png' style='width:20px;vertical-align:top'>
                 </span>
-            <span style='margin-left:4px;font-size:0.9em'>
+            <span style='margin-left:4px;font-size:0.85em'>
                 Профиль Github 
                 </span>
             </a>
@@ -526,13 +526,11 @@ function scrollFunction() {
     mybutton.style.display = "none";
   }
 }
-
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
   document.body.scrollTop = 290; // For Safari
   document.documentElement.scrollTop = 290; // For Chrome, Firefox, IE and Opera
 }
-
 function scrollToID(id) {
     let element = document.getElementById(id);
     element.scrollIntoView({
@@ -540,6 +538,9 @@ function scrollToID(id) {
       // behavior: 'smooth',
       inline: 'start'
     });
-}  
+} 
+function clickSize(img) {
+      img.classList.toggle('change-size');
+    }
     </script>
 </body> 

@@ -132,16 +132,16 @@ img-center {
 img-margin {
     margin-left: 30px;
 }
-ul1, ol1 {
+ul, ol {
     list-style: none;
     margin: 0;
     padding: 0;
 }
-li1 {
+li {
     margin-left: 1rem;
     font-size: 0.8rem;
 }
-ul {
+/* ul {
         list-style-type: disc;
         line-height: 1.5;
         margin-top: 5px;
@@ -151,7 +151,7 @@ li {
     font-family: system-ui;
     line-height: 1.75em;
     text-align: justify
-}
+} */
 space {
     display: block;
     margin-top: 12.5px;
@@ -219,11 +219,11 @@ span.emoji {
 <body>   
 <main-container>
     <nav class="section-nav" style='margin-top:-2.755em;'>
-    <ol1>
-        <li1><a href="#review">1. Обзор и краткие результаты</a></li1>
-        <li1><a href="#section1"><i>Секция 1. Исследование и подготовка данных</i></a></li1>
-        <li1><a href="#dataset_description">2. Описание датасета</a></li1>
-        <li1><a href="#missed_values">3. Заполнение отсутствующих значений</a></li1>
+    <ol>
+        <li><a href="#review">1. Обзор и краткие результаты</a></li>
+        <li><a href="#section1"><i>Секция 1. Исследование и подготовка данных</i></a></li>
+        <li><a href="#dataset_description">2. Описание датасета</a></li>
+        <li><a href="#missed_values">3. Заполнение отсутствующих значений</a></li>
         <li1><a href="#model_base">4. ML-модель №1 (базовая)</a></li1>
         <li1><a href="#eda">5. Исследование данных</a></li1>
         <li1><a href="#clear">6. Очистка и проверка на несоответствие</a></li1>
@@ -249,7 +249,7 @@ span.emoji {
         <li1><a href="#actual_predicted_prices">17. Актуальные и спрогнозированные цены</a></li1>
         <li1><a href="#residuals_hpp">18. Анализ остатков HPP</a></li1>
         <li1><a href="#further">19. Дальнейшие шаги</a></li1>
-    </ol1>
+    </ol>
   </nav>
 <sub-container id='begin' style='scroll-margin-top: 15px;'>
     <img 
@@ -287,7 +287,7 @@ span.emoji {
 <content-container style='border-right:none;'>
     <section id="review">
         <h2>
-        1. Обзор и краткие результаты 4
+        1. Обзор и краткие результаты 5
             </h2>
     <content-container style='border-left:none;padding-left:0;'>
         <button onclick="scrollToID('begin')" id="toTocBtn">
@@ -510,6 +510,9 @@ span.emoji {
            </section>
     <section id="missed_values">
 
+        
+        </section>
+
 
 
 
@@ -559,7 +562,7 @@ span.emoji {
               
             });
             </script>
-    </content-container>
+        </content-container>
     </content-container>
     </sub-container>
     </main-container>

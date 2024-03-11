@@ -80,10 +80,13 @@ main-container > nav {
     position: sticky;
     top: 40px;
     align-self: start;
-    overflow: hidden;
+    overflow: scroll;
     height: 750px;
     direction:rtl;
-    /* scrollbar-width: none;        */
+    scrollbar-width: none;
+}
+main-container > nav ol li1 {
+    overflow: hidden;
 }
 sub-container {
     display: block;
@@ -249,8 +252,8 @@ span.emoji {
 <main-container>
     <nav class='section-nav'>
     <ol>
-        <li style='padding-left:14px;margin-bottom:5px;'>
-            <a href="#begin" style='color:#202020;'>Содержание</a></li>
+        <li1 style='padding-left:14px;margin-bottom:5px;'>
+            <a href="#begin" style='color:#202020;'>Содержание</a></li1>
         <li><a href="#review">1. Обзор и краткие результаты</a></li>
         <li style='margin-top:5px;margin-bottom:5px;color:#202020;'>Секция I. Исследование и подготовка данных</li>
         <li><a href="#dataset_description">2. Описание датасета</a></li>
@@ -320,7 +323,7 @@ span.emoji {
             Наверх
             </button> 
         <h2>
-        1. Обзор и краткие результаты 8
+        1. Обзор и краткие результаты 9
             </h2>
     <content-container style='border-left:none;padding-left:0;'>
         <section id='review' style='scroll-margin-top: 65px;'>

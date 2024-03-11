@@ -244,11 +244,6 @@ sb {
 span.emoji {
     font-size: 20px;
 }
-/* ::-webkit-scrollbar {
-    -webkit-appearance: none;
-  width: 15px;
-  scrollbar-color: red;
-} */
 </style>  
 <body>   
 <main-container>
@@ -324,11 +319,11 @@ span.emoji {
     <!-- <button onclick="scrollToID('begin')" id="toTocBtn">
             Наверх
             </button> -->
-    <button class='toTocBtn'>
-        <a href='#begin'>Наверх</a>
-        </button>
+    <button onclick="gimmeCats('#begin')" id="toTocBtn">
+            Наверх
+            </button> 
         <h2>
-        1. Обзор и краткие результаты 4
+        1. Обзор и краткие результаты 5
             </h2>
     <content-container style='border-left:none;padding-left:0;'>
         <section id='review' style='scroll-margin-top: 65px;'>
@@ -1731,5 +1726,8 @@ function scrollToID(id) {
 function clickSize(img) {
       img.classList.toggle('change-size');
     }
+var gimmeCats = (href) => {
+  window.location.href = href;
+}
     </script>
 </body> 

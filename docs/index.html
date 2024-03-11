@@ -89,7 +89,6 @@ main-container > nav {
     height: 750px;
     direction:rtl;
     scrollbar-width: none;       
-    /* scrollbar-color: transparent transparent; */
 }
 sub-container {
     display: block;
@@ -107,22 +106,18 @@ section {
 }
 .section-nav {
     width: 100%;
-    /* border-right: 1px solid red; */
 }
 .section-nav a:link,
 .section-nav a:visited {
     display: block;
     text-decoration: none;
-    color: #707070;
-    color: red;
-    /* font-weight:500; */
+    color: #606060;
     /* transition: all 25ms ease-in-out; */
     padding-right: 30px;
     padding-left: 0px;
 }
 .section-nav a:hover,
 .section-nav a:focus {
-    /* color: #164B84; */
     color: #1E5FA5;
 }
 .section-nav ol {
@@ -325,7 +320,7 @@ span.emoji {
             Наверх
             </button> 
         <h2>
-        1. Обзор и краткие результаты 3
+        1. Обзор и краткие результаты 4
             </h2>
     <content-container style='border-left:none;padding-left:0;'>
         <section id='review' style='scroll-margin-top: 65px;'>
@@ -552,7 +547,7 @@ span.emoji {
             </ul>
             </p>
            
-    <section id="missed_values">
+    
         <h2>
             3. Заполнение отсутствующих значений
             </h2>
@@ -570,6 +565,7 @@ span.emoji {
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
                 </img-margin>
             <space></space>
+            <section id="missed_values">
             <i>Номинативные</i>
             <space></space>
             <img-margin>
@@ -598,6 +594,7 @@ span.emoji {
         </ul>
         <p style='margin-bottom:0px'>
             &emsp;&emsp;&ensp;237 (18%) пропусков заполняются медианным значением. Помимо этого, обнаружены два потенциальных выброса (выделены красным).
+        </section>
             <space></space>
             <img src='img/Section1-Overview-and-Base-model/lotfrontage_outs.png'>
             <space></space>
@@ -614,8 +611,8 @@ span.emoji {
         <p style='margin-bottom:10px'>
             &emsp;&emsp;&ensp;8 (1%) пропусков. Более детальное изучение этой и связанных с ней переменных показывает, что все пропущенные значения соответствуют отсутствию облицовки (переменная <sb>masvnrtype</sb> со значением NA). Соответственно, площади этих элементов заполняются нулевыми значениями.
             </p>
-        </section>
-    <section id='model_base'>
+        
+    
         <h2>
             4. ML-модель №1 (базовая)
             </h2>
@@ -626,6 +623,7 @@ span.emoji {
             <space></space>
             Подбор гиперпараметров проводится в два этапа. На первом этапе тестируется широкий диапазон значений и определяются базовые параметры. После этого осуществляется дополнительный поиск в окрестностях этих параметров. В обоих случаях используется <sb>GridSearch</sb> от Scikit-learn с <sb>20-fold</sb> кросс-валидацией.
             <space></space>
+        <section id='model_base'>
             Чтобы предотвратить утчеку данных применяется <sb>Pipeline</sb> от Scikit-learn.
             <space></space>
             Метрика качества модели - <sb>RMSE</sb> (среднеквадратичная ошибка).
@@ -667,13 +665,14 @@ span.emoji {
             <img-center>
             <img src='img/Section1-Overview-and-Base-model/model_1.png'>
                 </img-center>
+        </section>
             <space></space>
             Это первый ориентир, показывающий насколько хорошо имеющиеся данные подходят для прогнозирования цены дома. Также базовая модель дает представление о наиболее значимых предикторах. Можно отметить, что 7 из 10 ключевых предикторов связаны с площадью. На общем фоне заметно выделяется суммарная площадь первого и второго этажа (<sb>grlivarea</sb>).
             <space></space>
             <img src='img/Section1-Overview-and-Base-model/feature_importance.png'>
             <space></space>
-        </section>
-    <section id='eda'>
+       
+    
         <h2>
             5. Исследование данных
             </h2>
@@ -686,6 +685,7 @@ span.emoji {
                 src='img/Section2-Explore-and-Clean/corr_matrix.png'
                 style="display:block;background-color:#FFFFFF;" width="100%" height="100%"
                 onclick='clickSize(this)'>
+        <section id='eda'>
             <space20></space20>
             Полный набор визуализаций представлен в соответствующем блокноте <i>'Section2-Explore-and-Clean.ipynb'</i>. Ниже приведены несколько типовых графиков.
         </p>
@@ -720,12 +720,13 @@ span.emoji {
             Примеры взаимосвязи некоторых категориальных переменных с ценой.
             <space20></space20>
             <img src='img/Section2-Explore-and-Clean/housestyle.png'>
+        </section>
             <space></space>
             <img src='img/Section2-Explore-and-Clean/kitchenqual_vs_price.png'>
             <space></space>
             </p>
-        </section>
-    <section id='clear'>
+       
+   
         <h2>
             6. Очистка и проверка на несоответствие
             </h2>
@@ -750,6 +751,7 @@ span.emoji {
             <ul>
                 <li>Постройка гаража может быть первым этапом строительства, но после её завершения возможна заморозка стройки, например, из-за финансовых трудностей. Соответственно, сам дом будет достроен только через несколько лет. Такое несоответствие допускается.</li>
                 </ul>
+    <section id='clear'>
         <p>
             <i>Решение:</i>
             </p>
@@ -917,6 +919,7 @@ span.emoji {
             <space></space>
             <img src='img/Section2-Explore-and-Clean/miscval.png'>
             <space></space>
+        </section>
             Далее строятся диаграммы, на которых подозрительные элементы выделены цветом.
             <space></space>
             <img 
@@ -926,8 +929,8 @@ span.emoji {
             <space></space>
             После визуальной оценки три элемента (индексы 523, 934 и 1298) признаются выбросами и удаляются из датасета.
             </p>
-        </section>
-    <section id='model_inter1'>
+        
+    
         <h2>
             <a
                 class='anchor'
@@ -944,9 +947,11 @@ span.emoji {
             <space></space>
             По сравнению с базовой моделью число деревьев не изменилось, глубина дерева уменьшилась почти в три раза, а количество листьев сократилось более чем в 10 раз. Значимость предикторов выровнялась по сравнению с сырыми данными. По-прежнему лидирует предиктор, характеризующий суммарную площадь первого и второго этажа <sb>grlivarea</sb>.
             </p>
+    <section id='model_inter1'>
             <space></space>
             <img src='img/Section2-Explore-and-Clean/feature_importance.png'>
             <space></space>
+    </section>
         <h4>
             <i>Промежуточные результаты</i>
             </h4>
@@ -957,8 +962,8 @@ span.emoji {
             <img src='img/Section8-Final-predictions/results_inter1.png'>
             <space></space>
             </p>
-        </section>
-    <section id='feature_engineering'>
+        
+    
         <h2>
             <a
                 class='anchor'
@@ -983,6 +988,7 @@ span.emoji {
             <space></space>
             Гипотеза, лежащая в основе создания нового предиктора <sb>flrsfmean</sb>: для большинства жителей относительная ценность первого этажа выше, чем второго. Объясняется это тем, что на втором этаже расположены преимущественно спальни, и люди в целом проводят больше времени на первом этаже. Чтобы учесть этот эффект, вместо среднего арифметического будет использоваться среднее взвешенное:
             </p>
+    <section id='feature_engineering'>
             <space></space>
             \[ flrsfmean = \frac{first\_flrsf*weight_1 + second\_flrsf*weight_2}{weight_1 + weight_2} , \]
             <space></space>

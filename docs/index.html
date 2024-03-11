@@ -320,7 +320,7 @@ span.emoji {
             Наверх
             </button> 
         <h2>
-        1. Обзор и краткие результаты 5
+        1. Обзор и краткие результаты 6
             </h2>
     <content-container style='border-left:none;padding-left:0;'>
         <section id='review' style='scroll-margin-top: 65px;'>
@@ -1156,10 +1156,12 @@ span.emoji {
             В этом пункте строится эластичная сеть, оценивается влияние регуляризации на эффективность и исследуется, какие предикторы выбирает сеть в зависимости от величины параметра регуляризации.
             <space></space>
             Пространство значений гиперпараметра \( \alpha \) выглядит следующим образом.
+            </p>
             <space></space>
             <img src='img/Section4-Linear-models-research/alphas_logspace.png'>
             <space></space>
     <section id='elastic_net'>
+        <p>
             Отобразим зависимость эффективности модели от величины \( \alpha \), а также добавим на верхнюю ось число предикторов эластичной сети. 
             <space></space>
             <img src='img/Section4-Linear-models-research/features_plot.png'>
@@ -1170,6 +1172,7 @@ span.emoji {
             <space></space>
             <i>Изменение набора предикторов в зависимости от величины параметра регуляризации \( \alpha \)</i>
             <space></space>
+            </p>
     </section>
             <img-center>
                 <img
@@ -1177,6 +1180,7 @@ span.emoji {
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
                 </img-center>
             <space></space>
+        <p>
             В следующем пункте строится линейная регрессия, которая станет ядром HousePricePredictor.
             </p>
         
@@ -1203,6 +1207,7 @@ span.emoji {
         <ul>
             <li><sb>lg_flrsfmean</sb> - средневзвешенная площадь этажей;</li>
             <li><sb>lg_lotarea</sb> - площадь придомовой территории;</li>
+    <section id='linear_regression'>
             <li><sb>overallqual</sb> - оценка качества дома;</li>
             <li><sb>kitchenqual</sb> - оценка качества кухни;</li>
             <li><sb>exterqual</sb> - оценка качества материала фасада;</li>
@@ -1211,7 +1216,7 @@ span.emoji {
             <li><sb>houseage</sb> - возраст дома на момент продажи;</li>
             <li><sb>garagecars</sb> - количество машиномест в гараже.</li>
                 </ul>
-    <section id='linear_regression'>
+    
         <p>
             Для повышения надежности оценки доверительных интервалов коэффициентов используется метод HC3, устойчивый к гетероскедастичности.
             <space></space>

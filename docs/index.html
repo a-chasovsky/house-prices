@@ -74,7 +74,7 @@ main-container {
     display: grid;
     grid-template-columns: 75% 25%;
     width: 1200px;
-    margin: 0 0 75px 0;
+    margin: 0 0 75px 10%;
 }
 main-container > nav {
     position: sticky;
@@ -101,6 +101,8 @@ section {
 }
 .section-nav {
     width: 100%;
+    border-left: 1px solid red;
+    border-right: 1px solid red;
 }
 .section-nav li a {
     display: block;
@@ -1754,7 +1756,7 @@ window.addEventListener('DOMContentLoaded', () => {
                    margin-bottom:5px;color:#101010;font-weight:500;'>
             Содержание</li>
         <li><a onclick='scrollToID("review")' id='#review'>1. Обзор и краткие результаты</a></li>
-        <li style='padding-left:14px;padding-right:20px;margin-top:5px;
+        <li style='padding-left:0px;padding-right:20px;margin-top:5px;
                    margin-bottom:5px;color:#101010;font-weight:500;'>
             I. Исследование и подготовка данных</li>
         <li><a onclick='scrollToID("dataset_description")' id='#dataset_description'>2. Описание датасета</a></li>
@@ -1766,13 +1768,13 @@ window.addEventListener('DOMContentLoaded', () => {
         <li><a onclick='scrollToID("feature_engineering")' id='#feature_engineering'>8. Создание дополнительных предикторов</a></li>
         <li><a onclick='scrollToID("preprocessing")' id='#preprocessing'>9. Предварительная подготовка данных</a></li>
         <li><a onclick='scrollToID("model_inter2")' id='#model_inter2'>10. ML-модель после создания признаков</a></li>
-        <li style='padding-left:14px;padding-right:20px;margin-top:5px;
+        <li style='padding-left:0px;padding-right:20px;margin-top:5px;
                    margin-bottom:5px;color:#101010;font-weight:500;'>
             II. Регрессионный анализ</li>
         <li><a onclick='scrollToID("elastic_net")' id='#elastic_net'>11. Эластичная сеть</a></li>
         <li><a onclick='scrollToID("linear_regression")' id='#linear_regression'>12. Линейная регрессия</a></li>
         <li><a onclick='scrollToID("simulations")' id='#simulations'>13. Симуляция и ресэмплинг</a></li>
-        <li style='padding-left:14px;padding-right:20px;margin-top:5px;
+        <li style='padding-left:0px;padding-right:20px;margin-top:5px;
                    margin-bottom:5px;color:#101010;font-weight:500;'>
             III. Машинное обучение</i></li>
         <li><a onclick='scrollToID("ml_algorithms")' id='#ml_algorithms'>14. Прогнозирование остатков регрессии</a></li>
@@ -1783,7 +1785,7 @@ window.addEventListener('DOMContentLoaded', () => {
             <li><a href="#hpp">14.4. Модель HousePricePredictor</a></li>
             </ul> -->
         <li><a onclick='scrollToID("ml_models")' id='#ml_models'>15. Модели машинного обучения</a></li>
-        <li style='padding-left:14px;padding-right:20px;margin-top:5px;
+        <li style='padding-left:0px;padding-right:20px;margin-top:5px;
                    margin-bottom:5px;color:#202020;font-weight:500;'>
             IV. Подведение итогов</li>
         <li><a onclick='scrollToID("comparison")' id='#comparison'>16. Сравнение моделей</a></li>

@@ -274,7 +274,7 @@ span.emoji {
             <li><a href="#residuals_final">14.3. Сравнение всех моделeй и выбор финального оценщика остатков регрессии</a></li>
             <li><a href="#hpp">14.4. Объединение линейной регрессии и ML-алгоритма в итоговый оценщик HPP</a></li>
             </ul>
-        <li><a href="#ml_models">15. Оценка независимых ML-моделей</a></li>
+        <li><a href="#ml_models">15. Создание независимых ML-моделей</a></li>
         <li style='margin-top:5px;margin-bottom:5px;color:#202020;'>Секция IV. Подведение итогов</li>
         <li><a href="#comparison">16. Сравнение всех моделей</a></li>
         <li><a href="#actual_predicted_prices">17. Актуальные и спрогнозированные цены</a></li>
@@ -320,7 +320,7 @@ span.emoji {
             Наверх
             </button> 
         <h2>
-        1. Обзор и краткие результаты 6
+        1. Обзор и краткие результаты 7
             </h2>
     <content-container style='border-left:none;padding-left:0;'>
         <section id='review' style='scroll-margin-top: 65px;'>
@@ -1384,8 +1384,10 @@ span.emoji {
                 </ul>
         <p>
             В качестве предикторов используются все сгенерированные в предыдущих пунктах признаки, а также прогнозы линейной регрессии (предиктор <sb>price_pred_lr</sb>).
+            </p>
             <space></space>
     <section id='ml_simple'>
+        <p>
             Алгоритмы <sb>Random Forest</sb>, <sb>Bagging</sb>, <sb>LGBoost</sb>, <sb>XGBoost</sb> имеют встроенный функционал отбора наиболее информативных признаков. Отобразим топ-10 наиболее важных признаков для каждой из моделей.
             <space></space>       
             <img-margin>
@@ -1395,6 +1397,7 @@ span.emoji {
                 </img-margin>
             <space></space>
             Наиболее значимые признаки здесь:
+            </p>
             <space></space>
         <ul>
             <li><sb>neighborhood</sb> - район расположения дома, он вошел в топ-4 ключевых признаков каждой из моделей;</li>
@@ -1408,6 +1411,7 @@ span.emoji {
             <img src='img/Section5-Residuals-prediction/features_importance.png'>
             <space></space>
         <p>
+    </section>
             Результаты на 20-фолдовой кросс-валидации выглядят следующим образом (опорные вектора демонстрируют неожиданно высокий результат).
             <space></space>
             <img-center>
@@ -1417,8 +1421,8 @@ span.emoji {
                 </img-center>
             <space></space>
             </p>
-        </section>
-    <section id='vote_stack'>
+        
+    
         <h3>
             14.2. Добавление метаоценщиков верхнего уровня - алгоритмы Voting и Stacking
             </h3>
@@ -1436,15 +1440,18 @@ span.emoji {
             <b>Сравнение Voting и Stacking (20-fold cross-validation)</b>
             <space></space>
             Прогнозы <sb>Stacking</sb> точнее в 12 фолдах из 20.
+            </p>
             <space></space>
+    <section id='vote_stack'>
+        </section>
             <img-center>
                 <img 
                     src='img/Section5-Residuals-prediction/vote_stack_compare.png'
                     style="display:block;background-color:#FFFFFF;"
                     onclick='clickSize(this)'>
             </img-center>
-        </section>
-    <section id='residuals_final'>
+        
+    
         <h3>
             14.3. Сравнение всех ML-алгоритмов и выбор оценщика остатков регрессии
             </h3>
@@ -1456,12 +1463,14 @@ span.emoji {
                     src='img/Section5-Residuals-prediction/models_residuals_summary.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
                 </img-center>
+    <section id='residuals_final'>
             <space></space>
             <i>Визуализация результатов</i>
             <space></space>
             <img-margin>
                 <img src='img/Section5-Residuals-prediction/final_plot.png'>
                 </img-margin>
+    </section>
             <space></space>
             Для оценки остатков будет использоваться алгоритм <sb>Stacking</sb>. 
             <space></space>
@@ -1471,8 +1480,8 @@ span.emoji {
                 src='img/Section5-Residuals-prediction/stacking_cofiguration.png'
                 style="display:block;" width="100%" height="100%">
             </p>
-        </section>
-    <section id='hpp'>
+        
+    
         <h3>
             14.4. Объединение линейной регрессии и ML-алгоритма в итоговый оценщик HPP
             </h3>
@@ -1486,6 +1495,8 @@ span.emoji {
                 </img-margin>
             <space></space>
             <sb>HousePricePredictor</sb> поддерживает Scickit-learn-совместимые методы <sb>.fit</sb> и <sb>.predict</sb>, а также ряд других методов (код доступен в файле <i>tools.py</i>)
+    <section id='hpp'>
+        </section>
             <space></space>
             <img-margin>
                 <img
@@ -1501,10 +1512,10 @@ span.emoji {
             <space></space>
             Средняя RMSE на 20-фолдовой проверке: 0.1102 +/- 0.009.
             </p>
-        </section>
-    <section id='ml_models'>
+        
+    
         <h2>
-            15. Обучение независимых ML-моделей
+            15. Создание независимых ML-моделей
             </h2>
         <p>
             Здесь, как и в предыдущем пункте, в первую очередь обучаются популярные ML-алгоритмы, а после этого исследуется влияние оценщиков верхнего уровня <sb>Voting</sb> и <sb>Stacking</sb>.
@@ -1514,6 +1525,7 @@ span.emoji {
             <i>Визуализация результатов</i>
             <space></space>
             <img-margin><img src='img/Section7-ML-models/ml_models_plot.png'></img-margin>
+    <section id='ml_models'>
             <space></space>
             <i>Средние значения RMSE (20-fold) всех моделей</i>
             <space></space>
@@ -1530,6 +1542,7 @@ span.emoji {
                 style="display:block;" width="100%" height="100%">
             <space></space>
             </p>
+    </section>
         <h4>
             <i>Промежуточные результаты</i>
             </h4>
@@ -1540,8 +1553,8 @@ span.emoji {
             <img src='img/Section8-Final-predictions/results_inter4.png'>
             <space></space>
             </p>
-        </section>
-    <section id='section4'>
+        
+    
         <h2>
             <i>Секция 4. Подведение итогов</i>
             </h2>
@@ -1562,6 +1575,7 @@ span.emoji {
             <li><sb>Stacking</sb> - лучший ансамблевый алгоритм (Stacking);</li>
             <li><sb>HPP</sb> - сочетание линейной регрессии и стэкинга (HousePricePredictor).</li>
             </ul>
+    <section id='section4'>
         <p>
             <i>Сводный график и таблица с результатами</i>
             <space></space>
@@ -1584,6 +1598,7 @@ span.emoji {
             <li>Опорные вектора (SVM) неожиданно продемонстрировали сравнительно хорошие результаты. По эффективности этот алгоритм уступил только стэкингу (Stacking). Можно предположить, что это обусловлено высоким уровнем линейности взаимосвязей в данных;</li>
             <li>Stacking и HPP показывают хорошую кучность (это видно на нижнем графике swarmplot).</li>
             </ul>
+    </section>
         <p>
             <i>Визуализация ошибок 20 фолдов кросс-валидации HousePricePredictor и Stacking</i>
             <space20></space20>
@@ -1594,8 +1609,8 @@ span.emoji {
                     onclick='clickSize(this)'>
                 </img-center>
             </p>
-        </section>
-    <section id='actual_predicted_prices'>
+        
+    
         <h2>
             17. Актуальные и спрогнозированные цены
             </h2>
@@ -1609,11 +1624,14 @@ span.emoji {
                     style='background-color:#FFFFFF;'
                     onclick='clickSize(this)'>
                 </img-center>
+    
+    <section id='actual_predicted_prices'>
+        </section>
             <space></space>
             На первой трети графика заметно, что HousePricePredictor излишне оптимистичен и часто переоценивает дома. Во второй трети этот баланс выравнивается, но в третьей части появляется снова. Видимо, выбранная архитектура построения модели хорошо подходит для домов среднего размера, но для больших и маленьких домов модель должна быть скорректирована, что в теории приведет к увеличению возможностей для эффективного прогноза цены.
             </p>
-        </section>
-    <section id='residuals_hpp'>
+        
+    
         <h2>
             18. Анализ остатков HPP
             </h2>
@@ -1626,6 +1644,7 @@ span.emoji {
             <space></space>
             <img src='img/Section8-Final-predictions/hpp_residuals.png'>
             <space></space>
+    <section id='residuals_hpp'>
             Ни один тест не позволяет предполагать, что остатки распределены нормально. Попробуем удалить экстремальные значения ошибок (шесть элементов с остатками более 50000$, см. таблицу ниже).
             <space></space>
             <img-margin>
@@ -1670,12 +1689,13 @@ span.emoji {
             </h4>
         <p>
             С другой стороны, если взглянуть на относительные ошибки, то зависимость от величины жилой площади менее очевидна. Можно увидеть некоторые паттерны, если дополнительно построить линии локальной регрессии (LOWESS). Форма остатков в левой части графика напоминает форму вогнутой параболы с вершиной в районе площади, равной 1250. В правой части графика явно-выраженная закономерность отсутствует, что может быть следствием недостаточного числа элементов.
+    </section>
             <space></space>
             <space></space>
             <img src='img/Section8-Final-predictions/grlivarea_residuals_frac.png'>
             </p>
-        </section>
-    <section id='further'>
+        
+    
         <h2>
             19. Дальнейшие шаги
             </h2>
@@ -1696,6 +1716,7 @@ span.emoji {
             </h4> 
         <p>
             Предиктор <sb>neighborhood</sb> имеет высокий коэффициент корреляции (0.81), и высоко котируется большинством моделей машинного обучения. При этом он не использовался для построения линейной регрессии, чтобы не усложнять её интерпретацию. В перспективе можно более детально изучить географию местности и её взаимосвязь с целевой переменной. Возможно, объединить некоторые районы в один предиктор. 
+    <section id='further'>
             <space></space>
             Еще один предиктор, на который стоит обратить внимание - это <sb>functional</sb>.
             </p>

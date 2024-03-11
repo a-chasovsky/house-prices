@@ -308,7 +308,7 @@ span.emoji {
                 id='review'
                 style='scroll-margin-top:400px;'>
                 </a>
-        1. Обзор и краткие результаты
+        1. Обзор и краткие результаты 1
             </h2>
     <content-container style='border-left:none;padding-left:0;'>
         <section id='review'>
@@ -1744,6 +1744,11 @@ span.emoji {
             Еще один предиктор, на который стоит обратить внимание - это <sb>functional</sb>.
             </p>
         </section>
+
+        <button class="smoothscroll" onclick="functionforscroll('general')">
+            <div class="scroll-down">ТЕСТ</div></button>
+
+        
 <script>
 window.addEventListener('DOMContentLoaded', () => {
 
@@ -1796,6 +1801,10 @@ function clickSize(img) {
     }
 var toHref = (href) => {
   window.location.href = href;
+}
+const functionforscroll = function(id){
+    const reqId = "#"+id;
+    window.scrollTo(0, $(reqId).offset().top-85);
 }
     </script>
 </body> 

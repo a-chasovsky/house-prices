@@ -235,13 +235,13 @@ span.emoji {
         <li style='margin-top:5px;margin-bottom:5px;color:#101010;font-weight:500;'>Секция I. Исследование и подготовка данных</li>
         <li><a href="#dataset_description">2. Описание датасета</a></li>
         <li><a href="#missed_values">3. Заполнение отсутствующих значений</a></li>
-        <li><a href="#model_base">4. ML-модель №1 (базовая)</a></li>
+        <li><a href="#model_base">4. Базовая ML-модель</a></li>
         <li><a href="#eda">5. Исследование данных</a></li>
         <li><a href="#clear">6. Очистка и проверка на несоответствие</a></li>
-        <li><a href="#model_inter1">7. ML-модель №2 (после очистки данных)</a></li>
+        <li><a href="#model_inter1">7. ML-модель после очистки данных</a></li>
         <li><a href="#feature_engineering">8. Создание дополнительных предикторов</a></li>
         <li><a href="#preprocessing">9. Предварительная подготовка данных</a></li>
-        <li><a href="#model_inter2">10. ML-модель №3 (после создания новых признаков)</a></li>
+        <li><a href="#model_inter2">10. ML-модель после создания новых признаков</a></li>
         <li style='margin-top:5px;margin-bottom:5px;color:#101010;font-weight:500;'>Секция II. Регрессионный анализ</li>
         <li><a href="#elastic_net">11. Эластичная сеть</a></li>
         <li><a href="#linear_regression">12. Линейная регрессия</a></li>
@@ -343,7 +343,7 @@ span.emoji {
             </p>
         <ul>
             <li>линейная модель для первого уровня итогового оценщика HPP</li>
-            <li>эластичная сеть для сравнения с другими моделями.</li>
+            <li>эластичная сеть для итогового сравнения с другими моделями.</li>
         </ul>
         <h4>
             <i>Секция III: Машинное обучение</i>
@@ -654,13 +654,16 @@ span.emoji {
             </h4>
         <p>
             Таким образом, базовая модель (RMSE: 0.1276) имеет следующую конфигурацию:
+            </p>
             <space></space>
             <img-center>
             <img src='img/Section1-Overview-and-Base-model/model_1.png'>
                 </img-center>
         </section>
             <space></space>
+        <p>
             Это первый ориентир, показывающий насколько хорошо имеющиеся данные подходят для прогнозирования цены дома. Также базовая модель дает представление о наиболее значимых предикторах. Можно отметить, что 7 из 10 ключевых предикторов связаны с площадью. На общем фоне заметно выделяется суммарная площадь первого и второго этажа (<sb>grlivarea</sb>).
+            </p>
             <space></space>
             <img src='img/Section1-Overview-and-Base-model/feature_importance.png'>
             <space></space>
@@ -927,10 +930,8 @@ span.emoji {
                 style="display:block;background-color:#FFFFFF;" width="100%" height="100%"
                 onclick='clickSize(this)'>
             <space></space>
-            После визуальной оценки три элемента (индексы 523, 934 и 1298) признаются выбросами и удаляются из датасета.
+            По результатам визуальной оценки три элемента с индексами 523, 934 и 1298 признаются выбросами и удаляются из датасета.
             </p>
-        
-    
         <h2>
             <a
                 class='anchor'
@@ -994,15 +995,15 @@ span.emoji {
                 где  \( weight_1 \) и \( weight_2 \) - это вес первого и второго этажа соответственно.
                 </p>
             <space></space>
-            <p>
-                После нескольких тестов веса принимаются равными 1 и 0.7, соответственно. Итоговая формула выглядит следующим образом:
-                </p>
+        <p>
+            После нескольких тестов веса принимаются равными 1 и 0.7, соответственно. Итоговая формула выглядит следующим образом:
+            </p>
             <space></space>
             $$ flrsfmean = \frac{first\_flrsf + second\_flrsf*0.7}{1.7} $$
             <space></space>
-            <p>
-                Коэффициент корреляции нового предиктора <sb>flrsfmean</sb> равен 0.77. Это на 0.05 выше, чем у наиболее информативного количественного предиктора <sb>grlivarea</sb>. Также <sb>flrsfmean</sb> имеет мéньшую дисперсию.
-                </p>
+        <p>
+            Коэффициент корреляции нового предиктора <sb>flrsfmean</sb> равен 0.77. Это на 0.05 выше, чем у наиболее информативного количественного предиктора <sb>grlivarea</sb>. Также <sb>flrsfmean</sb> имеет мéньшую дисперсию.
+            </p>
             <space></space>
             <img-center><img src='img/Section3-Feature-selection-and-Preprocessing/flrsfmean.png'></img-center>
             <space></space>

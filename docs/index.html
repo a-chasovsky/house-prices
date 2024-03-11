@@ -308,7 +308,7 @@ span.emoji {
                 id='review'
                 style='scroll-margin-top:400px;'>
                 </a>
-        1. Обзор и краткие результаты 2
+        1. Обзор и краткие результаты 3
             </h2>
     <content-container style='border-left:none;padding-left:0;'>
         <section id='review'>
@@ -1745,7 +1745,7 @@ span.emoji {
             </p>
         </section>
 
-        <a onclick="scrollSmoothTo('general')">
+        <a onclick="scrollTo('general')">
               Scroll to userdiv
             </a>
         
@@ -1802,11 +1802,10 @@ function clickSize(img) {
 var toHref = (href) => {
   window.location.href = href;
 }
-function scrollSmoothTo(elementId) {
-  var element = document.getElementById(elementId);
+function scrollTo(id) {
+  var element = document.getElementById(id);
   element.scrollIntoView({
-    block: 'start',
-    behavior: 'smooth'
+    block: 'start'
   });
 }
     </script>

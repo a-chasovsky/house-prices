@@ -109,6 +109,7 @@ section {
     color: #606060;
     padding-right: 20px;
     padding-left: 0px;
+    cursor: pointer;
     /* transition: all 25ms ease-in-out; */
 }
 .section-nav a:hover,
@@ -127,9 +128,9 @@ section {
     list-style: none;
     margin-left: -20px;
 }
-.section-nav li a {
+/* .section-nav li a {
     cursor: pointer;
-}
+} */
 .section-nav li {
     font-size: 0.85rem;
     text-align: left;
@@ -233,11 +234,11 @@ span.emoji {
     <nav class='section-nav'>
     <ol>
         <li style='padding-left:14px;padding-right:20px;margin-bottom:5px;color:#101010;'>Содержание</li>
-        <li><a onclick='scrollToID("review")' href='#review'>1. Обзор и краткие результаты</a></li>
+        <li><a onclick='scrollToID("review")' id='#review'>1. Обзор и краткие результаты</a></li>
         <li style='padding-left:14px;padding-right:20px;margin-top:5px;
                    margin-bottom:5px;color:#101010;font-weight:500;'>
             Секция I. Исследование и подготовка данных</li>
-        <li><a onclick='scrollToID("dataset_description")' href='#dataset_description'>2. Описание датасета</a></li>
+        <li><a onclick='scrollToID("dataset_description")' id='#dataset_description'>2. Описание датасета</a></li>
         <li><a onclick='scrollToID("missed_values")'>3. Заполнение отсутствующих значений</a></li>
         <li><a onclick='scrollToID("model_base")'>4. Базовая ML-модель</a></li>
         <li><a onclick='scrollToID("eda")'>5. Исследование данных</a></li>
@@ -315,7 +316,7 @@ span.emoji {
                 id='review'
                 style='scroll-margin-top:400px;'>
                 </a>
-        1. Обзор и краткие результаты 2
+        1. Обзор и краткие результаты 3
             </h2>
     <content-container style='border-left:none;padding-left:0;'>
         <section id='review'>
@@ -1758,9 +1759,9 @@ window.addEventListener('DOMContentLoaded', () => {
       const id = entry.target.getAttribute('id');
       // if (entry.intersectionRatio > 0) {
       if (entry.intersectionRatio > 0) {
-        document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.add('active');
+        document.querySelector(`nav li a[id="#${id}"]`).parentElement.classList.add('active');
       } else {
-        document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.remove('active');
+        document.querySelector(`nav li a[id="#${id}"]`).parentElement.classList.remove('active');
       }
     });
   });

@@ -85,9 +85,6 @@ main-container > nav {
     direction:rtl;
     scrollbar-width: none;
 }
-main-container > nav ol li1 {
-    overflow: hidden;
-}
 sub-container {
     display: block;
     width: 810px;
@@ -120,7 +117,7 @@ section {
 }
 .section-nav ol {
     display: block;
-    overflow: auto;
+    /* overflow: auto; */
     list-style: none;
     padding-left: 10px;
     margin-top:0;
@@ -252,8 +249,8 @@ span.emoji {
 <main-container>
     <nav class='section-nav'>
     <ol>
-        <li1 style='padding-left:14px;margin-bottom:5px;'>
-            <a href="#begin" style='color:#202020;'>Содержание</a></li1>
+        <li style='padding-left:14px;margin-bottom:5px;'>
+            <a href="#begin" style='color:#202020;'>Содержание</a></li>
         <li><a href="#review">1. Обзор и краткие результаты</a></li>
         <li style='margin-top:5px;margin-bottom:5px;color:#202020;'>Секция I. Исследование и подготовка данных</li>
         <li><a href="#dataset_description">2. Описание датасета</a></li>
@@ -323,10 +320,14 @@ span.emoji {
             Наверх
             </button> 
         <h2>
-        1. Обзор и краткие результаты 9
+            <a
+                class='anchor'
+                id='review'>
+                </a>
+        1. Обзор и краткие результаты 1
             </h2>
     <content-container style='border-left:none;padding-left:0;'>
-        <section id='review' style='scroll-margin-top: 65px;'>
+        <section id='review'>
         <p style='margin:0;'>
             Современные алгоритмы машинного обучения обычно превосходят классические регрессионные модели в точности прогнозов, но при этом сложны в интерпретации. Некоторые алгоритмы имеют встроенный функционал приоритизации предикторов, но этого недостаточно для оценки взаимосвязей в данных.<br>
             <space></space>
@@ -465,7 +466,6 @@ span.emoji {
         <h2 id="section1">
             Секция I. Исследование и подготовка данных
             </h2>
-    
         <h2>
             <a
                 class='anchor'
@@ -549,9 +549,11 @@ span.emoji {
                 <li>Организационные аспекты продажи.</li>
             </ul>
             </p>
-           
-    
         <h2>
+            <a
+                class='anchor'
+                id='missed_values'>
+                </a>
             3. Заполнение отсутствующих значений
             </h2>
         <h4>
@@ -617,9 +619,11 @@ span.emoji {
         <p style='margin-bottom:10px'>
             &emsp;&emsp;&ensp;8 (1%) пропусков. Более детальное изучение этой и связанных с ней переменных показывает, что все пропущенные значения соответствуют отсутствию облицовки (переменная <sb>masvnrtype</sb> со значением NA). Соответственно, площади этих элементов заполняются нулевыми значениями.
             </p>
-        
-    
         <h2>
+            <a
+                class='anchor'
+                id='model_base'>
+                </a>
             4. ML-модель №1 (базовая)
             </h2>
         <p>
@@ -679,9 +683,11 @@ span.emoji {
             <space></space>
             <img src='img/Section1-Overview-and-Base-model/feature_importance.png'>
             <space></space>
-       
-    
         <h2>
+            <a
+                class='anchor'
+                id='eda'>
+                </a>
             5. Исследование данных
             </h2>
         <h4>
@@ -736,6 +742,10 @@ span.emoji {
             <space></space>
             </p>
         <h2>
+            <a
+                class='anchor'
+                id='clear'>
+                </a>
             6. Очистка и проверка на несоответствие
             </h2>
         <h3>
@@ -971,8 +981,6 @@ span.emoji {
             <img src='img/Section8-Final-predictions/results_inter1.png'>
             <space></space>
             </p>
-        
-    
         <h2>
             <a
                 class='anchor'
@@ -1049,8 +1057,6 @@ span.emoji {
         <p>
             Добавлены новые предикторы <sb>houseage</sb> (возраст дома на момент продажи) и <sb>modage</sb> (число лет с момента модернизации на момент продажи). Они не повышают информативность, но лучше подходят для интерпретации.
             </p>
-        
-    
         <h2>
             <a
                 class='anchor'
@@ -1119,8 +1125,6 @@ span.emoji {
                 </img-center>
             <space></space>
             </p>
-        
-    
         <h2>
             <a
                 class='anchor'
@@ -1156,6 +1160,10 @@ span.emoji {
             Секция II. Регрессионный анализ
             </h2>
         <h2>
+            <a
+                class='anchor'
+                id='elastic_net'>
+                </a>
             11. Эластичная сеть
             </h2>
         <p>
@@ -1189,8 +1197,6 @@ span.emoji {
         <p>
             В следующем пункте строится линейная регрессия, которая станет ядром HousePricePredictor.
             </p>
-        
-    
         <h2>
             <a
                 class='anchor'
@@ -1344,13 +1350,14 @@ span.emoji {
             <img src='img/Section8-Final-predictions/results_inter3.png'>
             <space></space>
             </p>
-        
-    <section id='section3'>
-        <h2>
+        <h2 id='section3'>
             Секция 3. Машинное обучение
             </h2>
-        </section>
         <h2>
+            <a
+                class='anchor'
+                id='ml_algorithms'>
+                </a>
             14. Выбор алгоритма машинного обучения для прогнозирования остатков линейной регрессии
             </h2>
         <p>
@@ -1424,6 +1431,10 @@ span.emoji {
             <space></space>
             </p>
         <h3>
+            <a
+                class='anchor'
+                id='vote_stack'>
+                </a>
             14.2. Добавление метаоценщиков - алгоритмы Voting и Stacking
             </h3>
         <p>
@@ -1451,6 +1462,10 @@ span.emoji {
                     onclick='clickSize(this)'>
             </img-center>
         <h3>
+            <a
+                class='anchor'
+                id='residuals_final'>
+                </a>
             14.3. Сравнение всех ML-алгоритмов и выбор оценщика остатков регрессии
             </h3>
         <p>
@@ -1479,6 +1494,10 @@ span.emoji {
                 style="display:block;" width="100%" height="100%">
             </p>
         <h3>
+            <a
+                class='anchor'
+                id='hpp'>
+                </a>
             14.4. Объединение линейной регрессии и ML-алгоритма в итоговый оценщик HPP
             </h3>
         <p>
@@ -1508,9 +1527,11 @@ span.emoji {
             <space></space>
             Средняя RMSE на 20-фолдовой проверке: 0.1102 +/- 0.009.
             </p>
-        
-    
         <h2>
+            <a
+                class='anchor'
+                id='ml_models'>
+                </a>
             15. Создание независимых ML-моделей
             </h2>
         <p>
@@ -1554,8 +1575,11 @@ span.emoji {
         <h2>
             <i>Секция 4. Подведение итогов</i>
             </h2>
-    
         <h2>
+            <a
+                class='anchor'
+                id='comparison'>
+                </a>
             16. Сравнение всех моделей
             </h2>
         <p>
@@ -1606,9 +1630,11 @@ span.emoji {
                     onclick='clickSize(this)'>
                 </img-center>
             </p>
-        
-    
         <h2>
+            <a
+                class='anchor'
+                id='actual_predicted_prices'>
+                </a>
             17. Актуальные и спрогнозированные цены
             </h2>
         <p>
@@ -1629,6 +1655,10 @@ span.emoji {
             На первой трети графика заметно, что HousePricePredictor излишне оптимистичен и часто переоценивает дома. Во второй трети этот баланс выравнивается, но в третьей части появляется снова. Видимо, выбранная архитектура построения модели хорошо подходит для домов среднего размера, но для больших и маленьких домов модель должна быть скорректирована, что в теории приведет к увеличению возможностей для эффективного прогноза цены.
             </p>
         <h2>
+            <a
+                class='anchor'
+                id='residuals_hpp'>
+                </a>
             18. Анализ остатков HPP
             </h2>
         <p>
@@ -1689,12 +1719,15 @@ span.emoji {
     </section>
         <p>
             С другой стороны, если взглянуть на относительные ошибки, то зависимость от величины жилой площади менее очевидна. Можно увидеть некоторые паттерны, если дополнительно построить линии локальной регрессии (LOWESS). Форма остатков в левой части графика напоминает форму вогнутой параболы с вершиной в районе площади, равной 1250. В правой части графика явно-выраженная закономерность отсутствует, что может быть следствием недостаточного числа элементов.
-    
             <space></space>
             <space></space>
             <img src='img/Section8-Final-predictions/grlivarea_residuals_frac.png'>
             </p>
         <h2>
+            <a
+                class='anchor'
+                id='further'>
+                </a>
             19. Дальнейшие шаги
             </h2>
         <h4>

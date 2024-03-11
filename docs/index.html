@@ -559,20 +559,23 @@ span.emoji {
             <space></space>
             <i>Порядковые</i>
             <space></space>
+            
             <img-margin>
                 <img 
                     src='img/Section1-Overview-and-Base-model/categorical_ordinal.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
                 </img-margin>
             <space></space>
+            </p>
             <section id="missed_values">
+        <p>
             <i>Номинативные</i>
             <space></space>
             <img-margin>
                 <img
                     src='img/Section1-Overview-and-Base-model/categorical_categorical.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
+                </img-margin>  
             <space></space>
             Большое число пропусков объясняется тем, что большинство NaN в этом датасете эквивалентны значению "Отсутствует" (например, NaN для переменной "бассейн" означает, что в этом доме отсутствует бассейн). После замены NaNs на 'NA' остается только одно пропущенное значение в переменной <sb>electrical</sb>, которое заполняется медианой.
         </p>
@@ -622,8 +625,10 @@ span.emoji {
             Катеориальные признаки кодируются с помощью <sb>OrdinalEncoder</sb> из библиотеки Feature-engine (категории заменяются целыми числами - по возрастанию в зависимости от величины среднего значения целевой переменной для данной категории).
             <space></space>
             Подбор гиперпараметров проводится в два этапа. На первом этапе тестируется широкий диапазон значений и определяются базовые параметры. После этого осуществляется дополнительный поиск в окрестностях этих параметров. В обоих случаях используется <sb>GridSearch</sb> от Scikit-learn с <sb>20-fold</sb> кросс-валидацией.
+            </p>
             <space></space>
         <section id='model_base'>
+        <p>
             Чтобы предотвратить утчеку данных применяется <sb>Pipeline</sb> от Scikit-learn.
             <space></space>
             Метрика качества модели - <sb>RMSE</sb> (среднеквадратичная ошибка).
@@ -681,14 +686,16 @@ span.emoji {
             </h4> 
         <p>
             В топ-10 в основном попали оценки площади и качества различных составляющих дома (см. рисунок ниже, клик для увеличения изображения).
+            </p>
             <img
                 src='img/Section2-Explore-and-Clean/corr_matrix.png'
                 style="display:block;background-color:#FFFFFF;" width="100%" height="100%"
                 onclick='clickSize(this)'>
         <section id='eda'>
             <space20></space20>
+        <p>
             Полный набор визуализаций представлен в соответствующем блокноте <i>'Section2-Explore-and-Clean.ipynb'</i>. Ниже приведены несколько типовых графиков.
-        </p>
+            </p>
         <h4>
             <i>Количественные признаки</i>
             </h4>
@@ -725,8 +732,6 @@ span.emoji {
             <img src='img/Section2-Explore-and-Clean/kitchenqual_vs_price.png'>
             <space></space>
             </p>
-       
-   
         <h2>
             6. Очистка и проверка на несоответствие
             </h2>
@@ -919,7 +924,8 @@ span.emoji {
             <space></space>
             <img src='img/Section2-Explore-and-Clean/miscval.png'>
             <space></space>
-        </section>
+    </section>
+        <p>
             Далее строятся диаграммы, на которых подозрительные элементы выделены цветом.
             <space></space>
             <img 
@@ -1087,6 +1093,7 @@ span.emoji {
             </h4>
         <p>
             Для преобразования категориальных переменных используется <sb>OrdinalEncoder</sb> из библиотеки Feature-engine. Он присваивает переменным порядковые целочисленные значения (0, 1, 2, 3, и т.д.). Порядок определяется средним значением целевой переменной (0 - для элементов с наименьшим средним и далее по возрастанию).
+            </p>
             <space></space>
     </section>
             <img-center>
@@ -1095,7 +1102,7 @@ span.emoji {
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
                 </img-center>
             <space></space>
-            </p>
+            
         <h4>
             <i>Стандартизация</i>
             </h4>
@@ -1126,11 +1133,11 @@ span.emoji {
                 </img-center>
             <space></space>
              Теперь самым информативным предиктором является вновь созданный <sb>flrsfmean</sb> (это соответствует его высокому коэффициенту корреляции). В топ-10 наиболее значимых признаков также попал новый предиктор <sb>bedroomsize</sb>.
+            </p>
     <section id='model_inter2'>
             <space></space>
             <img src='img/Section3-Feature-selection-and-Preprocessing/feature_importance.png'>
             <space></space>
-            </p>
     </section>
         <h4>
             <i>Промежуточные результаты</i>
@@ -1147,8 +1154,6 @@ span.emoji {
         <h2>
             Секция II. Регрессионный анализ
             </h2>
-        
-    
         <h2>
             11. Эластичная сеть
             </h2>
@@ -1216,7 +1221,6 @@ span.emoji {
             <li><sb>houseage</sb> - возраст дома на момент продажи;</li>
             <li><sb>garagecars</sb> - количество машиномест в гараже.</li>
                 </ul>
-    
         <p>
             Для повышения надежности оценки доверительных интервалов коэффициентов используется метод HC3, устойчивый к гетероскедастичности.
             <space></space>
@@ -1304,8 +1308,6 @@ span.emoji {
         <p>
             Линейная регрессия объясняет 88% изменчивости целевой переменной, что является хорошим результатом. Используемые предикторы значимы, понятны и легко интерпретируемы. Тем не менее, модель не в полной мере соответствует имеющимся данным. Это объяснимо, если учесть тот факт, что не были использованы некоторые важные признаки (<sb>neighborhood</sb>, <sb>functional</sb>).
             </p>
-        
-    
         <h2>
             <a
                 class='anchor'
@@ -1346,7 +1348,6 @@ span.emoji {
             Секция 3. Машинное обучение
             </h2>
         </section>
-    
         <h2>
             14. Выбор алгоритма машинного обучения для прогнозирования остатков линейной регрессии
             </h2>
@@ -1362,7 +1363,6 @@ span.emoji {
             </p>
     <section id='ml_algorithms'>
         </section>
-    
         <h3>
             <a
                 class='anchor'
@@ -1410,8 +1410,8 @@ span.emoji {
             <space></space>
             <img src='img/Section5-Residuals-prediction/features_importance.png'>
             <space></space>
-        <p>
     </section>
+        <p>
             Результаты на 20-фолдовой кросс-валидации выглядят следующим образом (опорные вектора демонстрируют неожиданно высокий результат).
             <space></space>
             <img-center>
@@ -1421,8 +1421,6 @@ span.emoji {
                 </img-center>
             <space></space>
             </p>
-        
-    
         <h3>
             14.2. Добавление метаоценщиков верхнего уровня - алгоритмы Voting и Stacking
             </h3>
@@ -1450,8 +1448,6 @@ span.emoji {
                     style="display:block;background-color:#FFFFFF;"
                     onclick='clickSize(this)'>
             </img-center>
-        
-    
         <h3>
             14.3. Сравнение всех ML-алгоритмов и выбор оценщика остатков регрессии
             </h3>
@@ -1480,8 +1476,6 @@ span.emoji {
                 src='img/Section5-Residuals-prediction/stacking_cofiguration.png'
                 style="display:block;" width="100%" height="100%">
             </p>
-        
-    
         <h3>
             14.4. Объединение линейной регрессии и ML-алгоритма в итоговый оценщик HPP
             </h3>
@@ -1523,10 +1517,12 @@ span.emoji {
             Отдельно оценивается вклад предикторов, добавленных в пункте <i>'8. Создание дополнительных предикторов'</i>.
             <space></space>
             <i>Визуализация результатов</i>
+            </p>
             <space></space>
             <img-margin><img src='img/Section7-ML-models/ml_models_plot.png'></img-margin>
     <section id='ml_models'>
             <space></space>
+        <p>
             <i>Средние значения RMSE (20-fold) всех моделей</i>
             <space></space>
             <img-center>
@@ -1553,13 +1549,10 @@ span.emoji {
             <img src='img/Section8-Final-predictions/results_inter4.png'>
             <space></space>
             </p>
-        
-    
         <h2>
             <i>Секция 4. Подведение итогов</i>
             </h2>
-        </section>
-    <section id='comparison'>
+    
         <h2>
             16. Сравнение всех моделей
             </h2>
@@ -1575,9 +1568,10 @@ span.emoji {
             <li><sb>Stacking</sb> - лучший ансамблевый алгоритм (Stacking);</li>
             <li><sb>HPP</sb> - сочетание линейной регрессии и стэкинга (HousePricePredictor).</li>
             </ul>
-    <section id='section4'>
         <p>
             <i>Сводный график и таблица с результатами</i>
+            </p>
+    <section id='comparison'>
             <space></space>
             <img 
                 src='img/Section8-Final-predictions/final_plot.png'
@@ -1588,6 +1582,7 @@ span.emoji {
                 src='img/Section8-Final-predictions/final_table_T.png'
                 style='margin-left:80px;border: 1px solid #CCCCCC;border-radius: 3px;'>
             <space></space>
+        <p>
             Комментарии:
             </p>
         <ul>
@@ -1624,14 +1619,11 @@ span.emoji {
                     style='background-color:#FFFFFF;'
                     onclick='clickSize(this)'>
                 </img-center>
-    
     <section id='actual_predicted_prices'>
         </section>
             <space></space>
             На первой трети графика заметно, что HousePricePredictor излишне оптимистичен и часто переоценивает дома. Во второй трети этот баланс выравнивается, но в третьей части появляется снова. Видимо, выбранная архитектура построения модели хорошо подходит для домов среднего размера, но для больших и маленьких домов модель должна быть скорректирована, что в теории приведет к увеличению возможностей для эффективного прогноза цены.
             </p>
-        
-    
         <h2>
             18. Анализ остатков HPP
             </h2>
@@ -1687,15 +1679,14 @@ span.emoji {
         <h4>
             <i>Относительные ошибки (предсказанная цена относительно актуальной цены)</i>
             </h4>
+    </section>
         <p>
             С другой стороны, если взглянуть на относительные ошибки, то зависимость от величины жилой площади менее очевидна. Можно увидеть некоторые паттерны, если дополнительно построить линии локальной регрессии (LOWESS). Форма остатков в левой части графика напоминает форму вогнутой параболы с вершиной в районе площади, равной 1250. В правой части графика явно-выраженная закономерность отсутствует, что может быть следствием недостаточного числа элементов.
-    </section>
+    
             <space></space>
             <space></space>
             <img src='img/Section8-Final-predictions/grlivarea_residuals_frac.png'>
             </p>
-        
-    
         <h2>
             19. Дальнейшие шаги
             </h2>
@@ -1714,9 +1705,9 @@ span.emoji {
         <h4>
             <i>Предложение 3</i>
             </h4> 
+    <section id='further'>
         <p>
             Предиктор <sb>neighborhood</sb> имеет высокий коэффициент корреляции (0.81), и высоко котируется большинством моделей машинного обучения. При этом он не использовался для построения линейной регрессии, чтобы не усложнять её интерпретацию. В перспективе можно более детально изучить географию местности и её взаимосвязь с целевой переменной. Возможно, объединить некоторые районы в один предиктор. 
-    <section id='further'>
             <space></space>
             Еще один предиктор, на который стоит обратить внимание - это <sb>functional</sb>.
             </p>

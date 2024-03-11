@@ -102,6 +102,14 @@ section {
 .section-nav {
     width: 100%;
 }
+.section-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #606060;
+    padding-right: 20px;
+    padding-left: 0px;
+    cursor: pointer;
+}
 .section-nav a:link,
 .section-nav a:visited {
     display: block;
@@ -128,9 +136,6 @@ section {
     list-style: none;
     margin-left: -20px;
 }
-/* .section-nav li a {
-    cursor: pointer;
-} */
 .section-nav li {
     font-size: 0.85rem;
     text-align: left;
@@ -239,38 +244,38 @@ span.emoji {
                    margin-bottom:5px;color:#101010;font-weight:500;'>
             Секция I. Исследование и подготовка данных</li>
         <li><a onclick='scrollToID("dataset_description")' id='#dataset_description'>2. Описание датасета</a></li>
-        <li><a onclick='scrollToID("missed_values")'>3. Заполнение отсутствующих значений</a></li>
-        <li><a onclick='scrollToID("model_base")'>4. Базовая ML-модель</a></li>
-        <li><a onclick='scrollToID("eda")'>5. Исследование данных</a></li>
-        <li><a onclick='scrollToID("clear")'>6. Очистка и проверка данных</a></li>
-        <li><a onclick='scrollToID("model_inter1")'>7. ML-модель после очистки данных</a></li>
-        <li><a onclick='scrollToID("feature_engineering")'>8. Создание дополнительных предикторов</a></li>
-        <li><a onclick='scrollToID("preprocessing")'>9. Предварительная подготовка данных</a></li>
-        <li><a onclick='scrollToID("model_inter2")'>10. ML-модель после создания признаков</a></li>
+        <li><a onclick='scrollToID("missed_values")' id='#missed_values'>3. Заполнение отсутствующих значений</a></li>
+        <li><a onclick='scrollToID("model_base")' id='#model_base'>4. Базовая ML-модель</a></li>
+        <li><a onclick='scrollToID("eda")' id='#eda'>5. Исследование данных</a></li>
+        <li><a onclick='scrollToID("clear")' id='#clear'>6. Очистка и проверка данных</a></li>
+        <li><a onclick='scrollToID("model_inter1")' id='#model_inter1'>7. ML-модель после очистки данных</a></li>
+        <li><a onclick='scrollToID("feature_engineering")' id='#feature_engineering'>8. Создание дополнительных предикторов</a></li>
+        <li><a onclick='scrollToID("preprocessing")' id='#preprocessing'>9. Предварительная подготовка данных</a></li>
+        <li><a onclick='scrollToID("model_inter2")' id='#model_inter2'>10. ML-модель после создания признаков</a></li>
         <li style='padding-left:14px;padding-right:20px;margin-top:5px;
                    margin-bottom:5px;color:#101010;font-weight:500;'>
             Секция II. Регрессионный анализ</li>
-        <li><a onclick='scrollToID("elastic_net")'>11. Эластичная сеть</a></li>
-        <li><a onclick='scrollToID("linear_regression")'>12. Линейная регрессия</a></li>
-        <li><a onclick='scrollToID("simulations")'>13. Симуляция и ресэмплинг</a></li>
+        <li><a onclick='scrollToID("elastic_net")' id='#elastic_net'>11. Эластичная сеть</a></li>
+        <li><a onclick='scrollToID("linear_regression")' id='#linear_regression'>12. Линейная регрессия</a></li>
+        <li><a onclick='scrollToID("simulations")' id='#simulations'>13. Симуляция и ресэмплинг</a></li>
         <li style='padding-left:14px;padding-right:20px;margin-top:5px;
                    margin-bottom:5px;color:#101010;font-weight:500;'>
             Секция III. Машинное обучение</i></li>
-        <li><a onclick='scrollToID("ml_algorithms")'>14. Прогнозирование остатков регрессии</a></li>
+        <li><a onclick='scrollToID("ml_algorithms")' id='#ml_algorithms'>14. Прогнозирование остатков регрессии</a></li>
         <!-- <ul>
             <li><a href="#ml_simple">14.1. Опорные вектора, бустинги, бэггинг, случайный лес, KNN</a></li>
             <li><a href="#vote_stack">14.2. Voting и Stacking</a></li>
             <li><a href="#residuals_final">14.3. Выбор финального оценщика остатков</a></li>
             <li><a href="#hpp">14.4. Модель HousePricePredictor</a></li>
             </ul> -->
-        <li><a onclick='scrollToID("ml_models")'>15. Модели машинного обучения</a></li>
+        <li><a onclick='scrollToID("ml_models")' id='#ml_models'>15. Модели машинного обучения</a></li>
         <li style='padding-left:14px;padding-right:20px;margin-top:5px;
                    margin-bottom:5px;color:#202020;font-weight:500;'>
             Секция IV. Подведение итогов</li>
-        <li><a onclick='scrollToID("comparison")'>16. Сравнение моделей</a></li>
-        <li><a onclick='scrollToID("actual_predicted_prices")'>17. Актуальные и спрогнозированные цены</a></li>
-        <li><a onclick='scrollToID("residuals_hpp")'>18. Анализ остатков HousePricePredictor</a></li>
-        <li><a onclick='scrollToID("further")'>19. Дальнейшие шаги</a></li>
+        <li><a onclick='scrollToID("comparison")' id='#comparison'>16. Сравнение моделей</a></li>
+        <li><a onclick='scrollToID("actual_predicted_prices")' id='#actual_predicted_prices'>17. Актуальные и спрогнозированные цены</a></li>
+        <li><a onclick='scrollToID("residuals_hpp")' id='#residuals_hpp'>18. Анализ остатков HousePricePredictor</a></li>
+        <li><a onclick='scrollToID("further")' id='#further'>19. Дальнейшие шаги</a></li>
         </ol> 
       </nav>
 <sub-container id='general' style='scroll-margin-top:15px;'>
@@ -316,7 +321,7 @@ span.emoji {
                 id='review'
                 style='scroll-margin-top:400px;'>
                 </a>
-        1. Обзор и краткие результаты 3
+        1. Обзор и краткие результаты 4
             </h2>
     <content-container style='border-left:none;padding-left:0;'>
         <section id='review'>

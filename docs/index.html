@@ -320,7 +320,7 @@ span.emoji {
             Наверх
             </button> 
         <h2>
-        1. Обзор и краткие результаты 4
+        1. Обзор и краткие результаты 5
             </h2>
     <content-container style='border-left:none;padding-left:0;'>
         <section id='review' style='scroll-margin-top: 65px;'>
@@ -1026,6 +1026,7 @@ span.emoji {
         <p>
             Наиболее информативным из новых признаков является относительное число кухонь (<sb>kitchensize</sb>, коэффициент корреляции: -0.71).
             </p>
+    </section>
             <space></space>
             <img-center><img src='img/Section3-Feature-selection-and-Preprocessing/bedroom_kitchen.png'></img-center>
             <space></space>
@@ -1039,8 +1040,8 @@ span.emoji {
         <p>
             Добавлены новые предикторы <sb>houseage</sb> (возраст дома на момент продажи) и <sb>modage</sb> (число лет с момента модернизации на момент продажи). Они не повышают информативность, но лучше подходят для интерпретации.
             </p>
-        </section>
-    <section id='preprocessing'>
+        
+    
         <h2>
             <a
                 class='anchor'
@@ -1061,6 +1062,7 @@ span.emoji {
         <h4>
             <i>Количественные переменные</i>
             </h4>
+    <section id='preprocessing'>
         <p>
             Количественные предикторы логарифмируются (натуральный логарифм) с помощью <sb>LogCpTransformer</sb> из библиотеки Feature-engine. Предварительно к каждому значению добавляется константа C, равная 1. В название всех логарифмированных предикторов добавляется приставка <sb>lg_</sb>.
             <space></space>
@@ -1086,6 +1088,7 @@ span.emoji {
         <p>
             Для преобразования категориальных переменных используется <sb>OrdinalEncoder</sb> из библиотеки Feature-engine. Он присваивает переменным порядковые целочисленные значения (0, 1, 2, 3, и т.д.). Порядок определяется средним значением целевой переменной (0 - для элементов с наименьшим средним и далее по возрастанию).
             <space></space>
+    </section>
             <img-center>
                 <img
                     src='img/Section3-Feature-selection-and-Preprocessing/data_encoded.png'
@@ -1106,8 +1109,8 @@ span.emoji {
                 </img-center>
             <space></space>
             </p>
-        </section>
-    <section id='model_inter2'>
+        
+    
         <h2>
             <a
                 class='anchor'
@@ -1123,10 +1126,12 @@ span.emoji {
                 </img-center>
             <space></space>
              Теперь самым информативным предиктором является вновь созданный <sb>flrsfmean</sb> (это соответствует его высокому коэффициенту корреляции). В топ-10 наиболее значимых признаков также попал новый предиктор <sb>bedroomsize</sb>.
-            <space></space>    
+    <section id='model_inter2'>
+            <space></space>
             <img src='img/Section3-Feature-selection-and-Preprocessing/feature_importance.png'>
             <space></space>
             </p>
+    </section>
         <h4>
             <i>Промежуточные результаты</i>
             </h4>
@@ -1142,8 +1147,8 @@ span.emoji {
         <h2>
             Секция II. Регрессионный анализ
             </h2>
-        </section>
-    <section id='elastic_net'>
+        
+    
         <h2>
             11. Эластичная сеть
             </h2>
@@ -1154,6 +1159,7 @@ span.emoji {
             <space></space>
             <img src='img/Section4-Linear-models-research/alphas_logspace.png'>
             <space></space>
+    <section id='elastic_net'>
             Отобразим зависимость эффективности модели от величины \( \alpha \), а также добавим на верхнюю ось число предикторов эластичной сети. 
             <space></space>
             <img src='img/Section4-Linear-models-research/features_plot.png'>
@@ -1164,6 +1170,7 @@ span.emoji {
             <space></space>
             <i>Изменение набора предикторов в зависимости от величины параметра регуляризации \( \alpha \)</i>
             <space></space>
+    </section>
             <img-center>
                 <img
                     src='img/Section4-Linear-models-research/features_by_alpha.png'
@@ -1172,8 +1179,8 @@ span.emoji {
             <space></space>
             В следующем пункте строится линейная регрессия, которая станет ядром HousePricePredictor.
             </p>
-        </section>
-    <section id='linear_regression'>
+        
+    
         <h2>
             <a
                 class='anchor'
@@ -1204,6 +1211,7 @@ span.emoji {
             <li><sb>houseage</sb> - возраст дома на момент продажи;</li>
             <li><sb>garagecars</sb> - количество машиномест в гараже.</li>
                 </ul>
+    <section id='linear_regression'>
         <p>
             Для повышения надежности оценки доверительных интервалов коэффициентов используется метод HC3, устойчивый к гетероскедастичности.
             <space></space>
@@ -1273,6 +1281,7 @@ span.emoji {
         <p>
             Все оценки действительны при прочих равных:
             </p>
+    </section>
             <ul>
                 <li><sb>lg_flrsfmean</sb> - при увеличении средневзвешенной площади этажей на 1%, цена увеличивается на 0.144%;</li>
                 <li><sb>overallqual</sb> - при увеличении качества материалов на 1 пункт, цена увеличивается на 8.8%;</li>
@@ -1290,8 +1299,8 @@ span.emoji {
         <p>
             Линейная регрессия объясняет 88% изменчивости целевой переменной, что является хорошим результатом. Используемые предикторы значимы, понятны и легко интерпретируемы. Тем не менее, модель не в полной мере соответствует имеющимся данным. Это объяснимо, если учесть тот факт, что не были использованы некоторые важные признаки (<sb>neighborhood</sb>, <sb>functional</sb>).
             </p>
-        </section>
-    <section id='simulations'>
+        
+    
         <h2>
             <a
                 class='anchor'
@@ -1308,12 +1317,14 @@ span.emoji {
                 <li>линейная регрессия из п.12 - 0.1352;</li>
                 <li>эластичная сеть (alpha: 0.0067, L1 ratio: 0.1) - 0.1347.</li>
                 </ul>
+    <section id='simulations'>
             <space20></space20>
             <img-center><img src='img/Section4-Linear-models-research/simulations.png'></img-center>
             <space></space>
         <p>
             Прогнозы отдельно взятых элементов практически не различаются (что показывают предиктивные интервалы). Однако на длинной дистанции (для бóльшего числа элементов) в среднем эффективность эластичной сети выше, поэтому она будет включена в итоговое сравнение как наиболее эффективная регрессия.
             </p>
+    </section>
         <h4>
             <i>Промежуточные результаты</i>
             </h4>
@@ -1324,13 +1335,13 @@ span.emoji {
             <img src='img/Section8-Final-predictions/results_inter3.png'>
             <space></space>
             </p>
-        </section>
+        
     <section id='section3'>
         <h2>
             Секция 3. Машинное обучение
             </h2>
         </section>
-    <section id='ml_algorithms'>
+    
         <h2>
             14. Выбор алгоритма машинного обучения для прогнозирования остатков линейной регрессии
             </h2>
@@ -1344,8 +1355,9 @@ span.emoji {
             Метрика качества модели - <sb>RMSE</sb> (среднеквадратичная ошибка).
             <space></space>
             </p>
+    <section id='ml_algorithms'>
         </section>
-    <section id='ml_simple'>
+    
         <h3>
             <a
                 class='anchor'
@@ -1368,6 +1380,7 @@ span.emoji {
         <p>
             В качестве предикторов используются все сгенерированные в предыдущих пунктах признаки, а также прогнозы линейной регрессии (предиктор <sb>price_pred_lr</sb>).
             <space></space>
+    <section id='ml_simple'>
             Алгоритмы <sb>Random Forest</sb>, <sb>Bagging</sb>, <sb>LGBoost</sb>, <sb>XGBoost</sb> имеют встроенный функционал отбора наиболее информативных признаков. Отобразим топ-10 наиболее важных признаков для каждой из моделей.
             <space></space>       
             <img-margin>

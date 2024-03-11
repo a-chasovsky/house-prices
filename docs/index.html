@@ -562,7 +562,7 @@ span.emoji {
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
                 </img-margin>  
             <space></space>
-            В описании данных сказано, что у ряда переменных пропуски эквивалентны значению "Отсутствует" (например, NaN для переменной "бассейн" означает, что в этом доме отсутствует бассейн). После замены NaN на 'NA' остается только одно пропущенное значение у предиктора <sb>electrical</sb>, которое заполняется медианой.
+            В описании данных сказано, что для ряда переменных пропуски соответствуют значению "Отсутствует" (например, NaN для переменной "бассейн" означает, что в этом доме отсутствует бассейн). После замены NaN на 'NA' остается только одно пропущенное значение у переменной <sb>electrical</sb>, которое заполняется медианой.
         </p>
         <h4>
             <i>Количественные переменные</i>
@@ -1349,7 +1349,7 @@ span.emoji {
             Подбор гиперпараметров осуществляется с помощью решетчатого поиска <sb>GridSearch</sb> от Scikit-learn с <sb>20-fold</sb> кросс-валидацией. Чтобы предотвратить утчеку данных используется <sb>Pipeline</sb> от Scikit-learn.
             <space></space>
     <section id='ml_algorithms'>
-        </section>
+        <!-- </section> -->
             Метрика качества модели - <sb>RMSE</sb> (среднеквадратичная ошибка).
             <space></space>
             </p>
@@ -1386,7 +1386,7 @@ span.emoji {
                     src='img/Section5-Residuals-prediction/features_importance_four_models.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
                 </img-margin>
-    <section id='ml_simple'>
+    <!-- <section id='ml_simple'> -->
         <p>
             <space></space>
             Наиболее значимые признаки здесь:
@@ -1403,7 +1403,7 @@ span.emoji {
             <space></space>
             <img src='img/Section5-Residuals-prediction/features_importance.png'>
             <space></space>
-    </section>
+    <!-- </section> -->
         <p>
             Результаты на 20-фолдовой кросс-валидации выглядят следующим образом (опорные вектора демонстрируют неожиданно высокий результат).
             <space></space>
@@ -1437,8 +1437,8 @@ span.emoji {
             Прогнозы <sb>Stacking</sb> точнее в 12 фолдах из 20.
             </p>
             <space></space>
-    <section id='vote_stack'>
-        </section>
+    <!-- <section id='vote_stack'> -->
+        <!-- </section> -->
             <img-center>
                 <img 
                     src='img/Section5-Residuals-prediction/vote_stack_compare.png'
@@ -1461,7 +1461,7 @@ span.emoji {
                     src='img/Section5-Residuals-prediction/models_residuals_summary.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
                 </img-center>
-    <section id='residuals_final'>
+    <!-- <section id='residuals_final'> -->
             <space20></space20>
         <p>
             <i>Визуализация результатов</i>
@@ -1473,7 +1473,7 @@ span.emoji {
             Для оценки остатков будет использоваться алгоритм <sb>Stacking</sb>. 
             </p>
             <space></space>
-    </section>
+    <!-- </section> -->
         <p>
             <i>Конфигурация StackingRegressor</i>
             </p>
@@ -1506,7 +1506,7 @@ span.emoji {
                     src='img/Section5-Residuals-prediction/fit.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
                 </img-margin>
-    <section id='hpp'>
+    <!-- <section id='hpp'> -->
         </section>
             <space></space>
             <img-margin>

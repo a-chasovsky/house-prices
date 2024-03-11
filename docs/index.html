@@ -125,6 +125,14 @@ section {
     color: #1E5FA5;
     /* font-weight:500 */
 }
+.section-nav a::before {
+			display: block;
+			content: attr(title);
+			font-weight: bold;
+			height: 0;
+			overflow: hidden;
+			visibility: hidden;
+		}
 .section-nav ol {
     overflow: auto;
     list-style: none;
@@ -323,7 +331,7 @@ span.emoji {
             Наверх
             </button> 
         <h2>
-        1. Обзор и краткие результаты 4
+        1. Обзор и краткие результаты 5
             </h2>
     <content-container style='border-left:none;padding-left:0;'>
         <section id='review' style='scroll-margin-top: 65px;'>

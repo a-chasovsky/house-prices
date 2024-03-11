@@ -2,20 +2,15 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Power Consumption</title>
+    <title>Комбинирование регрессии и ML-алгоритмов</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
     <script id="MathJax-script" async
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
         </script>
 </head>
 <style>
-html {
-    /* scroll-behavior: smooth; */
-    
-}
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    
+    font-family: system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
 }
 h1 { 
     font-family: system-ui;
@@ -85,10 +80,10 @@ main-container > nav {
     position: sticky;
     top: 40px;
     align-self: start;
-    overflow: scroll;
+    overflow: hidden;
     height: 750px;
     direction:rtl;
-    scrollbar-width: none;       
+    /* scrollbar-width: none;        */
 }
 sub-container {
     display: block;
@@ -244,6 +239,11 @@ sb {
 span.emoji {
     font-size: 20px;
 }
+.change-size {
+    transform: scale(1.5);
+    border: 1px solid #CCCCCC;
+    border-radius: 3px;
+}
 </style>  
 <body>   
 <main-container>
@@ -270,7 +270,7 @@ span.emoji {
         <li><a href="#ml_algorithms">14. Выбор ML-модели для прогнозирования остатков линейной регрессии</a></li>
         <ul>
             <li><a href="#ml_simple">14.1. Опорные вектора, бустинги, бэггинг, случайный лес, K-ближайших соседей</a></li>
-            <li><a href="#vote_stack">14.2. Добавление оценщиков верхнего уровня - Voting и Stacking</a></li>
+            <li><a href="#vote_stack">14.2. Добавление метаоценщиков - Voting и Stacking</a></li>
             <li><a href="#residuals_final">14.3. Сравнение всех моделeй и выбор финального оценщика остатков регрессии</a></li>
             <li><a href="#hpp">14.4. Объединение линейной регрессии и ML-алгоритма в итоговый оценщик HPP</a></li>
             </ul>
@@ -320,7 +320,7 @@ span.emoji {
             Наверх
             </button> 
         <h2>
-        1. Обзор и краткие результаты 7
+        1. Обзор и краткие результаты 8
             </h2>
     <content-container style='border-left:none;padding-left:0;'>
         <section id='review' style='scroll-margin-top: 65px;'>
@@ -1149,8 +1149,6 @@ span.emoji {
             <img src='img/Section8-Final-predictions/results_inter2.png'>
             <space></space>
             </p>
-        </section>
-    <section id='section2'>
         <h2>
             Секция II. Регрессионный анализ
             </h2>
@@ -1209,10 +1207,10 @@ span.emoji {
         <p>
             В итоге выбраны следующие предикторы:
             </p>
+    <section id='linear_regression'>
         <ul>
             <li><sb>lg_flrsfmean</sb> - средневзвешенная площадь этажей;</li>
             <li><sb>lg_lotarea</sb> - площадь придомовой территории;</li>
-    <section id='linear_regression'>
             <li><sb>overallqual</sb> - оценка качества дома;</li>
             <li><sb>kitchenqual</sb> - оценка качества кухни;</li>
             <li><sb>exterqual</sb> - оценка качества материала фасада;</li>
@@ -1286,11 +1284,12 @@ span.emoji {
             </p>
         <h4>
             <i>Интерпретация коэффициентов</i>
-            </h4>  
+            </h4>
+    </section>
         <p>
             Все оценки действительны при прочих равных:
             </p>
-    </section>
+        
             <ul>
                 <li><sb>lg_flrsfmean</sb> - при увеличении средневзвешенной площади этажей на 1%, цена увеличивается на 0.144%;</li>
                 <li><sb>overallqual</sb> - при увеличении качества материалов на 1 пункт, цена увеличивается на 8.8%;</li>
@@ -1422,7 +1421,7 @@ span.emoji {
             <space></space>
             </p>
         <h3>
-            14.2. Добавление метаоценщиков верхнего уровня - алгоритмы Voting и Stacking
+            14.2. Добавление метаоценщиков - алгоритмы Voting и Stacking
             </h3>
         <p>
             На втором этапе оценивается эффект от поочередного включения в модель оценщиков верхнего уровня.
@@ -1518,9 +1517,9 @@ span.emoji {
             <space></space>
             <i>Визуализация результатов</i>
             </p>
+    <section id='ml_models'>
             <space></space>
             <img-margin><img src='img/Section7-ML-models/ml_models_plot.png'></img-margin>
-    <section id='ml_models'>
             <space></space>
         <p>
             <i>Средние значения RMSE (20-fold) всех моделей</i>
@@ -1619,9 +1618,11 @@ span.emoji {
                     style='background-color:#FFFFFF;'
                     onclick='clickSize(this)'>
                 </img-center>
+            </p>
     <section id='actual_predicted_prices'>
         </section>
             <space></space>
+        <p>
             На первой трети графика заметно, что HousePricePredictor излишне оптимистичен и часто переоценивает дома. Во второй трети этот баланс выравнивается, но в третьей части появляется снова. Видимо, выбранная архитектура построения модели хорошо подходит для домов среднего размера, но для больших и маленьких домов модель должна быть скорректирована, что в теории приведет к увеличению возможностей для эффективного прогноза цены.
             </p>
         <h2>
@@ -1636,7 +1637,9 @@ span.emoji {
             <space></space>
             <img src='img/Section8-Final-predictions/hpp_residuals.png'>
             <space></space>
+            </p>
     <section id='residuals_hpp'>
+        <p>
             Ни один тест не позволяет предполагать, что остатки распределены нормально. Попробуем удалить экстремальные значения ошибок (шесть элементов с остатками более 50000$, см. таблицу ниже).
             <space></space>
             <img-margin>
@@ -1666,6 +1669,7 @@ span.emoji {
             Попробуем определить предиктор, который наилучшим образом отражает эту закономерность. После ряда тестов выяснилось, что таким предиктором является суммарная площадь первого и второго этажа <sb>grlivarea</sb> (что логично, так как этот признак сильнее других коррелирует с ценой).
             <space></space>
             Рассчитаем <sb>абсолютные</sb> и <sb>относительные ошибки</sb> и отобразим их взаимосвязь с <sb>grlivarea</sb>.
+            </p>
         <h4>
             <i>Абсолютные ошибки</i>
             </h4>
@@ -1712,33 +1716,28 @@ span.emoji {
             Еще один предиктор, на который стоит обратить внимание - это <sb>functional</sb>.
             </p>
         </section>
-
-
-
-    
-
 <script>
-            window.addEventListener('DOMContentLoaded', () => {
-            
-              const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                  const id = entry.target.getAttribute('id');
-                  // if (entry.intersectionRatio > 0) {
-                  if (entry.intersectionRatio > 0) {
-                    document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.add('active');
-                  } else {
-                    document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.remove('active');
-                  }
-                });
-              });
-            
-              // Track all sections that have an `id` applied
-              document.querySelectorAll('section[id]').forEach((section) => {
-                observer.observe(section);
-              });
-              
-            });
-            </script>
+window.addEventListener('DOMContentLoaded', () => {
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const id = entry.target.getAttribute('id');
+      // if (entry.intersectionRatio > 0) {
+      if (entry.intersectionRatio > 0) {
+        document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.add('active');
+      } else {
+        document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.remove('active');
+      }
+    });
+  });
+
+  // Track all sections that have an `id` applied
+  document.querySelectorAll('section[id]').forEach((section) => {
+    observer.observe(section);
+  });
+  
+});
+</script>
         </content-container>
     </content-container>
     </sub-container>

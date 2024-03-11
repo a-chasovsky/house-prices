@@ -112,7 +112,7 @@ section {
 .section-nav a:visited {
     text-decoration: none;
     display: block;
-    color: #909090;
+    color: #707070;
     transition: all 25ms ease-in-out;
     padding-right: 20px;
     padding-left: 0px;
@@ -255,9 +255,9 @@ span.emoji {
     <nav class='section-nav'>
     <ol>
         <li style='padding-left:14px;margin-bottom:5px;'>
-            <a href="#begin" style='color:#404040'>Содержание</a></li>
+            <a href="#begin" style='color:#202020;'>Содержание</a></li>
         <li><a href="#review">1. Обзор и краткие результаты</a></li>
-        <li style='margin-top:5px;margin-bottom:5px;color:#404040;'>Секция I. Исследование и подготовка данных</li>
+        <li style='margin-top:5px;margin-bottom:5px;color:#202020;'>Секция I. Исследование и подготовка данных</li>
         <li><a href="#dataset_description">2. Описание датасета</a></li>
         <li><a href="#missed_values">3. Заполнение отсутствующих значений</a></li>
         <li><a href="#model_base">4. ML-модель №1 (базовая)</a></li>
@@ -267,11 +267,11 @@ span.emoji {
         <li><a href="#feature_engineering">8. Создание дополнительных предикторов (feature engineering)</a></li>
         <li><a href="#preprocessing">9. Предварительная подготовка данных</a></li>
         <li><a href="#model_inter2">10. ML-модель №3 (после создания новых признаков)</a></li>
-        <li style='margin-top:5px;margin-bottom:5px;color:#404040;'>Секция II. Регрессионный анализ</li>
+        <li style='margin-top:5px;margin-bottom:5px;color:#202020;'>Секция II. Регрессионный анализ</li>
         <li><a href="#elastic_net">11. Эластичная сеть</a></li>
         <li><a href="#linear_regression">12. Линейная регрессия</a></li>
         <li><a href="#simulations">13. Результаты линейных моделей на сэмплированных данных</a></li>
-        <li style='margin-top:5px;margin-bottom:5px;color:#404040;'>Секция III. Машинное обучение</i></li>
+        <li style='margin-top:5px;margin-bottom:5px;color:#202020;'>Секция III. Машинное обучение</i></li>
         <li><a href="#ml_algorithms">14. Выбор ML-модели для прогнозирования остатков линейной регрессии</a></li>
         <ul>
             <li><a href="#ml_simple">14.1. Опорные вектора, бустинги, бэггинг, случайный лес, K-ближайших соседей</a></li>
@@ -280,7 +280,7 @@ span.emoji {
             <li><a href="#hpp">14.4. Объединение линейной регрессии и ML-алгоритма в итоговый оценщик HPP</a></li>
             </ul>
         <li><a href="#ml_models">15. Оценка независимых ML-моделей</a></li>
-        <li style='margin-top:5px;margin-bottom:5px;color:#404040;'>Секция IV. Подведение итогов</li>
+        <li style='margin-top:5px;margin-bottom:5px;color:#202020;'>Секция IV. Подведение итогов</li>
         <li><a href="#comparison">16. Сравнение всех моделей</a></li>
         <li><a href="#actual_predicted_prices">17. Актуальные и спрогнозированные цены</a></li>
         <li><a href="#residuals_hpp">18. Анализ остатков HPP</a></li>
@@ -324,9 +324,11 @@ span.emoji {
     <!-- <button onclick="scrollToID('begin')" id="toTocBtn">
             Наверх
             </button> -->
-    <a href='#begin' class='toTocBtn'>Наверх</a>
+    <button class='toTocBtn'>
+        <a href='#begin'>Наверх</a>
+        </button>
         <h2>
-        1. Обзор и краткие результаты 2
+        1. Обзор и краткие результаты 4
             </h2>
     <content-container style='border-left:none;padding-left:0;'>
         <section id='review' style='scroll-margin-top: 65px;'>

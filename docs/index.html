@@ -242,7 +242,7 @@ span.emoji {
         <li><a onclick='scrollToID("review")' id='#review'>1. Обзор и краткие результаты</a></li>
         <li style='padding-left:14px;padding-right:20px;margin-top:5px;
                    margin-bottom:5px;color:#101010;font-weight:500;'>
-            Секция I. Исследование и подготовка данных</li>
+            I. Исследование и подготовка данных</li>
         <li><a onclick='scrollToID("dataset_description")' id='#dataset_description'>2. Описание датасета</a></li>
         <li><a onclick='scrollToID("missed_values")' id='#missed_values'>3. Заполнение отсутствующих значений</a></li>
         <li><a onclick='scrollToID("model_base")' id='#model_base'>4. Базовая ML-модель</a></li>
@@ -254,13 +254,13 @@ span.emoji {
         <li><a onclick='scrollToID("model_inter2")' id='#model_inter2'>10. ML-модель после создания признаков</a></li>
         <li style='padding-left:14px;padding-right:20px;margin-top:5px;
                    margin-bottom:5px;color:#101010;font-weight:500;'>
-            Секция II. Регрессионный анализ</li>
+            II. Регрессионный анализ</li>
         <li><a onclick='scrollToID("elastic_net")' id='#elastic_net'>11. Эластичная сеть</a></li>
         <li><a onclick='scrollToID("linear_regression")' id='#linear_regression'>12. Линейная регрессия</a></li>
         <li><a onclick='scrollToID("simulations")' id='#simulations'>13. Симуляция и ресэмплинг</a></li>
         <li style='padding-left:14px;padding-right:20px;margin-top:5px;
                    margin-bottom:5px;color:#101010;font-weight:500;'>
-            Секция III. Машинное обучение</i></li>
+            III. Машинное обучение</i></li>
         <li><a onclick='scrollToID("ml_algorithms")' id='#ml_algorithms'>14. Прогнозирование остатков регрессии</a></li>
         <!-- <ul>
             <li><a href="#ml_simple">14.1. Опорные вектора, бустинги, бэггинг, случайный лес, KNN</a></li>
@@ -271,7 +271,7 @@ span.emoji {
         <li><a onclick='scrollToID("ml_models")' id='#ml_models'>15. Модели машинного обучения</a></li>
         <li style='padding-left:14px;padding-right:20px;margin-top:5px;
                    margin-bottom:5px;color:#202020;font-weight:500;'>
-            Секция IV. Подведение итогов</li>
+            IV. Подведение итогов</li>
         <li><a onclick='scrollToID("comparison")' id='#comparison'>16. Сравнение моделей</a></li>
         <li><a onclick='scrollToID("actual_predicted_prices")' id='#actual_predicted_prices'>17. Актуальные и спрогнозированные цены</a></li>
         <li><a onclick='scrollToID("residuals_hpp")' id='#residuals_hpp'>18. Анализ остатков HousePricePredictor</a></li>
@@ -399,13 +399,13 @@ span.emoji {
             График демонстрирует эффективность прогнозирования семи моделей, построенных на разных стадиях проекта.
             </p>
             <ul>
-                <li>Base - базовая модель LightGBM после удаления пропусков;</li>
-                <li>Base (Clean) - промежуточная модель LightGBM после очистки данных;</li>
-                <li>Base (FE) - промежуточная модель LightGBM после генерации новых признаков;</li>
-                <li>Elastic Net - лучшая регрессионная модель (эластичная сеть);</li>
-                <li>SVM - лучшая линейная ML-модель;</li>
-                <li>Stacking - лучшая ML-модель;</li>
-                <li>HousePricePredictor(HPP) - модель, полученная в результате комбинации линейной регрессии и стэкинга.</li>
+                <li><sb>Base</sb> - базовая модель LightGBM после удаления пропусков;</li>
+                <li><sb>Base (Clean)</sb> - промежуточная модель LightGBM после очистки данных;</li>
+                <li><sb>Base (FE)</sb> - промежуточная модель LightGBM после генерации новых признаков;</li>
+                <li><sb>Elastic Net</sb> - лучшая регрессионная модель (эластичная сеть);</li>
+                <li><sb>SVM</sb> - лучшая линейная ML-модель;</li>
+                <li><sb>Stacking</sb> - лучшая ML-модель;</li>
+                <li><sb>HPP</sb> - HousePricePredictor - комбинация линейной регрессии и стэкинга.</li>
             </ul>
             <img 
                 src='img/Section8-Final-predictions/final_plot.png'

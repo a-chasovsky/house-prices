@@ -175,6 +175,11 @@ space20 {
     margin-top: 20px;
     content: ' '
 }
+space2 {
+    display: block;
+    margin-top: 20px;
+    content: ' '
+}
 space25 {
     display: block;
     margin-top: 25px;
@@ -528,10 +533,13 @@ span.emoji {
             <i>Группы предикторов</i>
             </h4>
         <p>
-            Для более детального анализа предикторы разделяются на группы. Этот подход полезен для генерации дополнительных признаков, являющихся производными от основных характеристик, а также для очистки и проверки данных на логические противоречия.
+            Для более детального анализа предикторы разделяются на группы. Это полезно для генерации дополнительных признаков, являющихся производными от основных характеристик, а также для проверки данных на противоречия.
+            </p>
             <space></space>
             </section>
+        <p>
             Сформировано 12 категорий предикторов:
+            </p>
             <ul>
                 <li>Качество помещений и материалов;</li>
                 <li>Относящиеся к гаражу;</li>
@@ -562,7 +570,7 @@ span.emoji {
             У некоторых переменных количество пропущенных значений достигает почти 100% от общего числа элементов.
             <space></space>
             <i>Порядковые</i>
-            <space></space>
+            <space20></space20>
             <img-margin>
                 <img 
                     src='img/Section1-Overview-and-Base-model/categorical_ordinal.png'
@@ -573,7 +581,7 @@ span.emoji {
             <section id="missed_values">
         <p>
             <i>Номинативные</i>
-            <space></space>
+            <space20></space20>
             <img-margin>
                 <img
                     src='img/Section1-Overview-and-Base-model/categorical_categorical.png'
@@ -695,7 +703,7 @@ span.emoji {
             <i>Матрица корреляций</i>
             </h4> 
         <p>
-            В топ-10 в основном попали оценки площади и качества различных составляющих дома (см. рисунок ниже, клик для увеличения изображения).
+            В топ-10 в основном попали оценки площади и качества различных составляющих дома.
             </p>
             <img
                 src='img/Section2-Explore-and-Clean/corr_matrix.png'
@@ -711,7 +719,7 @@ span.emoji {
             </h4>
         <p>
             Ключевые инструменты для исследования количественных переменных - гистограммы и диаграммы рассеяния с добавлением линии регрессии.
-            <space></space>
+            <space20></space20>
             <img
                 src='img/Section2-Explore-and-Clean/quantitative.png'
                 style="display:block;background-color:#FFFFFF;" width="100%" height="100%"
@@ -723,7 +731,7 @@ span.emoji {
             </h4>
         <p>
             Ключевые инструменты для исследования категориальных переменных - диаграмма рассеяния с линией регрессии и точечная диаграмма.
-            <space></space>
+            <space2></space2>
             <img
                 src='img/Section2-Explore-and-Clean/ordinal.png'
                 style="display:block;background-color:#FFFFFF;" width="100%" height="100%"
@@ -812,7 +820,7 @@ span.emoji {
         <h4>
             <i>Элементы с индексом 1230 и 733</i>
             </h4>
-            <space></space>
+            <space2></space2>
             <img-margin>
                 <img
                     src='img/Section2-Explore-and-Clean/1230_773.png'
@@ -850,7 +858,7 @@ span.emoji {
         <h4>
             <i>Элементы с индексом 1241 и 688</i>
             </h4>
-            <space></space>
+            <space2></space2>
             <img-margin>
                 <img
                     src='img/Section2-Explore-and-Clean/688_1241.png'
@@ -884,7 +892,7 @@ span.emoji {
         <h4>
             <i>Элементы с индексом 624, 1300 и 1334</i>
             </h4>
-            <space></space>
+            <space2></space2>
             <img-margin>
                 <img
                     src='img/Section2-Explore-and-Clean/624_1300_1334.png'
@@ -919,7 +927,7 @@ span.emoji {
         <h4>
             <i>Исправленные данные</i>
             </h4>
-            <space></space>
+            <space2></space2>
             <img-margin>
                 <img
                     src='img/Section2-Explore-and-Clean/masvnrarea_fixed.png'
@@ -941,7 +949,7 @@ span.emoji {
     </section>
         <p>
             Далее строятся диаграммы, на которых подозрительные элементы выделены цветом.
-            <space></space>
+            <space2></space2>
             <img 
                 src='img/Section2-Explore-and-Clean/outliers_colored.png'
                 style="display:block;background-color:#FFFFFF;" width="100%" height="100%"
@@ -1021,7 +1029,7 @@ span.emoji {
         <p>
             Коэффициент корреляции нового предиктора <sb>flrsfmean</sb> равен 0.77. Это на 0.05 выше, чем у наиболее информативного количественного предиктора <sb>grlivarea</sb>. Также <sb>flrsfmean</sb> имеет мéньшую дисперсию.
             </p>
-            <space></space>
+            <space2></space2>
             <img-center><img src='img/Section3-Feature-selection-and-Preprocessing/flrsfmean.png'></img-center>
             <space></space>
         <h3>
@@ -1043,7 +1051,7 @@ span.emoji {
             Наиболее информативным из новых признаков является относительное число кухонь (<sb>kitchensize</sb>, коэффициент корреляции: -0.71).
             </p>
     </section>
-            <space></space>
+            <space2></space2>
             <img-center><img src='img/Section3-Feature-selection-and-Preprocessing/bedroom_kitchen.png'></img-center>
             <space></space>
         <h3>
@@ -1065,7 +1073,7 @@ span.emoji {
             </h2>
          <p>
             <i>Данные до преобразования</i>
-            <space></space>
+            <space2></space2>
             <img-center>
                 <img
                     src='img/Section3-Feature-selection-and-Preprocessing/data_raw.png'
@@ -1079,7 +1087,7 @@ span.emoji {
     <section id='preprocessing'>
         <p>
             Количественные предикторы логарифмируются (натуральный логарифм) с помощью <sb>LogCpTransformer</sb> из библиотеки Feature-engine. Предварительно к каждому значению добавляется константа C, равная 1. В название всех логарифмированных предикторов добавляется приставка <sb>lg_</sb>.
-            <space></space>
+            <space2></space2>
             <img-center>
                 <img
                     src='img/Section3-Feature-selection-and-Preprocessing/data_log.png'
@@ -1102,7 +1110,7 @@ span.emoji {
         <p>
             Для преобразования категориальных переменных используется <sb>OrdinalEncoder</sb> из библиотеки Feature-engine. Он присваивает переменным порядковые целочисленные значения (0, 1, 2, 3, и т.д.). Порядок определяется средним значением целевой переменной (0 - для элементов с наименьшим средним и далее по возрастанию).
             </p>
-            <space></space>
+            <space2></space2>
     </section>
             <img-center>
                 <img
@@ -1116,7 +1124,7 @@ span.emoji {
             </h4>
         <p>
             После этого данные стандартизируются с помощью <sb>StandardScaler</sb> из библиотеки Scikit-learn.
-            <space></space>
+            <space2></space2>
             <img-center>
                 <img
                     src='img/Section3-Feature-selection-and-Preprocessing/data_scaled.png'
@@ -1176,7 +1184,7 @@ span.emoji {
     <section id='elastic_net'>
         <p>
             Отобразим зависимость эффективности модели от величины \( \alpha \), а также добавим на верхнюю ось число предикторов эластичной сети. 
-            <space></space>
+            <space2></space2>
             <img src='img/Section4-Linear-models-research/features_plot.png'>
             <space></space>
             Чем ниже параметр регуляризации, тем выше эффективность прогнозирования (оптимальный \( \alpha \) равен 0.0067). Минимальное число предикторов эластичной сети - 3, это <sb>lg_flrsfmean</sb>, <sb>neighborhood</sb>, <sb>overallqual</sb>. Ошибка резко уменьшается после увеличения количества предикторов с 3 до 8, заметно снижается при изменении их с 8 до 33, и плавно снижается после увеличения до 88. 
@@ -1184,7 +1192,7 @@ span.emoji {
             С точки зрения баланса точности прогнозов и интерпретируемости модели, оптимальное количество предикторов находится между 8 и 33. Необходимо также учитывать тот факт, что после отметки в 14 признаков показатель мультиколлинеарности <sb>VIF</sb> увеличивается многократно и выходит за допустимые рамки (см. таблицу ниже). 
             <space></space>
             <i>Изменение набора предикторов в зависимости от величины параметра регуляризации \( \alpha \)</i>
-            <space></space>
+            <space2></space2>
             </p>
     </section>
             <img-center>
@@ -1192,7 +1200,7 @@ span.emoji {
                     src='img/Section4-Linear-models-research/features_by_alpha.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
                 </img-center>
-            <space></space>
+            <space2></space2>
         <p>
             В следующем пункте строится линейная регрессия, которая станет ядром HousePricePredictor.
             </p>
@@ -1231,7 +1239,7 @@ span.emoji {
             Для повышения надежности оценки доверительных интервалов коэффициентов используется метод HC3, устойчивый к гетероскедастичности.
             <space></space>
             <i>Коэффициенты регрессии</i>
-            <space></space>
+            <space2></space2>
             <img-center>
                 <img
                     src='img/Section4-Linear-models-research/coefficients_table_charachteristics.png'
@@ -1269,7 +1277,7 @@ span.emoji {
             Попробуем удалить крайние элементы остатков ( \( 1.5*IQR \) ), повторить тесты на нормальность и эксцесс, а также построим график, на котором нормальное распределение с параметрами остатков ( \( mean \) 0, \( std.\) ~0.1243) сравнивается с распределением остатков до и после удаления выбросов. 
             <space></space>
             <i>Тесты на нормальность распределения остатков без выбросов</i>
-            <space></space>
+            <space2></space2>
             <img-margin>
                 <img
                     src='img/Section4-Linear-models-research/residuals_trimmed_tests.png'
@@ -1277,7 +1285,7 @@ span.emoji {
                 </img-margin>
             <space></space>
             <i>Коэффициент эксцесса</i>
-            <space></space>
+            <space2></space2>
             <img-margin>
                 <img
                     src='img/Section4-Linear-models-research/residuals_kurtosis.png'
@@ -1397,7 +1405,7 @@ span.emoji {
             <space></space>
         <p>
             Алгоритмы <sb>Random Forest</sb>, <sb>Bagging</sb>, <sb>LGBoost</sb>, <sb>XGBoost</sb> имеют встроенный функционал отбора наиболее информативных признаков. Отобразим топ-10 наиболее важных признаков для каждой из моделей.
-            <space></space>   
+            <space2></space2>   
             </p>
             <img-margin>
                 <img
@@ -1424,7 +1432,7 @@ span.emoji {
     <!-- </section> -->
         <p>
             Результаты на 20-фолдовой кросс-валидации выглядят следующим образом (опорные вектора демонстрируют неожиданно высокий результат).
-            <space></space>
+            <space2></space2>
             <img-center>
                 <img
                     src='img/Section5-Residuals-prediction/models_residuals.png'
@@ -1518,7 +1526,7 @@ span.emoji {
             <space></space>
             <sb>HousePricePredictor</sb> поддерживает Scickit-learn-совместимые методы <sb>.fit</sb> и <sb>.predict</sb>, а также ряд других методов (код доступен в файле <i>tools.py</i>)
             </p>
-            <space></space>
+            <space2></space2>
             <img-margin>
                 <img
                     src='img/Section5-Residuals-prediction/fit.png'
@@ -1556,15 +1564,15 @@ span.emoji {
     <section id='ml_models'>
         <p>
             <i>Средние значения RMSE (20-fold) всех моделей</i>
-            <space></space>
+            <space2></space2>
             <img-center>
                 <img
                     src='img/Section7-ML-models/ml_models_table.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
                 </img-center>
             <space></space>
-            Ожидаемо, наиболее эффективным алгоритмом оказался <sb>Stacking</sb>. Его конфигурация идентична модели, выбранной для прогнозирования остатков регрессии.
-            <space></space>
+            Ожидаемо, наиболее эффективным алгоритмом оказался <sb>Stacking</sb>. Его конфигурация повторяет модель, которая выбрана для прогнозирования остатков регрессии.
+            <space2></space2>
             <img 
                 src='img/Section7-ML-models/stacking_cofiguration.png'
                 style="display:block;" width="100%" height="100%">

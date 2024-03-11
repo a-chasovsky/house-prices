@@ -250,32 +250,32 @@ span.emoji {
     <nav class='section-nav'>
     <ol>
         <li style='padding-left:14px;margin-bottom:5px;'>
-            <a href="#begin" style='color:#202020;'>Содержание</a></li>
+            <a href="#begin" style='color:#101010;'>Содержание</a></li>
         <li><a href="#review">1. Обзор и краткие результаты</a></li>
-        <li style='margin-top:5px;margin-bottom:5px;color:#202020;'>Секция I. Исследование и подготовка данных</li>
+        <li style='margin-top:5px;margin-bottom:5px;color:#101010;font-weight:500;'>Секция I. Исследование и подготовка данных</li>
         <li><a href="#dataset_description">2. Описание датасета</a></li>
         <li><a href="#missed_values">3. Заполнение отсутствующих значений</a></li>
         <li><a href="#model_base">4. ML-модель №1 (базовая)</a></li>
         <li><a href="#eda">5. Исследование данных</a></li>
         <li><a href="#clear">6. Очистка и проверка на несоответствие</a></li>
         <li><a href="#model_inter1">7. ML-модель №2 (после очистки данных)</a></li>
-        <li><a href="#feature_engineering">8. Создание дополнительных предикторов (feature engineering)</a></li>
+        <li><a href="#feature_engineering">8. Создание дополнительных предикторов</a></li>
         <li><a href="#preprocessing">9. Предварительная подготовка данных</a></li>
         <li><a href="#model_inter2">10. ML-модель №3 (после создания новых признаков)</a></li>
-        <li style='margin-top:5px;margin-bottom:5px;color:#202020;'>Секция II. Регрессионный анализ</li>
+        <li style='margin-top:5px;margin-bottom:5px;color:#101010;font-weight:500;'>Секция II. Регрессионный анализ</li>
         <li><a href="#elastic_net">11. Эластичная сеть</a></li>
         <li><a href="#linear_regression">12. Линейная регрессия</a></li>
-        <li><a href="#simulations">13. Результаты линейных моделей на сэмплированных данных</a></li>
-        <li style='margin-top:5px;margin-bottom:5px;color:#202020;'>Секция III. Машинное обучение</i></li>
+        <li><a href="#simulations">13. Симуляции и ресэмплинг</a></li>
+        <li style='margin-top:5px;margin-bottom:5px;color:#101010;font-weight:500;'>Секция III. Машинное обучение</i></li>
         <li><a href="#ml_algorithms">14. Выбор алгоритма машинного обучения для прогнозирования остатков регрессии</a></li>
         <ul>
             <li><a href="#ml_simple">14.1. Опорные вектора, бустинги, бэггинг, случайный лес, KNN</a></li>
             <li><a href="#vote_stack">14.2. Добавление метаоценщиков - Voting и Stacking</a></li>
-            <li><a href="#residuals_final">14.3. Сравнение всех алгоритмов и выбор финального оценщика</a></li>
+            <li><a href="#residuals_final">14.3. Сравнение всех алгоритмов и выбор финального оценщика остатков</a></li>
             <li><a href="#hpp">14.4. Объединение линейной регрессии и ML-алгоритма в модель HPP</a></li>
             </ul>
         <li><a href="#ml_models">15. Создание независимых моделей машинного обучения</a></li>
-        <li style='margin-top:5px;margin-bottom:5px;color:#202020;'>Секция IV. Подведение итогов</li>
+        <li style='margin-top:5px;margin-bottom:5px;color:#202020;font-weight:500;'>Секция IV. Подведение итогов</li>
         <li><a href="#comparison">16. Итоговое сравнение всех моделей</a></li>
         <li><a href="#actual_predicted_prices">17. Актуальные и спрогнозированные цены</a></li>
         <li><a href="#residuals_hpp">18. Анализ остатков HPP</a></li>
@@ -986,7 +986,7 @@ span.emoji {
                 class='anchor'
                 id='feature_engineering'>
                 </a>
-            8. Создание дополнительных предикторов.
+            8. Создание дополнительных предикторов
             </h2>
         <p>
             На данном этапе предикторы разбиваются на <sb>группы</sb> и исследуется возможность создания дополнительных предикторов, которые могут улучшить модель.
@@ -1321,7 +1321,7 @@ span.emoji {
                 class='anchor'
                 id='simulations'>
                 </a>
-            13. Результаты линейных моделей на сэмплированных данных
+            13. Симуляции и ресэмплинг
             </h2>
          <p>
             Сгенерированные с помощью симуляций подвыборки не содержат дополнительной информации. Тем не менее, если предположить, что исходный датасет достаточно точно отражают генеральную совокупность, результаты симуляций могут быть полезны для оценки дисперсии прогнозов. Симуляции проводились на 1000 сэмплах с повторением (число элементов в сэмпле и исходных данных одинаково).

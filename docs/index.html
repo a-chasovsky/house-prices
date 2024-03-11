@@ -81,8 +81,12 @@ main-container {
 }
 main-container > nav {
     position: sticky;
+    height: 32rem;
     top: 20px;
     align-self: start;
+    display: flex;
+    overflow: auto;
+    scrollbar-width: none;
 }
 sub-container {
     display: block;
@@ -119,6 +123,7 @@ section {
     font-weight:500
 }
 .section-nav ol {
+    overflow: auto;
     list-style: none;
     padding-left: 20px;
     margin-top:0;
@@ -228,62 +233,10 @@ span.emoji {
     left: -1px;
     padding: 10px 7px 5px;
 }
-
 </style>  
 <body>   
 <main-container>
-    
-
     <nav class='section-nav'>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const ele = document.getElementById('container');
-            ele.style.cursor = 'grab';
-        
-            let pos = { top: 0, left: 0, x: 0, y: 0 };
-        
-            const mouseDownHandler = function (e) {
-                ele.style.cursor = 'grabbing';
-                ele.style.userSelect = 'none';
-        
-                pos = {
-                    left: ele.scrollLeft,
-                    top: ele.scrollTop,
-                    // Get the current mouse position
-                    x: e.clientX,
-                    y: e.clientY,
-                };
-        
-                document.addEventListener('mousemove', mouseMoveHandler);
-                document.addEventListener('mouseup', mouseUpHandler);
-            };
-        
-            const mouseMoveHandler = function (e) {
-                // How far the mouse has been moved
-                const dx = e.clientX - pos.x;
-                const dy = e.clientY - pos.y;
-        
-                // Scroll the element
-                ele.scrollTop = pos.top - dy;
-                ele.scrollLeft = pos.left - dx;
-            };
-        
-            const mouseUpHandler = function () {
-                ele.style.cursor = 'grab';
-                ele.style.removeProperty('user-select');
-        
-                document.removeEventListener('mousemove', mouseMoveHandler);
-                document.removeEventListener('mouseup', mouseUpHandler);
-            };
-        
-            // Attach the handler
-            ele.addEventListener('mousedown', mouseDownHandler);
-        });
-    </script>
-
-        
-        <div id="container" style="overflow: auto;">
     <ol>
         <li style='padding-left:14px;margin-bottom:5px;'>
             <a href="#begin" style='color:#404040'>Содержание</a></li>
@@ -316,11 +269,8 @@ span.emoji {
         <li><a href="#actual_predicted_prices">17. Актуальные и спрогнозированные цены</a></li>
         <li><a href="#residuals_hpp">18. Анализ остатков HPP</a></li>
         <li><a href="#further">19. Дальнейшие шаги</a></li>
-        </ol>
-            </div>
+        </ol> 
   </nav>
-        
-<sub-container id='begin' style='scroll-margin-top:15px;'>
     <img 
         src='img/header.png'
         style='width:760px;padding-left:30px'>
@@ -358,7 +308,7 @@ span.emoji {
             Наверх
             </button>
         <h2>
-        1. Обзор и краткие результаты 5
+        1. Обзор и краткие результаты 6
             </h2>
     <content-container style='border-left:none;padding-left:0;'>
         <section id='review' style='scroll-margin-top: 65px;'>

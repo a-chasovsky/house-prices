@@ -29,6 +29,7 @@ h2 {
     font-weight: 600;
     text-align: left;
     line-height: 1.5em;
+    margin-bottom: -5px;
     scroll-margin-top: 15px;
 }
 h3 {
@@ -38,6 +39,7 @@ h3 {
     font-weight: 600;
     text-align: left;
     line-height: 1.25em;
+    margin-bottom: -5px;
     scroll-margin-top: 15px;
 }
 h4 {
@@ -47,7 +49,8 @@ h4 {
     font-weight: 600;
     text-align: left;
     line-height: 1.25;
-    margin-bottom: 0px;
+    margin-top: 15px;
+    margin-bottom: 0;
     scroll-margin-top: 15px;
 }
 h5 {
@@ -240,16 +243,16 @@ span.emoji {
 </sub-container>
 <main-container>
 <sub-container>
-<content-container style='border-left:none;text-align:right;'>
+<content-container style='border-left:none;'>
     <h1 id='title' style='text-align:right;'>
        Сочетание регрессионного анализа и машинного обучения для увеличения точности и интерпретируемости модели
-    </h1>
+        </h1>
     <h5 style='text-align:right;'>
        Регрессионный анализ, машинное обучение, описательная аналитика, предиктивная аналитика
         </h5>
+<content-container style='margin-top:20px;margin-left:-30px;border:1px solid red;text-align:right;'>
     <span 
-        style='margin-top:15px;margin-bottom:5px;padding-left:17px;
-               display:inline-block;scroll-margin-top:15px;' id='links'>
+        style='padding-left:17px;display:inline-block;scroll-margin-top:15px;' id='links'>
         <a href='https://github.com/a-chasovsky/kgl_house_prices' target='_blank'>
             <span class='emoji' style='vertical-align: -0.05em;'>
                 &#127969;
@@ -260,16 +263,17 @@ span.emoji {
             </a>
             &emsp;
         </span>
-    <span style='margin-top:15px;margin-bottom:5px;display:inline-block;scroll-margin-top:15px;'>
+    <span style='display:inline-block;scroll-margin-top:15px;'>
         <a href='https://github.com/a-chasovsky' target='_blank'>
             <span>
-                <img src='img/logo-github.png' style='width:20px;vertical-align:top'>
+                <img src='img/logo-github.png' style='width:20px;vertical-align:top;'>
                 </span>
             <span style='margin-left:3px;font-size:0.85em'>
                 Профиль Github 
                 </span>
             </a>
         </span>
+</content-container>
 <content-container style='border-right:none;margin-left:-30px;'>
     <button onclick="scrollToID('general')" id="toTocBtn">
             Наверх
@@ -277,13 +281,12 @@ span.emoji {
         <h2>
             <a
                 class='anchor'
-                id='review'
-                style='scroll-margin-top:400px;'>
+                id='review'>
                 </a>
-        Обзор и краткие результаты
+        Обзор и краткие результаты 1
             </h2>
 <section id='review'>
-        <p style='margin:0;'>
+        <p>
             Современные алгоритмы машинного обучения превосходят классические регрессионные модели в точности прогнозов, но при этом сложны в интерпретации. Некоторые алгоритмы имеют встроенный функционал приоритизации предикторов, но этого недостаточно для оценки взаимосвязей в данных.<br>
             <space></space>
             Целью проекта является создание простой в интерпретации модели <sb>HousePricePredictor</sb>, которая по точности прогнозов не уступает лучшим алгоритмам машинного обучения. Модель состоит из двух уровней: на первом уровне линейная регрессия формирует первичные прогнозы и коэффициенты для интерпретации; второй уровень - это алгоритм машинного обучения, который прогнозирует величину остатков (ошибок) регрессии и корректирует результаты.
@@ -1739,6 +1742,7 @@ window.addEventListener('DOMContentLoaded', () => {
   
 });
 </script>
+</content-container>
 </content-container>
 </sub-container>
 <nav class='section-nav'>

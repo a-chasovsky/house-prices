@@ -76,7 +76,7 @@ p {
 main-container {
     display: grid;
     grid-template-columns: 800px 375px;
-    margin: 0 0 75px 15%;
+    margin: 0 0 75px 0;
 }
 main-container > nav {
     position: sticky;
@@ -105,7 +105,7 @@ section {
     width: 100%;
     margin-top: 1.25em;
     padding-top: 1em;
-    boder: 1px solid purple;
+    border: 1px solid purple;
 }
 .section-nav a {
     display: block;
@@ -1724,6 +1724,10 @@ span.emoji {
             Еще один предиктор, на который стоит обратить внимание - это <sb>functional</sb>.
             </p>
         </section>
+
+
+
+    
 <script>
 window.addEventListener('DOMContentLoaded', () => {
   const observer = new IntersectionObserver(entries => {
@@ -1791,7 +1795,7 @@ window.addEventListener('DOMContentLoaded', () => {
         <li><a onclick='scrollToID("residuals_hpp")' id='#residuals_hpp'>Анализ остатков HousePricePredictor</a></li>
         <li><a onclick='scrollToID("further")' id='#further'>Дальнейшие шаги</a></li>
         </ol> 
-      </nav> 
+      </nav>
 </main-container>
 <script>
 let mybutton = document.getElementById('toTocBtn');

@@ -248,7 +248,7 @@ span.emoji {
         style='width:760px;'>
 </sub-container> -->
 <main-container>
-<sub-container style='border:none;'>
+<sub-container style='border:none;border:1px solid red;'>
 <sub-container>
 <content-container style='text-align:right;'>
     <h1 id='title' style='text-align:right;'>
@@ -374,10 +374,12 @@ span.emoji {
             <li><sb>Stacking</sb> - лучшая ML-модель;</li>
             <li><sb>HPP</sb> - HousePricePredictor - комбинация линейной регрессии и стэкинга.</li>
         </ul>
-        <img 
+        <img-center>
+        <img
             src='img/Section8-Final-predictions/final_plot.png'
             style="display:block;background-color:#FFFFFF;"
             onclick='clickSize(this)'>
+            </img-center>
         <space></space>
     <p>
         В ходе проекта удалось снизить ошибку RMSE c 0.1216 у базовой модели до 0.0969 итогового оценщика HousePricePredictor. На этапе преобразования наибольший вклад внесла очистка данных, а несколько дополнительно сгенерированных предикторов полезны как для линейной регрессии, так и для более сложных алгоритмов машинного обучения (см. <i>'8. Создание дополнительных предикторов'</i>, <i>'12. Линейная регрессия'</i>, <i>'15. Оценка независимых ML-моделей'</i>).

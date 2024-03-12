@@ -427,7 +427,603 @@ span.emoji {
     <p>
         Ось абсцисс - элементы, отсортированные по суммарной площади первого и второго этажа <sb>grlivarea</sb>. Визуально этот график можно разбить на три составляющие: малые, средние и большие дома. Модель чаще переоценивает небольшие дома, значения ошибок при этом относительно невелики. На среднем отрезке ошибки увеличиваются и становятся более симметричными. Для больших домов вновь чаще наблюдается переоценка, а ошибки иногда превышают 50000$.
     </p>
-
+<h2 id="section1">
+            <a
+                class='anchor'
+                id='dataset_description'>
+                </a>
+            Секция I. Исследование и подготовка данных
+            </h2>
+        <h2>
+            Описание датасета
+            </h2>
+        <p>
+            В проекте используется один из датасетов, опубликованных на Kaggle. Это задача регрессии, в которой требуется спрогнозировать стоимость дома, используя значения его характеристик и исторические данные о предыдущих сделках.
+            <space></space>
+        <a
+            href='https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/overview'
+            target='_blank'
+            >Перейти к странице датасета на сайте Kaggle
+            </a>
+            <space></space>
+            <section id="dataset_description">
+            </p>
+            <ul>
+                <li>Число предикторов - 79;</li>
+                <li>Число элементов - 1460.</li>
+                </ul>
+            <space20></space20>
+            <img-center>
+                <img 
+                    src='img/Section1-Overview-and-Base-model/data_raw.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-center>
+            <space20></space20>
+        <p>
+            Данные разбиваются на два датасета в соотношении 9 к 1: обучающий train (1314 элемента) и проверочный test (146 элемента).
+            <space></space>
+            </p>
+        <h4>
+            <i>Целевая переменная</i>
+            </h4>  
+        <p>
+            Распределение целевой переменной напоминает гамма-распределение. Это одномодальное распределение с вершиной в районе 150000$ и правосторонней асимметрией.
+            <space></space>
+            <img src='img/Section1-Overview-and-Base-model/target_distribution.png'>
+            <space></space>
+            Для выравнивания формы распределения и снижения влияния экстремальных значений используется натуральный логарифм.
+            <space></space>
+            <img src='img/Section1-Overview-and-Base-model/target_distribution_log.png'>
+            </p>
+            <h4>
+                <i>Характеристики</i>
+                </h4>
+        <p>
+            В датасете 79 независимых переменных:
+            </p>
+            <ul>
+                <li>Количественные признаки - 34;</li>
+                <li>Категориальные признаки - 45:</li>
+                <ul style='list-style-type:"-  ";'>
+                    <li style='margin-left:-15px'>Порядковые - 18;</li>
+                    <li style='margin-left:-15px'>Номинативные - 27.</li>
+                    </ul>
+            </ul>
+        <h4>
+            <i>Группы предикторов</i>
+            </h4>
+        <p>
+            Для более детального анализа предикторы разделяются на группы. Это полезно для генерации дополнительных признаков, являющихся производными от основных характеристик, а также для проверки данных на противоречия.
+            </p>
+            <space></space>
+            </section>
+        <p>
+            Сформировано 12 категорий предикторов:
+            </p>
+            <ul>
+                <li>Качество помещений и материалов;</li>
+                <li>Относящиеся к гаражу;</li>
+                <li>Относящиеся к подвалу;</li>
+                <li>Предикторы, связанные с площадью;</li>
+                <li>Типы помещений (комнаты, подвал);</li>
+                <li>Год постройки дома/гаража, модернизации, и т.д.;</li>
+                <li>Двор и область вокруг дома;</li>
+                <li>Строительный материал;</li>
+                <li>Конструкционные особенности;</li>
+                <li>Состояние (уровень износа);</li>
+                <li>Удобства;</li>
+                <li>Окружение (район, улица, и т.д.);</li>
+                <li>Организационные аспекты продажи.</li>
+            </ul>
+            </p>
+        <h2>
+            <a
+                class='anchor'
+                id='missed_values'>
+                </a>
+            Заполнение отсутствующих значений
+            </h2>
+        <h4>
+            <i>Категориальные переменные</i>
+            </h4>
+        <p>
+            У некоторых переменных количество пропущенных значений достигает почти 100% от общего числа элементов.
+            <space></space>
+            <i>Порядковые</i>
+            <space20></space20>
+            <img-margin>
+                <img 
+                    src='img/Section1-Overview-and-Base-model/categorical_ordinal.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-margin>
+            <space></space>
+            </p>
+            <section id="missed_values">
+        <p>
+            <i>Номинативные</i>
+            <space20></space20>
+            <img-margin>
+                <img
+                    src='img/Section1-Overview-and-Base-model/categorical_categorical.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-margin>  
+            <space></space>
+            В описании данных сказано, что для ряда переменных пропуски соответствуют значению "Отсутствует" (например, NaN для переменной "бассейн" означает, что в этом доме отсутствует бассейн). После замены NaN на 'NA' остается только одно пропущенное значение у переменной <sb>electrical</sb>, которое заполняется медианой.
+        </p>
+        <h4>
+            <i>Количественные переменные</i>
+            </h4> 
+        <p>            
+            Пропущенные значения имеются у трех количественных переменных: <sb>lotfrontage</sb>, <sb>garageyrblt</sb>, <sb>masvnrarea</sb>.
+            </p>
+            <space20></space20>
+            <img-margin>
+                <img
+                    src='img/Section1-Overview-and-Base-model/quantitative.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-margin>
+            <space></space>
+        <ul style='list-style-type:"a) ";margin-bottom:-10px'>
+            <li><sb>lotfrontage</sb> - длина участка улицы, прилегающей к придомовой территории</li>
+        </ul>
+        <p style='margin-bottom:0px'>
+            &emsp;&emsp;&ensp;237 (18%) пропусков заполняются медианным значением. Помимо этого, обнаружены два потенциальных выброса (выделены красным).
+        </section>
+            <space></space>
+            <img src='img/Section1-Overview-and-Base-model/lotfrontage_outs.png'>
+            <space></space>
+            </p>
+        <ul style='list-style-type:"b) ";margin-bottom:-10px'>
+            <li><sb>garageyrblt</sb> - год постройки гаража</li>
+        </ul>
+        <p style='margin-bottom:10px'>
+            &emsp;&emsp;&ensp;73 (6%) пропусков заполняются годом постройки дома.
+            </p>
+        <ul style='list-style-type:"c) ";margin-bottom:-10px'>
+            <li><sb>masvnrarea</sb> - площадь облицовки фундамента</li>
+        </ul>
+        <p style='margin-bottom:10px'>
+            &emsp;&emsp;&ensp;8 (1%) пропусков. Более детальное изучение этой и связанных с ней переменных показывает, что все пропущенные значения соответствуют отсутствию облицовки (переменная <sb>masvnrtype</sb> со значением NA). Соответственно, площади этих элементов заполняются нулевыми значениями.
+            </p>
+        <h2>
+            <a
+                class='anchor'
+                id='model_base'>
+                </a>
+            Базовая модель
+            </h2>
+        <p>
+            Алгоритм LightGBM используется в качестве базовой модели, потому что он оптимален с точки зрения эффективности и производительности.    
+            <space></space>
+            Катеориальные признаки кодируются с помощью <sb>OrdinalEncoder</sb> из библиотеки Feature-engine (категории заменяются целыми числами - по возрастанию в зависимости от величины среднего значения целевой переменной для данной категории).
+            <space></space>
+            Подбор гиперпараметров проводится в два этапа. На первом этапе тестируется широкий диапазон значений и определяются базовые параметры. После этого осуществляется дополнительный поиск в окрестностях этих параметров. В обоих случаях используется <sb>GridSearch</sb> от Scikit-learn с <sb>20-fold</sb> кросс-валидацией.
+            </p>
+            <space></space>
+        <section id='model_base'>
+        <p>
+            Чтобы предотвратить утчеку данных применяется <sb>Pipeline</sb> от Scikit-learn.
+            <space></space>
+            Метрика качества модели - <sb>RMSE</sb> (среднеквадратичная ошибка).
+            </p>
+        <h4>
+            <i>Результаты 1-го этапа подбора гиперпараметров</i>
+            </h4> 
+        <p>
+            Лучшие результаты (RMSE примерно 0.130) показывают сложные модели с большим числом деревьев (75), увеличение числа листьев положительно сказывается на эффективности модели. Оптимальная скорость обучения - 0.1. RMSE лучшей модели - 0.1282.
+            <space20></space20>
+            <img-center>
+                <img 
+                    src='img/Section1-Overview-and-Base-model/gridsearch1.png'
+                    style='display:block;background-color:#FFFFFF;'
+                    onclick='clickSize(this)'>
+                </img-center>
+            <space></space>
+            </p>
+            <h4>
+                <i>Результаты 2-го этапа подбора гиперпараметров</i>
+                </h4> 
+        <p>
+            Ошибка уменьшилась незначительно - с 0.1282 до 0.1276.
+            <space></space>
+            <img-center>
+                <img 
+                    src='img/Section1-Overview-and-Base-model/gridsearch2.png'
+                    style='display:block;background-color:#FFFFFF;'
+                    onclick='clickSize(this)'>
+                </img-center>
+            <space></space>
+            </p>
+        <h4>
+            <i>ML-модель №1 (базовая)</i>
+            </h4>
+        <p>
+            Таким образом, базовая модель (RMSE: 0.1276) имеет следующую конфигурацию:
+            </p>
+            <space></space>
+            <img-center>
+            <img src='img/Section1-Overview-and-Base-model/model_1.png'>
+                </img-center>
+        </section>
+            <space></space>
+        <p>
+            Это первый ориентир, показывающий насколько хорошо имеющиеся данные подходят для прогнозирования цены дома. Также базовая модель дает представление о наиболее значимых предикторах. Можно отметить, что 7 из 10 ключевых предикторов связаны с площадью. На общем фоне заметно выделяется суммарная площадь первого и второго этажа (<sb>grlivarea</sb>).
+            </p>
+            <space></space>
+            <img src='img/Section1-Overview-and-Base-model/feature_importance.png'>
+            <space></space>
+        <h2>
+            <a
+                class='anchor'
+                id='eda'>
+                </a>
+            Исследование данных
+            </h2>
+        <h4>
+            <i>Матрица корреляций</i>
+            </h4> 
+        <p>
+            В топ-10 в основном попали оценки площади и качества различных составляющих дома.
+            </p>
+            <img
+                src='img/Section2-Explore-and-Clean/corr_matrix.png'
+                style="display:block;background-color:#FFFFFF;" width="100%" height="100%"
+                onclick='clickSize(this)'>
+        <section id='eda'>
+            <space20></space20>
+        <p>
+            Полный набор визуализаций представлен в соответствующем блокноте <i>'Section2-Explore-and-Clean.ipynb'</i>. Ниже приведены несколько типовых графиков.
+            </p>
+        <h4>
+            <i>Количественные признаки</i>
+            </h4>
+        <p>
+            Ключевые инструменты для исследования количественных переменных - гистограммы и диаграммы рассеяния с добавлением линии регрессии.
+            <space20></space20>
+            <img
+                src='img/Section2-Explore-and-Clean/quantitative.png'
+                style="display:block;background-color:#FFFFFF;" width="100%" height="100%"
+                onclick='clickSize(this)'>
+            <space></space>
+            </p>
+        <h4>
+            <i>Категориальные признаки</i>
+            </h4>
+        <p>
+            Ключевые инструменты для исследования категориальных переменных - диаграмма рассеяния с линией регрессии и точечная диаграмма.
+            <space2></space2>
+            <img
+                src='img/Section2-Explore-and-Clean/ordinal.png'
+                style="display:block;background-color:#FFFFFF;" width="100%" height="100%"
+                onclick='clickSize(this)'>
+            <space></space>
+            <img
+                src='img/Section2-Explore-and-Clean/categorical.png'
+                style="display:block;background-color:#FFFFFF;" width="100%" height="100%"
+                onclick='clickSize(this)'>
+            <space20></space20>
+            Примеры взаимосвязи некоторых категориальных переменных с ценой.
+            <space20></space20>
+            <img src='img/Section2-Explore-and-Clean/housestyle.png'>
+        </section>
+            <space></space>
+            <img src='img/Section2-Explore-and-Clean/kitchenqual_vs_price.png'>
+            <space></space>
+            </p>
+        <h2>
+            <a
+                class='anchor'
+                id='clear'>
+                </a>
+            Очистка и проверка данных
+            </h2>
+        <h3>
+            Проверка данных на несоответствие
+            </h3>
+        <p>
+            В этом пункте данные проверяются на несоответствие, например, суммарная площадь жилого пространства не должна быть больше или меньше суммы площадей всех комнат.
+            <space></space>
+            Проверено 33 предиктора, несоответствия найдены в двух переменных: <sb>masvnrarea</sb> и <sb>garageyrblt</sb>.
+            <space></space>
+            <b> GARAGEYRBLT </b> (год постройки гаража) 
+            <space></space>
+            <i>Несоответствия:</i>
+            </p>
+            <ul>
+                <li>У 6 элементов год постройки гаража меньше года постройки дома. В некоторых случаях эта разница составляет несколько лет.</li>
+                </ul>
+        <p>    
+            <i>Возможная причина:</i>
+            </p>
+            <ul>
+                <li>Постройка гаража может быть первым этапом строительства, но после её завершения возможна заморозка стройки, например, из-за финансовых трудностей. Соответственно, сам дом будет достроен только через несколько лет. Такое несоответствие допускается.</li>
+                </ul>
+    <section id='clear'>
+        <p>
+            <i>Решение:</i>
+            </p>
+            <ul>
+                <li>Данные не исправляются.</li>
+                </ul>
+        <p>
+            <b> MASVNRAREA </b> (Площадь облицовки фундамента)
+            <space20></space20>
+            <img-margin>
+                <img
+                    src='img/Section2-Explore-and-Clean/masvnarea_disc.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-margin>
+            <space></space>
+            <i>Несоответствия:</i>
+            </p>
+             <ul>
+                <li>У 7 элементов площадь облицовки равна 0 (эквивалентно тому, что облицовка отсутствует), при этом тип облицовки не равен NA; и наоборот (см. таблицу выше).</li>
+                </ul>
+        <p>
+            <i>Возможная причина:</i>
+            </p>
+            <ul>
+                <li><t>Ошибка ввода данных.</t></li>
+                </ul>
+        <p>
+            <i>Решение:</i>
+            </p>
+            <ul>
+                <li>Исправление вручную. Во время исправления ошибок будем ориентироваться на тип облицовки (<sb>masvnrtype</sb>) и цену дома (<sb>price</sb>). На графике видно, что наиболее дорогие - это дома с облицовкой из камня (Stone) и кирпича (BrkFace).</li>
+                </ul>
+            <space></space>
+            <img src='img/Section2-Explore-and-Clean/masvnrtype_price.png'>
+            <space></space>
+        <p>
+            В данных имеется три различных типа противоречий, и соответственно, будут исследованы три группы элементов.
+            </p>
+        <h4>
+            <i>Элементы с индексом 1230 и 733</i>
+            </h4>
+            <space2></space2>
+            <img-margin>
+                <img
+                    src='img/Section2-Explore-and-Clean/1230_773.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-margin>
+            <space></space>
+        <p>
+        <i>Противоречие:</i>
+            </p>
+        <ul>
+            <li>Если <sb>masvnrtype</sb> равен NA, то <sb>masvnrarea</sb> должна быть равна 0.</li>
+            </ul>
+        <p>
+            <i>Варианты исправления:</i>
+            </p>
+            <ul>
+                <li>Или <sb>masvnrtype</sb> присваивается какое-то значение, или <sb>masvnrarea</sb> приравнивается к 0.</li>
+                </ul>
+        <p>
+            <i>Решение:</i>
+            </p>
+            <ul>
+                <li><sb>masvnrarea</sb> приравнивается к 0.</li>
+                </ul>
+        <p>
+            <i>Аргументы:</i>
+            </p>
+            <ul>
+            <li>Цены этих домов примерно равны 12.0 - это может говорить о том, что облицовка отсутствует (средняя цена домов без облицовки - 11.9).</li>
+            <li>Самое низкое значение переменной <sb>masvnrarea</sb> - 10 (см. график ниже); вероятно, 1 - это ошибка ввода данных.</li>
+                </ul>
+            <space></space>
+            <img src='img/Section2-Explore-and-Clean/masvnrarea_minimal.png'>
+            <space></space>
+        <h4>
+            <i>Элементы с индексом 1241 и 688</i>
+            </h4>
+            <space2></space2>
+            <img-margin>
+                <img
+                    src='img/Section2-Explore-and-Clean/688_1241.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-margin>
+            <space></space>
+        <p>
+            <i>Противоречие:</i>
+            </p>
+             <ul>
+                <li>Если <sb>masvnrarea</sb> равна нулю, то <sb>masvnrtype</sb> должен быть равен NA.</li>
+                </ul>
+        <p>
+            <i>Варианты исправления:</i>
+            </p>
+             <ul>
+                <li>Или <sb>masvnrarea</sb> присваивается какое-либо значение, или <sb>masvnrtype</sb> меняется на NA.</li>
+                </ul>
+        <p>
+            <i>Решение:</i>
+            </p>
+            <ul>
+                <li><sb>masvnrarea</sb> присваивается медианное значение элементов, у которых такой же тип облицовки <sb>masvnrtype</sb>.</t></li>
+                </ul>
+        <p>
+            <i>Аргументы:</i>
+            </p>
+            <ul>
+                <li>Цена элементов с нулевой <sb>masvnrarea</sb> достаточно большая, что говорит скорее в пользу наличия облицовки (т.е. в пользу того, что <sb>masvnrarea</sb> не равна нулю), поэтому <sb>masvnrarea</sb> заполняется медианным значением.</li>
+                </ul>
+        <h4>
+            <i>Элементы с индексом 624, 1300 и 1334</i>
+            </h4>
+            <space2></space2>
+            <img-margin>
+                <img
+                    src='img/Section2-Explore-and-Clean/624_1300_1334.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-margin>
+            <space></space>
+        <p>
+            <i>Противоречие:</i>
+            </p>
+            <ul>
+                <li>Если <sb>masvnrarea</sb> не равна нулю, то <sb>masvnrtype</sb> не должен быть NA.</li>
+                </ul>
+        <p>
+            <i>Варианты исправления:</i>
+            </p>
+            <ul>
+                <li>Или <sb>masvnrtype</sb> присваивается какое-то значение, или <sb>masvnrarea</sb> приравнивается к 0.</li>
+                </ul>
+        <p>
+            <i>Решение:</i>
+            </p>
+            <ul>
+                <li>Элементы 624 и 1334: <sb>masvnrarea</sb> приравнивается к 0;</li>
+                <li>Элемент 1300: <sb>masvnrtype</sb> присваивается значение Stone.</li>
+                </ul>
+        <p>
+            <i>Аргументы:</i>
+            </p>
+            <ul>
+                <li>Для всех трех элементов выбор сделан исходя из их цены - у дорогих домов чаще встречается <sb>masvnrtype</sb>, равный Stone, а у недорогих - NA.</li>
+                </ul>
+        <h4>
+            <i>Исправленные данные</i>
+            </h4>
+            <space2></space2>
+            <img-margin>
+                <img
+                    src='img/Section2-Explore-and-Clean/masvnrarea_fixed.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-margin>
+            <space></space>
+        <h3>
+            Выявление и удаление выбросов
+            </h3>
+        <p>
+            Два подозрительно высоких значения <sb>lotfrontage</sb>, обнаруженных при исследовании количественных признаков.
+            <space></space>
+            <img src='img/Section2-Explore-and-Clean/lotfrontage.png'>
+            <space></space>
+            Потенциальные выбросы обнаружены также в некоторых других переменных. Например, так выглядит диаграмма для переменной <sb>miscval</sb>:
+            <space></space>
+            <img src='img/Section2-Explore-and-Clean/miscval.png'>
+            <space></space>
+    </section>
+        <p>
+            Далее строятся диаграммы, на которых подозрительные элементы выделены цветом.
+            <space2></space2>
+            <img 
+                src='img/Section2-Explore-and-Clean/outliers_colored.png'
+                style="display:block;background-color:#FFFFFF;" width="100%" height="100%"
+                onclick='clickSize(this)'>
+            <space></space>
+            По результатам визуальной оценки три элемента с индексами 523, 934 и 1298 признаются выбросами и удаляются из датасета.
+            </p>
+        <h2>
+            <a
+                class='anchor'
+                id='model_inter1'>
+                </a>
+            ML-модель после очистки данных
+            </h2>
+        <p>
+            Здесь применяется тот же двухэтапный подход, который использовался в пункте <i>"4. ML-модель №1 (базовая)"</i>. Лучшая модель демонстрирует RMSE на уровне 0.1233 (у базовой модели RMSE равна 0.1276). Конфигурация модели выглядит следующим образом:
+            <space></space>
+            <img-center>
+            <img src='img/Section2-Explore-and-Clean/model_2.png'>
+                </img-center>
+            <space></space>
+            По сравнению с базовой моделью число деревьев не изменилось, глубина дерева уменьшилась почти в три раза, а количество листьев сократилось более чем в 10 раз. Значимость предикторов выровнялась по сравнению с сырыми данными. По-прежнему лидирует предиктор, характеризующий суммарную площадь первого и второго этажа <sb>grlivarea</sb>.
+            </p>
+    <section id='model_inter1'>
+            <space></space>
+            <img src='img/Section2-Explore-and-Clean/feature_importance.png'>
+            <space></space>
+    </section>
+        <h4>
+            <i>Промежуточные результаты</i>
+            </h4>
+        <p>
+            После очистки и исправления данных модель стала проще и эффективнее. 
+            </p>
+            <space></space>
+            <img src='img/Section8-Final-predictions/results_inter1.png'>
+            <space></space>
+            </p>
+        <h2>
+            <a
+                class='anchor'
+                id='feature_engineering'>
+                </a>
+            Создание дополнительных предикторов
+            </h2>
+        <p>
+            На данном этапе предикторы разбиваются на <sb>группы</sb> и исследуется возможность создания дополнительных предикторов, которые могут улучшить модель.
+            </p>
+        <h3>
+            <a
+                class='anchor'
+                id='square_feet'>
+                </a>
+            Предикторы, характеризующие площадь.
+            </h3>
+        <p>
+            Исследовано 17 предикторов, создан 1 дополнительный - <sb>flsrmean</sb>.
+            <space></space>
+            Согласно матрице корреляций наиболее информативным предиктором в данной группе является суммарная площадь первого и второго этажа <sb>grlivarea</sb> с коэффициентом корреляции 0.72 (для очищенных данных). Этот показатель эквивалентен их среднему арифметическому.
+            <space></space>
+            Гипотеза, лежащая в основе создания нового предиктора <sb>flrsfmean</sb>: для большинства жителей относительная ценность первого этажа выше, чем второго. Объясняется это тем, что на втором этаже расположены преимущественно спальни, и люди в целом проводят больше времени на первом этаже. Чтобы учесть этот эффект, вместо среднего арифметического будет использоваться среднее взвешенное:
+            </p>
+    <section id='feature_engineering'>
+            <space></space>
+            \[ flrsfmean = \frac{first\_flrsf*weight_1 + second\_flrsf*weight_2}{weight_1 + weight_2} , \]
+            <space></space>
+            <p>
+                где  \( weight_1 \) и \( weight_2 \) - это вес первого и второго этажа соответственно.
+                </p>
+            <space></space>
+        <p>
+            После нескольких тестов веса принимаются равными 1 и 0.7, соответственно. Итоговая формула выглядит следующим образом:
+            </p>
+            <space></space>
+            $$ flrsfmean = \frac{first\_flrsf + second\_flrsf*0.7}{1.7} $$
+            <space></space>
+        <p>
+            Коэффициент корреляции нового предиктора <sb>flrsfmean</sb> равен 0.77. Это на 0.05 выше, чем у наиболее информативного количественного предиктора <sb>grlivarea</sb>. Также <sb>flrsfmean</sb> имеет мéньшую дисперсию.
+            </p>
+            <space2></space2>
+            <img-center><img src='img/Section3-Feature-selection-and-Preprocessing/flrsfmean.png'></img-center>
+            <space></space>
+        <h3>
+            <a
+                class='anchor'
+                id='rooms'>
+                </a>
+            Предикторы, характеризующие помещения (жилые и ванные комнаты, кухни).
+            </h3>
+        <p>
+            Исследовано 7 предикторов, создано 5 дополнительных - <sb>bedroomsize</sb>, <sb>kitchensize</sb>, <sb>bedroomfracrms</sb>, <sb>kitchenfracrms</sb>, <sb>bathsfracbedr</sb>. Новые предикторы можно разделить на три группы:
+            </p>
+            <ul>
+            <li><sb>bedroomsize</sb>, <sb>kitchensize</sb>: относительное количество спален и кухонь по площади - рассчитывается как количество спален/кухонь, деленное на суммарную площадь первого и второго этажа (<sb>grlivarea</sb>);</li>
+            <li><sb>bedroomfracrms</sb>, <sb>kitchenfracrms</sb>: относительное количество спален и кухонь по общему числу комнат - рассчитывается как количество спален/кухонь, деленное на общее число комнат (<sb>totrmsabvgrd</sb>);</li>
+            <li><sb>bathsfracbedr</sb>: относительное число ванных комнат на спальню - рассчитывается как число совмещенных ванных комнат, деленное на число спален (<sb>bedroomabvgr</sb>).</li>
+                </ul>
+        <p>
+            Наиболее информативным из новых признаков является относительное число кухонь (<sb>kitchensize</sb>, коэффициент корреляции: -0.71).
+            </p>
+    </section>
+            <space2></space2>
+            <img-center><img src='img/Section3-Feature-selection-and-Preprocessing/bedroom_kitchen.png'></img-center>
+            <space></space>
+        <h3>
+            <a
+                class='anchor'
+                id='dates'>
+                </a>
+            Предикторы, характеризующие даты.
+            </h3>
+        <p>
+            Добавлены новые предикторы <sb>houseage</sb> (возраст дома на момент продажи) и <sb>modage</sb> (число лет с момента модернизации на момент продажи). Они не повышают информативность, но лучше подходят для интерпретации.
+            </p>
 
 
 

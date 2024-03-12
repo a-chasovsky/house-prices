@@ -78,13 +78,11 @@ main-container {
     grid-template-columns: 810px 355px;
     /* width: 1275px; */
     margin: 0 0 75px 10%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 sub-container {
     display: block;
     width: 810px;
-    border-right: 1px solid #CFD7DE;
-    border-left: 1px solid #CFD7DE;
 }
 content-container {
     display: block;
@@ -99,6 +97,7 @@ main-container > nav {
     height: 750px;
     direction:rtl;
     scrollbar-width: none;
+    /* border: 1px solid red; */
 }
 .section-nav {
     width: 100%;
@@ -247,11 +246,11 @@ span.emoji {
         style='width:760px;'>
 </sub-container> -->
 <main-container>
-<sub-container style='margin-left:-1px;border:1px solid red;'>
-<sub-container style='margin-left:-1px;'>
-<content-container style=';text-align:right;'>
+<sub-container style='margin-left:-1px;border:none;'>
+<sub-container style='border-right: 1px solid #CFD7DE;border-left:none;'>
+<content-container style='text-align:right;'>
     <h1 id='title' style='text-align:right;'>
-       3Сочетание регрессионного анализа и машинного обучения для увеличения точности и интерпретируемости модели
+       4Сочетание регрессионного анализа и машинного обучения для увеличения точности и интерпретируемости модели
         </h1>
     <h5 style='text-align:right;'>
        Регрессионный анализ, машинное обучение, описательная аналитика, предиктивная аналитика
@@ -279,6 +278,7 @@ span.emoji {
             </a>
         </span>
 </content-container>
+<sub-container style='border-left: 1px solid #CFD7DE;'>
 <content-container>
     <button onclick="scrollToID('general')" id="toTocBtn">
         Наверх
@@ -429,7 +429,7 @@ span.emoji {
     </p>
 </content-container>
 
-    
+</sub-container>  
 </sub-container>
 
 
@@ -446,7 +446,7 @@ span.emoji {
 
 
 </sub-container>
-<nav class='section-nav' style='border: 1px solid red;'>
+<nav class='section-nav'>
     <ol>
         <li style='
                    margin-bottom:5px;color:#101010;font-weight:500;'>

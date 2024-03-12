@@ -234,9 +234,11 @@ span.emoji {
 <body>   
 <main-container>
 <sub-container id='general' style='scroll-margin-top:15px;'>
+<content-container style='text-align:right;border:none;border:1px solid yellow;'>
     <img 
         src='img/header.png'
         style='width:760px;padding-right:30px;'>
+    </content-container>
 <content-container style='text-align:right;border-left:none;'>
     <h1 style='text-align:right;'>
        Сочетание регрессионного анализа и машинного обучения для увеличения точности и интерпретируемости модели
@@ -267,8 +269,8 @@ span.emoji {
                 </span>
             </a>
         </span>
-    </content-container>
-<content-container>
+</content-container>
+<content-container style='border:1px solid red;'>
     <button onclick="scrollToID('general')" id="toTocBtn">
             Наверх
             </button> 
@@ -280,8 +282,7 @@ span.emoji {
                 </a>
         1. Обзор и краткие результаты
             </h2>
-    <content-container style='border-left:none;padding-left:0;'>
-        <section id='review'>
+<section id='review'>
         <p style='margin:0;'>
             Современные алгоритмы машинного обучения обычно превосходят классические регрессионные модели в точности прогнозов, но при этом сложны в интерпретации. Некоторые алгоритмы имеют встроенный функционал приоритизации предикторов, но этого недостаточно для оценки взаимосвязей в данных.<br>
             <space></space>
@@ -1738,11 +1739,9 @@ window.addEventListener('DOMContentLoaded', () => {
   
 });
 </script>
-        </content-container>
-    </content-container>
-    </sub-container>
-
-    <nav class='section-nav'>
+</content-container>
+</sub-container>
+<nav class='section-nav' style='border:1px solid orange'>
     <ol>
         <li style='padding-left:10px;padding-right:20px;
                    margin-bottom:5px;color:#101010;font-weight:500;'>
@@ -1785,9 +1784,8 @@ window.addEventListener('DOMContentLoaded', () => {
         <li><a onclick='scrollToID("residuals_hpp")' id='#residuals_hpp'>18. Анализ остатков HousePricePredictor</a></li>
         <li><a onclick='scrollToID("further")' id='#further'>19. Дальнейшие шаги</a></li>
         </ol> 
-      </nav>
-    
-    </main-container>
+      </nav> 
+</main-container>
 <script>
 let mybutton = document.getElementById('toTocBtn');
 

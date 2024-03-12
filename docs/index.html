@@ -1317,7 +1317,296 @@ span.emoji {
             <img src='img/Section8-Final-predictions/results_inter3.png'>
             <space></space>
             </p>
-
+<h2 id='section3'>
+            <a
+                class='anchor'
+                id='ml_algorithms'>
+                </a>
+            Секция 3. Машинное обучение
+            </h2>
+        <h2>
+            Прогнозирование остатков регрессии
+            </h2>
+        <p>
+            В этом разделе выбирается алгоритм для прогнозирования остатков линейной регрессии. После этого создается модель <sb>HousePricePredictor</sb>, который объединяет линейную регрессию и оценщик остатков.
+            <space></space>
+            Категориальные признаки кодируются с помощью <sb>OrdinalEncoder</sb> из библиотеки Feature-engine. Он присваивает переменным порядковые целочисленные значения (0, 1, 2, 3, и т.д.). Порядок определяется средним значением целевой переменной (0 - для элементов с наименьшим средним и далее по возрастанию).
+            <space></space>
+            Подбор гиперпараметров осуществляется с помощью решетчатого поиска <sb>GridSearch</sb> от Scikit-learn с <sb>20-fold</sb> кросс-валидацией. Чтобы предотвратить утчеку данных используется <sb>Pipeline</sb> от Scikit-learn.
+            <space></space>
+    <section id='ml_algorithms'>
+        <!-- </section> -->
+            Метрика качества модели - <sb>RMSE</sb> (среднеквадратичная ошибка).
+            <space></space>
+            </p>
+    
+        <h3>
+            <a
+                class='anchor'
+                id='ml_simple'>
+                </a>
+            Опорные вектора, бустинги, бэггинг, случайный лес, KNN
+            </h3>
+         <p>
+            На первом этапе обучаются следующие ML-модели:
+            </p>
+            <ul>
+                <li><sb>KNN</sb> - K-Nearest Neighbors;</li>
+                <li><sb>SVR</sb> - Support Vector Machine;</li>
+                <li><sb>RF</sb> - Random Forest;</li>
+                <li><sb>Bagging</sb> - Bagging Regressor;</li>
+                <li><sb>LGBoost</sb> - Light Gradient Boosting;</li>
+                <li><sb>HGBoost</sb> - Histogram-based Gradient Boosting;</li>
+                <li><sb>XGBoost</sb> - Extreme Gradient Boosting.</li>
+                </ul>
+        <p>
+            В качестве предикторов используются все сгенерированные в предыдущих пунктах признаки, а также прогнозы линейной регрессии (предиктор <sb>price_pred_lr</sb>).
+            </p>
+            <space></space>
+        <p>
+            Алгоритмы <sb>Random Forest</sb>, <sb>Bagging</sb>, <sb>LGBoost</sb>, <sb>XGBoost</sb> имеют встроенный функционал отбора наиболее информативных признаков. Отобразим топ-10 наиболее важных признаков для каждой из моделей.
+            <space2></space2>   
+            </p>
+            <img-margin>
+                <img
+                    src='img/Section5-Residuals-prediction/features_importance_four_models.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-margin>
+    <!-- <section id='ml_simple'> -->
+        <p>
+            <space></space>
+            Наиболее значимые признаки здесь:
+            </p>
+            <space></space>
+        <ul>
+            <li><sb>neighborhood</sb> - район расположения дома, он вошел в топ-4 ключевых признаков каждой из моделей;</li>
+            <li><sb>lg_bsmtfinsf_first</sb> - площадь подвала 1 типа, 3 модели поместили его в топ-4 ключевых признаков;</li>
+            <li><sb>price_pred_lr</sb> - также в топ-4 у трех моделей, но менее значим, чем <sb>lg_bsmtfinsf_first.</sb></li>
+            </ul>
+        <p>
+            <i>Число попаданий в топ-10 ключевых признаков</i>
+            </p>
+            <space></space>
+            <img src='img/Section5-Residuals-prediction/features_importance.png'>
+            <space></space>
+    <!-- </section> -->
+        <p>
+            Результаты на 20-фолдовой кросс-валидации выглядят следующим образом (опорные вектора демонстрируют неожиданно высокий результат).
+            <space2></space2>
+            <img-center>
+                <img
+                    src='img/Section5-Residuals-prediction/models_residuals.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-center>
+            <space></space>
+            </p>
+        <h3>
+            <a
+                class='anchor'
+                id='vote_stack'>
+                </a>
+            Voting и Stacking
+            </h3>
+        <p>
+            На втором этапе оценивается эффект от поочередного включения в модель оценщиков верхнего уровня.
+            <space></space>
+            <b>VoteRegressor</b>
+            <space></space>
+            VoteRegressor формирует свой прогноз, усредняя прогнозы моделей нижнего уровня. Средняя RMSE на 20-фолдовой проверке составила 0.1101.
+            <space></space>
+            <b>StackingRegressor</b> 
+            <space></space>
+            В схеме StackingRegressor на верхний уровень добавляется агрегирующий оценщик (в текущей конфигурации это <sb>Ridge Regression</sb>), который выдает прогнозы, используя в качестве предикторов прогнозы моделей нижнего уровня. Средняя RMSE на 20-фолдовой проверке: 0.1084.
+            <space></space>
+            <b>Сравнение Voting и Stacking (20-fold cross-validation)</b>
+            <space></space>
+            Прогнозы <sb>Stacking</sb> точнее в 12 фолдах из 20.
+            </p>
+            <space></space>
+    <!-- <section id='vote_stack'> -->
+        <!-- </section> -->
+            <img-center>
+                <img 
+                    src='img/Section5-Residuals-prediction/vote_stack_compare.png'
+                    style="display:block;background-color:#FFFFFF;"
+                    onclick='clickSize(this)'>
+            </img-center>
+        <h3>
+            <a
+                class='anchor'
+                id='residuals_final'>
+                </a>
+            Выбор оценщика остатков регрессии
+            </h3>
+        <p>
+            Суммарные результаты всех обученных в этом разделе моделей выглядят следующим образом
+            </p>
+            <space20></space20>
+            <img-center>
+                <img
+                    src='img/Section5-Residuals-prediction/models_residuals_summary.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-center>
+    <!-- <section id='residuals_final'> -->
+            <space20></space20>
+        <p>
+            <i>Визуализация результатов</i>
+            <space></space>
+            <img-margin>
+                <img src='img/Section5-Residuals-prediction/final_plot.png'>
+                </img-margin>
+            <space></space>
+            Для оценки остатков будет использоваться алгоритм <sb>Stacking</sb>. 
+            </p>
+            <space></space>
+    <!-- </section> -->
+        <p>
+            <i>Конфигурация StackingRegressor</i>
+            </p>
+            <space></space>
+            <img 
+                src='img/Section5-Residuals-prediction/stacking_cofiguration.png'
+                style="display:block;" width="100%" height="100%">
+            </p>
+        <h3>
+            <a
+                class='anchor'
+                id='hpp'>
+                </a>
+            Модель HousePricePredictor
+            </h3>
+        <p>
+            Класс <sb>HousePricePredictor</sb> объединяет линейную регрессию и Stacking в единую модель. Линейная регрессия генерирует основные прогнозы цен, а Stacking используется для коррекции и повышения точности.
+            <space></space>
+            <img-margin>
+                <img
+                    src='img/Section5-Residuals-prediction/hpp.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-margin>
+            <space></space>
+            <sb>HousePricePredictor</sb> поддерживает Scickit-learn-совместимые методы <sb>.fit</sb> и <sb>.predict</sb>, а также ряд других методов (код доступен в файле <i>tools.py</i>)
+            </p>
+            <space2></space2>
+            <img-margin>
+                <img
+                    src='img/Section5-Residuals-prediction/fit.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-margin>
+    <!-- <section id='hpp'> -->
+            <space></space>
+        </section>
+            <img-margin>
+                <img
+                    src='img/Section5-Residuals-prediction/predict.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-margin>
+            <space></space>
+        <p>
+            Средняя RMSE на 20-фолдовой проверке: 0.1102 +/- 0.009.
+            </p>
+        <h2>
+            <a
+                class='anchor'
+                id='ml_models'>
+                </a>
+            Модели машинного обучения
+            </h2>
+        <p>
+            Здесь, как и в предыдущем пункте, в первую очередь обучаются популярные ML-алгоритмы, а после этого исследуется влияние оценщиков верхнего уровня <sb>Voting</sb> и <sb>Stacking</sb>.
+            <space></space>
+            Отдельно оценивается вклад предикторов, добавленных в пункте <i>'8. Создание дополнительных предикторов'</i>.
+            <space></space>
+            <i>Визуализация результатов</i>
+            </p>
+            <space></space>
+            <img-margin><img src='img/Section7-ML-models/ml_models_plot.png'></img-margin>
+            <space></space>
+    <section id='ml_models'>
+        <p>
+            <i>Средние значения RMSE (20-fold) всех моделей</i>
+            <space2></space2>
+            <img-center>
+                <img
+                    src='img/Section7-ML-models/ml_models_table.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-center>
+            <space></space>
+            Ожидаемо, наиболее эффективным алгоритмом оказался <sb>Stacking</sb>. Его конфигурация повторяет модель, которая выбрана для прогнозирования остатков регрессии.
+            <space2></space2>
+            <img 
+                src='img/Section7-ML-models/stacking_cofiguration.png'
+                style="display:block;" width="100%" height="100%">
+            <space></space>
+            </p>
+    </section>
+        <h4>
+            <i>Промежуточные результаты</i>
+            </h4>
+        <p>
+             Для итогового сравнения выбраны две ML-модели: стэкинг (наиболее эффективный) и SVM (лучший линейный алгоритм).
+            </p>
+            <space></space>
+            <img src='img/Section8-Final-predictions/results_inter4.png'>
+            <space></space>
+            </p>
+        <h2>
+            <a
+                class='anchor'
+                id='comparison'>
+                </a>
+            Секция 4. Подведение итогов
+            </h2>
+        <h2>
+            Сравнение моделей
+            </h2>
+        <p>
+            В этом пункте оценщик HousePricePredictor сравнивается с моделями из предыдущих пунктов. Три базовых модели LightGBM обучены на разных этапах подготовки данных (удаление пропусков, очистка, генерация дополнительных признаков). Для обучения регрессионной модели (эластичная сеть) используются те же предикторы, которые были использованы для линейной регрессии в HousePricePredictor. Две ML-модели представляют лучшую линейную (SVM) ML-модель и лучший ансамблевый алгоритм (Stacking).
+            </p>
+        <ul style='padding-top:10px'>
+            <li><sb>Base</sb> - базовая модель (LightGBM) после удаления пропусков;</li>
+            <li><sb>Base (Clean)</sb> - промежуточная модель (LightGBM) после очистки данных;</li>
+            <li><sb>Base (FE)</sb> - промежуточная модель (LightGBM) после генерации новых признаков;</li>
+            <li><sb>Elastic Net</sb> - лучшая регрессионная модель (эластичная сеть);</li>
+            <li><sb>SVM</sb> - лучшая линейная модель (SVM);</li>
+            <li><sb>Stacking</sb> - лучший ансамблевый алгоритм (Stacking);</li>
+            <li><sb>HPP</sb> - сочетание линейной регрессии и стэкинга (HousePricePredictor).</li>
+            </ul>
+        <p>
+            <i>Сводный график и таблица с результатами</i>
+            </p>
+    <section id='comparison'>
+            <space></space>
+            <img 
+                src='img/Section8-Final-predictions/final_plot.png'
+                style='background-color:#FFFFFF;'
+                onclick='clickSize(this)'>
+            <space></space>
+            <img
+                src='img/Section8-Final-predictions/final_table_T.png'
+                style='margin-left:80px;border: 1px solid #CCCCCC;border-radius: 3px;'>
+            <space></space>
+        <p>
+            Комментарии:
+            </p>
+        <ul>
+            <li>Результат комбинирования линейной регрессии и алгоритмов машинного обучения превысил ожидание. Итоговый оценщик не только не уступает лучшей модели, но и превосходит её в точности;</li>
+            <li>Очистка и исправление данных увеличили прогнозную точность базовой модели и уменьшили доверительный интервал;</li>
+            <li>Генерация новых признаков сказалась на конфигурации базовой модели, но не на точности прогнозов (при этом неправильно утверждать, что новые признаки бесполезны - они использовались другими моделями, в частности линейной регрессией HousePricePredictor);</li>
+            <li>Эластичная сеть ожидаемо продемонстрировала худшие результаты (что во многом связано с ограниченным числом предикторов в этой модели);</li>
+            <li>Опорные вектора (SVM) неожиданно продемонстрировали сравнительно хорошие результаты. По эффективности этот алгоритм уступил только стэкингу (Stacking). Можно предположить, что это обусловлено высоким уровнем линейности взаимосвязей в данных;</li>
+            <li>Stacking и HPP показывают хорошую кучность (это видно на нижнем графике swarmplot).</li>
+            </ul>
+    </section>
+        <p>
+            <i>Визуализация ошибок 20 фолдов кросс-валидации HousePricePredictor и Stacking</i>
+            <space20></space20>
+            <img-center>
+                <img 
+                    src='img/Section8-Final-predictions/stack_hpp_compare.png'
+                    style='background-color:#FFFFFF;'
+                    onclick='clickSize(this)'>
+                </img-center>
+            </p>
 
 
 

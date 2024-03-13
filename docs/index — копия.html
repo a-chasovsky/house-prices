@@ -20,7 +20,7 @@ h1 {
     text-align: left;
     line-height: 1.25;
     scroll-margin-top: 15px;
-    margin-top: 15px;
+    margin: 30px 0 15px 0;
     }
 h2 {
     font-family: system-ui;
@@ -71,22 +71,14 @@ p {
     color: #151515;
     line-height: 1.5;
     margin: 12.5px 0 0 0;
+    text-align: justify
 }
 main-container {
     display: grid;
-    grid-template-columns: 810px 355px;
-    margin: 0 0 75px 12%;
-    /* border: 1px solid black; */
-}
-sub-container {
-    display: block;
-    width: 810px;
-}
-content-container {
-    display: block;
-    width: 750px;
-    margin: 0 auto;
-    text-align: justify;
+    grid-template-columns: 800px 375px;
+    width: 1175px;
+    margin: 0 0 75px 0;
+    border: 1px solid black;
 }
 main-container > nav {
     position: sticky;
@@ -97,16 +89,33 @@ main-container > nav {
     direction:rtl;
     scrollbar-width: none;
 }
+sub-container {
+    display: block;
+    width: 800px;
+}
+content-container {
+    display: block;
+    width: 800px;
+    border-right: 1px solid #CFD7DE;
+    border-left: 1px solid #CFD7DE;
+    padding: 0 30px 0 30px;
+}
+section {
+    scroll-margin-top: 15px;
+}
 .section-nav {
     width: 100%;
-    margin-top: 2.3em;
-    padding-top: 0.2em;
-    padding-left: 30px;
+    margin-top: 1.25em;
+    padding-top: 1.1em;
+    margin-left:61px;
+    border: 1px solid red;
 }
 .section-nav a {
     display: block;
     text-decoration: none;
     color: #606060;
+    padding-right: 0px;
+    padding-left: 10px;
     cursor: pointer;
     /* transition: all 25ms ease-in-out; */
 }
@@ -116,7 +125,11 @@ main-container > nav {
 }
 .section-nav ol {
     display: block;
+    /* overflow: auto; */
     list-style: none;
+    padding-left: 20px;
+    margin-top:0;
+    direction:ltr;
 }
 .section-nav ul {
     list-style: none;
@@ -129,6 +142,7 @@ main-container > nav {
 .section-nav li.active > a {
     font-weight:600;
     color: #1E5FA5;
+    padding-right: 30px;
 }
 ul {
     list-style-type: disc;
@@ -144,12 +158,11 @@ li {
 img-center {
     display: flex;
     justify-content: center;
+    padding-right: 0px;
+    padding-left: 0px
 }
 img-margin {
     margin-left: 30px;
-}
-section {
-    scroll-margin-top: 15px;
 }
 space {
     display: block;
@@ -199,15 +212,15 @@ sb {
 #toTocBtn {
     display: none;
     position: fixed;
-    margin-left: 840px;
-    bottom: 30px;
+    margin-left: 875px;
+    bottom: 35px;
     z-index: 99;
     border: none; 
     outline: none; 
     background-color: #F1F1F1;
     color: #1B60AA; 
     cursor: pointer;
-    padding: 15px;
+    padding: 15px; 
     border-radius: 5px;
     font-size: 0.9em;
 }
@@ -225,28 +238,28 @@ span.emoji {
     border-radius: 3px;
 }
 </style>  
-
 <body>
-<sub-container
+<sub-container  
     id='general' 
-    style='margin-left:12%;text-align:right;'>
+    style='width:860px;border:none;margin-left:10%;
+           scroll-margin-top:15px;text-align:right;'>
     <img 
         src='img/header.png'
-        style='width:760px;padding-right:30px;scroll-margin-top:5px;'>
+        style='width:760px;padding-right:30px;'>
 </sub-container>
 <main-container>
 <sub-container>
-<sub-container style='border-right: 1px solid #CFD7DE;'>
-<content-container style='text-align:right;'>
+<content-container style='border-left:none;'>
     <h1 id='title' style='text-align:right;'>
        Сочетание регрессионного анализа и машинного обучения для увеличения точности и интерпретируемости модели
         </h1>
     <h5 style='text-align:right;'>
        Регрессионный анализ, машинное обучение, описательная аналитика, предиктивная аналитика
         </h5>
-    <span
-        style='display:inline-block;margin-top:10px;'>
-        <a href='https://a-chasovsky.github.io/house-prices/' target='_blank'>
+<content-container style='border:none;margin-top:20px;margin-left:-30px;text-align:right;'>
+    <span 
+        style='padding-left:17px;display:inline-block;scroll-margin-top:15px;' id='links'>
+        <a href='https://github.com/a-chasovsky/kgl_house_prices' target='_blank'>
             <span class='emoji' style='vertical-align: -0.1em;'>
                 &#127969;
                 </span>
@@ -256,7 +269,7 @@ span.emoji {
             </a>
             &emsp;
         </span>
-    <span style='display:inline-block;'>
+    <span style='display:inline-block;scroll-margin-top:15px;'>
         <a href='https://github.com/a-chasovsky' target='_blank'>
             <span>
                 <img src='img/logo-github.png' style='width:20px;vertical-align:top;'>
@@ -267,156 +280,154 @@ span.emoji {
             </a>
         </span>
 </content-container>
-<sub-container style='border-left: 1px solid #CFD7DE;'>
-    <button onclick="scrollToID('general')" id="toTocBtn" style='text-align:right'>
-        Наверх
-        </button>
-<content-container>
-    <h2 style='margin-top: 10px;'>
-        <a
-            class='anchor'
-            id='review'>
-            </a>
-        Обзор и краткие результаты
-        </h2>
+<content-container style='border-right:none;margin-left:-30px;border:1px solid blue'>
+    <button onclick="scrollToID('general')" id="toTocBtn">
+            Наверх
+            </button> 
+        <h2>
+            <a
+                class='anchor'
+                id='review'>
+                </a>
+        Обзор и краткие результаты 2
+            </h2>
 <section id='review'>
-    <p>
-        Современные алгоритмы машинного обучения превосходят классические регрессионные модели в точности прогнозов, но при этом сложны в интерпретации. Некоторые алгоритмы имеют встроенный функционал приоритизации предикторов, но этого недостаточно для оценки взаимосвязей в данных.<br>
-        <space></space>
-        Целью проекта является создание простой в интерпретации модели <sb>HousePricePredictor</sb>, которая по точности прогнозов не уступает лучшим алгоритмам машинного обучения. Модель состоит из двух уровней: на первом уровне линейная регрессия формирует первичные прогнозы и коэффициенты для интерпретации; второй уровень - это алгоритм машинного обучения, который прогнозирует величину остатков (ошибок) регрессии и корректирует результаты.
-        </p>
-    <h3>
-        Этапы
-        </h3>
-    <h4>
-        <i>Секция I: Исследование и подготовка данных</i>
-        </h4>
-    <p>
-        На первом этапе проводится первичный анализ данных, визуализация, а также необходимые преобразования. Среди прочего заполняются пропущенные значения, выявляются и исправляются противоречия в данных, определяются наиболее значимые и создаются дополнительные предикторы, данные кодируются и стандартизируются. По итогам каждого этапа преобразований обучается промежуточная модель LightGBM, которая используется как бенчмарк для HousePricePredictor. 
-        <space></space>
-        <i>Результаты:</i>
-        </p>
-    <ul>
-        <li>очищенный и преобразованный датасет;</li>
-        <li>датасеты для пайплайнов секции машинного обучения;</li>
-        <li>три промежуточные ML-модели.</li>
-    </ul>
-    <h4>
-        <i>Секция II: Регрессионный анализ</i>
-        </h4>
-    <p>
-        В этом разделе рассматриваются две регрессионные модели: эластичная сеть и линейная регрессия (без регуляризации). 
+        <p>
+            Современные алгоритмы машинного обучения превосходят классические регрессионные модели в точности прогнозов, но при этом сложны в интерпретации. Некоторые алгоритмы имеют встроенный функционал приоритизации предикторов, но этого недостаточно для оценки взаимосвязей в данных.<br>
+            <space></space>
+            Целью проекта является создание простой в интерпретации модели <sb>HousePricePredictor</sb>, которая по точности прогнозов не уступает лучшим алгоритмам машинного обучения. Модель состоит из двух уровней: на первом уровне линейная регрессия формирует первичные прогнозы и коэффициенты для интерпретации; второй уровень - это алгоритм машинного обучения, который прогнозирует величину остатков (ошибок) регрессии и корректирует результаты.
+            </p>
+        <h3>
+            Этапы
+            </h3>
+        <h4>
+            <i>Секция I: Исследование и подготовка данных</i>
+            </h4>
+        <p>
+            На первом этапе проводится первичный анализ данных, визуализация, а также необходимые преобразования. Среди прочего заполняются пропущенные значения, выявляются и исправляются противоречия в данных, определяются наиболее значимые и создаются дополнительные предикторы, данные кодируются и стандартизируются. По итогам каждого этапа преобразований обучается промежуточная модель LightGBM, которая используется как бенчмарк для HousePricePredictor. 
+            <space></space>
+            <i>Результаты:</i>
+            </p>
+        <ul>
+            <li>очищенный и преобразованный датасет;</li>
+            <li>датасеты для пайплайнов секции машинного обучения;</li>
+            <li>три промежуточные ML-модели.</li>
+        </ul>
+        <h4>
+            <i>Секция II: Регрессионный анализ</i>
+            </h4>
+        <p>
+            В этом разделе рассматриваются две регрессионные модели: эластичная сеть и линейная регрессия (без регуляризации). 
 Для эластичной сети подбирается оптимальное значение гиперпараметра \( \alpha \) и строится график зависимости RMSE от числа используемых предикторов. Десять наиболее релевантных предикторов используются для построения линейной регрессии. После диагностики регрессии, она сравнивается с эластичной сетью с применением ресэмплинга.
-        <space></space>
-        В дальнейшем результаты эластичной сети используются как бенчмарк эффективности линейных регрессионных моделей, а линейная регрессия станет первым уровнем итогового оценщика HPP. 
-    <space></space>
-    <i>Результаты:</i>
-        </p>
-    <ul>
-        <li>линейная модель для первого уровня итогового оценщика HPP</li>
-        <li>эластичная сеть для итогового сравнения с другими моделями.</li>
-    </ul>
-    <h4>
-        <i>Секция III: Машинное обучение</i>
-        </h4>
-    <p>
-        Секция машинного обучения состоит из двух частей.
-        <space></space>
-        В первой части осуществляется выбор алгоритма, который будет прогнозировать <sb>остатки</sb> (ошибки) линейной регрессии. Здесь оцениваются разные типы ML-алгоритмов: метод ближайших соседей, бэггинг, случайный лес, бустинг, стэкинг. Самый эффективный алгоритм будет использоваться на втором уровне итогового оценщика HPP. Его прогнозы используются для коррекции прогнозов регрессии, что теоретически должно привести к увеличению точности предсказания цены. Для выбора лучшего алгоритма используется 20-фолдовая перекрестная проверка.
-        <space></space>
-        Во второй части секции по аналогичной схеме с 20-фолдовой кросс-валидацией определяется лучшая модель машинного обучения, прогнозирующая <sb>цену</sb> дома. Эта модель - очередной бенчмарк эффективности (в дополнение к моделям из предыдущих секций) для итогового оценщика HPP.
+            <space></space>
+            В дальнейшем результаты эластичной сети используются как бенчмарк эффективности линейных регрессионных моделей, а линейная регрессия станет первым уровнем итогового оценщика HPP. 
         <space></space>
         <i>Результаты:</i>
-        </p>
-    <ul>
-        <li>ML-модель для прогноза остатков регрессии;</li>
-        <li>ML-модель для прогноза цены дома.</li>
-        </ul>
-    <h4>
-        <i>Секция IV: Подведение итогов</i>
-        </h4>
-    <p>
-        На заключительном этапе проводится сравнение имеющихся моделей, делается заключение об эффективности оценщика HPP, исследуются остатки его прогнозов, предлагаются шаги для дальнейшего исследования данных и развития структуры HPP.
-        <space></space>
-    <i>Результаты:</i>
-        </p>
-    <ul>
-        <li>оценка HPP;</li>
-        <li>рекомендации по дальнейшим шагам.</li>
-    </ul>
-    <h3>
-        Результаты
-        </h3>
-    <h4>
-        <i>Предсказательная эффективность HousePricePredictor (HPP)</i>
-        </h4>
-    <p>
-        График демонстрирует эффективность прогнозирования семи моделей, построенных на разных стадиях проекта.
-        </p>
+            </p>
         <ul>
-            <li><sb>Base</sb> - базовая модель LightGBM после удаления пропусков;</li>
-            <li><sb>Base (Clean)</sb> - промежуточная модель LightGBM после очистки данных;</li>
-            <li><sb>Base (FE)</sb> - промежуточная модель LightGBM после генерации новых признаков;</li>
-            <li><sb>Elastic Net</sb> - лучшая регрессионная модель (эластичная сеть);</li>
-            <li><sb>SVM</sb> - лучшая линейная ML-модель;</li>
-            <li><sb>Stacking</sb> - лучшая ML-модель;</li>
-            <li><sb>HPP</sb> - HousePricePredictor - комбинация линейной регрессии и стэкинга.</li>
+            <li>линейная модель для первого уровня итогового оценщика HPP</li>
+            <li>эластичная сеть для итогового сравнения с другими моделями.</li>
         </ul>
-        <img-center>
-        <img
-            src='img/Section8-Final-predictions/final_plot.png'
-            style="display:block;background-color:#FFFFFF;"
-            onclick='clickSize(this)'>
-            </img-center>
+        <h4>
+            <i>Секция III: Машинное обучение</i>
+            </h4>
+        <p>
+            Секция машинного обучения состоит из двух частей.
+            <space></space>
+            В первой части осуществляется выбор алгоритма, который будет прогнозировать <sb>остатки</sb> (ошибки) линейной регрессии. Здесь оцениваются разные типы ML-алгоритмов: метод ближайших соседей, бэггинг, случайный лес, бустинг, стэкинг. Самый эффективный алгоритм будет использоваться на втором уровне итогового оценщика HPP. Его прогнозы используются для коррекции прогнозов регрессии, что теоретически должно привести к увеличению точности предсказания цены. Для выбора лучшего алгоритма используется 20-фолдовая перекрестная проверка.
+            <space></space>
+            Во второй части секции по аналогичной схеме с 20-фолдовой кросс-валидацией определяется лучшая модель машинного обучения, прогнозирующая <sb>цену</sb> дома. Эта модель - очередной бенчмарк эффективности (в дополнение к моделям из предыдущих секций) для итогового оценщика HPP.
+            <space></space>
+            <i>Результаты:</i>
+            </p>
+        <ul>
+            <li>ML-модель для прогноза остатков регрессии;</li>
+            <li>ML-модель для прогноза цены дома.</li>
+            </ul>
+        <h4>
+            <i>Секция IV: Подведение итогов</i>
+            </h4>
+        <p>
+            На заключительном этапе проводится сравнение имеющихся моделей, делается заключение об эффективности оценщика HPP, исследуются остатки его прогнозов, предлагаются шаги для дальнейшего исследования данных и развития структуры HPP.
         <space></space>
-    <p>
-        В ходе проекта удалось снизить ошибку RMSE c 0.1216 у базовой модели до 0.0969 итогового оценщика HousePricePredictor. На этапе преобразования наибольший вклад внесла очистка данных, а несколько дополнительно сгенерированных предикторов полезны как для линейной регрессии, так и для более сложных алгоритмов машинного обучения (см. <i>'8. Создание дополнительных предикторов'</i>, <i>'12. Линейная регрессия'</i>, <i>'15. Оценка независимых ML-моделей'</i>).
-        <space></space>
-        Результат итогового оценщика HPP превысил ожидания - это единственная модель, у которой ошибка на тестовых данных не превышает 0.1. Доверительные и предиктивные интервалы для всех моделей примерно одинаковы.
-        <space></space>
-        Три лучшие модели демонстрируют неплохую дисперсию - их результаты на кросс-валидации достаточно кучны, за исключением нескольких выбросов (см. нижний график). Для HPP это пять элементов с заметно более высоким значением ошибки.
-        </p>
-    <h4>
-        <i>Интерпретациия модели</i>
-        </h4>
-    <p>
-        Ядром HousePricePredictor является классическая линейная регрессия. Коэффициенты и доверительные интервалы представлены в таблице ниже.
-        <space20></space20>
-        <img-margin>
+        <i>Результаты:</i>
+            </p>
+        <ul>
+            <li>оценка HPP;</li>
+            <li>рекомендации по дальнейшим шагам.</li>
+        </ul>
+        <h3>
+            Результаты
+            </h3>
+        <h4>
+            <i>Предсказательная эффективность HousePricePredictor (HPP)</i>
+            </h4>
+        <p>
+            График демонстрирует эффективность прогнозирования семи моделей, построенных на разных стадиях проекта.
+            </p>
+            <ul>
+                <li><sb>Base</sb> - базовая модель LightGBM после удаления пропусков;</li>
+                <li><sb>Base (Clean)</sb> - промежуточная модель LightGBM после очистки данных;</li>
+                <li><sb>Base (FE)</sb> - промежуточная модель LightGBM после генерации новых признаков;</li>
+                <li><sb>Elastic Net</sb> - лучшая регрессионная модель (эластичная сеть);</li>
+                <li><sb>SVM</sb> - лучшая линейная ML-модель;</li>
+                <li><sb>Stacking</sb> - лучшая ML-модель;</li>
+                <li><sb>HPP</sb> - HousePricePredictor - комбинация линейной регрессии и стэкинга.</li>
+            </ul>
             <img 
-                src='img/Section4-Linear-models-research/coefficients_table.png'
-                style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-            </img-margin>
-        <space></space>
-        Предикторы с наибольшими коэффициентами - <sb>lg_flrsfmean</sb> (дополнительно сгенерированный предиктор - средневзвешенная площадь первого и второго этажей, см. <i>'8.1. Предикторы, характеризующие площадь'</i>), <sb>overallqual</sb> (качество строительных и отделочных материалов) и <sb>houseage</sb> (возраст дома). 
-        <space></space>
-        Оценка вклада каждого из этих параметров (при прочих равных):
-        </p>
-        <ul>
-            <li>С увеличением средневзвешенной площади этажей на 1% цена увеличивается на 0.144%;</li>
-            <li>С увеличением качества материалов на 1 пункт цена увеличивается на 8.8%;</li>
-            <li>С увеличением возраста дома на 1 год цена уменьшается на 8.5%</li>
-        </ul>
-    <p>
-        Интерпретацию остальных коэффициентов см. в разделе <i>'12. Линейная регрессия'.</i>
-        </p>
-</section>
-    <h4>
-        <i>Визуализация актуальных и предсказанных HousePricePredictor цен</i>
-        </h4>
-        <space></space>
-        <img-center>
-            <img
-                src='img/Section8-Final-predictions/predicted_actual_residuals.png'
+                src='img/Section8-Final-predictions/final_plot.png'
                 style="display:block;background-color:#FFFFFF;"
                 onclick='clickSize(this)'>
-            </img-center>
-        <space></space>
+            <space></space>
+        <p>
+            В ходе проекта удалось снизить ошибку RMSE c 0.1216 у базовой модели до 0.0969 итогового оценщика HousePricePredictor. На этапе преобразования наибольший вклад внесла очистка данных, а несколько дополнительно сгенерированных предикторов полезны как для линейной регрессии, так и для более сложных алгоритмов машинного обучения (см. <i>'8. Создание дополнительных предикторов'</i>, <i>'12. Линейная регрессия'</i>, <i>'15. Оценка независимых ML-моделей'</i>).
+            <space></space>
+            Результат итогового оценщика HPP превысил ожидания - это единственная модель, у которой ошибка на тестовых данных не превышает 0.1. Доверительные и предиктивные интервалы для всех моделей примерно одинаковы.
+            <space></space>
+            Три лучшие модели демонстрируют неплохую дисперсию - их результаты на кросс-валидации достаточно кучны, за исключением нескольких выбросов (см. нижний график). Для HPP это пять элементов с заметно более высоким значением ошибки.
+            </p>
+        <h4>
+            <i>Интерпретациия модели</i>
+            </h4>
+        <p>
+            Ядром HousePricePredictor является классическая линейная регрессия. Коэффициенты и доверительные интервалы представлены в таблице ниже.
+            <space20></space20>
+            <img-margin>
+                <img 
+                    src='img/Section4-Linear-models-research/coefficients_table.png'
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                </img-margin>
+            <space></space>
+            Предикторы с наибольшими коэффициентами - <sb>lg_flrsfmean</sb> (дополнительно сгенерированный предиктор - средневзвешенная площадь первого и второго этажей, см. <i>'8.1. Предикторы, характеризующие площадь'</i>), <sb>overallqual</sb> (качество строительных и отделочных материалов) и <sb>houseage</sb> (возраст дома). 
+            <space></space>
+            Оценка вклада каждого из этих параметров (при прочих равных):
+            </p>
+            <ul>
+                <li>С увеличением средневзвешенной площади этажей на 1% цена увеличивается на 0.144%;</li>
+                <li>С увеличением качества материалов на 1 пункт цена увеличивается на 8.8%;</li>
+                <li>С увеличением возраста дома на 1 год цена уменьшается на 8.5%</li>
+            </ul>
+        <p>
+            Интерпретацию остальных коэффициентов см. в разделе <i>'12. Линейная регрессия'.</i>
+            </p>
+    </section>
+        <h4>
+            <i>Визуализация актуальных и предсказанных HousePricePredictor цен</i>
+            </h4>
+            <space></space>
+            <img-center>
+                <img
+                    src='img/Section8-Final-predictions/predicted_actual_residuals.png'
+                    style="display:block;background-color:#FFFFFF;" width="100%" height="100%"
+                    onclick='clickSize(this)'>
+                </img-center>
+            <space></space>
+            
+        <p>
+            Ось абсцисс - элементы, отсортированные по суммарной площади первого и второго этажа <sb>grlivarea</sb>. Визуально этот график можно разбить на три составляющие: малые, средние и большие дома. Модель чаще переоценивает небольшие дома, значения ошибок при этом относительно невелики. На среднем отрезке ошибки увеличиваются и становятся более симметричными. Для больших домов вновь чаще наблюдается переоценка, а ошибки иногда превышают 50000$.
+        </p>
         
-    <p>
-        Ось абсцисс - элементы, отсортированные по суммарной площади первого и второго этажа <sb>grlivarea</sb>. Визуально этот график можно разбить на три составляющие: малые, средние и большие дома. Модель чаще переоценивает небольшие дома, значения ошибок при этом относительно невелики. На среднем отрезке ошибки увеличиваются и становятся более симметричными. Для больших домов вновь чаще наблюдается переоценка, а ошибки иногда превышают 50000$.
-    </p>
-<h2 id="section1">
+        <h2 id="section1">
             <a
                 class='anchor'
                 id='dataset_description'>
@@ -656,7 +667,7 @@ span.emoji {
             </p>
             <img
                 src='img/Section2-Explore-and-Clean/corr_matrix.png'
-                style='display:block;background-color:#FFFFFF;'
+                style="display:block;background-color:#FFFFFF;" width="100%" height="100%"
                 onclick='clickSize(this)'>
         <section id='eda'>
             <space20></space20>
@@ -1013,7 +1024,7 @@ span.emoji {
         <p>
             Добавлены новые предикторы <sb>houseage</sb> (возраст дома на момент продажи) и <sb>modage</sb> (число лет с момента модернизации на момент продажи). Они не повышают информативность, но лучше подходят для интерпретации.
             </p>
-<h2>
+        <h2>
             <a
                 class='anchor'
                 id='preprocessing'>
@@ -1306,7 +1317,7 @@ span.emoji {
             <img src='img/Section8-Final-predictions/results_inter3.png'>
             <space></space>
             </p>
-<h2 id='section3'>
+        <h2 id='section3'>
             <a
                 class='anchor'
                 id='ml_algorithms'>
@@ -1596,7 +1607,7 @@ span.emoji {
                     onclick='clickSize(this)'>
                 </img-center>
             </p>
-<h2>
+        <h2>
             <a
                 class='anchor'
                 id='actual_predicted_prices'>
@@ -1610,11 +1621,11 @@ span.emoji {
             <img-center>
                 <img
                     src='img/Section8-Final-predictions/predicted_actual_residuals.png'
-                    style='background-color:#FFFFFF;width:750px;'
+                    style='background-color:#FFFFFF;'
                     onclick='clickSize(this)'>
                 </img-center>
             </p>
-<section id='actual_predicted_prices'>
+    <section id='actual_predicted_prices'>
         </section>
             <space></space>
         <p>
@@ -1716,81 +1727,11 @@ span.emoji {
             Еще один предиктор, на который стоит обратить внимание - это <sb>functional</sb>.
             </p>
         </section>
-</content-container>
-</sub-container>  
-</sub-container>
-</sub-container>
-<nav class='section-nav'>
-    <ol>
-        <li style='
-                   margin-bottom:5px;color:#101010;font-weight:500;'>
-            Содержание</li>
-        <li><a onclick='scrollToID("title")' id='#review'>Обзор и краткие результаты</a></li>
-        <li style='margin-top:5px;
-                   margin-bottom:5px;color:#101010;font-weight:500;'>
-            Исследование и подготовка данных</li>
-        <li><a onclick='scrollToID("dataset_description")' id='#dataset_description'>Описание датасета</a></li>
-        <li><a onclick='scrollToID("missed_values")' id='#missed_values'>Заполнение отсутствующих значений</a></li>
-        <li><a onclick='scrollToID("model_base")' id='#model_base'>Базовая модель</a></li>
-        <li><a onclick='scrollToID("eda")' id='#eda'>Исследование данных</a></li>
-        <li><a onclick='scrollToID("clear")' id='#clear'>Очистка и проверка данных</a></li>
-        <li><a onclick='scrollToID("model_inter1")' id='#model_inter1'>Модель после очистки данных</a></li>
-        <li><a onclick='scrollToID("feature_engineering")' id='#feature_engineering'>Создание дополнительных предикторов</a></li>
-        <li><a onclick='scrollToID("preprocessing")' id='#preprocessing'>Предварительная подготовка данных</a></li>
-        <li><a onclick='scrollToID("model_inter2")' id='#model_inter2'>Модель после создания признаков</a></li>
-        <li style='margin-top:5px;
-                   margin-bottom:5px;color:#101010;font-weight:500;'>
-            Регрессионный анализ</li>
-        <li><a onclick='scrollToID("elastic_net")' id='#elastic_net'>Эластичная сеть</a></li>
-        <li><a onclick='scrollToID("linear_regression")' id='#linear_regression'>Линейная регрессия</a></li>
-        <li><a onclick='scrollToID("simulations")' id='#simulations'>Симуляция и ресэмплинг</a></li>
-        <li style='margin-top:5px;
-                   margin-bottom:5px;color:#101010;font-weight:500;'>
-            Машинное обучение</i></li>
-        <li><a onclick='scrollToID("ml_algorithms")' id='#ml_algorithms'>Прогнозирование остатков регрессии</a></li>
-        <!-- <ul>
-            <li><a href="#ml_simple">14.1. Опорные вектора, бустинги, бэггинг, случайный лес, KNN</a></li>
-            <li><a href="#vote_stack">14.2. Voting и Stacking</a></li>
-            <li><a href="#residuals_final">14.3. Выбор финального оценщика остатков</a></li>
-            <li><a href="#hpp">14.4. Модель HousePricePredictor</a></li>
-            </ul> -->
-        <li><a onclick='scrollToID("ml_models")' id='#ml_models'>Модели машинного обучения</a></li>
-        <li style='margin-top:5px;
-                   margin-bottom:5px;color:#202020;font-weight:500;'>
-            Подведение итогов</li>
-        <li><a onclick='scrollToID("comparison")' id='#comparison'>Итоговое сравнение всех моделей</a></li>
-        <li><a onclick='scrollToID("actual_predicted_prices")' id='#actual_predicted_prices'>Актуальные и спрогнозированные цены</a></li>
-        <li><a onclick='scrollToID("residuals_hpp")' id='#residuals_hpp'>Анализ остатков HousePricePredictor</a></li>
-        <li><a onclick='scrollToID("further")' id='#further'>Дальнейшие шаги</a></li>
-        </ol> 
-      </nav>
-</main-container>
+
+
+
+    
 <script>
-// Button 'Наверх'
-let mybutton = document.getElementById('toTocBtn');
-    // When the user scrolls down 300px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-function scrollFunction() {
-  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-// Scroll to element (anchor 'href' analog)
-function scrollToID(id) {
-    let element = document.getElementById(id);
-    element.scrollIntoView({
-      block: 'start',
-      // behavior: 'smooth',
-      inline: 'start'
-    });
-} 
-// Increase size of pictures
-function clickSize(img) {
-      img.classList.toggle('change-size');
-    }
-// Tracking sections with menu
 window.addEventListener('DOMContentLoaded', () => {
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -1803,10 +1744,87 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-    // Track all sections that have an `id` applied
-document.querySelectorAll('section[id]').forEach((section) => {
+
+  // Track all sections that have an `id` applied
+  document.querySelectorAll('section[id]').forEach((section) => {
     observer.observe(section);
-});
+  });
 });
 </script>
-</body>
+</content-container>
+</content-container>
+</sub-container>
+<nav class='section-nav'>
+    <ol>
+        <li style='padding-left:10px;padding-right:20px;
+                   margin-bottom:5px;color:#101010;font-weight:500;'>
+            Содержание</li>
+        <li><a onclick='scrollToID("title")' id='#review'>Обзор и краткие результаты</a></li>
+        <li style='padding-left:10px;padding-right:20px;margin-top:5px;
+                   margin-bottom:5px;color:#101010;font-weight:500;'>
+            Исследование и подготовка данных</li>
+        <li><a onclick='scrollToID("dataset_description")' id='#dataset_description'>Описание датасета</a></li>
+        <li><a onclick='scrollToID("missed_values")' id='#missed_values'>Заполнение отсутствующих значений</a></li>
+        <li><a onclick='scrollToID("model_base")' id='#model_base'>Базовая модель</a></li>
+        <li><a onclick='scrollToID("eda")' id='#eda'>Исследование данных</a></li>
+        <li><a onclick='scrollToID("clear")' id='#clear'>Очистка и проверка данных</a></li>
+        <li><a onclick='scrollToID("model_inter1")' id='#model_inter1'>Модель после очистки данных</a></li>
+        <li><a onclick='scrollToID("feature_engineering")' id='#feature_engineering'>Создание дополнительных предикторов</a></li>
+        <li><a onclick='scrollToID("preprocessing")' id='#preprocessing'>Предварительная подготовка данных</a></li>
+        <li><a onclick='scrollToID("model_inter2")' id='#model_inter2'>Модель после создания признаков</a></li>
+        <li style='padding-left:10px;padding-right:20px;margin-top:5px;
+                   margin-bottom:5px;color:#101010;font-weight:500;'>
+            Регрессионный анализ</li>
+        <li><a onclick='scrollToID("elastic_net")' id='#elastic_net'>Эластичная сеть</a></li>
+        <li><a onclick='scrollToID("linear_regression")' id='#linear_regression'>Линейная регрессия</a></li>
+        <li><a onclick='scrollToID("simulations")' id='#simulations'>Симуляция и ресэмплинг</a></li>
+        <li style='padding-left:10px;padding-right:20px;margin-top:5px;
+                   margin-bottom:5px;color:#101010;font-weight:500;'>
+            Машинное обучение</i></li>
+        <li><a onclick='scrollToID("ml_algorithms")' id='#ml_algorithms'>Прогнозирование остатков регрессии</a></li>
+        <!-- <ul>
+            <li><a href="#ml_simple">14.1. Опорные вектора, бустинги, бэггинг, случайный лес, KNN</a></li>
+            <li><a href="#vote_stack">14.2. Voting и Stacking</a></li>
+            <li><a href="#residuals_final">14.3. Выбор финального оценщика остатков</a></li>
+            <li><a href="#hpp">14.4. Модель HousePricePredictor</a></li>
+            </ul> -->
+        <li><a onclick='scrollToID("ml_models")' id='#ml_models'>Модели машинного обучения</a></li>
+        <li style='padding-left:10px;padding-right:20px;margin-top:5px;
+                   margin-bottom:5px;color:#202020;font-weight:500;'>
+            Подведение итогов</li>
+        <li><a onclick='scrollToID("comparison")' id='#comparison'>Итоговое сравнение всех моделей</a></li>
+        <li><a onclick='scrollToID("actual_predicted_prices")' id='#actual_predicted_prices'>Актуальные и спрогнозированные цены</a></li>
+        <li><a onclick='scrollToID("residuals_hpp")' id='#residuals_hpp'>Анализ остатков HousePricePredictor</a></li>
+        <li><a onclick='scrollToID("further")' id='#further'>Дальнейшие шаги</a></li>
+        </ol> 
+      </nav>
+</main-container>
+<script>
+let mybutton = document.getElementById('toTocBtn');
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+function scrollToID(id) {
+    let element = document.getElementById(id);
+    element.scrollIntoView({
+      block: 'start',
+      // behavior: 'smooth',
+      inline: 'start'
+    });
+} 
+function clickSize(img) {
+      img.classList.toggle('change-size');
+    }
+var toHref = (href) => {
+  window.location.href = href;
+}
+    </script>
+</body> 

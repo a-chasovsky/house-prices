@@ -96,14 +96,12 @@ main-container > nav {
     height: 750px;
     direction:rtl;
     scrollbar-width: none;
-    border: 1px solid red;
 }
 .section-nav {
     width: 100%;
     margin-top: 2.3em;
     padding-top: 0.2em;
     padding-left: 30px;
-    /* margin-left: -100px; */
 }
 .section-nav a {
     display: block;
@@ -241,7 +239,7 @@ span.emoji {
 <sub-container style='border-right: 1px solid #CFD7DE;'>
 <content-container style='text-align:right;'>
     <h1 id='title' style='text-align:right;'>
-       2Сочетание регрессионного анализа и машинного обучения для увеличения точности и интерпретируемости модели
+       Сочетание регрессионного анализа и машинного обучения для увеличения точности и интерпретируемости модели
         </h1>
     <h5 style='text-align:right;'>
        Регрессионный анализ, машинное обучение, описательная аналитика, предиктивная аналитика
@@ -1768,9 +1766,9 @@ span.emoji {
       </nav>
 </main-container>
 <script>
+// Button 'Наверх'
 let mybutton = document.getElementById('toTocBtn');
-
-// When the user scrolls down 20px from the top of the document, show the button
+    // When the user scrolls down 300px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
   if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
@@ -1779,6 +1777,7 @@ function scrollFunction() {
     mybutton.style.display = "none";
   }
 }
+// Scroll to element (anchor 'href' analog)
 function scrollToID(id) {
     let element = document.getElementById(id);
     element.scrollIntoView({
@@ -1787,13 +1786,11 @@ function scrollToID(id) {
       inline: 'start'
     });
 } 
+// Increase size of pictures
 function clickSize(img) {
       img.classList.toggle('change-size');
     }
-// var toHref = (href) => {
-//   window.location.href = href;
-// }
-
+// Tracking sections with menu
 window.addEventListener('DOMContentLoaded', () => {
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -1806,12 +1803,10 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-
-  // Track all sections that have an `id` applied
-  document.querySelectorAll('section[id]').forEach((section) => {
+    // Track all sections that have an `id` applied
+document.querySelectorAll('section[id]').forEach((section) => {
     observer.observe(section);
-  });
 });
-
-    </script>
+});
+</script>
 </body>

@@ -103,14 +103,16 @@ main-container > nav {
     width: 100%;
     margin-top: 1.25em;
     padding-top: 1.1em;
+    border:1px solid red;
+    padding-left: 30px;
 }
 .section-nav a {
     display: block;
     text-decoration: none;
     color: #606060;
-    padding-right: 0px;
     /* padding-left: 10px; */
     cursor: pointer;
+    
     /* transition: all 25ms ease-in-out; */
 }
 .section-nav a:hover,
@@ -122,8 +124,8 @@ main-container > nav {
     /* overflow: auto; */
     list-style: none;
     /* padding-left: 20px; */
-    margin-top:0;
-    direction:ltr;
+    /* margin-top:0; */
+    
 }
 .section-nav ul {
     list-style: none;
@@ -250,7 +252,7 @@ span.emoji {
 <sub-container style='border-right: 1px solid #CFD7DE;'>
 <content-container style='text-align:right;'>
     <h1 id='title' style='text-align:right;'>
-       8Сочетание регрессионного анализа и машинного обучения для увеличения точности и интерпретируемости модели
+       1Сочетание регрессионного анализа и машинного обучения для увеличения точности и интерпретируемости модели
         </h1>
     <h5 style='text-align:right;'>
        Регрессионный анализ, машинное обучение, описательная аналитика, предиктивная аналитика
@@ -1727,13 +1729,6 @@ span.emoji {
             Еще один предиктор, на который стоит обратить внимание - это <sb>functional</sb>.
             </p>
         </section>
-
-
-
-
-
-
-    
 </content-container>
 </sub-container>  
 </sub-container>
@@ -1787,15 +1782,14 @@ span.emoji {
 let mybutton = document.getElementById('toTocBtn');
 
 // When the user scrolls down 20px from the top of the document, show the button
-// window.onscroll = function() {scrollFunction()};
-
-// function scrollFunction() {
-//   if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-//     mybutton.style.display = "block";
-//   } else {
-//     mybutton.style.display = "none";
-//   }
-// }
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
 function scrollToID(id) {
     let element = document.getElementById(id);
     element.scrollIntoView({
@@ -1810,5 +1804,25 @@ function clickSize(img) {
 // var toHref = (href) => {
 //   window.location.href = href;
 // }
+
+window.addEventListener('DOMContentLoaded', () => {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const id = entry.target.getAttribute('id');
+      // if (entry.intersectionRatio > 0) {
+      if (entry.intersectionRatio > 0) {
+        document.querySelector(`nav li a[id="#${id}"]`).parentElement.classList.add('active');
+      } else {
+        document.querySelector(`nav li a[id="#${id}"]`).parentElement.classList.remove('active');
+      }
+    });
+  });
+
+  // Track all sections that have an `id` applied
+  document.querySelectorAll('section[id]').forEach((section) => {
+    observer.observe(section);
+  });
+});
+
     </script>
 </body>

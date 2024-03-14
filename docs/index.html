@@ -2,8 +2,8 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <title>Сочетание регрессионного анализа и машинного обучения для увеличения точности и интерпретируемости модели</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
     <script id="MathJax-script" async
@@ -12,7 +12,10 @@
 </head>
 <style>
 body {
-    font-family: system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    font-family: system-ui, 'Arial';
+    font-size: 1em;
+    color: #151515;
+    line-height: 1.5;
 }
 h1 { 
     font-family: system-ui;
@@ -78,7 +81,6 @@ main-container {
     display: grid;
     grid-template-columns: 810px 355px;
     margin: 0 0 75px 12%;
-    /* border: 1px solid black; */
 }
 sub-container {
     display: block;
@@ -95,42 +97,44 @@ main-container > nav {
     top: 0;
     align-self: start;
     overflow: scroll;
-    height: 750px;
-    direction:rtl;
     scrollbar-width: none;
 }
-.section-nav {
+.toc {
     width: 100%;
-    margin-top: 2.3em;
+    margin-top: 0.4em;
     padding-top: 0.2em;
-    padding-left: 30px;
-}
-.section-nav a {
-    display: block;
-    text-decoration: none;
+    padding-right: 2em;
+    height: 750px;
+    font-size: 0.85rem;
     color: #606060;
+}
+.toc a {
+    text-decoration: none;
+    /* color: #606060; */
     cursor: pointer;
     /* transition: all 25ms ease-in-out; */
 }
-.section-nav a:hover,
-.section-nav a:focus {
+.toc a:hover,
+.toc a:focus {
     color: #1E5FA5;
 }
-.section-nav ol {
+.toc ol {
     display: block;
     list-style: none;
+    padding-left: 2em; 
 }
-.section-nav ul {
+.toc ul {
     list-style: none;
-    margin-left: -20px;
+    padding-left: 2.5em;
 }
-.section-nav li {
-    font-size: 0.85rem;
+.toc li {
     text-align: left;
 }
-.section-nav li.active > a {
+.toc li.active > a {
     font-weight:600;
     color: #1E5FA5;
+    padding-right: 1.5em;
+    /* white-space: nowrap; */
 }
 ul {
     list-style-type: disc;
@@ -174,6 +178,7 @@ space25 {
     content: ' '
 }
 a {
+    font-size: 1em;
     scroll-margin-top: 15px;
 }
 a:link {
@@ -196,7 +201,6 @@ a:active {
 }
 sb {
     font-weight: 600;
-    font-color: red;
 }
 #toTocBtn {
     display: none;
@@ -226,9 +230,33 @@ span.emoji {
     border: 1px solid #CCCCCC;
     border-radius: 3px;
 }
-</style>  
-
+hr.grey {
+    height: 1px;
+    background-color: #DADADA;
+    border-width: 0;
+    margin: 1em auto 1em auto;
+}
+/* if desktop */
+.mobile_device_380px {
+    display: none;
+}
+.mobile_device_480px {
+    display: none;
+}
+/* if mobile device max width 380px */
+@media only screen and (max-device-width: 380px) {
+    .mobile_device_380px{display: block;}       
+    .desktop {display: none;}
+} 
+/* if mobile device max width 480px */
+@media only screen and (max-device-width: 480px) {
+   .mobile_device_480px{display: block;}
+   .desktop {display: none;}
+}
+</style>
 <body>
+<div id="content">
+    <div class="desktop">
 <sub-container
     id='general' 
     style='margin-left:12%;text-align:right;scroll-margin-top:10px;'>
@@ -241,7 +269,7 @@ span.emoji {
 <sub-container style='border-right: 1px solid #CFD7DE;'>
 <content-container style='text-align:right;'>
     <h1 id='title' style='text-align:right;'>
-       Сочетание регрессионного анализа и машинного обучения для увеличения точности и интерпретируемости модели
+       1Сочетание регрессионного анализа и машинного обучения для увеличения точности и интерпретируемости модели
         </h1>
     <h5 style='text-align:right;'>
        Регрессионный анализ, машинное обучение, описательная аналитика, предиктивная аналитика
@@ -249,7 +277,7 @@ span.emoji {
     <span
         style='display:inline-block;margin-top:10px;'>
         <a href='https://a-chasovsky.github.io/house-prices/' target='_blank'>
-            <span class='emoji' style='vertical-align: -0.1em;'>
+            <span style='font-size:1em;vertical-align:-0.1em;'>
                 &#127969;
                 </span>
             <span style='margin-left:3px;font-size:0.85em'>
@@ -261,7 +289,7 @@ span.emoji {
     <span style='display:inline-block;'>
         <a href='https://github.com/a-chasovsky' target='_blank'>
             <span>
-                <img src='img/logo-github.png' style='width:20px;vertical-align:top;'>
+                <img src='img/logo-github.png' style='width:1em;vertical-align:top;'>
                 </span>
             <span style='margin-left:3px;font-size:0.85em'>
                 Профиль Github 
@@ -1737,6 +1765,7 @@ span.emoji {
         </ol> 
       </nav>
 </main-container>
+</div>
 <script>
 // Button 'Наверх'
 let mybutton = document.getElementById('toTocBtn');

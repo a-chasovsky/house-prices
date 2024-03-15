@@ -252,7 +252,7 @@ hr.grey {
     .mobile_device_380px{display: block;}
     .mobile_device_480px{display: none;}
     .mobile_device_1000px{display: none;}
-    img {width:100%}
+    img {width:100%;justify-content: center;}
 } 
 /* if mobile device max width 480px */
 @media only screen and (max-device-width: 480px) {
@@ -260,7 +260,7 @@ hr.grey {
     .mobile_device_380px{display: none;}
     .mobile_device_480px{display: block;}
     .mobile_device_1000px{display: none;}
-    img {width:100%}
+    img {width:100%;justify-content: center;}
 }
 /* if mobile device max width 1000px */
 @media only screen and (max-device-width: 1000px) {
@@ -268,7 +268,7 @@ hr.grey {
     .mobile_device_380px{display: none;}
     .mobile_device_480px{display: none;}
     .mobile_device_1000px{display: block;}
-    img {width:100%}
+    img {width:100%;justify-content: center;}
 }
 </style>
 <body>
@@ -1929,7 +1929,7 @@ hr.grey {
         <space20></space20>
             <img 
                 src='img/Section4-Linear-models-research/coefficients_table.png'
-                style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                style='border: 1px solid #CCCCCC;border-radius: 3px;width:80%'>
         <space></space>
         Предикторы с наибольшими коэффициентами - <sb>lg_flrsfmean</sb> (дополнительно сгенерированный предиктор - средневзвешенная площадь первого и второго этажей, см. <i>'8.1. Предикторы, характеризующие площадь'</i>), <sb>overallqual</sb> (качество строительных и отделочных материалов) и <sb>houseage</sb> (возраст дома). 
         <space></space>
@@ -2053,7 +2053,7 @@ hr.grey {
             <space20></space20>
                 <img 
                     src='img/Section1-Overview-and-Base-model/categorical_ordinal.png'
-                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;width:70%'>
             <space></space>
             </p>
         <p>
@@ -2061,7 +2061,7 @@ hr.grey {
             <space20></space20>
                 <img
                     src='img/Section1-Overview-and-Base-model/categorical_categorical.png'
-                    style='border: 1px solid #CCCCCC;border-radius: 3px;'>
+                    style='border: 1px solid #CCCCCC;border-radius: 3px;width:70%'>
             <space></space>
             В описании данных сказано, что для ряда переменных пропуски соответствуют значению "Отсутствует" (например, NaN для переменной "бассейн" означает, что в этом доме отсутствует бассейн). После замены NaN на 'NA' остается только одно пропущенное значение у переменной <sb>electrical</sb>, которое заполняется медианой.
         </p>

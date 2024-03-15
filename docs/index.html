@@ -3172,7 +3172,7 @@ hr.grey {
 </div>
 
 <!-- // Mobile Version: MobVer 2 -->
-<div class='mobile_device_380px' style='margin-bottom:75px;'>
+<div class='mobile_device_480px' style='margin-bottom:75px;'>
 <page-container>
     <img 
         src='img/header.png'
@@ -3843,7 +3843,7 @@ hr.grey {
             Гипотеза, лежащая в основе создания нового предиктора <sb>flrsfmean</sb>: для большинства жителей относительная ценность первого этажа выше, чем второго. Объясняется это тем, что на втором этаже расположены преимущественно спальни, и люди в целом проводят больше времени на первом этаже. Чтобы учесть этот эффект, вместо среднего арифметического будет использоваться среднее взвешенное:
             </p>
             <space></space>
-            \[ flrsfmean = \frac{first\_flrsf*weight_1 + second\_flrsf*weight_2}{weight_1 + weight_2} , \]
+            <img src='img/Section3-Feature-selection-and-Preprocessing/formula1.png'>
             <space></space>
             <p>
                 где  \( weight_1 \) и \( weight_2 \) - это вес первого и второго этажа соответственно.
@@ -3853,7 +3853,7 @@ hr.grey {
             После нескольких тестов веса принимаются равными 1 и 0.7, соответственно. Итоговая формула выглядит следующим образом:
             </p>
             <space></space>
-            $$ flrsfmean = \frac{first\_flrsf + second\_flrsf*0.7}{1.7} $$
+            <img src='img/Section3-Feature-selection-and-Preprocessing/formula2.png'>
             <space></space>
         <p>
             Коэффициент корреляции нового предиктора <sb>flrsfmean</sb> равен 0.77. Это на 0.05 выше, чем у наиболее информативного количественного предиктора <sb>grlivarea</sb>. Также <sb>flrsfmean</sb> имеет мéньшую дисперсию.
@@ -4410,7 +4410,7 @@ hr.grey {
             <space></space>
             <img
                 src='img/Section8-Final-predictions/final_table_T.png'
-                style='margin-left:80px;border: 1px solid #CCCCCC;border-radius: 3px;'>
+                style='border: 1px solid #CCCCCC;border-radius: 3px;'>
             <space></space>
         <p>
             Комментарии:
@@ -4447,7 +4447,7 @@ hr.grey {
             <img-center>
                 <img
                     src='img/Section8-Final-predictions/predicted_actual_residuals.png'
-                    style='background-color:#FFFFFF;width:750px;'
+                    style='background-color:#FFFFFF;'
                     onclick='clickSize(this)'>
                 </img-center>
             </p>
@@ -4548,7 +4548,7 @@ hr.grey {
 </div>
 
 <!-- // Mobile Version: MobVer 3 -->
-<div class='mobile_device_1000px' style='margin-bottom:75px;'>
+<div class='mobile_device_480px' style='margin-bottom:75px;'>
 <page-container>
     <img 
         src='img/header.png'
@@ -5219,7 +5219,7 @@ hr.grey {
             Гипотеза, лежащая в основе создания нового предиктора <sb>flrsfmean</sb>: для большинства жителей относительная ценность первого этажа выше, чем второго. Объясняется это тем, что на втором этаже расположены преимущественно спальни, и люди в целом проводят больше времени на первом этаже. Чтобы учесть этот эффект, вместо среднего арифметического будет использоваться среднее взвешенное:
             </p>
             <space></space>
-            \[ flrsfmean = \frac{first\_flrsf*weight_1 + second\_flrsf*weight_2}{weight_1 + weight_2} , \]
+            <img src='img/Section3-Feature-selection-and-Preprocessing/formula1.png'>
             <space></space>
             <p>
                 где  \( weight_1 \) и \( weight_2 \) - это вес первого и второго этажа соответственно.
@@ -5229,7 +5229,7 @@ hr.grey {
             После нескольких тестов веса принимаются равными 1 и 0.7, соответственно. Итоговая формула выглядит следующим образом:
             </p>
             <space></space>
-            $$ flrsfmean = \frac{first\_flrsf + second\_flrsf*0.7}{1.7} $$
+            <img src='img/Section3-Feature-selection-and-Preprocessing/formula2.png'>
             <space></space>
         <p>
             Коэффициент корреляции нового предиктора <sb>flrsfmean</sb> равен 0.77. Это на 0.05 выше, чем у наиболее информативного количественного предиктора <sb>grlivarea</sb>. Также <sb>flrsfmean</sb> имеет мéньшую дисперсию.
@@ -5786,7 +5786,7 @@ hr.grey {
             <space></space>
             <img
                 src='img/Section8-Final-predictions/final_table_T.png'
-                style='margin-left:80px;border: 1px solid #CCCCCC;border-radius: 3px;'>
+                style='border: 1px solid #CCCCCC;border-radius: 3px;'>
             <space></space>
         <p>
             Комментарии:
@@ -5823,7 +5823,7 @@ hr.grey {
             <img-center>
                 <img
                     src='img/Section8-Final-predictions/predicted_actual_residuals.png'
-                    style='background-color:#FFFFFF;width:750px;'
+                    style='background-color:#FFFFFF;'
                     onclick='clickSize(this)'>
                 </img-center>
             </p>

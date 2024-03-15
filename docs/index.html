@@ -1927,11 +1927,9 @@ hr.grey {
     <p>
         Ядром HousePricePredictor является классическая линейная регрессия. Коэффициенты и доверительные интервалы представлены в таблице ниже.
         <space20></space20>
-        <img-margin>
             <img 
                 src='img/Section4-Linear-models-research/coefficients_table.png'
                 style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-            </img-margin>
         <space></space>
         Предикторы с наибольшими коэффициентами - <sb>lg_flrsfmean</sb> (дополнительно сгенерированный предиктор - средневзвешенная площадь первого и второго этажей, см. <i>'8.1. Предикторы, характеризующие площадь'</i>), <sb>overallqual</sb> (качество строительных и отделочных материалов) и <sb>houseage</sb> (возраст дома). 
         <space></space>
@@ -2053,21 +2051,17 @@ hr.grey {
             <space></space>
             <i>Порядковые</i>
             <space20></space20>
-            <img-margin>
                 <img 
                     src='img/Section1-Overview-and-Base-model/categorical_ordinal.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
             </p>
         <p>
             <i>Номинативные</i>
             <space20></space20>
-            <img-margin>
                 <img
                     src='img/Section1-Overview-and-Base-model/categorical_categorical.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>  
             <space></space>
             В описании данных сказано, что для ряда переменных пропуски соответствуют значению "Отсутствует" (например, NaN для переменной "бассейн" означает, что в этом доме отсутствует бассейн). После замены NaN на 'NA' остается только одно пропущенное значение у переменной <sb>electrical</sb>, которое заполняется медианой.
         </p>
@@ -2078,11 +2072,9 @@ hr.grey {
             Пропущенные значения имеются у трех количественных переменных: <sb>lotfrontage</sb>, <sb>garageyrblt</sb>, <sb>masvnrarea</sb>.
             </p>
             <space20></space20>
-            <img-margin>
                 <img
                     src='img/Section1-Overview-and-Base-model/quantitative.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
         <ul style='list-style-type:"a) ";margin-bottom:-10px'>
             <li><sb>lotfrontage</sb> - длина участка улицы, прилегающей к придомовой территории</li>
@@ -2263,11 +2255,9 @@ hr.grey {
         <p>
             <b> MASVNRAREA </b> (Площадь облицовки фундамента)
             <space20></space20>
-            <img-margin>
                 <img
                     src='img/Section2-Explore-and-Clean/masvnarea_disc.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
             <i>Несоответствия:</i>
             </p>
@@ -2296,11 +2286,9 @@ hr.grey {
             <i>Элементы с индексом 1230 и 733</i>
             </h4>
             <space2></space2>
-            <img-margin>
                 <img
                     src='img/Section2-Explore-and-Clean/1230_773.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
         <p>
         <i>Противоречие:</i>
@@ -2334,11 +2322,9 @@ hr.grey {
             <i>Элементы с индексом 1241 и 688</i>
             </h4>
             <space2></space2>
-            <img-margin>
                 <img
                     src='img/Section2-Explore-and-Clean/688_1241.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
         <p>
             <i>Противоречие:</i>
@@ -2368,11 +2354,9 @@ hr.grey {
             <i>Элементы с индексом 624, 1300 и 1334</i>
             </h4>
             <space2></space2>
-            <img-margin>
                 <img
                     src='img/Section2-Explore-and-Clean/624_1300_1334.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
         <p>
             <i>Противоречие:</i>
@@ -2403,11 +2387,9 @@ hr.grey {
             <i>Исправленные данные</i>
             </h4>
             <space2></space2>
-            <img-margin>
                 <img
                     src='img/Section2-Explore-and-Clean/masvnrarea_fixed.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
         <h3>
             Выявление и удаление выбросов
@@ -2727,11 +2709,9 @@ hr.grey {
             <space></space>
             <i>Результаты статистических тестов и характеристики регрессии</i>
             <space20></space20>
-            <img-margin>
                 <img
                     src='img/Section4-Linear-models-research/regression_tests.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
             Скорректированный коэффициент детерминации \( R^{2}_{adj} \) значим и равен 0.882.
             <space></space>
@@ -2741,19 +2721,15 @@ hr.grey {
             <space></space>
             <i>Тесты на нормальность распределения остатков без выбросов</i>
             <space2></space2>
-            <img-margin>
                 <img
                     src='img/Section4-Linear-models-research/residuals_trimmed_tests.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
             <i>Коэффициент эксцесса</i>
             <space2></space2>
-            <img-margin>
                 <img
                     src='img/Section4-Linear-models-research/residuals_kurtosis.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
             <i>Визуализация формы распределения остатков и сравнение с нормальным распределением</i>
             <space></space>
@@ -2863,11 +2839,9 @@ hr.grey {
             Алгоритмы <sb>Random Forest</sb>, <sb>Bagging</sb>, <sb>LGBoost</sb>, <sb>XGBoost</sb> имеют встроенный функционал отбора наиболее информативных признаков. Отобразим топ-10 наиболее важных признаков для каждой из моделей.
             <space2></space2>   
             </p>
-            <img-margin>
                 <img
                     src='img/Section5-Residuals-prediction/features_importance_four_models.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
         <p>
             <space></space>
             Наиболее значимые признаки здесь:
@@ -2943,9 +2917,7 @@ hr.grey {
         <p>
             <i>Визуализация результатов</i>
             <space></space>
-            <img-margin>
                 <img src='img/Section5-Residuals-prediction/final_plot.png'>
-                </img-margin>
             <space></space>
             Для оценки остатков будет использоваться алгоритм <sb>Stacking</sb>. 
             </p>
@@ -2968,26 +2940,20 @@ hr.grey {
         <p>
             Класс <sb>HousePricePredictor</sb> объединяет линейную регрессию и Stacking в единую модель. Линейная регрессия генерирует основные прогнозы цен, а Stacking используется для коррекции и повышения точности.
             <space></space>
-            <img-margin>
                 <img
                     src='img/Section5-Residuals-prediction/hpp.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
             <sb>HousePricePredictor</sb> поддерживает Scickit-learn-совместимые методы <sb>.fit</sb> и <sb>.predict</sb>, а также ряд других методов (код доступен в файле <i>tools.py</i>)
             </p>
             <space2></space2>
-            <img-margin>
                 <img
                     src='img/Section5-Residuals-prediction/fit.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
-            <img-margin>
                 <img
                     src='img/Section5-Residuals-prediction/predict.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
         <p>
             Средняя RMSE на 20-фолдовой проверке: 0.1102 +/- 0.009.
@@ -3007,7 +2973,7 @@ hr.grey {
             <i>Визуализация результатов</i>
             </p>
             <space></space>
-            <img-margin><img src='img/Section7-ML-models/ml_models_plot.png'></img-margin>
+            <img src='img/Section7-ML-models/ml_models_plot.png'>
             <space></space>
         <p>
             <i>Средние значения RMSE (20-fold) всех моделей</i>
@@ -3131,19 +3097,15 @@ hr.grey {
         <p>
             Ни один тест не позволяет предполагать, что остатки распределены нормально. Попробуем удалить экстремальные значения ошибок (шесть элементов с остатками более 50000$, см. таблицу ниже).
             <space20></space20>
-            <img-margin>
                 <img
                     src='img/Section8-Final-predictions/residuals_been_cutted.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
             После этого три из пяти тестов указывают на нормальность распределения.
             <space20></space20>
-            <img-margin>
                 <img
                     src='img/Section8-Final-predictions/residuals_cutted_tests.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
             <i>Сравнение формы распределения остатков (до и после удаления выбросов) с формой нормального распределения</i>
             <space></space>
@@ -3341,11 +3303,9 @@ hr.grey {
     <p>
         Ядром HousePricePredictor является классическая линейная регрессия. Коэффициенты и доверительные интервалы представлены в таблице ниже.
         <space20></space20>
-        <img-margin>
             <img 
                 src='img/Section4-Linear-models-research/coefficients_table.png'
                 style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-            </img-margin>
         <space></space>
         Предикторы с наибольшими коэффициентами - <sb>lg_flrsfmean</sb> (дополнительно сгенерированный предиктор - средневзвешенная площадь первого и второго этажей, см. <i>'8.1. Предикторы, характеризующие площадь'</i>), <sb>overallqual</sb> (качество строительных и отделочных материалов) и <sb>houseage</sb> (возраст дома). 
         <space></space>
@@ -3467,21 +3427,17 @@ hr.grey {
             <space></space>
             <i>Порядковые</i>
             <space20></space20>
-            <img-margin>
                 <img 
                     src='img/Section1-Overview-and-Base-model/categorical_ordinal.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
             </p>
         <p>
             <i>Номинативные</i>
             <space20></space20>
-            <img-margin>
                 <img
                     src='img/Section1-Overview-and-Base-model/categorical_categorical.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>  
             <space></space>
             В описании данных сказано, что для ряда переменных пропуски соответствуют значению "Отсутствует" (например, NaN для переменной "бассейн" означает, что в этом доме отсутствует бассейн). После замены NaN на 'NA' остается только одно пропущенное значение у переменной <sb>electrical</sb>, которое заполняется медианой.
         </p>
@@ -3492,11 +3448,9 @@ hr.grey {
             Пропущенные значения имеются у трех количественных переменных: <sb>lotfrontage</sb>, <sb>garageyrblt</sb>, <sb>masvnrarea</sb>.
             </p>
             <space20></space20>
-            <img-margin>
                 <img
                     src='img/Section1-Overview-and-Base-model/quantitative.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
         <ul style='list-style-type:"a) ";margin-bottom:-10px'>
             <li><sb>lotfrontage</sb> - длина участка улицы, прилегающей к придомовой территории</li>
@@ -3677,11 +3631,9 @@ hr.grey {
         <p>
             <b> MASVNRAREA </b> (Площадь облицовки фундамента)
             <space20></space20>
-            <img-margin>
                 <img
                     src='img/Section2-Explore-and-Clean/masvnarea_disc.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
             <i>Несоответствия:</i>
             </p>
@@ -3710,11 +3662,9 @@ hr.grey {
             <i>Элементы с индексом 1230 и 733</i>
             </h4>
             <space2></space2>
-            <img-margin>
                 <img
                     src='img/Section2-Explore-and-Clean/1230_773.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
         <p>
         <i>Противоречие:</i>
@@ -3748,11 +3698,9 @@ hr.grey {
             <i>Элементы с индексом 1241 и 688</i>
             </h4>
             <space2></space2>
-            <img-margin>
                 <img
                     src='img/Section2-Explore-and-Clean/688_1241.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
         <p>
             <i>Противоречие:</i>
@@ -3782,11 +3730,9 @@ hr.grey {
             <i>Элементы с индексом 624, 1300 и 1334</i>
             </h4>
             <space2></space2>
-            <img-margin>
                 <img
                     src='img/Section2-Explore-and-Clean/624_1300_1334.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
         <p>
             <i>Противоречие:</i>
@@ -3817,11 +3763,9 @@ hr.grey {
             <i>Исправленные данные</i>
             </h4>
             <space2></space2>
-            <img-margin>
                 <img
                     src='img/Section2-Explore-and-Clean/masvnrarea_fixed.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
         <h3>
             Выявление и удаление выбросов
@@ -4141,11 +4085,9 @@ hr.grey {
             <space></space>
             <i>Результаты статистических тестов и характеристики регрессии</i>
             <space20></space20>
-            <img-margin>
                 <img
                     src='img/Section4-Linear-models-research/regression_tests.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
             Скорректированный коэффициент детерминации \( R^{2}_{adj} \) значим и равен 0.882.
             <space></space>
@@ -4155,19 +4097,15 @@ hr.grey {
             <space></space>
             <i>Тесты на нормальность распределения остатков без выбросов</i>
             <space2></space2>
-            <img-margin>
                 <img
                     src='img/Section4-Linear-models-research/residuals_trimmed_tests.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
             <i>Коэффициент эксцесса</i>
             <space2></space2>
-            <img-margin>
                 <img
                     src='img/Section4-Linear-models-research/residuals_kurtosis.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
             <i>Визуализация формы распределения остатков и сравнение с нормальным распределением</i>
             <space></space>
@@ -4277,11 +4215,9 @@ hr.grey {
             Алгоритмы <sb>Random Forest</sb>, <sb>Bagging</sb>, <sb>LGBoost</sb>, <sb>XGBoost</sb> имеют встроенный функционал отбора наиболее информативных признаков. Отобразим топ-10 наиболее важных признаков для каждой из моделей.
             <space2></space2>   
             </p>
-            <img-margin>
                 <img
                     src='img/Section5-Residuals-prediction/features_importance_four_models.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
         <p>
             <space></space>
             Наиболее значимые признаки здесь:
@@ -4357,9 +4293,7 @@ hr.grey {
         <p>
             <i>Визуализация результатов</i>
             <space></space>
-            <img-margin>
                 <img src='img/Section5-Residuals-prediction/final_plot.png'>
-                </img-margin>
             <space></space>
             Для оценки остатков будет использоваться алгоритм <sb>Stacking</sb>. 
             </p>
@@ -4382,26 +4316,20 @@ hr.grey {
         <p>
             Класс <sb>HousePricePredictor</sb> объединяет линейную регрессию и Stacking в единую модель. Линейная регрессия генерирует основные прогнозы цен, а Stacking используется для коррекции и повышения точности.
             <space></space>
-            <img-margin>
                 <img
                     src='img/Section5-Residuals-prediction/hpp.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
             <sb>HousePricePredictor</sb> поддерживает Scickit-learn-совместимые методы <sb>.fit</sb> и <sb>.predict</sb>, а также ряд других методов (код доступен в файле <i>tools.py</i>)
             </p>
             <space2></space2>
-            <img-margin>
                 <img
                     src='img/Section5-Residuals-prediction/fit.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
-            <img-margin>
                 <img
                     src='img/Section5-Residuals-prediction/predict.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
         <p>
             Средняя RMSE на 20-фолдовой проверке: 0.1102 +/- 0.009.
@@ -4421,7 +4349,7 @@ hr.grey {
             <i>Визуализация результатов</i>
             </p>
             <space></space>
-            <img-margin><img src='img/Section7-ML-models/ml_models_plot.png'></img-margin>
+            <img src='img/Section7-ML-models/ml_models_plot.png'>
             <space></space>
         <p>
             <i>Средние значения RMSE (20-fold) всех моделей</i>
@@ -4545,19 +4473,15 @@ hr.grey {
         <p>
             Ни один тест не позволяет предполагать, что остатки распределены нормально. Попробуем удалить экстремальные значения ошибок (шесть элементов с остатками более 50000$, см. таблицу ниже).
             <space20></space20>
-            <img-margin>
                 <img
                     src='img/Section8-Final-predictions/residuals_been_cutted.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
             После этого три из пяти тестов указывают на нормальность распределения.
             <space20></space20>
-            <img-margin>
                 <img
                     src='img/Section8-Final-predictions/residuals_cutted_tests.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
             <i>Сравнение формы распределения остатков (до и после удаления выбросов) с формой нормального распределения</i>
             <space></space>
@@ -4755,11 +4679,9 @@ hr.grey {
     <p>
         Ядром HousePricePredictor является классическая линейная регрессия. Коэффициенты и доверительные интервалы представлены в таблице ниже.
         <space20></space20>
-        <img-margin>
             <img 
                 src='img/Section4-Linear-models-research/coefficients_table.png'
                 style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-            </img-margin>
         <space></space>
         Предикторы с наибольшими коэффициентами - <sb>lg_flrsfmean</sb> (дополнительно сгенерированный предиктор - средневзвешенная площадь первого и второго этажей, см. <i>'8.1. Предикторы, характеризующие площадь'</i>), <sb>overallqual</sb> (качество строительных и отделочных материалов) и <sb>houseage</sb> (возраст дома). 
         <space></space>
@@ -4881,21 +4803,17 @@ hr.grey {
             <space></space>
             <i>Порядковые</i>
             <space20></space20>
-            <img-margin>
                 <img 
                     src='img/Section1-Overview-and-Base-model/categorical_ordinal.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
             </p>
         <p>
             <i>Номинативные</i>
             <space20></space20>
-            <img-margin>
                 <img
                     src='img/Section1-Overview-and-Base-model/categorical_categorical.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>  
             <space></space>
             В описании данных сказано, что для ряда переменных пропуски соответствуют значению "Отсутствует" (например, NaN для переменной "бассейн" означает, что в этом доме отсутствует бассейн). После замены NaN на 'NA' остается только одно пропущенное значение у переменной <sb>electrical</sb>, которое заполняется медианой.
         </p>
@@ -4906,11 +4824,9 @@ hr.grey {
             Пропущенные значения имеются у трех количественных переменных: <sb>lotfrontage</sb>, <sb>garageyrblt</sb>, <sb>masvnrarea</sb>.
             </p>
             <space20></space20>
-            <img-margin>
                 <img
                     src='img/Section1-Overview-and-Base-model/quantitative.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
         <ul style='list-style-type:"a) ";margin-bottom:-10px'>
             <li><sb>lotfrontage</sb> - длина участка улицы, прилегающей к придомовой территории</li>
@@ -5091,11 +5007,9 @@ hr.grey {
         <p>
             <b> MASVNRAREA </b> (Площадь облицовки фундамента)
             <space20></space20>
-            <img-margin>
                 <img
                     src='img/Section2-Explore-and-Clean/masvnarea_disc.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
             <i>Несоответствия:</i>
             </p>
@@ -5124,11 +5038,9 @@ hr.grey {
             <i>Элементы с индексом 1230 и 733</i>
             </h4>
             <space2></space2>
-            <img-margin>
                 <img
                     src='img/Section2-Explore-and-Clean/1230_773.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
         <p>
         <i>Противоречие:</i>
@@ -5162,11 +5074,9 @@ hr.grey {
             <i>Элементы с индексом 1241 и 688</i>
             </h4>
             <space2></space2>
-            <img-margin>
                 <img
                     src='img/Section2-Explore-and-Clean/688_1241.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
         <p>
             <i>Противоречие:</i>
@@ -5196,11 +5106,9 @@ hr.grey {
             <i>Элементы с индексом 624, 1300 и 1334</i>
             </h4>
             <space2></space2>
-            <img-margin>
                 <img
                     src='img/Section2-Explore-and-Clean/624_1300_1334.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
         <p>
             <i>Противоречие:</i>
@@ -5231,11 +5139,9 @@ hr.grey {
             <i>Исправленные данные</i>
             </h4>
             <space2></space2>
-            <img-margin>
                 <img
                     src='img/Section2-Explore-and-Clean/masvnrarea_fixed.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
         <h3>
             Выявление и удаление выбросов
@@ -5555,11 +5461,9 @@ hr.grey {
             <space></space>
             <i>Результаты статистических тестов и характеристики регрессии</i>
             <space20></space20>
-            <img-margin>
                 <img
                     src='img/Section4-Linear-models-research/regression_tests.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
             Скорректированный коэффициент детерминации \( R^{2}_{adj} \) значим и равен 0.882.
             <space></space>
@@ -5569,19 +5473,15 @@ hr.grey {
             <space></space>
             <i>Тесты на нормальность распределения остатков без выбросов</i>
             <space2></space2>
-            <img-margin>
                 <img
                     src='img/Section4-Linear-models-research/residuals_trimmed_tests.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
             <i>Коэффициент эксцесса</i>
             <space2></space2>
-            <img-margin>
                 <img
                     src='img/Section4-Linear-models-research/residuals_kurtosis.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
             <i>Визуализация формы распределения остатков и сравнение с нормальным распределением</i>
             <space></space>
@@ -5691,11 +5591,9 @@ hr.grey {
             Алгоритмы <sb>Random Forest</sb>, <sb>Bagging</sb>, <sb>LGBoost</sb>, <sb>XGBoost</sb> имеют встроенный функционал отбора наиболее информативных признаков. Отобразим топ-10 наиболее важных признаков для каждой из моделей.
             <space2></space2>   
             </p>
-            <img-margin>
                 <img
                     src='img/Section5-Residuals-prediction/features_importance_four_models.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
         <p>
             <space></space>
             Наиболее значимые признаки здесь:
@@ -5771,9 +5669,7 @@ hr.grey {
         <p>
             <i>Визуализация результатов</i>
             <space></space>
-            <img-margin>
                 <img src='img/Section5-Residuals-prediction/final_plot.png'>
-                </img-margin>
             <space></space>
             Для оценки остатков будет использоваться алгоритм <sb>Stacking</sb>. 
             </p>
@@ -5796,26 +5692,20 @@ hr.grey {
         <p>
             Класс <sb>HousePricePredictor</sb> объединяет линейную регрессию и Stacking в единую модель. Линейная регрессия генерирует основные прогнозы цен, а Stacking используется для коррекции и повышения точности.
             <space></space>
-            <img-margin>
                 <img
                     src='img/Section5-Residuals-prediction/hpp.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
             <sb>HousePricePredictor</sb> поддерживает Scickit-learn-совместимые методы <sb>.fit</sb> и <sb>.predict</sb>, а также ряд других методов (код доступен в файле <i>tools.py</i>)
             </p>
             <space2></space2>
-            <img-margin>
                 <img
                     src='img/Section5-Residuals-prediction/fit.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
-            <img-margin>
                 <img
                     src='img/Section5-Residuals-prediction/predict.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
         <p>
             Средняя RMSE на 20-фолдовой проверке: 0.1102 +/- 0.009.
@@ -5835,7 +5725,7 @@ hr.grey {
             <i>Визуализация результатов</i>
             </p>
             <space></space>
-            <img-margin><img src='img/Section7-ML-models/ml_models_plot.png'></img-margin>
+            <img src='img/Section7-ML-models/ml_models_plot.png'>
             <space></space>
         <p>
             <i>Средние значения RMSE (20-fold) всех моделей</i>
@@ -5959,19 +5849,15 @@ hr.grey {
         <p>
             Ни один тест не позволяет предполагать, что остатки распределены нормально. Попробуем удалить экстремальные значения ошибок (шесть элементов с остатками более 50000$, см. таблицу ниже).
             <space20></space20>
-            <img-margin>
                 <img
                     src='img/Section8-Final-predictions/residuals_been_cutted.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
             После этого три из пяти тестов указывают на нормальность распределения.
             <space20></space20>
-            <img-margin>
                 <img
                     src='img/Section8-Final-predictions/residuals_cutted_tests.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
-                </img-margin>
             <space></space>
             <i>Сравнение формы распределения остатков (до и после удаления выбросов) с формой нормального распределения</i>
             <space></space>
@@ -6036,6 +5922,7 @@ hr.grey {
 </content-container>
 </page-container>
 </div>
+
 
 
 

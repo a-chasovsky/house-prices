@@ -115,7 +115,6 @@ main-container > nav {
 }
 .toc li {
     text-align: left;
-    color: #606060;
 }
 .toc li.active > a {
     font-weight: 600;
@@ -131,7 +130,7 @@ ul {
     }
 li {
     font-family: system-ui;
-    color: red !important;
+    color: red;
     line-height: 1.75em;
     text-align: justify
 }

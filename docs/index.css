@@ -100,7 +100,7 @@ main-container > nav {
 }
 .toc a:hover,
 .toc a:focus {
-    color: #5DA1EA;
+    color: #3F84CD;
 }
 .toc ol {
     display: block;

@@ -100,7 +100,8 @@ main-container > nav {
 }
 .toc a:hover,
 .toc a:focus {
-    color: #1E5FA5;
+    /* color: #1E5FA5; */
+    color: red;
 }
 .toc ol {
     display: block;

@@ -116,7 +116,7 @@ main-container > nav {
     text-align: left;
     color: #606060;
 }
-.toc li.hover > a {
+.toc li.focus > a {
     /* color: #1E5FA5; */
     color: red;
 }

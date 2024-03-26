@@ -53,8 +53,7 @@ h5 {
 }
 p {
     font-size: 1em;
-    /* color: #151515; */
-    color: #202020 !important;
+    color: #151515 !important;
     line-height: 1.5;
     margin: 12.5px 0 0 0;
 }
@@ -127,11 +126,11 @@ ul {
     list-style-type: disc;
     line-height: 1.5;
     margin-top: 5px;
-    color: #202020;
+    color: #151515;
     }
 li {
     font-family: system-ui;
-    color: #202020;
+    color: #151515;
     line-height: 1.75em;
     text-align: justify
 }

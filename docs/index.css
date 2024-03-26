@@ -127,11 +127,11 @@ ul {
     list-style-type: disc;
     line-height: 1.5;
     margin-top: 5px;
-    color: #151515;
+    color: #252525;
     }
 li {
     font-family: system-ui;
-    color: red;
+    color: #252525;
     line-height: 1.75em;
     text-align: justify
 }

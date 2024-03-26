@@ -117,9 +117,8 @@ main-container > nav {
     text-align: left;
 }
 .toc li.active > a {
-    font-weight:400;
-    /* color: #1E5FA5; */
-    color: red;
+    font-weight: 500;
+    color: #1E5FA5;
     padding-right: 1.5em;
     /* white-space: nowrap; */
 }

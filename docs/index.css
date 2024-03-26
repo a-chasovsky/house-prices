@@ -116,6 +116,10 @@ main-container > nav {
     text-align: left;
     color: #606060;
 }
+.toc li.hover > a {
+    /* color: #1E5FA5; */
+    color: red;
+}
 .toc li.active > a {
     font-weight: 600;
     color: #1E5FA5;

@@ -1,8 +1,7 @@
 body {
     font-family: system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", 'Arial', "Ubuntu";
     font-size: 1em;
-    /* color: #252525; */
-    /* сolor: purple; */
+    color: #151515;
     line-height: 1.5;
 }
 h1 {
@@ -54,8 +53,8 @@ h5 {
 }
 p {
     font-size: 1em;
-    /* color: #151515; */
-    сolor: red;
+    color: #151515;
+    color: purple;
     line-height: 1.5;
     margin: 12.5px 0 0 0;
 }
@@ -97,7 +96,6 @@ main-container > nav {
 }
 .toc a {
     text-decoration: none;
-    /* color: #606060; */
     cursor: pointer;
     /* transition: all 25ms ease-in-out; */
 }

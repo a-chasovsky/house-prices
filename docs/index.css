@@ -54,7 +54,7 @@ h5 {
 p {
     font-size: 1em;
     /* color: #151515; */
-    color: red !important;
+    color: #252525 !important;
     line-height: 1.5;
     margin: 12.5px 0 0 0;
 }
@@ -130,6 +130,7 @@ ul {
     }
 li {
     font-family: system-ui;
+    color: red !important;
     line-height: 1.75em;
     text-align: justify
 }

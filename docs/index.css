@@ -100,7 +100,7 @@ main-container > nav {
 }
 .toc a:hover,
 .toc a:focus {
-    color: #3F84CD;
+    color: #1E5FA5;
 }
 .toc ol {
     display: block;
@@ -115,10 +115,6 @@ main-container > nav {
 .toc li {
     text-align: left;
     color: #606060;
-}
-.toc li.focus > a {
-    /* color: #1E5FA5; */
-    color: red;
 }
 .toc li.active > a {
     font-weight: 600;

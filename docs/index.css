@@ -1,61 +1,55 @@
 body {
     font-family: system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", 'Arial', "Ubuntu";
     font-size: 1em;
-    /* color: #151515; */
-    line-height: 1.5;
+    color: #151515;
+    line-height: 1.5em;
 }
 h1 {
-    color: #252525;
+    color: #303030;
     font-size: 1.5em;
     font-weight: 600;
-    text-align: left;
     line-height: 1.25;
-    margin-top: 15px;
+    margin-top: 0.8em;
     }
 h2 {
-    color: #252525;
+    color: #303030;
     font-size: 1.3em;
     font-weight: 600;
-    text-align: left;
     line-height: 1.5em;
-    margin-bottom: -5px;
-    scroll-margin-top: 15px;
+    /* margin-bottom: -0.2em; */
+    scroll-margin-top: 0.8em;
 }
 h3 {
-    color: #252525;
+    color: #303030;
     font-size: 1.15em;
     font-weight: 600;
-    text-align: left;
     line-height: 1.25em;
-    margin-bottom: -5px;
-    scroll-margin-top: 15px;
+    margin-bottom: -0.2em;
+    scroll-margin-top: 0.8em;
 }
 h4 {
-    color: #252525;
+    color: #303030;
     font-size: 1em;
     font-weight: 600;
-    text-align: left;
     line-height: 1.25;
-    margin-top: 15px;
     margin-bottom: 0;
-    scroll-margin-top: 15px;
+    scroll-margin-top: 0.8em;
 }
 h5 {
     font-style: italic;
     color: #252525;
     font-size:0.85em;
     font-weight: 400;
-    text-align: left;
     line-height: 1.25em;
-    margin-top: -5px;
+    margin-top: -0.2em;
     margin-bottom: 0px;
-    scroll-margin-top: 15px;
+    scroll-margin-top: 0.8em;
 }
 p {
     font-size: 1em;
-    color: #151515 !important;
+    color: #151515;
     line-height: 1.5;
-    margin: 12.5px 0 0 0;
+    margin: 1em 0 0 0;
 }
 page-container {
     display: block;
@@ -63,9 +57,9 @@ page-container {
 }
 main-container {
     display: grid;
-    grid-template-columns: 67% 33%;
-    width: 88%;
-    margin: 0 0 0 12%;
+    grid-template-columns: 73% 27%;
+    width: 80%;
+    margin: 0 0 0 20%;
 }
 sub-container {
     display: block;
@@ -86,11 +80,9 @@ main-container > nav {
 }
 .toc {
     width: 100%;
-    margin-top: 0.4em;
-    padding-top: 0.2em;
-    /* padding-right: 2em; */
-    height: 750px;
-    font-size: 0.85rem;
+    margin: 0.2em 0 0 0;
+    height: 30em;
+    font-size: 0.8em;
     color: #606060;
 }
 .toc a {
@@ -105,7 +97,7 @@ main-container > nav {
 .toc ol {
     display: block;
     list-style: none;
-    padding-left: 2em;
+    padding: 1em 0 0 2em;
 }
 .toc ul {
     list-style: none;
@@ -114,23 +106,32 @@ main-container > nav {
 }
 .toc li {
     text-align: left;
-    color: #606060;
+    border-left: 1px solid #CFD7DE;
+    padding-left: 0.75em;
+    margin-left: -1em;
 }
 .toc li.active > a {
-    font-weight: 600;
+    font-weight:600;
     color: #1E5FA5;
     padding-right: 1.5em;
     /* white-space: nowrap; */
 }
+.toc li.active {
+    /* list-style-type: disc; */
+    /* color: #1E5FA5; */
+    /* border-left: 0.2em solid #315E8E; */
+    border-left: 2px solid #315E8E;
+    padding-left: 0.65em;
+    margin-left: -1em;
+}
 ul {
     list-style-type: disc;
     line-height: 1.5;
-    margin-top: 5px;
+    margin-top: 0.5em;
     color: #151515;
     }
 li {
     font-family: system-ui;
-    color: #151515;
     line-height: 1.75em;
     text-align: justify
 }
@@ -139,34 +140,34 @@ img-center {
     justify-content: center;
 }
 img-margin {
-    margin-left: 30px;
+    margin-left: 2em;
 }
 section {
-    scroll-margin-top: 15px;
+    scroll-margin-top: 1em;
 }
 space {
     display: block;
-    margin-top: 12.5px;
-    content: ' '
-}
-space20 {
-    display: block;
-    margin-top: 20px;
+    margin-top: 0.8em;
     content: ' '
 }
 space2 {
     display: block;
-    margin-top: 20px;
+    margin-top: 1.2em;
     content: ' '
 }
-space25 {
+space3 {
     display: block;
-    margin-top: 25px;
+    margin-top: 1.6em;
+    content: ' '
+}
+space4 {
+    display: block;
+    margin-top: 2em;
     content: ' '
 }
 a {
     font-size: 1em;
-    scroll-margin-top: 15px;
+    scroll-margin-top: 1em;
 }
 a:link {
     font-family: system-ui;
@@ -192,30 +193,22 @@ sb {
 #toTocBtn {
     display: none;
     position: fixed;
-    margin-left: 845px;
-    bottom: 2em;
     z-index: 99;
     border: none; 
     outline: none; 
     background-color: #F1F1F1;
     color: #1B60AA; 
     cursor: pointer;
-    padding: 15px;
-    border-radius: 5px;
-    font-size: 0.9em;
 }
 #toTocBtn:hover {
     background-color: #E1E1E1;
     border: none; 
     color: #1B60AA;
 }
-span.emoji {
-    font-size: 20px;
-}
 .change-size {
     transform: scale(1.35);
     border: 1px solid #CCCCCC;
-    border-radius: 3px;
+    border-radius: 0.2em;
 }
 hr.grey {
     height: 1px;

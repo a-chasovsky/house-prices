@@ -199,8 +199,7 @@ sb {
     background-color: #F1F1F1;
     color: #1B60AA; 
     cursor: pointer;
-    padding-left: 0.75em;
-    margin-left: -0.6em;
+    margin-left: 10em;
 }
 #toTocBtn:hover {
     background-color: #E1E1E1;

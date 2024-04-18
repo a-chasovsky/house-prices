@@ -113,7 +113,7 @@ main-container > nav {
 .toc li.active > a {
     font-weight:600;
     color: #1E5FA5;
-    padding-right: 1em;
+    padding-right: 0em;
     /* white-space: nowrap; */
 }
 .toc li.active {
@@ -199,6 +199,8 @@ sb {
     background-color: #F1F1F1;
     color: #1B60AA; 
     cursor: pointer;
+    padding-left: 0.75em;
+    margin-left: -0.6em;
 }
 #toTocBtn:hover {
     background-color: #E1E1E1;

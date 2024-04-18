@@ -57,9 +57,9 @@ page-container {
 }
 main-container {
     display: grid;
-    grid-template-columns: 70% 30%;
-    width: 80%;
-    margin: 0 0 0 20%;
+    grid-template-columns: 73% 27%;
+    width: 83%;
+    margin: 0 0 0 17%;
 }
 sub-container {
     display: block;
@@ -81,7 +81,7 @@ main-container > nav {
 .toc {
     width: 100%;
     margin: 0.2em 0 0 0;
-    height: 30em;
+    height: 50em;
     font-size: 0.8em;
     color: #606060;
 }

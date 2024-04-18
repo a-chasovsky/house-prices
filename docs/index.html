@@ -154,7 +154,7 @@
     <h4><i>Интерпретациия модели</i></h4>
     <p>
         Ядром HousePricePredictor является классическая линейная регрессия. Коэффициенты и доверительные интервалы представлены в таблице ниже.
-        <space20></space20>
+        <space2></space2>
         <img-margin>
             <img 
                 src='img/Section4-Linear-models-research/coefficients_table.png'
@@ -206,13 +206,13 @@
                 <li>Число предикторов - 79;</li>
                 <li>Число элементов - 1460.</li>
                 </ul>
-            <space20></space20>
+            <space2></space2>
             <img-center>
                 <img 
                     src='img/Section1-Overview-and-Base-model/data_raw.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
                 </img-center>
-            <space20></space20>
+            <space2></space2>
         <p>
             Данные разбиваются на два датасета в соотношении 9 к 1: обучающий train (1314 элемента) и проверочный test (146 элемента).
             <space></space>
@@ -282,7 +282,7 @@
             У некоторых переменных количество пропущенных значений достигает почти 100% от общего числа элементов.
             <space></space>
             <i>Порядковые</i>
-            <space20></space20>
+            <space2></space2>
             <img-margin>
                 <img 
                     src='img/Section1-Overview-and-Base-model/categorical_ordinal.png'
@@ -293,7 +293,7 @@
             <section id="missed_values">
         <p>
             <i>Номинативные</i>
-            <space20></space20>
+            <space2></space2>
             <img-margin>
                 <img
                     src='img/Section1-Overview-and-Base-model/categorical_categorical.png'
@@ -308,7 +308,7 @@
         <p>            
             Пропущенные значения имеются у трех количественных переменных: <sb>lotfrontage</sb>, <sb>garageyrblt</sb>, <sb>masvnrarea</sb>.
             </p>
-            <space20></space20>
+            <space2></space2>
             <img-margin>
                 <img
                     src='img/Section1-Overview-and-Base-model/quantitative.png'
@@ -363,7 +363,7 @@
             </h4> 
         <p>
             Лучшие результаты (RMSE примерно 0.130) показывают сложные модели с большим числом деревьев (75), увеличение числа листьев положительно сказывается на эффективности модели. Оптимальная скорость обучения - 0.1. RMSE лучшей модели - 0.1282.
-            <space20></space20>
+            <space2></space2>
             <img-center>
                 <img 
                     src='img/Section1-Overview-and-Base-model/gridsearch1.png'
@@ -419,7 +419,7 @@
                 src='img/Section2-Explore-and-Clean/corr_matrix.png'
                 style='display:block;background-color:#FFFFFF;'>
         <section id='eda'>
-            <space20></space20>
+            <space2></space2>
         <p>
             Полный набор визуализаций представлен в соответствующем блокноте <i>'Section2-Explore-and-Clean.ipynb'</i>. Ниже приведены несколько типовых графиков.
             </p>
@@ -428,7 +428,7 @@
             </h4>
         <p>
             Ключевые инструменты для исследования количественных переменных - гистограммы и диаграммы рассеяния с добавлением линии регрессии.
-            <space20></space20>
+            <space2></space2>
             <img
                 src='img/Section2-Explore-and-Clean/quantitative.png'
                 style="display:block;background-color:#FFFFFF;" width="100%" height="100%">
@@ -447,9 +447,9 @@
             <img
                 src='img/Section2-Explore-and-Clean/categorical.png'
                 style="display:block;background-color:#FFFFFF;" width="100%" height="100%">
-            <space20></space20>
+            <space2></space2>
             Примеры взаимосвязи некоторых категориальных переменных с ценой.
-            <space20></space20>
+            <space2></space2>
             <img src='img/Section2-Explore-and-Clean/housestyle.png'>
         </section>
             <space></space>
@@ -493,7 +493,7 @@
                 </ul>
         <p>
             <b> MASVNRAREA </b> (Площадь облицовки фундамента)
-            <space20></space20>
+            <space2></space2>
             <img-margin>
                 <img
                     src='img/Section2-Explore-and-Clean/masvnarea_disc.png'
@@ -966,7 +966,7 @@
         <p>
             <space></space>
             <i>Результаты статистических тестов и характеристики регрессии</i>
-            <space20></space20>
+            <space2></space2>
             <img-margin>
                 <img
                     src='img/Section4-Linear-models-research/regression_tests.png'
@@ -1042,7 +1042,7 @@
                 <li>эластичная сеть (alpha: 0.0067, L1 ratio: 0.1) - 0.1347.</li>
                 </ul>
     <section id='simulations'>
-            <space20></space20>
+            <space2></space2>
             <img-center><img src='img/Section4-Linear-models-research/simulations.png'></img-center>
             <space></space>
         <p>
@@ -1182,14 +1182,14 @@
         <p>
             Суммарные результаты всех обученных в этом разделе моделей выглядят следующим образом
             </p>
-            <space20></space20>
+            <space2></space2>
             <img-center>
                 <img
                     src='img/Section5-Residuals-prediction/models_residuals_summary.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
                 </img-center>
     <!-- <section id='residuals_final'> -->
-            <space20></space20>
+            <space2></space2>
         <p>
             <i>Визуализация результатов</i>
             <space></space>
@@ -1339,7 +1339,7 @@
     </section>
         <p>
             <i>Визуализация ошибок 20 фолдов кросс-валидации HousePricePredictor и Stacking</i>
-            <space20></space20>
+            <space2></space2>
             <img-center>
                 <img 
                     src='img/Section8-Final-predictions/stack_hpp_compare.png'
@@ -1387,7 +1387,7 @@
     <section id='residuals_hpp'>
         <p>
             Ни один тест не позволяет предполагать, что остатки распределены нормально. Попробуем удалить экстремальные значения ошибок (шесть элементов с остатками более 50000$, см. таблицу ниже).
-            <space20></space20>
+            <space2></space2>
             <img-margin>
                 <img
                     src='img/Section8-Final-predictions/residuals_been_cutted.png'
@@ -1395,7 +1395,7 @@
                 </img-margin>
             <space></space>
             После этого три из пяти тестов указывают на нормальность распределения.
-            <space20></space20>
+            <space2></space2>
             <img-margin>
                 <img
                     src='img/Section8-Final-predictions/residuals_cutted_tests.png'
@@ -1647,7 +1647,7 @@
     <h4><i>Интерпретациия модели</i></h4>
     <p>
         Ядром HousePricePredictor является классическая линейная регрессия. Коэффициенты и доверительные интервалы представлены в таблице ниже.
-        <space20></space20>
+        <space2></space2>
             <img 
                 src='img/Section4-Linear-models-research/coefficients_table.png'
                 style='border: 1px solid #CCCCCC;border-radius:3px;width:80%;display:block;margin-left:auto;margin-right:auto;'>
@@ -1694,13 +1694,13 @@
                 <li>Число предикторов - 79;</li>
                 <li>Число элементов - 1460.</li>
                 </ul>
-            <space20></space20>
+            <space2></space2>
             <img-center>
                 <img 
                     src='img/Section1-Overview-and-Base-model/data_raw.png'
                     style='border: 1px solid #CCCCCC;border-radius:3px;'>
                 </img-center>
-            <space20></space20>
+            <space2></space2>
         <p>
             Данные разбиваются на два датасета в соотношении 9 к 1: обучающий train (1314 элемента) и проверочный test (146 элемента).
             <space></space>
@@ -1769,7 +1769,7 @@
             У некоторых переменных количество пропущенных значений достигает почти 100% от общего числа элементов.
             <space></space>
             <i>Порядковые</i>
-            <space20></space20>
+            <space2></space2>
                 <img 
                     src='img/Section1-Overview-and-Base-model/categorical_ordinal.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;width:70%;display:block;margin-left:auto;margin-right:auto;'>
@@ -1777,7 +1777,7 @@
             </p>
         <p>
             <i>Номинативные</i>
-            <space20></space20>
+            <space2></space2>
                 <img
                     src='img/Section1-Overview-and-Base-model/categorical_categorical.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;width:70%;display:block;margin-left:auto;margin-right:auto;'>
@@ -1790,7 +1790,7 @@
         <p>            
             Пропущенные значения имеются у трех количественных переменных: <sb>lotfrontage</sb>, <sb>garageyrblt</sb>, <sb>masvnrarea</sb>.
             </p>
-            <space20></space20>
+            <space2></space2>
                 <img
                     src='img/Section1-Overview-and-Base-model/quantitative.png'
                     style='border: 1px solid #CCCCCC;border-radius:3px;width:70%;display:block;margin-left:auto;margin-right:auto;'>
@@ -1841,7 +1841,7 @@
             </h4> 
         <p>
             Лучшие результаты (RMSE примерно 0.130) показывают сложные модели с большим числом деревьев (75), увеличение числа листьев положительно сказывается на эффективности модели. Оптимальная скорость обучения - 0.1. RMSE лучшей модели - 0.1282.
-            <space20></space20>
+            <space2></space2>
             <img-center>
                 <img 
                     src='img/Section1-Overview-and-Base-model/gridsearch1.svg'>
@@ -1895,7 +1895,7 @@
             <img
                 src='img/Section2-Explore-and-Clean/corr_matrix.svg'
                 style='display:block;'>
-            <space20></space20>
+            <space2></space2>
         <p>
             Полный набор визуализаций представлен в соответствующем блокноте <i>'Section2-Explore-and-Clean.ipynb'</i>. Ниже приведены несколько типовых графиков.
             </p>
@@ -1904,7 +1904,7 @@
             </h4>
         <p>
             Ключевые инструменты для исследования количественных переменных - гистограммы и диаграммы рассеяния с добавлением линии регрессии.
-            <space20></space20>
+            <space2></space2>
             <img
                 src='img/Section2-Explore-and-Clean/quantitative.png'
                 style="display:block;" width="100%" height="100%">
@@ -1923,9 +1923,9 @@
             <img
                 src='img/Section2-Explore-and-Clean/categorical.png'
                 style="display:block;" width="100%" height="100%">
-            <space20></space20>
+            <space2></space2>
             Примеры взаимосвязи некоторых категориальных переменных с ценой.
-            <space20></space20>
+            <space2></space2>
             <img src='img/Section2-Explore-and-Clean/housestyle.svg'>
             <space></space>
             <img src='img/Section2-Explore-and-Clean/kitchenqual_vs_price.svg'>
@@ -1967,7 +1967,7 @@
                 </ul>
         <p>
             <b> MASVNRAREA </b> (Площадь облицовки фундамента)
-            <space20></space20>
+            <space2></space2>
                 <img
                     src='img/Section2-Explore-and-Clean/masvnarea_disc.png'
                     style='border: 1px solid #CCCCCC;border-radius:3px;width:50%;display:block;margin-left:auto;margin-right:auto;'>
@@ -2426,7 +2426,7 @@
         <p>
             <space></space>
             <i>Результаты статистических тестов и характеристики регрессии</i>
-            <space20></space20>
+            <space2></space2>
                 <img
                     src='img/Section4-Linear-models-research/regression_tests.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
@@ -2494,7 +2494,7 @@
                 <li>линейная регрессия из п.12 - 0.1352;</li>
                 <li>эластичная сеть (alpha: 0.0067, L1 ratio: 0.1) - 0.1347.</li>
                 </ul>
-            <space20></space20>
+            <space2></space2>
             <img-center><img src='img/Section4-Linear-models-research/simulations.svg'></img-center>
             <space></space>
         <p>
@@ -2626,13 +2626,13 @@
         <p>
             Суммарные результаты всех обученных в этом разделе моделей выглядят следующим образом
             </p>
-            <space20></space20>
+            <space2></space2>
             <img-center>
                 <img
                     src='img/Section5-Residuals-prediction/models_residuals_summary.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
                 </img-center>
-            <space20></space20>
+            <space2></space2>
         <p>
             <i>Визуализация результатов</i>
             <space></space>
@@ -2768,7 +2768,7 @@
             </ul>
         <p>
             <i>Визуализация ошибок 20 фолдов кросс-валидации HousePricePredictor и Stacking</i>
-            <space20></space20>
+            <space2></space2>
             <img-center>
                 <img 
                     src='img/Section8-Final-predictions/stack_hpp_compare.svg'>
@@ -2811,13 +2811,13 @@
             </p>
         <p>
             Ни один тест не позволяет предполагать, что остатки распределены нормально. Попробуем удалить экстремальные значения ошибок (шесть элементов с остатками более 50000$, см. таблицу ниже).
-            <space20></space20>
+            <space2></space2>
                 <img
                     src='img/Section8-Final-predictions/residuals_been_cutted.png'
                     style='border:1px solid #CCCCCC;border-radius: 3px;width:90%;display:block;margin-left:auto;margin-right:auto;'>
             <space></space>
             После этого три из пяти тестов указывают на нормальность распределения.
-            <space20></space20>
+            <space2></space2>
                 <img
                     src='img/Section8-Final-predictions/residuals_cutted_tests.png'
                     style='border: 1px solid #CCCCCC;border-radius:3px;width:70%;display:block;margin-left:auto;margin-right:auto;'>
@@ -3015,7 +3015,7 @@
     <h4><i>Интерпретациия модели</i></h4>
     <p>
         Ядром HousePricePredictor является классическая линейная регрессия. Коэффициенты и доверительные интервалы представлены в таблице ниже.
-        <space20></space20>
+        <space2></space2>
             <img 
                 src='img/Section4-Linear-models-research/coefficients_table.png'
                 style='border: 1px solid #CCCCCC;border-radius:3px;width:80%;display:block;margin-left:auto;margin-right:auto;'>
@@ -3062,13 +3062,13 @@
                 <li>Число предикторов - 79;</li>
                 <li>Число элементов - 1460.</li>
                 </ul>
-            <space20></space20>
+            <space2></space2>
             <img-center>
                 <img 
                     src='img/Section1-Overview-and-Base-model/data_raw.png'
                     style='border: 1px solid #CCCCCC;border-radius:3px;'>
                 </img-center>
-            <space20></space20>
+            <space2></space2>
         <p>
             Данные разбиваются на два датасета в соотношении 9 к 1: обучающий train (1314 элемента) и проверочный test (146 элемента).
             <space></space>
@@ -3137,7 +3137,7 @@
             У некоторых переменных количество пропущенных значений достигает почти 100% от общего числа элементов.
             <space></space>
             <i>Порядковые</i>
-            <space20></space20>
+            <space2></space2>
                 <img 
                     src='img/Section1-Overview-and-Base-model/categorical_ordinal.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;width:70%;display:block;margin-left:auto;margin-right:auto;'>
@@ -3145,7 +3145,7 @@
             </p>
         <p>
             <i>Номинативные</i>
-            <space20></space20>
+            <space2></space2>
                 <img
                     src='img/Section1-Overview-and-Base-model/categorical_categorical.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;width:70%;display:block;margin-left:auto;margin-right:auto;'>
@@ -3158,7 +3158,7 @@
         <p>            
             Пропущенные значения имеются у трех количественных переменных: <sb>lotfrontage</sb>, <sb>garageyrblt</sb>, <sb>masvnrarea</sb>.
             </p>
-            <space20></space20>
+            <space2></space2>
                 <img
                     src='img/Section1-Overview-and-Base-model/quantitative.png'
                     style='border: 1px solid #CCCCCC;border-radius:3px;width:70%;display:block;margin-left:auto;margin-right:auto;'>
@@ -3209,7 +3209,7 @@
             </h4> 
         <p>
             Лучшие результаты (RMSE примерно 0.130) показывают сложные модели с большим числом деревьев (75), увеличение числа листьев положительно сказывается на эффективности модели. Оптимальная скорость обучения - 0.1. RMSE лучшей модели - 0.1282.
-            <space20></space20>
+            <space2></space2>
             <img-center>
                 <img 
                     src='img/Section1-Overview-and-Base-model/gridsearch1.svg'>
@@ -3263,7 +3263,7 @@
             <img
                 src='img/Section2-Explore-and-Clean/corr_matrix.svg'
                 style='display:block;'>
-            <space20></space20>
+            <space2></space2>
         <p>
             Полный набор визуализаций представлен в соответствующем блокноте <i>'Section2-Explore-and-Clean.ipynb'</i>. Ниже приведены несколько типовых графиков.
             </p>
@@ -3272,7 +3272,7 @@
             </h4>
         <p>
             Ключевые инструменты для исследования количественных переменных - гистограммы и диаграммы рассеяния с добавлением линии регрессии.
-            <space20></space20>
+            <space2></space2>
             <img
                 src='img/Section2-Explore-and-Clean/quantitative.png'
                 style="display:block;" width="100%" height="100%">
@@ -3291,9 +3291,9 @@
             <img
                 src='img/Section2-Explore-and-Clean/categorical.png'
                 style="display:block;" width="100%" height="100%">
-            <space20></space20>
+            <space2></space2>
             Примеры взаимосвязи некоторых категориальных переменных с ценой.
-            <space20></space20>
+            <space2></space2>
             <img src='img/Section2-Explore-and-Clean/housestyle.svg'>
             <space></space>
             <img src='img/Section2-Explore-and-Clean/kitchenqual_vs_price.svg'>
@@ -3335,7 +3335,7 @@
                 </ul>
         <p>
             <b> MASVNRAREA </b> (Площадь облицовки фундамента)
-            <space20></space20>
+            <space2></space2>
                 <img
                     src='img/Section2-Explore-and-Clean/masvnarea_disc.png'
                     style='border: 1px solid #CCCCCC;border-radius:3px;width:50%;display:block;margin-left:auto;margin-right:auto;'>
@@ -3794,7 +3794,7 @@
         <p>
             <space></space>
             <i>Результаты статистических тестов и характеристики регрессии</i>
-            <space20></space20>
+            <space2></space2>
                 <img
                     src='img/Section4-Linear-models-research/regression_tests.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
@@ -3862,7 +3862,7 @@
                 <li>линейная регрессия из п.12 - 0.1352;</li>
                 <li>эластичная сеть (alpha: 0.0067, L1 ratio: 0.1) - 0.1347.</li>
                 </ul>
-            <space20></space20>
+            <space2></space2>
             <img-center><img src='img/Section4-Linear-models-research/simulations.svg'></img-center>
             <space></space>
         <p>
@@ -3994,13 +3994,13 @@
         <p>
             Суммарные результаты всех обученных в этом разделе моделей выглядят следующим образом
             </p>
-            <space20></space20>
+            <space2></space2>
             <img-center>
                 <img
                     src='img/Section5-Residuals-prediction/models_residuals_summary.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
                 </img-center>
-            <space20></space20>
+            <space2></space2>
         <p>
             <i>Визуализация результатов</i>
             <space></space>
@@ -4136,7 +4136,7 @@
             </ul>
         <p>
             <i>Визуализация ошибок 20 фолдов кросс-валидации HousePricePredictor и Stacking</i>
-            <space20></space20>
+            <space2></space2>
             <img-center>
                 <img 
                     src='img/Section8-Final-predictions/stack_hpp_compare.svg'>
@@ -4179,13 +4179,13 @@
             </p>
         <p>
             Ни один тест не позволяет предполагать, что остатки распределены нормально. Попробуем удалить экстремальные значения ошибок (шесть элементов с остатками более 50000$, см. таблицу ниже).
-            <space20></space20>
+            <space2></space2>
                 <img
                     src='img/Section8-Final-predictions/residuals_been_cutted.png'
                     style='border:1px solid #CCCCCC;border-radius: 3px;width:90%;display:block;margin-left:auto;margin-right:auto;'>
             <space></space>
             После этого три из пяти тестов указывают на нормальность распределения.
-            <space20></space20>
+            <space2></space2>
                 <img
                     src='img/Section8-Final-predictions/residuals_cutted_tests.png'
                     style='border: 1px solid #CCCCCC;border-radius:3px;width:70%;display:block;margin-left:auto;margin-right:auto;'>
@@ -4383,7 +4383,7 @@
     <h4><i>Интерпретациия модели</i></h4>
     <p>
         Ядром HousePricePredictor является классическая линейная регрессия. Коэффициенты и доверительные интервалы представлены в таблице ниже.
-        <space20></space20>
+        <space2></space2>
             <img 
                 src='img/Section4-Linear-models-research/coefficients_table.png'
                 style='border: 1px solid #CCCCCC;border-radius:3px;width:80%;display:block;margin-left:auto;margin-right:auto;'>
@@ -4430,13 +4430,13 @@
                 <li>Число предикторов - 79;</li>
                 <li>Число элементов - 1460.</li>
                 </ul>
-            <space20></space20>
+            <space2></space2>
             <img-center>
                 <img 
                     src='img/Section1-Overview-and-Base-model/data_raw.png'
                     style='border: 1px solid #CCCCCC;border-radius:3px;'>
                 </img-center>
-            <space20></space20>
+            <space2></space2>
         <p>
             Данные разбиваются на два датасета в соотношении 9 к 1: обучающий train (1314 элемента) и проверочный test (146 элемента).
             <space></space>
@@ -4505,7 +4505,7 @@
             У некоторых переменных количество пропущенных значений достигает почти 100% от общего числа элементов.
             <space></space>
             <i>Порядковые</i>
-            <space20></space20>
+            <space2></space2>
                 <img 
                     src='img/Section1-Overview-and-Base-model/categorical_ordinal.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;width:70%;display:block;margin-left:auto;margin-right:auto;'>
@@ -4513,7 +4513,7 @@
             </p>
         <p>
             <i>Номинативные</i>
-            <space20></space20>
+            <space2></space2>
                 <img
                     src='img/Section1-Overview-and-Base-model/categorical_categorical.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;width:70%;display:block;margin-left:auto;margin-right:auto;'>
@@ -4526,7 +4526,7 @@
         <p>            
             Пропущенные значения имеются у трех количественных переменных: <sb>lotfrontage</sb>, <sb>garageyrblt</sb>, <sb>masvnrarea</sb>.
             </p>
-            <space20></space20>
+            <space2></space2>
                 <img
                     src='img/Section1-Overview-and-Base-model/quantitative.png'
                     style='border: 1px solid #CCCCCC;border-radius:3px;width:70%;display:block;margin-left:auto;margin-right:auto;'>
@@ -4577,7 +4577,7 @@
             </h4> 
         <p>
             Лучшие результаты (RMSE примерно 0.130) показывают сложные модели с большим числом деревьев (75), увеличение числа листьев положительно сказывается на эффективности модели. Оптимальная скорость обучения - 0.1. RMSE лучшей модели - 0.1282.
-            <space20></space20>
+            <space2></space2>
             <img-center>
                 <img 
                     src='img/Section1-Overview-and-Base-model/gridsearch1.svg'>
@@ -4631,7 +4631,7 @@
             <img
                 src='img/Section2-Explore-and-Clean/corr_matrix.svg'
                 style='display:block;'>
-            <space20></space20>
+            <space2></space2>
         <p>
             Полный набор визуализаций представлен в соответствующем блокноте <i>'Section2-Explore-and-Clean.ipynb'</i>. Ниже приведены несколько типовых графиков.
             </p>
@@ -4640,7 +4640,7 @@
             </h4>
         <p>
             Ключевые инструменты для исследования количественных переменных - гистограммы и диаграммы рассеяния с добавлением линии регрессии.
-            <space20></space20>
+            <space2></space2>
             <img
                 src='img/Section2-Explore-and-Clean/quantitative.png'
                 style="display:block;" width="100%" height="100%">
@@ -4659,9 +4659,9 @@
             <img
                 src='img/Section2-Explore-and-Clean/categorical.png'
                 style="display:block;" width="100%" height="100%">
-            <space20></space20>
+            <space2></space2>
             Примеры взаимосвязи некоторых категориальных переменных с ценой.
-            <space20></space20>
+            <space2></space2>
             <img src='img/Section2-Explore-and-Clean/housestyle.svg'>
             <space></space>
             <img src='img/Section2-Explore-and-Clean/kitchenqual_vs_price.svg'>
@@ -4703,7 +4703,7 @@
                 </ul>
         <p>
             <b> MASVNRAREA </b> (Площадь облицовки фундамента)
-            <space20></space20>
+            <space2></space2>
                 <img
                     src='img/Section2-Explore-and-Clean/masvnarea_disc.png'
                     style='border: 1px solid #CCCCCC;border-radius:3px;width:50%;display:block;margin-left:auto;margin-right:auto;'>
@@ -5162,7 +5162,7 @@
         <p>
             <space></space>
             <i>Результаты статистических тестов и характеристики регрессии</i>
-            <space20></space20>
+            <space2></space2>
                 <img
                     src='img/Section4-Linear-models-research/regression_tests.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
@@ -5230,7 +5230,7 @@
                 <li>линейная регрессия из п.12 - 0.1352;</li>
                 <li>эластичная сеть (alpha: 0.0067, L1 ratio: 0.1) - 0.1347.</li>
                 </ul>
-            <space20></space20>
+            <space2></space2>
             <img-center><img src='img/Section4-Linear-models-research/simulations.svg'></img-center>
             <space></space>
         <p>
@@ -5362,13 +5362,13 @@
         <p>
             Суммарные результаты всех обученных в этом разделе моделей выглядят следующим образом
             </p>
-            <space20></space20>
+            <space2></space2>
             <img-center>
                 <img
                     src='img/Section5-Residuals-prediction/models_residuals_summary.png'
                     style='border: 1px solid #CCCCCC;border-radius: 3px;'>
                 </img-center>
-            <space20></space20>
+            <space2></space2>
         <p>
             <i>Визуализация результатов</i>
             <space></space>
@@ -5504,7 +5504,7 @@
             </ul>
         <p>
             <i>Визуализация ошибок 20 фолдов кросс-валидации HousePricePredictor и Stacking</i>
-            <space20></space20>
+            <space2></space2>
             <img-center>
                 <img 
                     src='img/Section8-Final-predictions/stack_hpp_compare.svg'>
@@ -5547,13 +5547,13 @@
             </p>
         <p>
             Ни один тест не позволяет предполагать, что остатки распределены нормально. Попробуем удалить экстремальные значения ошибок (шесть элементов с остатками более 50000$, см. таблицу ниже).
-            <space20></space20>
+            <space2></space2>
                 <img
                     src='img/Section8-Final-predictions/residuals_been_cutted.png'
                     style='border:1px solid #CCCCCC;border-radius: 3px;width:90%;display:block;margin-left:auto;margin-right:auto;'>
             <space></space>
             После этого три из пяти тестов указывают на нормальность распределения.
-            <space20></space20>
+            <space2></space2>
                 <img
                     src='img/Section8-Final-predictions/residuals_cutted_tests.png'
                     style='border: 1px solid #CCCCCC;border-radius:3px;width:70%;display:block;margin-left:auto;margin-right:auto;'>

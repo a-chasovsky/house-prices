@@ -113,7 +113,7 @@ main-container > nav {
 .toc li.active > a {
     font-weight:600;
     color: #1E5FA5;
-    padding-right: 1.5em;
+    padding-right: 1em;
     /* white-space: nowrap; */
 }
 .toc li.active {

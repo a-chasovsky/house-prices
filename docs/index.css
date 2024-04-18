@@ -108,7 +108,7 @@ main-container > nav {
     text-align: left;
     /* border-left: 1px solid #CFD7DE; */
     padding-left: 0.75em;
-    margin-left: -0.7em;
+    margin-left: -0.6em;
 }
 .toc li.active > a {
     font-weight:600;

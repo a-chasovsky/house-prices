@@ -111,7 +111,7 @@ main-container > nav {
     margin-left: -0.8em;
 }
 .toc li.active > a {
-    font-weight:500;
+    font-weight: 600;
     /* color: #1E5FA5; */
     /* padding-right: 0em; */
     /* white-space: nowrap; */
